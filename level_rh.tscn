@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://bxvfd7rum88vk"]
 
-[ext_resource type="PackedScene" uid="uid://ds3t00mjlympf" path="res://outside_floodlight.tscn" id="1_oxafd"]
-[ext_resource type="PackedScene" uid="uid://c02im4b6l80gd" path="res://player_character.tscn" id="2_yhrv1"]
-[ext_resource type="PackedScene" uid="uid://ygf5ld8cbgji" path="res://light_manager.tscn" id="3_yhrv1"]
+[ext_resource type="PackedScene" uid="uid://cplgatc870qhj" path="res://scenes/outside_floodlight.tscn" id="1_oxafd"]
+[ext_resource type="PackedScene" uid="uid://c5emba75qxchp" path="res://scenes/player_character.tscn" id="2_yhrv1"]
+[ext_resource type="PackedScene" path="res://light_manager.tscn" id="3_yhrv1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vonw3"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
