@@ -1,10 +1,42 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3gxebruu2cr8"]
+[gd_scene load_steps=4 format=3 uid="uid://c3gxebruu2cr8"]
 
 [ext_resource type="Script" uid="uid://ehlsm8li3mo5" path="res://hud_canvas_layer.gd" id="1_5aj0g"]
 [ext_resource type="Texture2D" uid="uid://bvpjpyxhklcxs" path="res://2d_assets/progress_bar.png" id="2_5iisq"]
+[ext_resource type="Texture2D" uid="uid://cryi77eywewfx" path="res://2d_assets/grey_box.png" id="3_iu5xa"]
 
 [node name="HudCanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_5aj0g")
+
+[node name="BlinkVBoxContainer" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BlinkTopBottomProgressBar" type="TextureProgressBar" parent="BlinkVBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+value = 100.0
+fill_mode = 2
+nine_patch_stretch = true
+stretch_margin_bottom = 335
+texture_progress = ExtResource("3_iu5xa")
+
+[node name="BlinkBottomTopProgressBar" type="TextureProgressBar" parent="BlinkVBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+value = 100.0
+fill_mode = 3
+nine_patch_stretch = true
+texture_progress = ExtResource("3_iu5xa")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchors_preset = 15
