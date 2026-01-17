@@ -2,7 +2,7 @@ extends State
 class_name MothIdle
 
 @export var moth_enemy: CharacterBody3D
-@export var SPEED:= 10
+@export var move_speed:= 10
 @onready var nav_agent = $"../../NavigationAgent3D"
 @onready var player =   $"../../../PlayerCharacter"
 
@@ -27,7 +27,7 @@ func Physics_Update(_delta: float):
 	if moth_enemy:
 		var current_location = moth_enemy.global_transform.origin
 		var next_location = nav_agent.get_next_path_position()
-		var new_velocity = (next_location - current_location).normalized() * SPEED
+		var new_velocity = (next_location - current_location).normalized() * move_speed
 		
 		moth_enemy.velocity = new_velocity
 		moth_enemy.move_and_slide()

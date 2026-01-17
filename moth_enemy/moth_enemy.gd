@@ -17,7 +17,10 @@ func _on_vision_area_body_entered(body): #small sphere and cone detector check f
 	print("moth has spotted: " + body.name)
 	if body.name == "PlayerCharacter":
 		print("player_seen")
-		$"State Machine".current_state.Transitioned.emit($"State Machine".current_state, "MothChase")
+		if randi_range(1,4)==1:
+			$"State Machine".current_state.Transitioned.emit($"State Machine".current_state, "MothChase")
+		else:
+			$"State Machine".current_state.Transitioned.emit($"State Machine".current_state, "MothStalk")
 
 
 func _on_light_sensitive_area_entered(area: Area3D) -> void: #large sphere collector checks for Area3Ds named MothLight
@@ -25,3 +28,7 @@ func _on_light_sensitive_area_entered(area: Area3D) -> void: #large sphere colle
 		print("moth has felt the light shining")
 		$"State Machine".current_state.Transitioned.emit($"State Machine".current_state, "MothFollow")
 		$"State Machine/MothFollow".light=area
+
+
+func _on_moth_stalk_switch_to_chase() -> void:
+	$"State Machine".current_state.Transitioned.emit($"State Machine".current_state, "MothChase")
