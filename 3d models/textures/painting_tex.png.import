@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cx0h3736sc4c1"
-path.s3tc="res://.godot/imported/filing_cabinet_0.png-7a3747325ce2ccc1d47ff860218f9bd6.s3tc.ctex"
+uid="uid://clswr5i7n3lu1"
+path.s3tc="res://.godot/imported/painting_tex.png-ef530c5e252fab01947420c8204a259d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "77329dfb03f414fe8341ef24b1a0ad83"
-}
 
 [deps]
 
-source_file="res://3d models/filing_cabinet_0.png"
-dest_files=["res://.godot/imported/filing_cabinet_0.png-7a3747325ce2ccc1d47ff860218f9bd6.s3tc.ctex"]
+source_file="res://3d models/textures/painting_tex.png"
+dest_files=["res://.godot/imported/painting_tex.png-ef530c5e252fab01947420c8204a259d.s3tc.ctex"]
 
 [params]
 

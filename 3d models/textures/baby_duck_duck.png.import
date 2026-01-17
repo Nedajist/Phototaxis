@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlrrcyjigh62m"
-path.s3tc="res://.godot/imported/bed_complete_0.png-78582bd95b1521142abffa0457046f7e.s3tc.ctex"
+uid="uid://cvse6bdj2hbtu"
+path.s3tc="res://.godot/imported/baby_duck_duck.png-c8204f2ab2c6c84a04064b731137243a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "2d3f53927d17231d39c93fe83d82cfe6"
+"md5": "fb3281f352186cf587c78e0c2a50e515"
 }
 
 [deps]
 
-source_file="res://3d models/bed_complete_0.png"
-dest_files=["res://.godot/imported/bed_complete_0.png-78582bd95b1521142abffa0457046f7e.s3tc.ctex"]
+source_file="res://3d models/textures/baby_duck_duck.png"
+dest_files=["res://.godot/imported/baby_duck_duck.png-c8204f2ab2c6c84a04064b731137243a.s3tc.ctex"]
 
 [params]
 

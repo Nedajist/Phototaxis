@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4tk7qoff82pf"]
+
+[ext_resource type="ArrayMesh" uid="uid://cdyte6pvd23a1" path="res://3d models/obj files/vending_machine.obj" id="1_3eb1o"]
+[ext_resource type="Texture2D" uid="uid://djdfan1s48eg7" path="res://3d models/textures/vending_machine_tex.png" id="2_dgmkp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u6bad"]
+albedo_texture = ExtResource("2_dgmkp")
+
+[node name="vending machine" type="Node3D"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="VendingMachine" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4297272, 0, 0.29923725)
+mesh = ExtResource("1_3eb1o")
+surface_material_override/0 = SubResource("StandardMaterial3D_u6bad")

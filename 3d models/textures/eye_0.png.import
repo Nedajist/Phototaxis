@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://js14pfpj8x4k"
-path.s3tc="res://.godot/imported/cabinet_0.png-9f4e2b6a20763570fe6b79fd7565ff82.s3tc.ctex"
+uid="uid://cvlmumhb7u2ug"
+path.s3tc="res://.godot/imported/eye_0.png-7a70908545dbeae0c37aafbe77a4c8bd.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "accfebc94a0250b78bc1231fde8b8432"
+"md5": "d3c313e42abbdd2a45ab0d6cc3c7c189"
 }
 
 [deps]
 
-source_file="res://3d models/cabinet_0.png"
-dest_files=["res://.godot/imported/cabinet_0.png-9f4e2b6a20763570fe6b79fd7565ff82.s3tc.ctex"]
+source_file="res://3d models/textures/eye_0.png"
+dest_files=["res://.godot/imported/eye_0.png-7a70908545dbeae0c37aafbe77a4c8bd.s3tc.ctex"]
 
 [params]
 

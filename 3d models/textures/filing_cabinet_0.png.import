@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://31fs63r62gns"
-path.s3tc="res://.godot/imported/filing_cabinet_0.png-7d3c269e1db4dd763347e5a5fdb27d22.s3tc.ctex"
+uid="uid://cx0h3736sc4c1"
+path.s3tc="res://.godot/imported/filing_cabinet_0.png-7a3747325ce2ccc1d47ff860218f9bd6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://3d models/textures/filing_cabinet_0.png"
-dest_files=["res://.godot/imported/filing_cabinet_0.png-7d3c269e1db4dd763347e5a5fdb27d22.s3tc.ctex"]
+source_file="res://3d models/filing_cabinet_0.png"
+dest_files=["res://.godot/imported/filing_cabinet_0.png-7a3747325ce2ccc1d47ff860218f9bd6.s3tc.ctex"]
 
 [params]
 

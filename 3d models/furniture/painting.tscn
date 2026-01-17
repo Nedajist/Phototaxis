@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://bh5acme3wf2dc"]
+
+[ext_resource type="ArrayMesh" uid="uid://b7ss55q2cwi84" path="res://3d models/obj files/painting.obj" id="1_itaia"]
+[ext_resource type="Texture2D" uid="uid://clswr5i7n3lu1" path="res://3d models/textures/painting_tex.png" id="2_erqb2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g73w4"]
+albedo_texture = ExtResource("2_erqb2")
+
+[node name="painting" type="Node3D"]
+
+[node name="Painting" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_itaia")
+surface_material_override/0 = SubResource("StandardMaterial3D_g73w4")
