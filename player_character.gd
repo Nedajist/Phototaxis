@@ -1,6 +1,7 @@
 class_name PlayerCharacter
 extends CharacterBody3D
 @onready var camera_3d: Camera3D = %Camera3D
+@onready var flashlight: Node3D = %Flashlight
 
 @export var mouse_sensitivity = 0.002
 var camera_pitch: float = 0.0
@@ -29,6 +30,7 @@ func _input(event: InputEvent):
 		
 		if mouse_locked:
 			rotate_y(-event.relative.x * mouse_sensitivity)
+			flashlight.rotate_x(-event.relative.y * mouse_sensitivity)
 			camera_3d.rotation.x = camera_pitch
 		
 	if Input.is_action_just_pressed("escape"):

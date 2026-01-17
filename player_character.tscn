@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c02im4b6l80gd"]
+[gd_scene load_steps=6 format=3 uid="uid://c02im4b6l80gd"]
 
 [ext_resource type="Script" uid="uid://b3li2cqwf6fjs" path="res://player_character.gd" id="1_02ohv"]
 [ext_resource type="PackedScene" uid="uid://c3gxebruu2cr8" path="res://hud_canvas_layer.tscn" id="2_5up26"]
+[ext_resource type="PackedScene" uid="uid://cd5jygl443w8h" path="res://flashlight.tscn" id="3_4akcp"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_5up26"]
 
@@ -24,3 +25,7 @@ shape = SubResource("CapsuleShape3D_4akcp")
 [node name="Camera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4939646, -0.16715044)
+
+[node name="Flashlight" parent="." instance=ExtResource("3_4akcp")]
+unique_name_in_owner = true
+transform = Transform3D(0.2, 0, 0, 0, 0.19318517, -0.05176381, 0, 0.05176381, 0.19318517, 1.1159749, 0.75608444, -1.3647957)
