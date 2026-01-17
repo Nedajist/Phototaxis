@@ -15,7 +15,7 @@ var sprinting = false
 const SPEED = 2.0
 const SPRINT_SPEED = 5.0
 
-@export var interaction_hold_time: float = 2.0  # Time in seconds to hold for interaction
+@export var interaction_hold_time: float = 1.0  # Time in seconds to hold for interaction
 var interaction_hold_timer: float = 0.0
 var is_interacting: bool = false
 
@@ -23,6 +23,9 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _process(delta: float) -> void:
+	# Check for interactables in range and emit signals
+	_check_interactables_in_range()
+	
 	# Handle interaction hold mechanic
 	if Input.is_action_just_pressed("interact") and not is_interacting:
 		interaction_hold_timer = 0.0
@@ -105,13 +108,31 @@ func handle_player_movement(delta) -> void:
 
 	move_and_slide()
 
-func _complete_interaction() -> void:
-	# Get all bodies overlapping with the interaction area
+func _get_interactables() -> Array:
+	# Returns array of all bodies in interaction area that have interact() method
+	var interactables = []
 	var overlapping_bodies = interaction_area_3d.get_overlapping_bodies()
 	
-	# Interact with each object that has an interact() method
 	for body in overlapping_bodies:
 		if body.has_method("interact"):
-			body.interact()
+			interactables.append(body)
+	
+	return interactables
+
+func _check_interactables_in_range() -> void:
+	# Check if there are interactables in range and emit appropriate signal
+	var interactables = _get_interactables()
+	
+	if interactables.size() > 0:
+		EventBus.interactables_in_range.emit(interactables)
+	else:
+		EventBus.no_interactable_in_range.emit()
+
+func _complete_interaction() -> void:
+	# Get all interactables and call their interact() method
+	var interactables = _get_interactables()
+	
+	for interactable in interactables:
+		interactable.interact()
 	
 	EventBus.interaction_complete.emit()
