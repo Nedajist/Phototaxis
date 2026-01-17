@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dlrrcyjigh62m"
-path.s3tc="res://.godot/imported/bed_complete_0.png-78582bd95b1521142abffa0457046f7e.s3tc.ctex"
+path.s3tc="res://.godot/imported/bed_complete_0.png-b8ae35f0618033231defbd8276d41ce5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://3d models/bed_complete_0.png"
-dest_files=["res://.godot/imported/bed_complete_0.png-78582bd95b1521142abffa0457046f7e.s3tc.ctex"]
+source_file="res://3d models/textures/bed_complete_0.png"
+dest_files=["res://.godot/imported/bed_complete_0.png-b8ae35f0618033231defbd8276d41ce5.s3tc.ctex"]
 
 [params]
 
