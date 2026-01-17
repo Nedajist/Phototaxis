@@ -40,6 +40,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_5hmw8")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bmc8e"]
+albedo_color = Color(0.31431612, 0.31431612, 0.3143161, 1)
 albedo_texture = ExtResource("1_naf2q")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_em520"]
@@ -81,7 +82,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_mwxxb")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5cwfh"]
-albedo_color = Color(0.3529412, 1, 0.3764706, 1)
+albedo_color = Color(0, 0.33768255, 0.03899178, 1)
 albedo_texture = ExtResource("1_naf2q")
 
 [node name="barrels" type="Node3D"]
