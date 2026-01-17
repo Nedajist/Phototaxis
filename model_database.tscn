@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://de2evhgms5tyo"]
+[gd_scene load_steps=27 format=3 uid="uid://de2evhgms5tyo"]
 
 [ext_resource type="PackedScene" uid="uid://cjnrpwoo7ri8e" path="res://3d models/trees/tree_01.tscn" id="1_vdns3"]
 [ext_resource type="PackedScene" uid="uid://dl2vrdghviaii" path="res://3d models/trees/tree_02.tscn" id="2_b6bgt"]
@@ -19,6 +19,13 @@
 [ext_resource type="PackedScene" uid="uid://unr8u4lsv4j3" path="res://3d models/plants/shrub_01.tscn" id="17_xem2q"]
 [ext_resource type="PackedScene" uid="uid://dkcwmves1ju5x" path="res://3d models/plants/shrub_02.tscn" id="18_g7uo3"]
 [ext_resource type="PackedScene" uid="uid://cs5wt745pnyt2" path="res://3d models/plants/shrub_05.tscn" id="19_0vvl7"]
+[ext_resource type="PackedScene" uid="uid://cquisc7oy0ck5" path="res://3d models/misc/wildlife.tscn" id="20_bdq1u"]
+[ext_resource type="PackedScene" uid="uid://bgeep6lrm4ac8" path="res://3d models/furniture/bed_messy.tscn" id="21_tohmn"]
+[ext_resource type="PackedScene" uid="uid://djvxbos06ptl6" path="res://3d models/furniture/bed_complete.tscn" id="22_fenht"]
+[ext_resource type="PackedScene" uid="uid://krk47pk7q7yw" path="res://3d models/furniture/clock.tscn" id="23_j01vt"]
+[ext_resource type="PackedScene" uid="uid://dkkw0wn1ypyc" path="res://3d models/furniture/autopsy_table.tscn" id="24_q4823"]
+[ext_resource type="PackedScene" uid="uid://crpim427bviie" path="res://3d models/furniture/cabinet.tscn" id="25_fgvmg"]
+[ext_resource type="PackedScene" uid="uid://3r5x5p1xs17a" path="res://3d models/furniture/desk.tscn" id="26_66gb0"]
 
 [node name="model_database" type="Node3D"]
 
@@ -74,7 +81,28 @@ transform = Transform3D(0.35, 0, 0, 0, 0.35, 0, 0, 0, 0.35, 11.826166, 0, 2.8861
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 13.156129, 0, 3.0156374)
 
 [node name="SHRUB_02" parent="." instance=ExtResource("18_g7uo3")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 14.772362, 0, 2.9647946)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 14.839966, 0, 2.8207984)
 
 [node name="SHRUB_05" parent="." instance=ExtResource("19_0vvl7")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 16.503487, 0, 3.0046844)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 16.893517, 0, 3.1498003)
+
+[node name="wildlife" parent="." instance=ExtResource("20_bdq1u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.701992, 0, 2.928996)
+
+[node name="bed_messy" parent="." instance=ExtResource("21_tohmn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0779421, 0, 4.717351)
+
+[node name="bed_complete" parent="." instance=ExtResource("22_fenht")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9984503, 0, 4.7623215)
+
+[node name="clock" parent="." instance=ExtResource("23_j01vt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 5)
+
+[node name="autopsy_table" parent="." instance=ExtResource("24_q4823")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.7416844, -0.016814232, 4.961439)
+
+[node name="cabinet" parent="." instance=ExtResource("25_fgvmg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2356615, 0, 5.1314583)
+
+[node name="desk" parent="." instance=ExtResource("26_66gb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.122128, 0, 5.1338534)
