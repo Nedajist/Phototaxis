@@ -6,6 +6,7 @@ extends CharacterBody3D
 
 @export var mouse_sensitivity = 0.002
 var camera_pitch: float = 0.0
+var flashlight_pitch: float = 0.0
 var mouse_locked = true
 const sprint_max:float = 100.0
 const sprint_min:float = 0.0
@@ -15,7 +16,7 @@ var sprinting = false
 const SPEED = 2.0
 const SPRINT_SPEED = 5.0
 
-@export var interaction_hold_time: float = 2.0  # Time in seconds to hold for interaction
+@export var interaction_hold_time: float = 1.0  # Time in seconds to hold for interaction
 var interaction_hold_timer: float = 0.0
 var is_interacting: bool = false
 
@@ -23,6 +24,9 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _process(delta: float) -> void:
+	# Check for interactables in range and emit signals
+	_check_interactables_in_range()
+	
 	# Handle interaction hold mechanic
 	if Input.is_action_just_pressed("interact") and not is_interacting:
 		interaction_hold_timer = 0.0
@@ -69,10 +73,14 @@ func handle_mouse_movement(event) -> void:
 	# Clamp the camera pitch to prevent it from flipping upside down
 	camera_pitch = clamp(camera_pitch, deg_to_rad(-90), deg_to_rad(90))
 	
+	# Rotate the Flashlight around its local X-axis (up/down) with clamping
+	flashlight_pitch += -event.relative.y * mouse_sensitivity
+	flashlight_pitch = clamp(flashlight_pitch, deg_to_rad(-40), deg_to_rad(40))
+	
 	if mouse_locked:
 		rotate_y(-event.relative.x * mouse_sensitivity)
-		flashlight.rotate_x(-event.relative.y * mouse_sensitivity)
 		camera_3d.rotation.x = camera_pitch
+		flashlight.rotation.x = flashlight_pitch
 
 func handle_player_movement(delta) -> void:
 	
@@ -105,13 +113,31 @@ func handle_player_movement(delta) -> void:
 
 	move_and_slide()
 
-func _complete_interaction() -> void:
-	# Get all bodies overlapping with the interaction area
+func _get_interactables() -> Array:
+	# Returns array of all bodies in interaction area that have interact() method
+	var interactables = []
 	var overlapping_bodies = interaction_area_3d.get_overlapping_bodies()
 	
-	# Interact with each object that has an interact() method
 	for body in overlapping_bodies:
 		if body.has_method("interact"):
-			body.interact()
+			interactables.append(body)
+	
+	return interactables
+
+func _check_interactables_in_range() -> void:
+	# Check if there are interactables in range and emit appropriate signal
+	var interactables = _get_interactables()
+	
+	if interactables.size() > 0:
+		EventBus.interactables_in_range.emit(interactables)
+	else:
+		EventBus.no_interactable_in_range.emit()
+
+func _complete_interaction() -> void:
+	# Get all interactables and call their interact() method
+	var interactables = _get_interactables()
+	
+	for interactable in interactables:
+		interactable.interact()
 	
 	EventBus.interaction_complete.emit()

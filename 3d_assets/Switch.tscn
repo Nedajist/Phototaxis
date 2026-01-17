@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bpvpg1yhowgao"]
+[gd_scene load_steps=16 format=3 uid="uid://4ke43iuje6r4"]
 
+[ext_resource type="Script" uid="uid://oxxttutymjt1" path="res://3d_assets/switch.gd" id="1_kythj"]
 [ext_resource type="Material" uid="uid://bcd70ojs537if" path="res://textures/Slightly_rusty/Metal053B_1K-JPG.tres" id="1_sakex"]
 [ext_resource type="Texture2D" uid="uid://cn1da2ufyjww3" path="res://textures/Slightly_rusty/Metal053B_1K-JPG_Displacement.jpg" id="2_2lo1i"]
+[ext_resource type="AudioStream" uid="uid://cgeqimiqmrjs7" path="res://sfx/131599__echocinematics__kill-switch-large-breaker-switch.mp3" id="4_s2s2w"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_bc8p3"]
 
@@ -21,38 +23,109 @@ albedo_texture = ExtResource("2_2lo1i")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2lo1i"]
 albedo_color = Color(0.2947289, 0.2105746, 0.1404373, 1)
 
+[sub_resource type="Animation" id="Animation_3pl1a"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedHinge")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_s2s2w"]
+resource_name = "switch_off"
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedHinge")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.33333334, 1, 0, 0, -0.174, 0.985, 0.8333, 1, 0, 0, -0.174, 0.985, 0.96666664, 1, 0, 0, -0.707, 0.707)
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_s2s2w")
+}],
+"times": PackedFloat32Array(0.5)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_kythj"]
+resource_name = "switch_on"
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedHinge")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, -0.707, 0.707, 0.33333334, 1, 0, 0, -0.574, 0.819, 0.8333, 1, 0, 0, -0.574, 0.819, 0.96666664, 1, 0, 0, 0, 1)
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_s2s2w")
+}],
+"times": PackedFloat32Array(0.5)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g4ibr"]
+_data = {
+&"RESET": SubResource("Animation_3pl1a"),
+&"switch_off": SubResource("Animation_s2s2w"),
+&"switch_on": SubResource("Animation_kythj")
+}
+
 [node name="Switch" type="Node3D"]
+script = ExtResource("1_kythj")
 
-[node name="Hinge" type="Node3D" parent="."]
-transform = Transform3D(0.29999998, 0, 1.3113416e-08, 1.3113416e-08, 9.553427e-16, -0.29999998, 0, 0.5, 5.732056e-16, 0, -0.00043399632, 0)
+[node name="AnimatedHinge" type="Node3D" parent="."]
+unique_name_in_owner = true
 
-[node name="Right bar" type="MeshInstance3D" parent="Hinge"]
+[node name="Hinge" type="Node3D" parent="AnimatedHinge"]
+transform = Transform3D(0.29999998, -4.175936e-23, 1.0952157e-30, 0, -2.1855694e-08, -0.29999998, 2.5055614e-23, 0.5, -1.3113416e-08, 0, -0.00043399632, 0)
+
+[node name="Right bar" type="MeshInstance3D" parent="AnimatedHinge/Hinge"]
 transform = Transform3D(1.7546201, 1.0636629e-09, 0.8111254, -6.381975e-08, 0.05000005, -1.0887485e-08, -2.4333768, -5.443743e-10, 0.5848727, 0.6339803, 0.94711477, -0.94580775)
 mesh = SubResource("BoxMesh_bc8p3")
-skeleton = NodePath("../../Joint")
+skeleton = NodePath("../../../Joint")
 surface_material_override/0 = ExtResource("1_sakex")
 
-[node name="Center bar" type="MeshInstance3D" parent="Hinge"]
+[node name="Center bar" type="MeshInstance3D" parent="AnimatedHinge/Hinge"]
 transform = Transform3D(-4.747436e-08, -0.029386675, 0.8160019, 1.847761, -2.1853768e-09, 5.293956e-23, 6.5342846e-08, 0.040447284, 0.59286, 1.5212195, 0.050599817, -2.131121)
 mesh = SubResource("BoxMesh_bc8p3")
-skeleton = NodePath("../../Joint")
+skeleton = NodePath("../../../Joint")
 surface_material_override/0 = ExtResource("1_sakex")
 
-[node name="Shaft" type="MeshInstance3D" parent="Hinge/Center bar"]
+[node name="Shaft" type="MeshInstance3D" parent="AnimatedHinge/Hinge/Center bar"]
 transform = Transform3D(-0.20001708, 1.0115555e-05, 9.965245e-09, -1.8348615e-07, -16.11232, -2.3841858e-06, -6.5198216e-09, -1.4901161e-07, -0.53500485, -0.00074672326, -12.074417, 0.035950184)
 mesh = SubResource("CylinderMesh_bc8p3")
 surface_material_override/0 = ExtResource("1_sakex")
 
-[node name="Handle" type="MeshInstance3D" parent="Hinge/Center bar/Shaft"]
+[node name="Handle" type="MeshInstance3D" parent="AnimatedHinge/Hinge/Center bar/Shaft"]
 transform = Transform3D(-1.2, 9.00074e-15, -1.04907336e-07, 2.8424137e-15, 0.5, 2.1458209e-07, 1.04907336e-07, 8.94092e-08, -1.2, 5.2571297e-05, 1.0379324, -0.0008199215)
 mesh = SubResource("CylinderMesh_bc8p3")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_bc8p3")
 
-[node name="Left bar" type="MeshInstance3D" parent="Hinge"]
+[node name="Left bar" type="MeshInstance3D" parent="AnimatedHinge/Hinge"]
 transform = Transform3D(1.7546203, 1.063663e-09, 0.81112546, -6.3819755e-08, 0.050000057, -1.08874865e-08, -2.433377, -5.4437455e-10, 0.5848727, 0.63398033, -0.89904684, -0.9458077)
 mesh = SubResource("BoxMesh_bc8p3")
-skeleton = NodePath("../../Joint")
+skeleton = NodePath("../../../Joint")
 surface_material_override/0 = ExtResource("1_sakex")
 
 [node name="Panel" type="MeshInstance3D" parent="."]
@@ -64,3 +137,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_kythj")
 transform = Transform3D(0.3, 0, 0, 0, -1.9670125e-08, -0.3, 0, 0.45, -1.3113417e-08, 0, -0.00043399632, 0)
 mesh = SubResource("CylinderMesh_2lo1i")
 surface_material_override/0 = SubResource("StandardMaterial3D_2lo1i")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_g4ibr")
+}
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
