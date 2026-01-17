@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://de2evhgms5tyo"]
+[gd_scene load_steps=34 format=3 uid="uid://dwwt608jduh3w"]
 
 [ext_resource type="PackedScene" uid="uid://cjnrpwoo7ri8e" path="res://3d models/trees/tree_01.tscn" id="1_vdns3"]
 [ext_resource type="PackedScene" uid="uid://dl2vrdghviaii" path="res://3d models/trees/tree_02.tscn" id="2_b6bgt"]
@@ -133,4 +133,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.81524, 4.7683716e-07, 5.07
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.991749, 0, 2.7015128)
 
 [node name="brownrat" parent="." instance=ExtResource("33_3u4w5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.073135, 0, 2.718743)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.534285, 0, 2.6530983)
