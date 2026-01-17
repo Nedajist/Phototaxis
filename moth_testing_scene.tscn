@@ -45,7 +45,7 @@ use_collision = true
 size = Vector3(20, 1, 28)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D"]
-transform = Transform3D(0.041040037, -1.122091e-08, -0.99915755, -0.65085995, 0.75872695, -0.026733855, 0.7580877, 0.6514088, 0.031138178, 5.339305, 0.81990063, -15.334562)
+transform = Transform3D(0.04104004, -9.313226e-09, -0.99915755, -0.65086, 0.75872695, -0.02673385, 0.75808775, 0.6514088, 0.031138178, 5.339305, 0.81990063, -15.334562)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/StaticBody3D"]
 transform = Transform3D(0.81285405, 7.285838e-16, 0, 1.3536739e-16, 5, 0, 0, 0, 7, 0.24604154, 0, -3.6663046e-09)
@@ -53,7 +53,7 @@ mesh = SubResource("BoxMesh_ynr6c")
 skeleton = NodePath("../../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StaticBody3D"]
-transform = Transform3D(1, 1.4571676e-16, 4.618528e-13, 1.6653345e-16, 1, 0, 0, 0, 1.4, 0.2460416, 0.16662598, -0.03282315)
+transform = Transform3D(1, -1.6653345e-16, -8e-45, 1.6653345e-16, 1, 4.298951e-36, 8e-45, -4.298951e-36, 1, 0.2460416, 0.16662598, -0.03282315)
 shape = SubResource("BoxShape3D_bu470")
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("3_bu470")]

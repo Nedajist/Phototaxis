@@ -31,9 +31,10 @@ script = ExtResource("3_gtdvq")
 moth_enemy = NodePath("../..")
 metadata/_custom_type_script = "uid://mfgq6vs627nn"
 
-[node name="MothChase" type="Node" parent="State Machine" node_paths=PackedStringArray("moth_enemy")]
+[node name="MothChase" type="Node" parent="State Machine" node_paths=PackedStringArray("moth_enemy", "LightSensitive")]
 script = ExtResource("3_6eo5i")
 moth_enemy = NodePath("../..")
+LightSensitive = NodePath("../../LightSensitive")
 metadata/_custom_type_script = "uid://mfgq6vs627nn"
 
 [node name="MothFollow" type="Node" parent="State Machine" node_paths=PackedStringArray("moth_enemy")]

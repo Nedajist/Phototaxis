@@ -5,11 +5,16 @@ class_name MothChase
 @export var move_speed:= 10
 @onready var nav_agent = $"../../NavigationAgent3D"
 @onready var player =   $"../../../PlayerCharacter"
+@export var LightSensitive: Area3D
 
 var SPEED = 3.0
 
 func Enter():
 	print("Chase Entered")
+	LightSensitive.visible=false
+
+func Exit():
+	LightSensitive.visible=true
 
 func Physics_Update(_delta: float):
 	if moth_enemy and player:
