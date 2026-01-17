@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://de2evhgms5tyo"]
+[gd_scene load_steps=10 format=3 uid="uid://de2evhgms5tyo"]
 
 [ext_resource type="PackedScene" uid="uid://cjnrpwoo7ri8e" path="res://3d models/trees/tree_01.tscn" id="1_vdns3"]
 [ext_resource type="PackedScene" uid="uid://dl2vrdghviaii" path="res://3d models/trees/tree_02.tscn" id="2_b6bgt"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bsgjd4nsmouiv" path="res://3d models/trees/tree_06.tscn" id="5_7lq5n"]
 [ext_resource type="PackedScene" uid="uid://u6gg1auphtto" path="res://3d models/trees/tree_07.tscn" id="6_ywwwg"]
 [ext_resource type="PackedScene" uid="uid://qfq0nhorq58b" path="res://3d models/trees/tree_08.tscn" id="7_i1gds"]
+[ext_resource type="PackedScene" uid="uid://ycs7hlic14mo" path="res://3d models/misc/barrels.tscn" id="8_wow3n"]
+[ext_resource type="PackedScene" uid="uid://cx4bfhit8xfor" path="res://3d models/misc/barrel_rusted.tscn" id="9_i5vgw"]
 
 [node name="model_database" type="Node3D"]
 
@@ -30,3 +32,9 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 19, 0, -3)
 
 [node name="tree08" parent="." instance=ExtResource("7_i1gds")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 22.611687, -0.3138461, -3.6068401)
+
+[node name="barrels" parent="." instance=ExtResource("8_wow3n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 2)
+
+[node name="barrel_rusted" parent="." instance=ExtResource("9_i5vgw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)

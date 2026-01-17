@@ -29,7 +29,7 @@ AmbientMaterialMaker="*res://addons/ambientcg/global/ambient_material_maker.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/ambientcg/plugin.cfg")
+enabled=PackedStringArray()
 
 [rendering]
 

@@ -1,9 +1,8 @@
 [gd_scene load_steps=7 format=4 uid="uid://c24hjcol3t0ym"]
 
-[ext_resource type="Texture2D" uid="uid://cwmo5ufrciy7h" path="res://3d models/temporaryu/treee05.png" id="1_0m5oi"]
+[ext_resource type="Texture2D" uid="uid://cwmo5ufrciy7h" path="res://3d models/textures/treee05.png" id="1_0m5oi"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0m5oi"]
-load_path = "res://.godot/imported/tree05.png-b27a85e3c03fcf0f4f1924456a9e9bf3.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_73hqt"]
 resource_name = "tree05"
