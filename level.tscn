@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://d0m17j6b6rfmc"]
+[gd_scene load_steps=6 format=3 uid="uid://f4ilbe43h3yg"]
 
-[ext_resource type="PackedScene" path="res://outside_floodlight.tscn" id="1_u52ul"]
-[ext_resource type="PackedScene" uid="uid://c02im4b6l80gd" path="res://player_character.tscn" id="2_vonw3"]
+[ext_resource type="PackedScene" uid="uid://ds3t00mjlympf" path="res://outside_floodlight.tscn" id="1_u52ul"]
+[ext_resource type="PackedScene" path="res://player_character.tscn" id="2_vonw3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vonw3"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -163,6 +163,7 @@ transform = Transform3D(-0.5132455, 0, -0.47600323, 0, 0.7, 0, 0.47600323, 0, -0
 
 [node name="lightpost3" parent="." instance=ExtResource("1_u52ul")]
 transform = Transform3D(-0.59752375, 0, 0.36464417, 0, 0.70000005, 0, -0.36464417, 0, -0.59752375, -5.5361795, -0.5326867, 12.081279)
+duration_on = 6.0
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_vonw3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.53307, -0.5, 7.369843)
