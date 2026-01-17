@@ -44,7 +44,7 @@ fog_enabled = true
 fog_light_color = Color(0.067665085, 0.0776018, 0.09375567, 1)
 fog_light_energy = 0.2
 fog_density = 0.075
-fog_sky_affect = 0.2
+fog_sky_affect = 0.0
 adjustment_contrast = 6.93
 
 [node name="level_full" type="Node"]
@@ -391,7 +391,6 @@ transform = Transform3D(0.00010471791, 0, -0.24999999, 0, 0.25, 0, 0.24999999, 0
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="enviroment"]
 transform = Transform3D(-0.8350685, 0.13851899, -0.5324218, -0.110698625, 0.905681, 0.4092526, 0.5388936, 0.40069237, -0.74097186, 0, -0.19008255, 0)
-light_energy = 0.075
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="enviroment"]
