@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c02im4b6l80gd"]
+[gd_scene load_steps=7 format=3 uid="uid://c02im4b6l80gd"]
 
 [ext_resource type="Script" uid="uid://b3li2cqwf6fjs" path="res://player_character.gd" id="1_02ohv"]
 [ext_resource type="PackedScene" uid="uid://c3gxebruu2cr8" path="res://hud_canvas_layer.tscn" id="2_5up26"]
@@ -7,6 +7,9 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_5up26"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4akcp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4akcp"]
+size = Vector3(1, 1, 2)
 
 [node name="PlayerCharacter" type="CharacterBody3D"]
 script = ExtResource("1_02ohv")
@@ -25,6 +28,13 @@ shape = SubResource("CapsuleShape3D_4akcp")
 [node name="Camera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4939646, -0.16715044)
+
+[node name="InteractionArea3D" type="Area3D" parent="Camera3D"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.26088202, -1.138797)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3D/InteractionArea3D"]
+shape = SubResource("BoxShape3D_4akcp")
 
 [node name="Flashlight" parent="." instance=ExtResource("3_4akcp")]
 unique_name_in_owner = true

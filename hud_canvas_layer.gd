@@ -18,5 +18,4 @@ func interaction_progress_changed(progress) -> void:
 	radial_progress_bar.value = progress
 
 func interaction_complete() -> void:
-	print("done!")
 	radial_progress_bar.visible = false

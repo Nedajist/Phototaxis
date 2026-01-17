@@ -2,6 +2,7 @@ class_name PlayerCharacter
 extends CharacterBody3D
 @onready var camera_3d: Camera3D = %Camera3D
 @onready var flashlight: Node3D = %Flashlight
+@onready var interaction_area_3d: Area3D = %InteractionArea3D
 
 @export var mouse_sensitivity = 0.002
 var camera_pitch: float = 0.0
@@ -105,7 +106,12 @@ func handle_player_movement(delta) -> void:
 	move_and_slide()
 
 func _complete_interaction() -> void:
-	# Interaction logic here
-	print("Interaction performed!")
+	# Get all bodies overlapping with the interaction area
+	var overlapping_bodies = interaction_area_3d.get_overlapping_bodies()
+	
+	# Interact with each object that has an interact() method
+	for body in overlapping_bodies:
+		if body.has_method("interact"):
+			body.interact()
+	
 	EventBus.interaction_complete.emit()
-	# Add raycast or other interaction detection logic here
