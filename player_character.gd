@@ -5,6 +5,7 @@ extends CharacterBody3D
 @export var mouse_sensitivity = 0.002
 var camera_pitch: float = 0.0
 var mouse_locked = true
+var sprint: int = 100
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
