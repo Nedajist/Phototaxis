@@ -6,6 +6,7 @@ extends CharacterBody3D
 
 @export var mouse_sensitivity = 0.002
 var camera_pitch: float = 0.0
+var flashlight_pitch: float = 0.0
 var mouse_locked = true
 const sprint_max:float = 100.0
 const sprint_min:float = 0.0
@@ -72,10 +73,14 @@ func handle_mouse_movement(event) -> void:
 	# Clamp the camera pitch to prevent it from flipping upside down
 	camera_pitch = clamp(camera_pitch, deg_to_rad(-90), deg_to_rad(90))
 	
+	# Rotate the Flashlight around its local X-axis (up/down) with clamping
+	flashlight_pitch += -event.relative.y * mouse_sensitivity
+	flashlight_pitch = clamp(flashlight_pitch, deg_to_rad(-40), deg_to_rad(40))
+	
 	if mouse_locked:
 		rotate_y(-event.relative.x * mouse_sensitivity)
-		flashlight.rotate_x(-event.relative.y * mouse_sensitivity)
 		camera_3d.rotation.x = camera_pitch
+		flashlight.rotation.x = flashlight_pitch
 
 func handle_player_movement(delta) -> void:
 	

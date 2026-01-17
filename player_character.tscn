@@ -29,13 +29,13 @@ shape = SubResource("CapsuleShape3D_4akcp")
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4939646, -0.16715044)
 
+[node name="Flashlight" parent="Camera3D" instance=ExtResource("3_4akcp")]
+unique_name_in_owner = true
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.1159749, -0.7378801, -0.9974044)
+
 [node name="InteractionArea3D" type="Area3D" parent="Camera3D"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.26088202, -1.138797)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3D/InteractionArea3D"]
 shape = SubResource("BoxShape3D_4akcp")
-
-[node name="Flashlight" parent="." instance=ExtResource("3_4akcp")]
-unique_name_in_owner = true
-transform = Transform3D(0.2, 0, 0, 0, 0.19318517, -0.05176381, 0, 0.05176381, 0.19318517, 1.1159749, 0.75608444, -1.3647957)
