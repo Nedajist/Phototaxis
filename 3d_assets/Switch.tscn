@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://4ke43iuje6r4"]
+[gd_scene load_steps=16 format=3 uid="uid://4ke43iuje6r4"]
 
-[ext_resource type="Material" path="res://textures/Slightly_rusty/Metal053B_1K-JPG.tres" id="1_sakex"]
+[ext_resource type="Script" uid="uid://oxxttutymjt1" path="res://3d_assets/switch.gd" id="1_kythj"]
+[ext_resource type="Material" uid="uid://bcd70ojs537if" path="res://textures/Slightly_rusty/Metal053B_1K-JPG.tres" id="1_sakex"]
 [ext_resource type="Texture2D" uid="uid://cn1da2ufyjww3" path="res://textures/Slightly_rusty/Metal053B_1K-JPG_Displacement.jpg" id="2_2lo1i"]
+[ext_resource type="AudioStream" uid="uid://cgeqimiqmrjs7" path="res://sfx/131599__echocinematics__kill-switch-large-breaker-switch.mp3" id="4_s2s2w"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_bc8p3"]
 
@@ -21,7 +23,75 @@ albedo_texture = ExtResource("2_2lo1i")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2lo1i"]
 albedo_color = Color(0.2947289, 0.2105746, 0.1404373, 1)
 
+[sub_resource type="Animation" id="Animation_3pl1a"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedHinge")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_s2s2w"]
+resource_name = "switch_off"
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedHinge")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.33333334, 1, 0, 0, -0.174, 0.985, 0.8333, 1, 0, 0, -0.174, 0.985, 0.96666664, 1, 0, 0, -0.707, 0.707)
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_s2s2w")
+}],
+"times": PackedFloat32Array(0.5)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="Animation" id="Animation_kythj"]
+resource_name = "switch_on"
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedHinge")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, -0.707, 0.707, 0.33333334, 1, 0, 0, -0.574, 0.819, 0.8333, 1, 0, 0, -0.574, 0.819, 0.96666664, 1, 0, 0, 0, 1)
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_s2s2w")
+}],
+"times": PackedFloat32Array(0.5)
+}
+tracks/1/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g4ibr"]
+_data = {
+&"RESET": SubResource("Animation_3pl1a"),
+&"switch_off": SubResource("Animation_s2s2w"),
+&"switch_on": SubResource("Animation_kythj")
+}
+
 [node name="Switch" type="Node3D"]
+script = ExtResource("1_kythj")
 
 [node name="AnimatedHinge" type="Node3D" parent="."]
 unique_name_in_owner = true
@@ -67,3 +137,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_kythj")
 transform = Transform3D(0.3, 0, 0, 0, -1.9670125e-08, -0.3, 0, 0.45, -1.3113417e-08, 0, -0.00043399632, 0)
 mesh = SubResource("CylinderMesh_2lo1i")
 surface_material_override/0 = SubResource("StandardMaterial3D_2lo1i")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_g4ibr")
+}
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

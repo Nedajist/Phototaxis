@@ -24,4 +24,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3098005, 0)
 text = "THIS IS A BREAKER BOX"
 
 [node name="Switch" parent="." instance=ExtResource("2_i5kwe")]
+unique_name_in_owner = true
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
