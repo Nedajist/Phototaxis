@@ -19,6 +19,8 @@ var deactivated_lights:Array[Node3D]
 
 func _ready():
 	timer = frequency
+	for light:LightPost in light_sources:
+		light.total_time_on = frequency
 	if(behavior == Mode.Random):
 		randomize()
 
@@ -32,7 +34,7 @@ func _process(delta):
 				print(target)
 			Mode.Top_Most:
 				target = 0
-		light_sources[target]._deactivate_lights()
+		light_sources[target].selected_to_break = true
 		deactivated_lights.append(light_sources[target])
 		light_sources.remove_at(target)
 		timer = frequency

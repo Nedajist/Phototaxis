@@ -1,3 +1,4 @@
+class_name LightPost
 extends Node3D
 @onready var audio_stream_player_3d: AudioStreamPlayer3D = %AudioStreamPlayer3D
 
@@ -30,6 +31,8 @@ var interval_blink_high: float = 0.5
 # time in seconds for a light blink to fade out and turn back on
 var blink_fade_out: float = 0.2
 var blink_fade_in: float = 0.05
+
+var selected_to_break: bool = false
 
 # State machine variables
 var current_state: LightState = LightState.ON
@@ -102,7 +105,7 @@ func _process_on_state(delta):
 			lights[i].light_energy = ((original_light_energy[i] * flicker_amount) + original_light_energy[i]) / 2
 	
 	# Transition to BLINK_LOW after duration
-	if state_timer >= duration_on:
+	if selected_to_break:
 		_start_state(LightState.BLINK_LOW)
 
 # Process BLINK_LOW state: occasional blinks
