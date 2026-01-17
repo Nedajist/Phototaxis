@@ -18,12 +18,13 @@ points = PackedVector3Array(-0.00019574165, 1, -0.00019574165, 0.19498825, -1, -
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_bk6gy"]
 
-[node name="MothEnemy" type="CharacterBody3D"]
+[node name="MothEnemy" type="CharacterBody3D" node_paths=PackedStringArray("nav_agent")]
 script = ExtResource("1_rmvo2")
+nav_agent = NodePath("NavigationAgent3D")
 
 [node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_dutgy")
-initial_state = NodePath("MothFollow")
+initial_state = NodePath("MothIdle")
 
 [node name="MothIdle" type="Node" parent="State Machine" node_paths=PackedStringArray("moth_enemy")]
 script = ExtResource("3_gtdvq")

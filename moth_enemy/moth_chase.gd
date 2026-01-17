@@ -24,5 +24,5 @@ func Physics_Update(_delta: float):
 		
 		var distance = player.global_position - moth_enemy.global_position
 		#print("chasing")
-		#if distance.length() > 10:
-			#Transitioned.emit(self, "MothIdle")
+		if distance.length() > 10:
+			Transitioned.emit(self, "MothIdle")

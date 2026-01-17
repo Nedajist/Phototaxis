@@ -6,7 +6,7 @@ extends CharacterBody3D
 var camera_pitch: float = 0.0
 var mouse_locked = true
 
-const SPEED = 5.0
+const SPEED = 10.0
 const JUMP_VELOCITY = 4.5
 
 func _ready() -> void:

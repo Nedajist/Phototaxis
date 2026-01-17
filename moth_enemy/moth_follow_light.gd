@@ -22,6 +22,7 @@ func Physics_Update(_delta: float):
 		
 		moth_enemy.velocity = new_velocity
 		moth_enemy.move_and_slide()
+		
 		#var player_distance = player.global_position - moth_enemy.global_position
 		#if player_distance.length() < 5:
 		#	print(player_distance.length())
