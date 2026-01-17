@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=4 uid="uid://bsgjd4nsmouiv"]
 
-[ext_resource type="Texture2D" uid="uid://b25sk22p2e2mp" path="res://3d models/temporaryu/tree06.png" id="1_aolv2"]
+[ext_resource type="Texture2D" uid="uid://b25sk22p2e2mp" path="res://3d models/textures/tree06.png" id="1_aolv2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ed6mt"]
 resource_name = "tree06"

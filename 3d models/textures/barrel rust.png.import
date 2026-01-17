@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcdh4ojwj5xk0"
-path.s3tc="res://.godot/imported/tree01.png-123f99cc4ed737cf1c946c0bc193ef10.s3tc.ctex"
+uid="uid://bd0jep8jewfan"
+path.s3tc="res://.godot/imported/barrel rust.png-94a2dc46c7031fdb5311992ab8237f8c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://3d models/temporaryu/tree01.png"
-dest_files=["res://.godot/imported/tree01.png-123f99cc4ed737cf1c946c0bc193ef10.s3tc.ctex"]
+source_file="res://3d models/textures/barrel rust.png"
+dest_files=["res://.godot/imported/barrel rust.png-94a2dc46c7031fdb5311992ab8237f8c.s3tc.ctex"]
 
 [params]
 
