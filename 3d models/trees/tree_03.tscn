@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://bvck18yucjvoj"]
+[gd_scene load_steps=7 format=4 uid="uid://bvck18yucjvoj"]
 
 [ext_resource type="Texture2D" uid="uid://c6fv06yq3ujq7" path="res://3d models/textures/treee03.png" id="1_mdknn"]
 
@@ -45,13 +45,29 @@ shadow_mesh = SubResource("ArrayMesh_ww7ol")
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
+cull_mode = 2
 albedo_texture = ExtResource("1_mdknn")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_mdknn"]
+height = 0.08623047
+radius = 0.026367188
 
 [node name="tree03" type="Node3D"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 
 [node name="treee03" type="MeshInstance3D" parent="."]
-transform = Transform3D(77.69457, 0, 0, 0, 4.6309574e-06, 77.69457, 0, -77.69457, 4.6309574e-06, 4.056122, 2.2159958, 0.009262085)
+transform = Transform3D(77.69457, 0, 0, 0, 4.6309574e-06, 77.69457, 0, -77.69457, 4.6309574e-06, 0, 0, 0)
 mesh = SubResource("ArrayMesh_mjuqp")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_2di3d")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -0.018997932, 0.0020827453, 0.028865254)
+shape = SubResource("CylinderShape3D_mdknn")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.45584, -0.8900616, 0, 0.8900616, 0.45584, -0.018997932, 0.02036529, 0.06456329)
+shape = SubResource("CylinderShape3D_mdknn")

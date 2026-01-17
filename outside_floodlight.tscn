@@ -1,7 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://ds3t00mjlympf"]
+[gd_scene load_steps=21 format=3 uid="uid://cdtv2impc3j5r"]
 
 [ext_resource type="Texture2D" uid="uid://bb0h6fvmi65a6" path="res://materials/diamond_plate/DiamondPlate009_1K-JPG_Color.jpg" id="1_4uxog"]
-[ext_resource type="Script" uid="uid://4g1vmj512wdd" path="res://outside_floodlight.gd" id="1_6qv3f"]
+[ext_resource type="Script" path="res://outside_floodlight.gd" id="1_6qv3f"]
 [ext_resource type="Texture2D" uid="uid://cxu0xotdw620h" path="res://materials/diamond_plate/DiamondPlate009_1K-JPG_AmbientOcclusion.jpg" id="2_6qv3f"]
 [ext_resource type="Texture2D" uid="uid://d4nw1ly6v1v6n" path="res://materials/diamond_plate/DiamondPlate009_1K-JPG_Displacement.jpg" id="3_holxg"]
 [ext_resource type="Texture2D" uid="uid://5b1hobitnycn" path="res://materials/diamond_plate/DiamondPlate009_1K-JPG_Metalness.jpg" id="4_bsrld"]
@@ -123,8 +123,10 @@ mesh = SubResource("SphereMesh_w68wx")
 skeleton = NodePath("../../../..")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="main_box/lightpost/lightpost_crossbar/light_1"]
-transform = Transform3D(0.9659258, 0.22414386, 0.12940955, -0.12940954, -0.014754623, 0.9914814, 0.22414389, -0.97444445, 0.014754415, 0, 0, 0)
+transform = Transform3D(0.9659258, 0.22414389, 0.12940957, -0.08213734, -0.20868155, 0.9745283, 0.24543998, -0.9519516, -0.18316028, 0, 0, 0)
+light_energy = 3.0
 spot_range = 10.0
+spot_angle = 50.0
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="main_box/lightpost/lightpost_crossbar/light_1"]
 transform = Transform3D(1, 0, 0, 0, 0.8660254, -0.5, 0, 0.5, 0.8660254, 0, -0.08660245, -0.049999952)
@@ -146,8 +148,10 @@ mesh = SubResource("SphereMesh_w68wx")
 skeleton = NodePath("../../../..")
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="main_box/lightpost/lightpost_crossbar/light_3"]
-transform = Transform3D(0.9659258, -0.22414386, -0.12940955, 0.12940954, -0.014754623, 0.9914814, -0.22414389, -0.97444445, 0.014754415, 0, 0, 0)
+transform = Transform3D(0.9659258, -0.22414389, -0.12940957, 0.077440545, -0.22680238, 0.9708572, -0.2469621, -0.9477978, -0.2017164, 0, 0, 0)
+light_energy = 3.0
 spot_range = 10.0
+spot_angle = 50.0
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="main_box/lightpost/lightpost_crossbar/light_3"]
 transform = Transform3D(1, 0, 0, 0, 0.8660254, -0.5, 0, 0.5, 0.8660254, 0, -0.08660245, -0.049999952)
