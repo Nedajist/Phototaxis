@@ -1,6 +1,29 @@
-[gd_scene format=3 uid="uid://f4ilbe43h3yg"]
+[gd_scene load_steps=5 format=3 uid="uid://f4ilbe43h3yg"]
+
+[ext_resource type="PackedScene" uid="uid://cplgatc870qhj" path="res://outside_floodlight.tscn" id="1_u52ul"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vonw3"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+energy_multiplier = 0.25
+
+[sub_resource type="Sky" id="Sky_oi3di"]
+sky_material = SubResource("ProceduralSkyMaterial_vonw3")
+
+[sub_resource type="Environment" id="Environment_0b4ue"]
+background_mode = 2
+sky = SubResource("Sky_oi3di")
+tonemap_mode = 2
 
 [node name="level" type="Node"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0b4ue")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.48480973, -0.87461966, -3.823084e-08, 0, -4.371139e-08, 1, -0.87461966, -0.48480973, -2.1191706e-08, 0, 0, 0)
+light_energy = 0.1
+shadow_enabled = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 4)
@@ -130,3 +153,12 @@ height = 5.0
 [node name="CSGBox3D6" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.5, 13)
 size = Vector3(4, 2, 3)
+
+[node name="lightpost" parent="." instance=ExtResource("1_u52ul")]
+transform = Transform3D(0.3821895, 0, 0.5864565, 0, 0.70000005, 0, -0.5864565, 0, 0.3821895, 3.9749355, 2.3841858e-07, 2.7132626)
+
+[node name="lightpost2" parent="." instance=ExtResource("1_u52ul")]
+transform = Transform3D(-0.5132455, 0, -0.47600323, 0, 0.7, 0, 0.47600323, 0, -0.5132455, 7.1340427, 2.3841858e-07, 10.229637)
+
+[node name="lightpost3" parent="." instance=ExtResource("1_u52ul")]
+transform = Transform3D(-0.59752375, 0, 0.36464417, 0, 0.70000005, 0, -0.36464417, 0, -0.59752375, -5.5361795, 2.3841858e-07, 12.081279)
