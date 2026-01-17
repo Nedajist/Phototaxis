@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://de2evhgms5tyo"]
+[gd_scene load_steps=15 format=3 uid="uid://de2evhgms5tyo"]
 
 [ext_resource type="PackedScene" uid="uid://cjnrpwoo7ri8e" path="res://3d models/trees/tree_01.tscn" id="1_vdns3"]
 [ext_resource type="PackedScene" uid="uid://dl2vrdghviaii" path="res://3d models/trees/tree_02.tscn" id="2_b6bgt"]
@@ -9,6 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://qfq0nhorq58b" path="res://3d models/trees/tree_08.tscn" id="7_i1gds"]
 [ext_resource type="PackedScene" uid="uid://ycs7hlic14mo" path="res://3d models/misc/barrels.tscn" id="8_wow3n"]
 [ext_resource type="PackedScene" uid="uid://cx4bfhit8xfor" path="res://3d models/misc/barrel_rusted.tscn" id="9_i5vgw"]
+[ext_resource type="PackedScene" uid="uid://bdvp5porqh40b" path="res://3d models/rocks/small_rock.tscn" id="10_nls63"]
+[ext_resource type="PackedScene" uid="uid://ce7cwpt474o" path="res://3d models/rocks/medium_rock_1.tscn" id="11_kjlbc"]
+[ext_resource type="PackedScene" uid="uid://dmjwbg46dmhwd" path="res://3d models/rocks/medium_rock_2.tscn" id="12_5lnku"]
+[ext_resource type="PackedScene" uid="uid://v1k2cccqbbr5" path="res://3d models/rocks/medium_rock_3.tscn" id="13_xem2q"]
+[ext_resource type="PackedScene" uid="uid://br5jo8r718yhh" path="res://3d models/rocks/big_rock.tscn" id="14_g7uo3"]
 
 [node name="model_database" type="Node3D"]
 
@@ -38,3 +43,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 2)
 
 [node name="barrel_rusted" parent="." instance=ExtResource("9_i5vgw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+
+[node name="small rock" parent="." instance=ExtResource("10_nls63")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.824862, 0, 2.6966453)
+
+[node name="medium rock 1" parent="." instance=ExtResource("11_kjlbc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1764894, -2.3841858e-07, 2.8657608)
+
+[node name="medium rock 2" parent="." instance=ExtResource("12_5lnku")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.7867193, 0, 3.0875652)
+
+[node name="medium rock 3" parent="." instance=ExtResource("13_xem2q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.093444, 0, 2.980647)
+
+[node name="big rock" parent="." instance=ExtResource("14_g7uo3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.579865, 0, 2.8332691)
