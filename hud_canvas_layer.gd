@@ -30,11 +30,11 @@ func _ready() -> void:
 	blink_bottom_top_progress_bar.value = 0
 
 func _process(delta: float) -> void:
-	# Trigger blink every 3 seconds
-	time_since_last_blink += delta
-	if time_since_last_blink >= blink_interval and not blinking:
-		blink()
-		time_since_last_blink = 0.0
+	# Test to trigger blink every 3 seconds
+	#time_since_last_blink += delta
+	#if time_since_last_blink >= blink_interval and not blinking:
+		#blink()
+		#time_since_last_blink = 0.0
 	
 	_handle_blink(delta)
 
