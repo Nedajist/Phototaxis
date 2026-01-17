@@ -8,11 +8,28 @@
 
 config_version=5
 
+[ambientcg]
+
+extract_path="res://AmbientCG/Extracted"
+material_file_directory="res://AmbientCG/Materials"
+environment_file_directory="res://AmbientCG/Environments"
+
 [application]
 
 config/name="Phototaxis"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+AmbientAPI="*res://addons/ambientcg/global/ambient_api.gd"
+AmbientParser="*res://addons/ambientcg/global/ambient_parser.gd"
+AmbientFileHandler="*res://addons/ambientcg/global/ambient_file_handler.gd"
+AmbientMaterialMaker="*res://addons/ambientcg/global/ambient_material_maker.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/ambientcg/plugin.cfg")
 
 [rendering]
 

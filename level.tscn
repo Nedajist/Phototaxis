@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://f4ilbe43h3yg"]
+[gd_scene load_steps=2 format=3 uid="uid://f4ilbe43h3yg"]
+
+[ext_resource type="PackedScene" uid="uid://cjnrpwoo7ri8e" path="res://3d models/trees/tree_01.tscn" id="1_u52ul"]
 
 [node name="level" type="Node"]
 
@@ -162,3 +164,6 @@ size = Vector3(1, 0.1, 10.47876)
 [node name="path_2" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35090876, -0.4966873, 9.271828)
 size = Vector3(9.053223, 0.1, 0.8477783)
+
+[node name="tree01" parent="." instance=ExtResource("1_u52ul")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 4.754363, -0.4411975, 7.8284273)
