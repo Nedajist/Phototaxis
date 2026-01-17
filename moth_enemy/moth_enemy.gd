@@ -5,7 +5,6 @@ extends CharacterBody3D
 signal Transitioned
 
 func update_target_location(target_location) -> void:
-	print(nav_agent)
 	nav_agent.target_position = target_location
 	
 
@@ -18,3 +17,10 @@ func _on_vision_area_body_entered(body):
 	if body.name == "PlayerCharacter":
 		print("player_seen")
 		$"State Machine".current_state.Transitioned.emit($"State Machine".current_state, "MothChase")
+
+
+func _on_light_sensitive_area_entered(area: Area3D) -> void:
+	if area.name=="MothLight":
+		print("moth has felt the light shining")
+		$"State Machine".current_state.Transitioned.emit($"State Machine".current_state, "MothFollow")
+		$"State Machine/MothFollow".light=area

@@ -5,7 +5,7 @@ class_name MothFollow
 @export var move_speed:= 10
 @onready var nav_agent = $"../../NavigationAgent3D"
 @onready var player =  $"../../../PlayerCharacter"
-@onready var light = $"../../../MothAnchor"
+var light
 
 var SPEED = 3.0
 
