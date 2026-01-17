@@ -26,11 +26,11 @@ use_collision = true
 size = Vector3(20, 1, 28)
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("3_bu470")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1619954, 0.9999995, 15.071329)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.001, 1, 12.162)
+
+[node name="MothEnemy" parent="." groups=["enemies"] instance=ExtResource("1_w7ixk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.703, 0.5, 3.26)
 
 [node name="MothAnchor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.145295, 0, 5.098527)
 mesh = SubResource("BoxMesh_bu470")
-
-[node name="MothEnemy" parent="." instance=ExtResource("1_w7ixk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.48072, 0.5, 1.7153132)
