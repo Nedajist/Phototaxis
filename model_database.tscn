@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://de2evhgms5tyo"]
+[gd_scene load_steps=34 format=3 uid="uid://de2evhgms5tyo"]
 
 [ext_resource type="PackedScene" uid="uid://cjnrpwoo7ri8e" path="res://3d models/trees/tree_01.tscn" id="1_vdns3"]
 [ext_resource type="PackedScene" uid="uid://dl2vrdghviaii" path="res://3d models/trees/tree_02.tscn" id="2_b6bgt"]
@@ -26,6 +26,13 @@
 [ext_resource type="PackedScene" uid="uid://dkkw0wn1ypyc" path="res://3d models/furniture/autopsy_table.tscn" id="24_q4823"]
 [ext_resource type="PackedScene" uid="uid://crpim427bviie" path="res://3d models/furniture/cabinet.tscn" id="25_fgvmg"]
 [ext_resource type="PackedScene" uid="uid://3r5x5p1xs17a" path="res://3d models/furniture/desk.tscn" id="26_66gb0"]
+[ext_resource type="PackedScene" uid="uid://cr845u4nr00io" path="res://3d models/furniture/x_ray_skull.tscn" id="27_fgvmg"]
+[ext_resource type="PackedScene" uid="uid://b0rbioiewe5gc" path="res://3d models/furniture/x_ray_torax.tscn" id="28_66gb0"]
+[ext_resource type="PackedScene" uid="uid://wdu0hl23wuqd" path="res://3d models/furniture/toilet.tscn" id="29_mimos"]
+[ext_resource type="PackedScene" uid="uid://c18hpqrq76p8u" path="res://3d models/furniture/sink.tscn" id="30_faurg"]
+[ext_resource type="PackedScene" uid="uid://55h0vdxnlbpo" path="res://3d models/furniture/filing_cabinet.tscn" id="31_faurg"]
+[ext_resource type="PackedScene" uid="uid://cbbycj1c0phry" path="res://3d models/misc/blackrat.tscn" id="32_kc36s"]
+[ext_resource type="PackedScene" uid="uid://c5vov4hf2jpt2" path="res://3d models/misc/brownrat.tscn" id="33_3u4w5"]
 
 [node name="model_database" type="Node3D"]
 
@@ -106,3 +113,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2356615, 0, 5.1314583)
 
 [node name="desk" parent="." instance=ExtResource("26_66gb0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.122128, 0, 5.1338534)
+
+[node name="x_ray_skull" parent="." instance=ExtResource("27_fgvmg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.414442, 1.5942426, 4.758866)
+
+[node name="x_ray_torax" parent="." instance=ExtResource("28_66gb0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.531474, 0.6356926, 4.591838)
+
+[node name="toilet" parent="." instance=ExtResource("29_mimos")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.340068, 0, 5.0194006)
+
+[node name="sink" parent="." instance=ExtResource("30_faurg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.327341, 0, 5.0610056)
+
+[node name="filing_cabinet" parent="." instance=ExtResource("31_faurg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.81524, 4.7683716e-07, 5.0740957)
+
+[node name="blackrat" parent="." instance=ExtResource("32_kc36s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.991749, 0, 2.7015128)
+
+[node name="brownrat" parent="." instance=ExtResource("33_3u4w5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.073135, 0, 2.718743)
