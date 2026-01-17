@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c02im4b6l80gd"]
+[gd_scene load_steps=5 format=3 uid="uid://c02im4b6l80gd"]
 
 [ext_resource type="Script" uid="uid://b3li2cqwf6fjs" path="res://player_character.gd" id="1_02ohv"]
+[ext_resource type="PackedScene" uid="uid://c3gxebruu2cr8" path="res://hud_canvas_layer.tscn" id="2_5up26"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_5up26"]
 
@@ -8,6 +9,8 @@
 
 [node name="PlayerCharacter" type="CharacterBody3D"]
 script = ExtResource("1_02ohv")
+
+[node name="HudCanvasLayer" parent="." instance=ExtResource("2_5up26")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0098275, 0)

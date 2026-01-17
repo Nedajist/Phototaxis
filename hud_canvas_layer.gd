@@ -4,9 +4,8 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	EventBus.sprint_changed.connect(sprint_changed)
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func sprint_changed(sprint_meter):
+	progress_bar.value = sprint_meter

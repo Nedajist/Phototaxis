@@ -5,15 +5,18 @@ extends CharacterBody3D
 @export var mouse_sensitivity = 0.002
 var camera_pitch: float = 0.0
 var mouse_locked = true
-var sprint: int = 100
+const sprint_max:float = 100.0
+const sprint_min:float = 0.0
+var sprint_meter: float = 100.0
+var sprinting = false
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+const SPEED = 2.0
+const SPRINT_SPEED = 5.0
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
-func _unhandled_input(event: InputEvent):
+func _input(event: InputEvent):
 	# Handle mouse movement for looking around
 	if event is InputEventMouseMotion:
 		# Rotate the entire CharacterBody3D around the Y-axis (left/right)
@@ -47,11 +50,25 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+	
+	if Input.is_action_pressed("shift") and sprint_meter > 1:
+		sprinting = true
+		sprint_meter -= 1
+		sprint_meter = max(sprint_min, sprint_meter)
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		sprinting = false
+		sprint_meter += .25
+		sprint_meter = min(sprint_max, sprint_meter)
+		
+	EventBus.sprint_changed.emit(sprint_meter)
+	
+	var speed = SPEED
+	if(sprinting): speed = SPRINT_SPEED
+	if direction:
+		velocity.x = direction.x * speed
+		velocity.z = direction.z * speed
+	else:
+		velocity.x = move_toward(velocity.x, 0, speed)
+		velocity.z = move_toward(velocity.z, 0, speed)
 
 	move_and_slide()
