@@ -133,4 +133,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.81524, 4.7683716e-07, 5.07
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.991749, 0, 2.7015128)
 
 [node name="brownrat" parent="." instance=ExtResource("33_3u4w5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.534285, 0, 2.6530983)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.161688, -0.122136354, 2.6221635)
