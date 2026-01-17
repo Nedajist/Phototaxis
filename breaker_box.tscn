@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctx65xa0wtphu"]
+
+[ext_resource type="Script" uid="uid://05rpcu2t5rb1" path="res://breaker_box.gd" id="1_3rb8u"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_nsvcr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nsvcr"]
+
+[node name="BreakerBox" type="StaticBody3D" groups=["interactable"]]
+script = ExtResource("1_3rb8u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_nsvcr")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_nsvcr")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8643936, 0)
+text = "THIS IS A BREAKER BOX"
