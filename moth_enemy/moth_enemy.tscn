@@ -1,11 +1,11 @@
 [gd_scene load_steps=12 format=3 uid="uid://dq66112hawpx3"]
 
-[ext_resource type="Script" uid="uid://c1d2552pvod1n" path="res://moth_enemy.gd" id="1_rmvo2"]
-[ext_resource type="Script" uid="uid://ckj3rd7w7dcrk" path="res://moth_state_machine.gd" id="2_dutgy"]
-[ext_resource type="Script" uid="uid://cnhkr454kbmr8" path="res://moth_chase.gd" id="3_6eo5i"]
-[ext_resource type="Script" uid="uid://mfgq6vs627nn" path="res://moth_idle.gd" id="3_gtdvq"]
-[ext_resource type="Script" uid="uid://cwojt73q7pthm" path="res://moth_follow_light.gd" id="5_l03gm"]
-[ext_resource type="PackedScene" uid="uid://dlwbgy88dpm5i" path="res://cone.tscn" id="6_bk6gy"]
+[ext_resource type="Script" uid="uid://c1d2552pvod1n" path="res://moth_enemy/moth_enemy.gd" id="1_rmvo2"]
+[ext_resource type="Script" uid="uid://ckj3rd7w7dcrk" path="res://moth_enemy/moth_state_machine.gd" id="2_dutgy"]
+[ext_resource type="Script" uid="uid://cnhkr454kbmr8" path="res://moth_enemy/moth_chase.gd" id="3_6eo5i"]
+[ext_resource type="Script" uid="uid://mfgq6vs627nn" path="res://moth_enemy/moth_idle.gd" id="3_gtdvq"]
+[ext_resource type="Script" uid="uid://cwojt73q7pthm" path="res://moth_enemy/moth_follow_light.gd" id="5_l03gm"]
+[ext_resource type="PackedScene" uid="uid://dlwbgy88dpm5i" path="res://moth_enemy/cone.tscn" id="6_bk6gy"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_y0wrk"]
 

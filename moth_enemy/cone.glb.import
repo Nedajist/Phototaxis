@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://i04hbk7w5olp"
-path="res://.godot/imported/cone.glb-841a8874bfd92edff5cbb3635e2ffb04.scn"
+path="res://.godot/imported/cone.glb-3729ee645b5b0b94fb0cc51ec61bd75c.scn"
 
 [deps]
 
-source_file="res://cone.glb"
-dest_files=["res://.godot/imported/cone.glb-841a8874bfd92edff5cbb3635e2ffb04.scn"]
+source_file="res://moth_enemy/cone.glb"
+dest_files=["res://.godot/imported/cone.glb-3729ee645b5b0b94fb0cc51ec61bd75c.scn"]
 
 [params]
 
