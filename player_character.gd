@@ -20,18 +20,7 @@ func _ready() -> void:
 func _input(event: InputEvent):
 	# Handle mouse movement for looking around
 	if event is InputEventMouseMotion:
-		# Rotate the entire CharacterBody3D around the Y-axis (left/right)
-		
-		# Rotate the Camera3D around its local X-axis (up/down)
-		camera_pitch += -event.relative.y * mouse_sensitivity
-		# Clamp the camera pitch to prevent it from flipping upside down
-		camera_pitch = clamp(camera_pitch, deg_to_rad(-90), deg_to_rad(90))
-		
-		
-		if mouse_locked:
-			rotate_y(-event.relative.x * mouse_sensitivity)
-			flashlight.rotate_x(-event.relative.y * mouse_sensitivity)
-			camera_3d.rotation.x = camera_pitch
+		handle_mouse_movement(event)
 		
 	if Input.is_action_just_pressed("escape"):
 		if not mouse_locked:
@@ -42,12 +31,25 @@ func _input(event: InputEvent):
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
+	handle_player_movement(delta)
+
+func handle_mouse_movement(event) -> void:
+	# Rotate the entire CharacterBody3D around the Y-axis (left/right)
+	
+	# Rotate the Camera3D around its local X-axis (up/down)
+	camera_pitch += -event.relative.y * mouse_sensitivity
+	# Clamp the camera pitch to prevent it from flipping upside down
+	camera_pitch = clamp(camera_pitch, deg_to_rad(-90), deg_to_rad(90))
+	
+	if mouse_locked:
+		rotate_y(-event.relative.x * mouse_sensitivity)
+		flashlight.rotate_x(-event.relative.y * mouse_sensitivity)
+		camera_3d.rotation.x = camera_pitch
+
+func handle_player_movement(delta) -> void:
+	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	
-	# camera controls
-	
-
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
