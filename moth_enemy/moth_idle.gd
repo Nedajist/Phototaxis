@@ -24,10 +24,11 @@ func Update(delta: float):
 		randomize_wander()
 
 func Physics_Update(_delta: float):
-	if moth_enemy:
-		var current_location = moth_enemy.global_transform.origin
-		var next_location = nav_agent.get_next_path_position()
-		var new_velocity = (next_location - current_location).normalized() * move_speed
-		
-		moth_enemy.velocity = new_velocity
-		moth_enemy.move_and_slide()
+	pass
+	#if moth_enemy:
+		#var current_location = moth_enemy.global_transform.origin
+		#var next_location = nav_agent.get_next_path_position()
+		#var new_velocity = (next_location - current_location).normalized() * move_speed
+		#
+		#moth_enemy.velocity = new_velocity
+		#moth_enemy.move_and_slide()

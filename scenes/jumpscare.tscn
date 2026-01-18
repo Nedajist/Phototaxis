@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://uaebcnnrolqd"]
 
-[ext_resource type="Texture2D" uid="uid://ccq526l5340o8" path="res://moth_enemy/Normal Moth/Front.png" id="1_0krjb"]
 [ext_resource type="Script" uid="uid://bau0yahd4je3l" path="res://scenes/jumpscare.gd" id="1_yfyrm"]
+[ext_resource type="Texture2D" uid="uid://dpttjs67giuy4" path="res://moth_enemy/Enraged Moth/front.png" id="2_yfyrm"]
 
 [sub_resource type="Animation" id="Animation_uhibh"]
 length = 0.001
@@ -79,9 +79,11 @@ _data = {
 
 [node name="Jumpscare" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_yfyrm")
 
 [node name="Blackout" type="PanelContainer" parent="."]
@@ -111,16 +113,12 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 556.0
-offset_top = 608.0
-offset_right = 556.0
-offset_bottom = 608.0
 grow_horizontal = 2
 grow_vertical = 0
 
 [node name="Sprite2D" type="Sprite2D" parent="MothContainer"]
 position = Vector2(0, 500)
-texture = ExtResource("1_0krjb")
+texture = ExtResource("2_yfyrm")
 
 [node name="MothContainerAnimationPlayer" type="AnimationPlayer" parent="MothContainer/Sprite2D"]
 unique_name_in_owner = true
