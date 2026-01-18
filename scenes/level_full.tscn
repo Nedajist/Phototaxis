@@ -1,7 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://cyjfkujhlu7a8"]
+[gd_scene load_steps=20 format=3 uid="uid://cyjfkujhlu7a8"]
 
 [ext_resource type="Shader" uid="uid://dyysfxgdx3tjb" path="res://sky.gdshader" id="1_rujvi"]
-[ext_resource type="PackedScene" uid="uid://db5vtnv2kffga" path="res://shed.tscn" id="1_rvbka"]
+[ext_resource type="PackedScene" path="res://shed.tscn" id="1_rvbka"]
 [ext_resource type="PackedScene" uid="uid://bsgjd4nsmouiv" path="res://3d models/trees/tree_06.tscn" id="2_8fobk"]
 [ext_resource type="PackedScene" uid="uid://byia83ocim6js" path="res://scenes/player_character.tscn" id="2_lscal"]
 [ext_resource type="PackedScene" uid="uid://cjnrpwoo7ri8e" path="res://3d models/trees/tree_01.tscn" id="3_11pt6"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dqqqxrwirr7dw" path="res://outside_floodlight.tscn" id="7_oh6h3"]
 [ext_resource type="PackedScene" uid="uid://b4jppir7cfejv" path="res://breaker_box.tscn" id="9_ijcf8"]
 [ext_resource type="PackedScene" uid="uid://ygf5ld8cbgji" path="res://light_manager.tscn" id="9_sd6n8"]
+[ext_resource type="PackedScene" uid="uid://hiitfpg7yv0c" path="res://level_timer.tscn" id="10_j5urc"]
 [ext_resource type="Script" uid="uid://bxeqlygxow2lo" path="res://musics/musicmanager.gd" id="13_rvbka"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7aj1g"]
@@ -812,6 +813,19 @@ transform = Transform3D(0.85232085, 0, -0.52301925, 0, 1, 0, 0.52301925, 0, 0.85
 transform = Transform3D(-0.25, 0, -2.1855694e-08, 0, 0.25, 0, 2.1855694e-08, 0, -0.25, 11.894613, 1.3050765, 0.898263)
 light_sources = [NodePath("../NavigationRegion3D/BreakerBox/lightpost"), NodePath("../NavigationRegion3D/BreakerBox/lightpost2"), NodePath("../NavigationRegion3D/BreakerBox/lightpost3"), NodePath("../NavigationRegion3D/BreakerBox/lightpost4")]
 
+[node name="LevelTimer" parent="." instance=ExtResource("10_j5urc")]
+wait_time = 10.0
+
+[node name="Label" type="Label" parent="LevelTimer"]
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 121.0
+offset_bottom = 101.0
+text = "Retry
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_sd6n8")
 
@@ -879,11 +893,11 @@ transform = Transform3D(6.9282045, 0, 3.9999988, 0, 8, 0, -3.9999988, 0, 6.92820
 [node name="lightpost4" parent="NavigationRegion3D/BreakerBox3" instance=ExtResource("7_oh6h3")]
 transform = Transform3D(-2.1457672e-06, 0, -8.000001, 0, 8, 0, 8.000001, 0, -2.1457672e-06, -2.5726166, -5.2, -3.0804787)
 
-[editable path="NavigationRegion3D/main_building"]
-[editable path="NavigationRegion3D/main_building/ceiling/lights/ceiling_light10"]
-
 [node name="musicmanager" type="Node" parent="." node_paths=PackedStringArray("audio_manager")]
 script = ExtResource("13_rvbka")
 audio_manager = NodePath("AudioStreamPlayer")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="musicmanager"]
+
+[editable path="NavigationRegion3D/main_building"]
+[editable path="NavigationRegion3D/main_building/ceiling/lights/ceiling_light10"]
