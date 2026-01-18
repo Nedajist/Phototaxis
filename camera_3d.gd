@@ -2,7 +2,7 @@ extends Camera3D
 
 signal spotted_moth
 
-func _process(delta):
+func _process(_delta):
 	var object_list=[]
 	var exclude_list=[]
 

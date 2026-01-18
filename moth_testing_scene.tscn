@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://ck2xur32foxlf"]
 
-[ext_resource type="Script" uid="uid://cuwhwa3mamyvi" path="res://moth_enemy/moth_testing_scene.gd" id="1_iqrvf"]
-[ext_resource type="PackedScene" uid="uid://dq66112hawpx3" path="res://moth_enemy/moth_enemy.tscn" id="1_w7ixk"]
-[ext_resource type="PackedScene" uid="uid://c02im4b6l80gd" path="res://player_character.tscn" id="3_bu470"]
+[ext_resource type="Script" path="res://moth_enemy/moth_testing_scene.gd" id="1_iqrvf"]
+[ext_resource type="PackedScene" path="res://moth_enemy/moth_enemy.tscn" id="1_w7ixk"]
+[ext_resource type="PackedScene" uid="uid://byia83ocim6js" path="res://scenes/player_character.tscn" id="3_bu470"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_bu470"]
 
