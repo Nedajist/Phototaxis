@@ -24,6 +24,7 @@ func Update(delta: float):
 		randomize_wander()
 
 func Physics_Update(_delta: float):
+	pass
 	if moth_enemy:
 		var current_location = moth_enemy.global_transform.origin
 		var next_location = nav_agent.get_next_path_position()

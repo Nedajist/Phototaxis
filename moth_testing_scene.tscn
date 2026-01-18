@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://ck2xur32foxlf"]
+[gd_scene load_steps=10 format=3 uid="uid://ck2xur32foxlf"]
 
 [ext_resource type="Script" uid="uid://cuwhwa3mamyvi" path="res://moth_enemy/moth_testing_scene.gd" id="1_iqrvf"]
 [ext_resource type="PackedScene" uid="uid://dq66112hawpx3" path="res://moth_enemy/moth_enemy.tscn" id="1_w7ixk"]
+[ext_resource type="PackedScene" uid="uid://cplgatc870qhj" path="res://scenes/outside_floodlight.tscn" id="2_ynr6c"]
 [ext_resource type="PackedScene" uid="uid://byia83ocim6js" path="res://scenes/player_character.tscn" id="3_bu470"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_bu470"]
@@ -20,21 +21,29 @@ size = Vector3(1, 4.626709, 4.971817)
 [node name="MothTestingScene" type="Node"]
 script = ExtResource("1_iqrvf")
 
-[node name="Lights" type="Node3D" parent="."]
-visible = false
-
-[node name="MothLight" type="Area3D" parent="Lights"]
+[node name="MothLight" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5848856, 0, -4.60308)
 visible = false
 
-[node name="MothLight" type="MeshInstance3D" parent="Lights/MothLight"]
+[node name="MothLight" type="MeshInstance3D" parent="MothLight"]
 visible = false
 mesh = SubResource("BoxMesh_bu470")
-skeleton = NodePath("../../..")
+skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Lights/MothLight"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MothLight"]
 visible = false
 shape = SubResource("BoxShape3D_ynr6c")
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="lightpost2" parent="Lights" groups=["Lights"] instance=ExtResource("2_ynr6c")]
+transform = Transform3D(0.040201336, 0, 0.9991915, 0, 1, 0, -0.9991915, 0, 0.040201336, -7.370708, -0.95201576, -5.5613728)
+
+[node name="lightpost3" parent="Lights" groups=["Lights"] instance=ExtResource("2_ynr6c")]
+transform = Transform3D(0.7967305, 0, -0.6043349, 0, 1, 0, 0.6043349, 0, 0.7967305, 7.7180057, -0.95201576, -7.8436537)
+
+[node name="lightpost" parent="Lights" groups=["Lights"] instance=ExtResource("2_ynr6c")]
+transform = Transform3D(-0.72118, 0, -0.69274765, 0, 1, 0, 0.69274765, 0, -0.72118, 7.1053224, -0.47600788, 13.829328)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.04104005, -0.65085995, 0.7580878, 0, 0.75872695, 0.6514088, -0.9991575, -0.02673385, 0.031138195, 11.959379, 10.986662, 5.970937)
