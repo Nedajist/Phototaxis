@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ygf5ld8cbgji"]
+[gd_scene load_steps=2 format=3 uid="uid://bvh55u7g7ct3t"]
 
 [ext_resource type="Script" uid="uid://djr47r4c7dbk1" path="res://light_manager.gd" id="1_0xd76"]
 
 [node name="lightmanager" type="Node3D"]
 script = ExtResource("1_0xd76")
+frequency = 8.0
