@@ -119,6 +119,7 @@ mesh = SubResource("BoxMesh_dxp7n")
 skeleton = NodePath("../../..")
 
 [node name="light_1" type="MeshInstance3D" parent="main_box/lightpost/lightpost_crossbar"]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, -0.4, -0.10000014, 0.19999999)
 mesh = SubResource("SphereMesh_w68wx")
 skeleton = NodePath("../../../..")
@@ -135,6 +136,7 @@ light_energy = 0.5
 omni_range = 1.0
 
 [node name="light_2" type="MeshInstance3D" parent="main_box/lightpost/lightpost_crossbar"]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, -0.10000014, 0.19999999)
 mesh = SubResource("SphereMesh_w68wx")
 skeleton = NodePath("../../../..")
@@ -145,6 +147,7 @@ light_color = Color(1, 1, 0.33333334, 1)
 light_energy = 0.5
 
 [node name="light_3" type="MeshInstance3D" parent="main_box/lightpost/lightpost_crossbar"]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0.4, -0.10000014, 0.19999999)
 mesh = SubResource("SphereMesh_w68wx")
 skeleton = NodePath("../../../..")

@@ -1,6 +1,9 @@
 class_name LightPost
 extends Node3D
 @onready var audio_stream_player_3d: AudioStreamPlayer3D = %AudioStreamPlayer3D
+@onready var light_1: MeshInstance3D = %light_1
+@onready var light_2: MeshInstance3D = %light_2
+@onready var light_3: MeshInstance3D = %light_3
 
 # there are four states that progress in the following order
 # when the lights are reactivated, start from ON
@@ -77,9 +80,9 @@ func _cache_lights():
 	original_light_color.clear()
 	
 	var light_parents = [
-		$main_box/lightpost/lightpost_crossbar/light_1,
-		$main_box/lightpost/lightpost_crossbar/light_2,
-		$main_box/lightpost/lightpost_crossbar/light_3
+		light_1,
+		light_2,
+		light_3
 	]
 	
 	for light_parent in light_parents:
