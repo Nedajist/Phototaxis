@@ -2,6 +2,8 @@ extends CanvasLayer
 @onready var progress_bar: ProgressBar = %ProgressBar
 @onready var radial_progress_bar: TextureProgressBar = %RadialProgressBar
 @onready var interact_label: Label = %InteractLabel
+@onready var gasoline_texture_rect: TextureRect = %GasolineTextureRect
+@onready var mothster_texture_rect: TextureRect = %MothsterTextureRect
 
 # time in seconds to open / close
 var blinking = false
@@ -26,6 +28,10 @@ func _ready() -> void:
 	EventBus.interaction_complete.connect(_interaction_complete)
 	EventBus.no_interactable_in_range.connect(_no_interactable_in_range)
 	EventBus.interactables_in_range.connect(_interactables_in_range)
+	EventBus.gasoline_picked_up.connect(gasoline_pickup)
+	EventBus.gasoline_used.connect(gasoline_used)
+	EventBus.mothster_picked_up.connect(mothster_pickup)
+	EventBus.mothster_used.connect(mothster_used)
 	
 	# Initialize progress bars to fully open (0%)
 	blink_top_bottom_progress_bar.value = 0
@@ -102,3 +108,12 @@ func _handle_blink(delta: float) -> void:
 			var opening_progress = 300.0 - blink_progress
 			blink_top_bottom_progress_bar.value = opening_progress
 			blink_bottom_top_progress_bar.value = opening_progress
+
+func mothster_pickup():
+	mothster_texture_rect.visible = true
+func mothster_used():
+	mothster_texture_rect.visible = false
+func gasoline_pickup():
+	gasoline_texture_rect.visible = true
+func gasoline_used():
+	gasoline_texture_rect.visible = false

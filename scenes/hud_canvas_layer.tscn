@@ -206,7 +206,9 @@ size_flags_stretch_ratio = 4.0
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Control2/HBoxContainer/Panel"]
+[node name="GasolineTextureRect" type="TextureRect" parent="VBoxContainer/Control2/HBoxContainer/Panel"]
+unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -224,7 +226,9 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Control2/HBoxContainer/Panel2"]
+[node name="MothsterTextureRect" type="TextureRect" parent="VBoxContainer/Control2/HBoxContainer/Panel2"]
+unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
