@@ -73,7 +73,7 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	
 	if look_at_moth:
-		self.look_at(camera_lookat_target.transform.origin)
+		self.look_at(camera_lookat_target.transform.origin - Vector3(0, 1, 0))
 		camera_pitch = clamp(camera_pitch, deg_to_rad(-5), deg_to_rad(5))
 
 	handle_player_movement(delta)
@@ -129,8 +129,11 @@ func handle_player_movement(delta) -> void:
 	move_and_slide()
 
 
-func _on_camera_3d_spotted_moth() -> void:
+func _on_camera_3d_spotted_moth(moth) -> void:
 	look_at_moth=true
+	camera_lookat_target = moth
+	print(moth.name)
+	
 func _get_interactables() -> Array:
 	# Returns array of all bodies in interaction area that have interact() method
 	var interactables = []

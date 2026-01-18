@@ -81,7 +81,7 @@ func _handle_blink(delta: float) -> void:
 	if blinking:
 		if blink_progress <= 200.0 and !blink_signal_fired:
 			var rng = RandomNumberGenerator.new()
-			if rng.randi_range(1,6) < 2:
+			if rng.randi_range(1,5) < 2:
 				print("asd")
 				blink_signal.emit()
 			blink_signal_fired = true
