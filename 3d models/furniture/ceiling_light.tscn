@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgwxo14hnjmcp"]
+
+[ext_resource type="Material" uid="uid://bvik250qe0chs" path="res://materials/diamond_plate/DiamondPlate009_1K-JPG.tres" id="1_advau"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_p5acw"]
+top_radius = 0.025
+bottom_radius = 0.025
+
+[sub_resource type="BoxMesh" id="BoxMesh_u6mot"]
+material = ExtResource("1_advau")
+size = Vector3(0.25, 0.1, 0.1)
+
+[node name="ceiling_light" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.1, 0, 0)
+mesh = SubResource("CylinderMesh_p5acw")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("CylinderMesh_p5acw")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.1, 0, 0)
+mesh = SubResource("CylinderMesh_p5acw")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+mesh = SubResource("BoxMesh_u6mot")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+mesh = SubResource("BoxMesh_u6mot")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 5.9604645e-08)
+light_color = Color(0.8352941, 0.9764706, 0.91764706, 1)
+light_energy = 0.5
+light_size = 1.0
+omni_range = 3.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -0.2, 0)
+spot_range = 6.0

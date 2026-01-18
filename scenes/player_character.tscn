@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://byia83ocim6js"]
+[gd_scene load_steps=8 format=3 uid="uid://byia83ocim6js"]
 
 [ext_resource type="Script" uid="uid://b3li2cqwf6fjs" path="res://player_character.gd" id="1_02ohv"]
-[ext_resource type="PackedScene" uid="uid://cudbfausccvek" path="res://scenes/hud_canvas_layer.tscn" id="2_5up26"]
+[ext_resource type="PackedScene" uid="uid://c3gxebruu2cr8" path="res://scenes/hud_canvas_layer.tscn" id="2_5up26"]
 [ext_resource type="PackedScene" uid="uid://cd5jygl443w8h" path="res://scenes/flashlight.tscn" id="3_4akcp"]
-[ext_resource type="Script" uid="uid://cv6nm4vwt3rac" path="res://camera_3d.gd" id="3_4h0vy"]
-[ext_resource type="PackedScene" uid="uid://dgv0ai283b3pn" path="res://scenes/inventory_component.tscn" id="5_uj7mf"]
+[ext_resource type="Script" path="res://camera_3d.gd" id="3_4h0vy"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_5up26"]
 
@@ -43,8 +42,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.26088202, -1.138797)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3D/InteractionArea3D"]
 shape = SubResource("BoxShape3D_4akcp")
 
-[node name="InventoryComponent" parent="." instance=ExtResource("5_uj7mf")]
-unique_name_in_owner = true
-
-[connection signal="moth_out_of_view" from="Camera3D" to="." method="_on_camera_3d_moth_out_of_view"]
 [connection signal="spotted_moth" from="Camera3D" to="." method="_on_camera_3d_spotted_moth"]

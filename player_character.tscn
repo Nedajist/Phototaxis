@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://b3li2cqwf6fjs" path="res://player_character.gd" id="1_02ohv"]
 [ext_resource type="Script" uid="uid://cv6nm4vwt3rac" path="res://camera_3d.gd" id="2_5up26"]
-[ext_resource type="PackedScene" uid="uid://c3gxebruu2cr8" path="res://scenes/hud_canvas_layer.tscn" id="2_5up26"]
-[ext_resource type="PackedScene" uid="uid://wc22pypwqynm" path="res://flashlight.tscn" id="3_4akcp"]
+[ext_resource type="PackedScene" path="res://hud_canvas_layer.tscn" id="2_5up26"]
+[ext_resource type="PackedScene" path="res://flashlight.tscn" id="3_4akcp"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_5up26"]
 

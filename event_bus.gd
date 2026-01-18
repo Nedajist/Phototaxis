@@ -2,14 +2,6 @@
 # class_name EventBus 
 extends Node
 
-signal jumpscare
-signal mothster_ended
-signal mothster_attempt_pickup
-signal gasoline_attempt_pickup
-signal mothster_picked_up
-signal gasoline_picked_up
-signal mothster_used
-signal gasoline_used
 signal sprint_changed
 signal interaction_progress
 signal interaction_complete
@@ -27,8 +19,6 @@ signal gas_empty
 
 #Add signals to this dummy function to silence warnings
 func silence_warnings() -> void:
-	jumpscare.emit()
-	mothster_ended.emit()
 	sprint_changed.emit()
 	interaction_progress.emit()
 	interaction_complete.emit()
