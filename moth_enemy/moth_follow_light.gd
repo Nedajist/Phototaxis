@@ -3,9 +3,10 @@ class_name MothFollow
 
 @export var moth_enemy: CharacterBody3D
 @export var move_speed:= 10
-@onready var nav_agent = $"../../NavigationAgent3D"
-@onready var player =  $"../../../PlayerCharacter"
-var light
+@onready var nav_agent: NavigationAgent3D
+@onready var player: CharacterBody3D
+
+@onready var light
 
 var SPEED = 3.0
 

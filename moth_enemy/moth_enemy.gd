@@ -1,8 +1,15 @@
 extends CharacterBody3D
 
+@export var player_character: CharacterBody3D
 @export var nav_agent: NavigationAgent3D
-
 signal Transitioned
+
+func _ready() -> void:
+	for node in $"State Machine".get_children():
+		if "player" in node:
+			node.player=player_character
+		if "nav_agent" in node:
+			node.nav_agent=nav_agent
 
 
 func update_target_location(target_location) -> void:

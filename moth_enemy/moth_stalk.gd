@@ -3,21 +3,24 @@ class_name MothStalk
 
 @export var moth_enemy: CharacterBody3D
 @export var move_speed:= 10
-@onready var nav_agent = $"../../NavigationAgent3D"
-@onready var player =   $"../../../PlayerCharacter"
+@onready var nav_agent: NavigationAgent3D
+@onready var player: CharacterBody3D
+
 @export var LightSensitive: Area3D
 @export var PlayerSensitive: Area3D
+@export var PlayerSensitive2: Area3D
 
 var SPEED = 2.0
 var position_update_time=0
-var chase_chance=15
+var chase_chance=25
 signal switch_to_chase
 
 func Enter():
 	print("Stalk Entered")
 	LightSensitive.visible=false
 	PlayerSensitive.visible=false
-	
+	player.camera_lookat_target=moth_enemy
+
 func Exit():
 	LightSensitive.visible=true
 	PlayerSensitive.visible=true

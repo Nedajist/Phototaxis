@@ -60,8 +60,10 @@ skeleton = NodePath("../../..")
 transform = Transform3D(1, -1.6653345e-16, -8e-45, 1.6653345e-16, 1, 4.298951e-36, 8e-45, -4.298951e-36, 1, 0.2460416, 0.16662598, -0.03282315)
 shape = SubResource("BoxShape3D_bu470")
 
-[node name="PlayerCharacter" parent="." instance=ExtResource("3_bu470")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1619954, 0.9999995, 15.071329)
-
-[node name="MothEnemy" parent="." instance=ExtResource("1_w7ixk")]
+[node name="MothEnemy" parent="." node_paths=PackedStringArray("player_character") instance=ExtResource("1_w7ixk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2510767, 0.49356413, 2.6368637)
+player_character = NodePath("../PlayerCharacter")
+
+[node name="PlayerCharacter" parent="." node_paths=PackedStringArray("camera_lookat_target") instance=ExtResource("3_bu470")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1619954, 0.9999995, 15.071329)
+camera_lookat_target = NodePath("../MothEnemy")

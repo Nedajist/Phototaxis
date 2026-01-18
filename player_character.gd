@@ -1,13 +1,16 @@
 class_name PlayerCharacter
 extends CharacterBody3D
-@onready var camera_3d: Camera3D = %Camera3D
-
+@export var camera_3d: Camera3D
+@export var camera_lookat_target: CharacterBody3D
 @export var mouse_sensitivity = 0.002
 var camera_pitch: float = 0.0
 var mouse_locked = true
+var health=10
 
 const SPEED = 10.0
 const JUMP_VELOCITY = 4.5
+
+var look_at_moth = false
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -35,10 +38,15 @@ func _unhandled_input(event: InputEvent):
 		mouse_locked = !mouse_locked
 
 func _physics_process(delta: float) -> void:
+	#camera_3d.look_at(camera_lookat_target.transform.origin, Vector3.UP, false)
 	# Add the gravity.
+	
+	if look_at_moth:
+		self.look_at(camera_lookat_target.transform.origin)
+		camera_pitch = clamp(camera_pitch, deg_to_rad(-15), deg_to_rad(15))
+
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	
 	# camera controls
 	
 
@@ -54,3 +62,7 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+
+
+func _on_camera_3d_spotted_moth() -> void:
+	look_at_moth=true
