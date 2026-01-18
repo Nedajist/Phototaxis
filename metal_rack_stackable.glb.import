@@ -3,12 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://co2oo2yp6au0b"
-valid=false
+uid="uid://ntcg1nnb0sqc"
+path="res://.godot/imported/metal_rack_stackable.glb-607d1252f06c4e78062751493a3b63e8.scn"
 
 [deps]
 
-source_file="res://textures/Slightly_rusty/Metal053B_1K-JPG.blend"
+source_file="res://metal_rack_stackable.glb"
+dest_files=["res://.godot/imported/metal_rack_stackable.glb-607d1252f06c4e78062751493a3b63e8.scn"]
 
 [params]
 
@@ -36,23 +37,14 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
-blender/nodes/visible=0
-blender/nodes/active_collection_only=false
-blender/nodes/punctual_lights=true
-blender/nodes/cameras=true
-blender/nodes/custom_properties=true
-blender/nodes/modifiers=1
-blender/meshes/colors=false
-blender/meshes/uvs=true
-blender/meshes/normals=true
-blender/meshes/export_geometry_nodes_instances=false
-blender/meshes/tangents=true
-blender/meshes/skins=2
-blender/meshes/export_bones_deforming_mesh_only=false
-blender/materials/unpack_enabled=true
-blender/materials/export_materials=1
-blender/animation/limit_playback=true
-blender/animation/always_sample=true
-blender/animation/group_tracks=true
+_subresources={
+"materials": {
+"metal_rack_stackable": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://metal_rack.tres",
+"use_external/path": "uid://bkrfiu454xi0s"
+}
+}
+}
 gltf/naming_version=2
+gltf/embedded_image_handling=1

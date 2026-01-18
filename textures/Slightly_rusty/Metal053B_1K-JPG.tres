@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://bcd70ojs537if"]
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://dpt0th2c3ik16"]
 
 [ext_resource type="Texture2D" uid="uid://dcgmrm0m3e5ck" path="res://textures/Slightly_rusty/Metal053B_1K-JPG_Color.jpg" id="Color"]
 [ext_resource type="Texture2D" uid="uid://cn1da2ufyjww3" path="res://textures/Slightly_rusty/Metal053B_1K-JPG_Displacement.jpg" id="Displacement"]

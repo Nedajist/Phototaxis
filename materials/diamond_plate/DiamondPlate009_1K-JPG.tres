@@ -1,4 +1,4 @@
-[gd_resource type="StandardMaterial3D" load_steps=7 format=3 uid="uid://bhirbjyvgu3le"]
+[gd_resource type="StandardMaterial3D" load_steps=7 format=3 uid="uid://bvik250qe0chs"]
 
 [ext_resource type="Texture2D" uid="uid://bb0h6fvmi65a6" path="res://materials/diamond_plate/DiamondPlate009_1K-JPG_Color.jpg" id="1_ee5ee"]
 [ext_resource type="Texture2D" uid="uid://cxu0xotdw620h" path="res://materials/diamond_plate/DiamondPlate009_1K-JPG_AmbientOcclusion.jpg" id="2_e5e7c"]

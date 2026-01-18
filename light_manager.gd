@@ -19,8 +19,8 @@ var deactivated_lights:Array[Node3D]
 
 func _ready():
 	timer = frequency
-	for light:LightPost in light_sources:
-		light.total_time_on = frequency
+	#for light:LightPost in light_sources:
+		#light.total_time_on = frequency
 	if(behavior == Mode.Random):
 		randomize()
 

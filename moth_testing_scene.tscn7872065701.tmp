@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://ck2xur32foxlf"]
+
+[ext_resource type="Script" uid="uid://cuwhwa3mamyvi" path="res://moth_testing_scene.gd" id="1_iqrvf"]
+[ext_resource type="PackedScene" uid="uid://dq66112hawpx3" path="res://moth_enemy.tscn" id="1_w7ixk"]
+[ext_resource type="PackedScene" uid="uid://c02im4b6l80gd" path="res://player_character.tscn" id="3_bu470"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_bu470"]
+vertices = PackedVector3Array(-11.670143, -6.7702694, -9.028362, 15.329857, -6.2702694, -9.778362, 14.579857, 6.2297306, -24.278362, -12.420143, 5.4797306, -23.278362, 1.7903833, 5.9797306, -23.804678, 5.0851955, 2.9797306, -20.795723, -2.439866, 2.9797306, -20.80066, -11.399938, 2.9797306, -20.76658, -6.9287086, -4.7702694, -11.795898)
+polygons = [PackedInt32Array(4, 6, 3), PackedInt32Array(3, 7, 0), PackedInt32Array(0, 8, 1), PackedInt32Array(1, 5, 2), PackedInt32Array(2, 5, 4), PackedInt32Array(6, 7, 3), PackedInt32Array(4, 5, 6), PackedInt32Array(7, 8, 0), PackedInt32Array(8, 5, 1), PackedInt32Array(6, 8, 7), PackedInt32Array(5, 8, 6)]
+
+[sub_resource type="BoxMesh" id="BoxMesh_bu470"]
+
+[node name="MothTestingScene" type="Node"]
+script = ExtResource("1_iqrvf")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.04104005, -0.65085995, 0.7580878, 0, 0.75872695, 0.6514088, -0.9991575, -0.02673385, 0.031138195, 11.959379, 10.986662, 5.970937)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(0.04104005, -0.65085995, 0.7580878, 0, 0.75872695, 0.6514088, -0.9991575, -0.02673385, 0.031138195, 11.959379, 10.986662, 5.970937)
+navigation_mesh = SubResource("NavigationMesh_bu470")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D"]
+transform = Transform3D(0.04104005, -1.8626451e-09, -0.99915755, -0.65085995, 0.758727, -0.026733851, 0.7580877, 0.65140873, 0.031138193, 1.4784627, -1.2580326, -16.935846)
+use_collision = true
+size = Vector3(20, 1, 28)
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("3_bu470")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.001, 1, 12.162)
+
+[node name="MothEnemy" parent="." groups=["enemies"] instance=ExtResource("1_w7ixk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.703, 0.5, 3.26)
+
+[node name="MothAnchor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.145295, 0, 5.098527)
+mesh = SubResource("BoxMesh_bu470")
