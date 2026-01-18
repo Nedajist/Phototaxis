@@ -154,3 +154,7 @@ func _complete_interaction() -> void:
 		interactable.interact()
 	
 	EventBus.interaction_complete.emit()
+
+
+func _on_camera_3d_moth_out_of_view():
+	look_at_moth = false

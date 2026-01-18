@@ -42,4 +42,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.26088202, -1.138797)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Camera3D/InteractionArea3D"]
 shape = SubResource("BoxShape3D_4akcp")
 
+[connection signal="moth_out_of_view" from="Camera3D" to="." method="_on_camera_3d_moth_out_of_view"]
 [connection signal="spotted_moth" from="Camera3D" to="." method="_on_camera_3d_spotted_moth"]

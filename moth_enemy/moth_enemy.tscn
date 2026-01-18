@@ -19,7 +19,7 @@ points = PackedVector3Array(-0.00019574165, 1, -0.00019574165, 0.19498825, -1, -
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_bk6gy"]
 
-[node name="MothEnemy" type="CharacterBody3D" node_paths=PackedStringArray("nav_agent")]
+[node name="MothEnemy" type="CharacterBody3D" node_paths=PackedStringArray("nav_agent") groups=["Enemies"]]
 script = ExtResource("1_rmvo2")
 nav_agent = NodePath("NavigationAgent3D")
 
