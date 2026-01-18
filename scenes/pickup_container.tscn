@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://7vv7yqrjhuhj"]
+
+[ext_resource type="PackedScene" uid="uid://bt1tbegimor52" path="res://scenes/mothster_energy.tscn" id="1_amvig"]
+[ext_resource type="PackedScene" uid="uid://dqoqgm2g1es0y" path="res://scenes/gasoline_canister.tscn" id="2_t3p76"]
+
+[node name="PickupContainer" type="Node3D"]
+
+[node name="MothsterEnergy" parent="." instance=ExtResource("1_amvig")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8976154, 0.5207801, -8.318592)
+
+[node name="MothsterEnergy2" parent="." instance=ExtResource("1_amvig")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.740448, 1.4705408, 19.92197)
+
+[node name="MothsterEnergy3" parent="." instance=ExtResource("1_amvig")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.289783, 1.4705408, 7.532921)
+
+[node name="MothsterEnergy4" parent="." instance=ExtResource("1_amvig")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.411236, -0.7720394, -37.855545)
+
+[node name="GasolineCanister" parent="." instance=ExtResource("2_t3p76")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.947344, 1.1636788, -12.354273)
+
+[node name="GasolineCanister4" parent="." instance=ExtResource("2_t3p76")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.45139, -1.0673182, -38.76731)
+
+[node name="GasolineCanister5" parent="." instance=ExtResource("2_t3p76")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.604021, 1.1880517, 16.6613)
+
+[node name="GasolineCanister3" parent="." instance=ExtResource("2_t3p76")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.000471, -0.7037776, 31.457848)
+
+[node name="GasolineCanister2" parent="." instance=ExtResource("2_t3p76")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0038624, -1.1303186, -39.630302)
