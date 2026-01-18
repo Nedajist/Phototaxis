@@ -1,0 +1,63 @@
+[gd_scene load_steps=11 format=3 uid="uid://dq66112hawpx3"]
+
+[ext_resource type="Script" uid="uid://c1d2552pvod1n" path="res://moth_enemy.gd" id="1_rmvo2"]
+[ext_resource type="Script" uid="uid://ckj3rd7w7dcrk" path="res://moth_state_machine.gd" id="2_dutgy"]
+[ext_resource type="Script" uid="uid://cnhkr454kbmr8" path="res://moth_chase.gd" id="3_6eo5i"]
+[ext_resource type="Script" uid="uid://mfgq6vs627nn" path="res://moth_idle.gd" id="3_gtdvq"]
+[ext_resource type="Script" uid="uid://cwojt73q7pthm" path="res://moth_follow_light.gd" id="5_l03gm"]
+[ext_resource type="PackedScene" uid="uid://dlwbgy88dpm5i" path="res://cone.tscn" id="6_bk6gy"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_y0wrk"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_l03gm"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rmvo2"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_lih0l"]
+points = PackedVector3Array(-0.00019574165, 1, -0.00019574165, 0.19498825, -1, -0.9808144, -0.00019574165, -1, -1, -0.19518405, -1, -0.9808144, -0.382733, -1, -0.92404073, -0.5555991, -1, -0.83163667, -0.7071261, -1, -0.7071261, -0.83163667, -1, -0.5555991, -0.92404073, -1, -0.382733, -0.9808144, -1, -0.19518405, -1, -1, -0.00019574165, -0.9808144, -1, 0.19498825, -0.92404073, -1, 0.38253725, -0.83163667, -1, 0.55540323, -0.7071261, -1, 0.7069303, -0.5555991, -1, 0.8314409, -0.382733, -1, 0.92384493, -0.19518405, -1, 0.9806186, -0.00019574165, -1, 1, 0.19498825, -1, 0.9806186, 0.38253725, -1, 0.92384493, 0.55540323, -1, 0.8314409, 0.7069303, -1, 0.7069303, 0.8314409, -1, 0.55540323, 0.92384493, -1, 0.38253725, 0.9806186, -1, 0.19498825, 1, -1, -0.00019574165, 0.9806186, -1, -0.19518405, 0.92384493, -1, -0.382733, 0.8314409, -1, -0.5555991, 0.7069303, -1, -0.7071261, 0.55540323, -1, -0.83163667, 0.38253725, -1, -0.92404073)
+
+[node name="MothEnemy" type="CharacterBody3D"]
+script = ExtResource("1_rmvo2")
+
+[node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_dutgy")
+initial_state = NodePath("MothFollow")
+
+[node name="MothIdle" type="Node" parent="State Machine" node_paths=PackedStringArray("moth_enemy")]
+script = ExtResource("3_gtdvq")
+moth_enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://mfgq6vs627nn"
+
+[node name="MothChase" type="Node" parent="State Machine" node_paths=PackedStringArray("moth_enemy")]
+script = ExtResource("3_6eo5i")
+moth_enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://mfgq6vs627nn"
+
+[node name="MothFollow" type="Node" parent="State Machine" node_paths=PackedStringArray("moth_enemy")]
+script = ExtResource("5_l03gm")
+moth_enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://cwojt73q7pthm"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_y0wrk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(-1.7484554e-08, 0, 1, 0, 0.30000004, 0, -0.39999998, 0, -4.371139e-08, 0.008850992, 0, -0.3118363)
+mesh = SubResource("BoxMesh_l03gm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_rmvo2")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="VisionArea" type="Area3D" parent="."]
+
+[node name="Cone" parent="VisionArea" instance=ExtResource("6_bk6gy")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -1.3987606)
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="VisionArea"]
+transform = Transform3D(3, 0, 0, 0, -1.3113416e-07, -3, 0, 3, -1.3113416e-07, 0, 0, -3.449238)
+shape = SubResource("ConvexPolygonShape3D_lih0l")
+
+[connection signal="body_entered" from="VisionArea" to="." method="_on_vision_area_body_entered"]

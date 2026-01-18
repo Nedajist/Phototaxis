@@ -1,6 +1,7 @@
 class_name PlayerCharacter
 extends CharacterBody3D
 @onready var camera_3d: Camera3D = %Camera3D
+@export var camera_lookat_target: CharacterBody3D
 @onready var flashlight: Node3D = %Flashlight
 @onready var interaction_area_3d: Area3D = %InteractionArea3D
 
@@ -16,9 +17,12 @@ var sprinting = false
 const SPEED = 2.0
 const SPRINT_SPEED = 5.0
 
+var health=10
 @export var interaction_hold_time: float = 1.0  # Time in seconds to hold for interaction
 var interaction_hold_timer: float = 0.0
 var is_interacting: bool = false
+
+var look_at_moth = false
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -62,7 +66,13 @@ func _input(event: InputEvent):
 		mouse_locked = !mouse_locked
 
 func _physics_process(delta: float) -> void:
+	#camera_3d.look_at(camera_lookat_target.transform.origin, Vector3.UP, false)
 	# Add the gravity.
+	
+	if look_at_moth:
+		self.look_at(camera_lookat_target.transform.origin)
+		camera_pitch = clamp(camera_pitch, deg_to_rad(-15), deg_to_rad(15))
+
 	handle_player_movement(delta)
 
 func handle_mouse_movement(event) -> void:
@@ -113,6 +123,9 @@ func handle_player_movement(delta) -> void:
 
 	move_and_slide()
 
+
+func _on_camera_3d_spotted_moth() -> void:
+	look_at_moth=true
 func _get_interactables() -> Array:
 	# Returns array of all bodies in interaction area that have interact() method
 	var interactables = []
