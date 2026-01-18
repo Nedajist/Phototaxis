@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bxvfd7rum88vk"]
+[gd_scene load_steps=10 format=3 uid="uid://bxvfd7rum88vk"]
 
-[ext_resource type="PackedScene" uid="uid://cplgatc870qhj" path="res://scenes/outside_floodlight.tscn" id="1_oxafd"]
+[ext_resource type="PackedScene" uid="uid://dqqqxrwirr7dw" path="res://outside_floodlight.tscn" id="1_1ws1u"]
 [ext_resource type="PackedScene" uid="uid://byia83ocim6js" path="res://scenes/player_character.tscn" id="2_yhrv1"]
+[ext_resource type="PackedScene" uid="uid://b4jppir7cfejv" path="res://breaker_box.tscn" id="3_3gc80"]
 [ext_resource type="PackedScene" uid="uid://ygf5ld8cbgji" path="res://light_manager.tscn" id="3_yhrv1"]
+[ext_resource type="PackedScene" uid="uid://c0h4xhxeqqyo0" path="res://scenes/generator.tscn" id="5_cqtb4"]
+[ext_resource type="PackedScene" uid="uid://dqoqgm2g1es0y" path="res://scenes/gasoline_canister.tscn" id="6_jirxn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vonw3"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -17,7 +20,7 @@ background_mode = 2
 sky = SubResource("Sky_oi3di")
 tonemap_mode = 2
 
-[node name="level_rh" type="Node"]
+[node name="level" type="Node"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_0b4ue")
@@ -156,67 +159,29 @@ height = 5.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.5, 13)
 size = Vector3(4, 2, 3)
 
-[node name="lightpost" parent="." instance=ExtResource("1_oxafd")]
+[node name="lightpost" parent="." instance=ExtResource("1_1ws1u")]
 transform = Transform3D(0.3821895, 0, 0.5864565, 0, 0.70000005, 0, -0.5864565, 0, 0.3821895, 3.9749355, -0.5326867, 2.7132626)
 
-[node name="SpotLight3D" parent="lightpost/main_box/lightpost/lightpost_crossbar/light_1" index="0"]
-light_color = Color(1, 1, 0.33333334, 1)
-
-[node name="OmniLight3D2" parent="lightpost/main_box/lightpost/lightpost_crossbar/light_1" index="1"]
-light_color = Color(1, 1, 0.33333334, 1)
-
-[node name="OmniLight3D" parent="lightpost/main_box/lightpost/lightpost_crossbar/light_2" index="0"]
-light_color = Color(1, 1, 0.33333334, 1)
-
-[node name="SpotLight3D2" parent="lightpost/main_box/lightpost/lightpost_crossbar/light_3" index="0"]
-light_color = Color(1, 1, 0.33333334, 1)
-
-[node name="OmniLight3D3" parent="lightpost/main_box/lightpost/lightpost_crossbar/light_3" index="1"]
-light_color = Color(1, 1, 0.33333334, 1)
-
-[node name="lightpost2" parent="." instance=ExtResource("1_oxafd")]
+[node name="lightpost2" parent="." instance=ExtResource("1_1ws1u")]
 transform = Transform3D(-0.5132455, 0, -0.47600323, 0, 0.7, 0, 0.47600323, 0, -0.5132455, 7.1340427, -0.5326867, 10.229637)
 
-[node name="SpotLight3D" parent="lightpost2/main_box/lightpost/lightpost_crossbar/light_1" index="0"]
-light_color = Color(1, 1, 0.33333334, 1)
-
-[node name="OmniLight3D2" parent="lightpost2/main_box/lightpost/lightpost_crossbar/light_1" index="1"]
-light_color = Color(1, 1, 0.33333334, 1)
-
-[node name="OmniLight3D" parent="lightpost2/main_box/lightpost/lightpost_crossbar/light_2" index="0"]
-light_color = Color(1, 1, 0.33333334, 1)
-
-[node name="SpotLight3D2" parent="lightpost2/main_box/lightpost/lightpost_crossbar/light_3" index="0"]
-light_color = Color(1, 1, 0.33333334, 1)
-
-[node name="OmniLight3D3" parent="lightpost2/main_box/lightpost/lightpost_crossbar/light_3" index="1"]
-light_color = Color(1, 1, 0.33333334, 1)
-
-[node name="lightpost3" parent="." instance=ExtResource("1_oxafd")]
+[node name="lightpost3" parent="." instance=ExtResource("1_1ws1u")]
 transform = Transform3D(-0.59752375, 0, 0.36464417, 0, 0.70000005, 0, -0.36464417, 0, -0.59752375, -5.5361795, -0.5326867, 12.081279)
-
-[node name="SpotLight3D" parent="lightpost3/main_box/lightpost/lightpost_crossbar/light_1" index="0"]
-light_color = Color(1, 1, 0.33333334, 1)
-
-[node name="OmniLight3D2" parent="lightpost3/main_box/lightpost/lightpost_crossbar/light_1" index="1"]
-light_color = Color(1, 1, 0.33333334, 1)
-
-[node name="OmniLight3D" parent="lightpost3/main_box/lightpost/lightpost_crossbar/light_2" index="0"]
-light_color = Color(1, 1, 0.33333334, 1)
-
-[node name="SpotLight3D2" parent="lightpost3/main_box/lightpost/lightpost_crossbar/light_3" index="0"]
-light_color = Color(1, 1, 0.33333334, 1)
-
-[node name="OmniLight3D3" parent="lightpost3/main_box/lightpost/lightpost_crossbar/light_3" index="1"]
-light_color = Color(1, 1, 0.33333334, 1)
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_yhrv1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.53307, -0.5, 7.369843)
 
+[node name="BreakerBox" parent="." node_paths=PackedStringArray("attached_electronics") instance=ExtResource("3_3gc80")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -3.734863, 0.7377875, -0.4478057)
+attached_electronics = [NodePath("../lightpost"), NodePath("../lightpost2"), NodePath("../lightpost3")]
+
 [node name="lightmanager" parent="." node_paths=PackedStringArray("light_sources") instance=ExtResource("3_yhrv1")]
 light_sources = [NodePath("../lightpost"), NodePath("../lightpost2"), NodePath("../lightpost3")]
-frequency = 5.0
+frequency = 6.0
 
-[editable path="lightpost"]
-[editable path="lightpost2"]
-[editable path="lightpost3"]
+[node name="Generator" parent="." instance=ExtResource("5_cqtb4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.053257, 0, 2.1228895)
+tank_longevity = 20.0
+
+[node name="GasolineCanister" parent="." instance=ExtResource("6_jirxn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1536016, 2.3841858e-07, 3.5314763)

@@ -38,6 +38,8 @@ var burnout_time = 5
 
 var selected_to_break: bool = false
 var gas_low: bool = false
+var gas_critical: bool = false
+var gas_empty: bool = false
 
 # State machine variables
 var current_state: LightState = LightState.ON
@@ -113,9 +115,9 @@ func _process_burnout_state(delta):
 			light.light_energy += 2 * delta
 			light.light_color.b8 = min(light.light_color.b8 + 255 * delta, 255)
 				
-	#255 - 85 = 140 across 5 seconds
 	if state_timer >= burnout_time:
-		_start_state(LightState.OFF)
+		selected_to_break = false
+		deactivate()
 
 # Process ON state: flicker lights randomly
 func _process_on_state(delta):
@@ -140,9 +142,12 @@ func _process_blink_low_state(delta):
 	
 	_process_blinking(delta, interval_blink_low)
 	
-	# Transition to BLINK_HIGH after duration
-	if state_timer >= duration_blink_low:
+	# Transition to BLINK_HIGH based on gas state
+	if gas_critical:
 		_start_state(LightState.BLINK_HIGH)
+	# Transition to on if the tank was refilled
+	elif !gas_low:
+		_start_state(LightState.ON)
 
 # Process BLINK_HIGH state: frequent blinks
 func _process_blink_high_state(delta):
@@ -152,8 +157,10 @@ func _process_blink_high_state(delta):
 	_process_blinking(delta, interval_blink_high)
 	
 	# Transition to OFF after duration
-	if state_timer >= duration_blink_high:
-		_start_state(LightState.OFF)
+	if gas_empty:
+		deactivate()
+	elif !gas_critical:
+		_start_state(LightState.ON)
 
 # Handle the blinking on/off cycle
 func _process_blinking(_delta, blink_interval):
@@ -207,9 +214,12 @@ func _set_lights_visible(_visible: bool):
 
 # Public API: Manually deactivate lights (skip to OFF state)
 func deactivate():
+	EventBus.floodlight_deactivated.emit(self)
 	_start_state(LightState.OFF)
 
 # Public API: Reactivate lights (restart from ON state)
 func activate():
+	EventBus.floodlight_activated.emit(self)
 	audio_stream_player_3d.play()
 	_start_state(LightState.ON)
+	
