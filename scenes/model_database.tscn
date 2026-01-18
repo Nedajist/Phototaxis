@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://de2evhgms5tyo"]
+[gd_scene load_steps=46 format=3 uid="uid://de2evhgms5tyo"]
 
 [ext_resource type="PackedScene" uid="uid://cjnrpwoo7ri8e" path="res://3d models/trees/tree_01.tscn" id="1_vdns3"]
 [ext_resource type="PackedScene" uid="uid://dl2vrdghviaii" path="res://3d models/trees/tree_02.tscn" id="2_b6bgt"]
@@ -44,6 +44,7 @@
 [ext_resource type="PackedScene" uid="uid://bo8jqoih1uqhd" path="res://3d models/furniture/chair.tscn" id="42_5c0sg"]
 [ext_resource type="PackedScene" uid="uid://dh628wpfk1duo" path="res://3d models/misc/baby_duck.tscn" id="43_ukqpj"]
 [ext_resource type="PackedScene" uid="uid://dqsm0ayejar0n" path="res://3d models/misc/eye.tscn" id="44_tuha3"]
+[ext_resource type="PackedScene" uid="uid://d7xhochwne5q" path="res://3d models/furniture/metal_shelf.tscn" id="45_gpxap"]
 
 [node name="model_database" type="Node3D"]
 
@@ -178,3 +179,6 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 25.985575, -4.7683716e-
 
 [node name="eye" parent="." instance=ExtResource("44_tuha3")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 27, 0, 3)
+
+[node name="Node3D" parent="." instance=ExtResource("45_gpxap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 8.6)
