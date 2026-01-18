@@ -1,7 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://cyjfkujhlu7a8"]
+[gd_scene load_steps=23 format=3 uid="uid://cyjfkujhlu7a8"]
 
 [ext_resource type="Shader" uid="uid://dyysfxgdx3tjb" path="res://sky.gdshader" id="1_rujvi"]
-[ext_resource type="PackedScene" path="res://shed.tscn" id="1_rvbka"]
+[ext_resource type="PackedScene" uid="uid://db5vtnv2kffga" path="res://shed.tscn" id="1_rvbka"]
 [ext_resource type="PackedScene" uid="uid://bsgjd4nsmouiv" path="res://3d models/trees/tree_06.tscn" id="2_8fobk"]
 [ext_resource type="PackedScene" uid="uid://byia83ocim6js" path="res://scenes/player_character.tscn" id="2_lscal"]
 [ext_resource type="PackedScene" uid="uid://cjnrpwoo7ri8e" path="res://3d models/trees/tree_01.tscn" id="3_11pt6"]
@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bbfiq0efgxv51" path="res://3d models/barriers/wooden_fence_open_2.tscn" id="5_rvbka"]
 [ext_resource type="PackedScene" uid="uid://dqqqxrwirr7dw" path="res://outside_floodlight.tscn" id="7_oh6h3"]
 [ext_resource type="PackedScene" uid="uid://b4jppir7cfejv" path="res://breaker_box.tscn" id="9_ijcf8"]
-[ext_resource type="PackedScene" uid="uid://ygf5ld8cbgji" path="res://light_manager.tscn" id="9_sd6n8"]
+[ext_resource type="PackedScene" uid="uid://bvh55u7g7ct3t" path="res://light_manager.tscn" id="9_sd6n8"]
 [ext_resource type="PackedScene" uid="uid://hiitfpg7yv0c" path="res://level_timer.tscn" id="10_j5urc"]
 [ext_resource type="Script" uid="uid://bxeqlygxow2lo" path="res://musics/musicmanager.gd" id="13_rvbka"]
 [ext_resource type="PackedScene" uid="uid://c0h4xhxeqqyo0" path="res://scenes/generator.tscn" id="14_cybri"]
@@ -922,7 +922,7 @@ transform = Transform3D(0.74855083, 0, -0.66307735, 0, 1, 0, 0.66307735, 0, 0.74
 
 [node name="lightmanager" parent="." node_paths=PackedStringArray("light_sources") instance=ExtResource("9_sd6n8")]
 transform = Transform3D(-0.25, 0, -2.1855694e-08, 0, 0.25, 0, 2.1855694e-08, 0, -0.25, 11.894613, 1.3050765, 0.898263)
-light_sources = [NodePath("../NavigationRegion3D/BreakerBox/lightpost"), NodePath("../NavigationRegion3D/BreakerBox/lightpost2"), NodePath("../NavigationRegion3D/BreakerBox/lightpost3"), NodePath("../NavigationRegion3D/BreakerBox/lightpost4")]
+light_sources = [NodePath("../NavigationRegion3D/BreakerBox/lightpost"), NodePath("../NavigationRegion3D/BreakerBox/lightpost2"), NodePath("../NavigationRegion3D/BreakerBox/lightpost3"), NodePath("../NavigationRegion3D/BreakerBox/lightpost4"), NodePath("../NavigationRegion3D/BreakerBox2/lightpost5"), NodePath("../NavigationRegion3D/BreakerBox2/lightpost6"), NodePath("../NavigationRegion3D/BreakerBox2/lightpost7"), NodePath("../NavigationRegion3D/BreakerBox2/lightpost8"), NodePath("../NavigationRegion3D/BreakerBox2/lightpost9"), NodePath("../NavigationRegion3D/BreakerBox3/lightpost"), NodePath("../NavigationRegion3D/BreakerBox3/lightpost2"), NodePath("../NavigationRegion3D/BreakerBox3/lightpost3"), NodePath("../NavigationRegion3D/BreakerBox3/lightpost4"), NodePath("../NavigationRegion3D/main_building/ceiling/lights/ceiling_light2"), NodePath("../NavigationRegion3D/main_building/ceiling/lights/ceiling_light3"), NodePath("../NavigationRegion3D/main_building/ceiling/lights/ceiling_light4"), NodePath("../NavigationRegion3D/main_building/ceiling/lights/ceiling_light11"), NodePath("../NavigationRegion3D/main_building/ceiling/lights/ceiling_light12"), NodePath("../NavigationRegion3D/main_building/ceiling/lights/ceiling_light13"), NodePath("../NavigationRegion3D/main_building/ceiling/lights/ceiling_light14"), NodePath("../NavigationRegion3D/main_building/ceiling/lights/ceiling_light15"), NodePath("../NavigationRegion3D/main_building/ceiling/lights/ceiling_light16"), NodePath("../NavigationRegion3D/main_building/ceiling/lights/ceiling_light17"), NodePath("../NavigationRegion3D/main_building/ceiling/lights/ceiling_light18"), NodePath("../NavigationRegion3D/main_building/ceiling/lights/ceiling_light21"), NodePath("../NavigationRegion3D/main_building/ceiling/lights/ceiling_light22"), NodePath("../NavigationRegion3D/main_building/ceiling/lights/ceiling_light19"), NodePath("../NavigationRegion3D/main_building/ceiling/lights/ceiling_light20"), NodePath("../NavigationRegion3D/main_building/ceiling/lights/ceiling_light6"), NodePath("../NavigationRegion3D/main_building/ceiling/lights/ceiling_light10"), NodePath("../NavigationRegion3D/main_building/ceiling/lights/ceiling_light5"), NodePath("../NavigationRegion3D/main_building/ceiling/lights/ceiling_light9"), NodePath("../NavigationRegion3D/main_building/ceiling/lights/ceiling_light7"), NodePath("../NavigationRegion3D/main_building/ceiling/lights/ceiling_light8")]
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_sd6n8")
