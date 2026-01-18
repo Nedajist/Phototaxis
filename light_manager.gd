@@ -53,9 +53,12 @@ func _gasoline_refilled():
 """
 there are two ways the lights can turn off
 
-All lights are connected to a central generator, which will slowly run out of gas. When gas is running out, it will start blinking.
+All lights are connected to a central generator, which will slowly run out of gas. 
+When gas is running out, it will start blinking.
 -> This can be fixed by filling the generator with gas (stub above)
 
-Randomly, any given light has a chance to burn out. The lights will get brighter and brighter, then suddenly turn off.
--> This can be fixed by finding the breaker switches and fixing the correct light. Each light has a one-to-one or many-to-one (multiple lights per breaker) relationship with each breaker
+Randomly, any given light has a chance to burn out. The lights will get brighter and brighter, 
+then suddenly turn off.
+-> This can be fixed by finding the breaker switches and fixing the correct light. 
+Each light has a one-to-one or many-to-one (multiple lights per breaker) relationship with each breaker
 """
