@@ -17,7 +17,7 @@ environment_file_directory="res://AmbientCG/Environments"
 [application]
 
 config/name="Phototaxis"
-run/main_scene="uid://f4ilbe43h3yg"
+run/main_scene="uid://detp30ngyni5s"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
