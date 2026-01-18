@@ -14,10 +14,10 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rmvo2"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_bk6gy"]
+
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_lih0l"]
 points = PackedVector3Array(-0.00019574165, 1, -0.00019574165, 0.19498825, -1, -0.9808144, -0.00019574165, -1, -1, -0.19518405, -1, -0.9808144, -0.382733, -1, -0.92404073, -0.5555991, -1, -0.83163667, -0.7071261, -1, -0.7071261, -0.83163667, -1, -0.5555991, -0.92404073, -1, -0.382733, -0.9808144, -1, -0.19518405, -1, -1, -0.00019574165, -0.9808144, -1, 0.19498825, -0.92404073, -1, 0.38253725, -0.83163667, -1, 0.55540323, -0.7071261, -1, 0.7069303, -0.5555991, -1, 0.8314409, -0.382733, -1, 0.92384493, -0.19518405, -1, 0.9806186, -0.00019574165, -1, 1, 0.19498825, -1, 0.9806186, 0.38253725, -1, 0.92384493, 0.55540323, -1, 0.8314409, 0.7069303, -1, 0.7069303, 0.8314409, -1, 0.55540323, 0.92384493, -1, 0.38253725, 0.9806186, -1, 0.19498825, 1, -1, -0.00019574165, 0.9806186, -1, -0.19518405, 0.92384493, -1, -0.382733, 0.8314409, -1, -0.5555991, 0.7069303, -1, -0.7071261, 0.55540323, -1, -0.83163667, 0.38253725, -1, -0.92404073)
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_bk6gy"]
 
 [node name="MothEnemy" type="CharacterBody3D" node_paths=PackedStringArray("nav_agent") groups=["Enemies"]]
 script = ExtResource("1_rmvo2")
@@ -62,6 +62,13 @@ shape = SubResource("CapsuleShape3D_rmvo2")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
+[node name="HoldPlayerCamera" type="Area3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="MothSurroundingVision" type="CollisionShape3D" parent="HoldPlayerCamera"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+shape = SubResource("SphereShape3D_bk6gy")
+
 [node name="VisionArea" type="Area3D" parent="."]
 
 [node name="Cone" parent="VisionArea" instance=ExtResource("6_bk6gy")]
@@ -82,6 +89,11 @@ shape = SubResource("SphereShape3D_bk6gy")
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 shape = SubResource("SphereShape3D_bk6gy")
 
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
 [connection signal="switch_to_chase" from="State Machine/MothStalk" to="." method="_on_moth_stalk_switch_to_chase"]
 [connection signal="body_entered" from="VisionArea" to="." method="_on_vision_area_body_entered"]
 [connection signal="area_entered" from="LightSensitive" to="." method="_on_light_sensitive_area_entered"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]

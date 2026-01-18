@@ -28,12 +28,19 @@ func _process(_delta):
 		object_list.append(raycast_result.get("collider"))
 		raycast_result = space.intersect_ray(ray_query)
 	var moth_spotted:bool = false
+	#print("__________START__________")
 	for object in object_list:
+		#print(object)
+		if object.is_in_group("Wall"):
+			#print("WALL")
+			break
 		if object.is_in_group("Enemies"):
 			moth_spotted = true
 			looking_at_moth = true
 			emit_signal("spotted_moth")
-	print(moth_spotted)
-	#if !moth_spotted and looking_at_moth:
-	#	print("motv")
-	#	emit_signal("moth_out_of_view")
+		if object.name == "HoldPlayerCamera":
+			moth_spotted = true
+	#print(moth_spotted)
+	#print("__________END__________")
+	if !moth_spotted and looking_at_moth:
+		emit_signal("moth_out_of_view")

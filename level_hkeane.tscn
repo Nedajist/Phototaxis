@@ -1,0 +1,178 @@
+[gd_scene load_steps=8 format=3 uid="uid://c42rwgud4cuyc"]
+
+[ext_resource type="PackedScene" uid="uid://byia83ocim6js" path="res://scenes/player_character.tscn" id="1_4nm3s"]
+[ext_resource type="PackedScene" uid="uid://dqqqxrwirr7dw" path="res://outside_floodlight.tscn" id="1_mhwm6"]
+[ext_resource type="PackedScene" uid="uid://ygf5ld8cbgji" path="res://light_manager.tscn" id="3_578nk"]
+[ext_resource type="PackedScene" uid="uid://b4jppir7cfejv" path="res://breaker_box.tscn" id="4_4xjp7"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vonw3"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+energy_multiplier = 0.25
+
+[sub_resource type="Sky" id="Sky_oi3di"]
+sky_material = SubResource("ProceduralSkyMaterial_vonw3")
+
+[sub_resource type="Environment" id="Environment_0b4ue"]
+background_mode = 2
+sky = SubResource("Sky_oi3di")
+tonemap_mode = 2
+
+[node name="level" type="Node"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0b4ue")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.48480973, -0.87461966, -3.823084e-08, 0, -4.371139e-08, 1, -0.87461966, -0.48480973, -2.1191706e-08, 0, 0, 0)
+light_energy = 0.1
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 4)
+use_collision = true
+size = Vector3(20, 1, 28)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5, 2, -4.5)
+size = Vector3(8, 5, 8)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, -6.5)
+size = Vector3(3, 2, 2)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, -2.5)
+size = Vector3(3, 2, 2)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 1, -3)
+size = Vector3(6, 3, 9)
+
+[node name="walls" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.4995, 0.5, 0)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.5)
+size = Vector3(0.001, 2, 28)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, 4)
+size = Vector3(0.001, 2, 29)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="walls"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9, 0, 16)
+size = Vector3(0.001, 2, 21)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="walls"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9, 0, -10)
+size = Vector3(0.001, 2, 21)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1.5, 8)
+radius = 0.25
+height = 5.0
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1.5, 5)
+radius = 0.25
+height = 5.0
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.5, 6)
+radius = 0.25
+height = 5.0
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1.5, 10)
+radius = 0.25
+height = 5.0
+
+[node name="CSGCylinder3D14" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.5, 10)
+radius = 0.25
+height = 5.0
+
+[node name="CSGCylinder3D15" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 9)
+radius = 0.25
+height = 5.0
+
+[node name="CSGCylinder3D16" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.5, 10)
+radius = 0.25
+height = 5.0
+
+[node name="CSGCylinder3D17" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 12)
+radius = 0.25
+height = 5.0
+
+[node name="CSGCylinder3D18" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.5, 14)
+radius = 0.25
+height = 5.0
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.5, 4)
+radius = 0.25
+height = 5.0
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.5, 3)
+radius = 0.25
+height = 5.0
+
+[node name="CSGCylinder3D8" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1.5, 3)
+radius = 0.25
+height = 5.0
+
+[node name="CSGCylinder3D9" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.5, 7)
+radius = 0.25
+height = 5.0
+
+[node name="CSGCylinder3D10" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 5)
+radius = 0.25
+height = 5.0
+
+[node name="CSGCylinder3D11" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.5, 7)
+radius = 0.25
+height = 5.0
+
+[node name="CSGCylinder3D12" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.5, 6)
+radius = 0.25
+height = 5.0
+
+[node name="CSGCylinder3D13" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.5, 8)
+radius = 0.25
+height = 5.0
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.5, 13)
+size = Vector3(4, 2, 3)
+
+[node name="lightpost" parent="." instance=ExtResource("1_mhwm6")]
+transform = Transform3D(0.3821895, 0, 0.5864565, 0, 0.70000005, 0, -0.5864565, 0, 0.3821895, 3.9749355, -0.5326867, 2.7132626)
+
+[node name="lightpost2" parent="." instance=ExtResource("1_mhwm6")]
+transform = Transform3D(-0.5132455, 0, -0.47600323, 0, 0.7, 0, 0.47600323, 0, -0.5132455, 7.1340427, -0.5326867, 10.229637)
+
+[node name="lightpost3" parent="." instance=ExtResource("1_mhwm6")]
+transform = Transform3D(-0.59752375, 0, 0.36464417, 0, 0.70000005, 0, -0.36464417, 0, -0.59752375, -5.5361795, -0.5326867, 12.081279)
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("1_4nm3s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.53307, -0.5, 7.369843)
+
+[node name="BreakerBox" parent="." node_paths=PackedStringArray("attached_electronics") instance=ExtResource("4_4xjp7")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -3.734863, 0.7377875, -0.4478057)
+attached_electronics = [NodePath("../lightpost"), NodePath("../lightpost2"), NodePath("../lightpost3")]
+
+[node name="lightmanager" parent="." node_paths=PackedStringArray("light_sources") instance=ExtResource("3_578nk")]
+light_sources = [NodePath("../lightpost"), NodePath("../lightpost2"), NodePath("../lightpost3")]
+frequency = 6.0

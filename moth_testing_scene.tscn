@@ -48,10 +48,10 @@ transform = Transform3D(0.04104005, -1.8626451e-09, -0.99915755, -0.65085995, 0.
 use_collision = true
 size = Vector3(20, 1, 28)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D" groups=["Wall"]]
 transform = Transform3D(0.04104004, -9.313226e-09, -0.99915755, -0.65086, 0.75872695, -0.02673385, 0.75808775, 0.6514088, 0.031138178, 5.339305, 0.81990063, -15.334562)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/StaticBody3D" groups=["Wall"]]
 transform = Transform3D(0.81285405, 7.285838e-16, 0, 1.3536739e-16, 5, 0, 0, 0, 7, 0.24604154, 0, -3.6663046e-09)
 mesh = SubResource("BoxMesh_ynr6c")
 skeleton = NodePath("../../..")
