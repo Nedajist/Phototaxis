@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dqoqgm2g1es0y"]
 
-[ext_resource type="Script" uid="uid://80q3bm73wl40" path="res://scenes/gasoline_canister.gd" id="1_cdduo"]
+[ext_resource type="Script" path="res://scenes/gasoline_canister.gd" id="1_cdduo"]
 [ext_resource type="Texture2D" uid="uid://du3mhwdy12g7w" path="res://2d_assets/Gas_Canister.png" id="1_lc78l"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r1ubf"]
@@ -20,4 +20,5 @@ text = "THIS IS A GASOLINE CANISTER"
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 billboard = 1
+shaded = true
 texture = ExtResource("1_lc78l")

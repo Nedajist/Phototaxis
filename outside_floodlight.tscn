@@ -234,6 +234,8 @@ process_material = SubResource("ParticleProcessMaterial_p83cb")
 draw_pass_1 = SubResource("QuadMesh_ahoyo")
 
 [node name="LightBody" type="StaticBody3D" parent="." groups=["Lights"]]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="LightBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.026550293, 0.51293945, 1.4756064)

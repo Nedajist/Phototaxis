@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://chrhdj1rnvmok"]
+[gd_scene load_steps=59 format=3 uid="uid://chrhdj1rnvmok"]
 
 [ext_resource type="Material" uid="uid://qmwdqv3sgqea" path="res://materials/brick_1/Bricks047_1K-JPG.tres" id="1_4ns5f"]
 [ext_resource type="Shader" uid="uid://bj2a4iu2cmk8r" path="res://wall.tres" id="2_ox8ns"]
@@ -19,6 +19,7 @@
 [ext_resource type="Material" uid="uid://tf5jcn1q125y" path="res://materials/ceiling/OfficeCeiling001_1K-JPG.tres" id="17_44ia1"]
 [ext_resource type="PackedScene" uid="uid://bgwxo14hnjmcp" path="res://3d models/furniture/ceiling_light.tscn" id="18_ts6u7"]
 [ext_resource type="PackedScene" uid="uid://8c8ruiuh52lo" path="res://3d models/posters/posters_scene.tscn" id="19_it7tn"]
+[ext_resource type="PackedScene" uid="uid://dolti6pghn0gp" path="res://3d models/junk/junk.tscn" id="20_y3ler"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_toav8"]
 data = PackedVector3Array(-20, 1.5, 15, 20, 1.5, 15, -20, -1.5, 15, 20, 1.5, 15, 20, -1.5, 15, -20, -1.5, 15, 20, 1.5, -15, -20, 1.5, -15, 20, -1.5, -15, -20, 1.5, -15, -20, -1.5, -15, 20, -1.5, -15, 20, 1.5, 15, 20, 1.5, -15, 20, -1.5, 15, 20, 1.5, -15, 20, -1.5, -15, 20, -1.5, 15, -20, 1.5, -15, -20, 1.5, 15, -20, -1.5, -15, -20, 1.5, 15, -20, -1.5, 15, -20, -1.5, -15, 20, 1.5, 15, -20, 1.5, 15, 20, 1.5, -15, -20, 1.5, 15, -20, 1.5, -15, 20, 1.5, -15, -20, -1.5, 15, 20, -1.5, 15, -20, -1.5, -15, 20, -1.5, 15, 20, -1.5, -15, -20, -1.5, -15)
@@ -1093,5 +1094,8 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 9, 4
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 14, 4.9, -17.000002)
 
 [node name="posters" parent="." instance=ExtResource("19_it7tn")]
+
+[node name="junk" parent="." instance=ExtResource("20_y3ler")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.255632, -0.44387245, -24.741005)
 
 [editable path="ceiling/lights/ceiling_light10"]

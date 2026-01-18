@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://cibfajg58iqfr"]
+
+[ext_resource type="PackedScene" uid="uid://dq66112hawpx3" path="res://moth_enemy/moth_enemy.tscn" id="1_2l0t2"]
+
+[node name="MothContainer" type="Node3D"]
+
+[node name="MothEnemy" parent="." node_paths=PackedStringArray("player_character") instance=ExtResource("1_2l0t2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1153488, 1.1753988, 23.530039)
+player_character = NodePath("")
+
+[node name="MothEnemy2" parent="." node_paths=PackedStringArray("player_character") instance=ExtResource("1_2l0t2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.329758, -1.2129261, -31.988394)
+player_character = NodePath("")
+
+[node name="MothEnemy3" parent="." node_paths=PackedStringArray("player_character") instance=ExtResource("1_2l0t2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.201895, -0.1453743, 19.837152)
+player_character = NodePath("")
+
+[node name="MothEnemy4" parent="." node_paths=PackedStringArray("player_character") instance=ExtResource("1_2l0t2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.93846, -0.6393742, -38.095493)
+player_character = NodePath("")
+
+[node name="MothEnemy5" parent="." node_paths=PackedStringArray("player_character") instance=ExtResource("1_2l0t2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0801232, -1.0952597, -42.768837)
+player_character = NodePath("")
