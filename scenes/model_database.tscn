@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://de2evhgms5tyo"]
+[gd_scene load_steps=48 format=3 uid="uid://de2evhgms5tyo"]
 
 [ext_resource type="PackedScene" uid="uid://cjnrpwoo7ri8e" path="res://3d models/trees/tree_01.tscn" id="1_vdns3"]
 [ext_resource type="PackedScene" uid="uid://dl2vrdghviaii" path="res://3d models/trees/tree_02.tscn" id="2_b6bgt"]
@@ -44,6 +44,9 @@
 [ext_resource type="PackedScene" uid="uid://bo8jqoih1uqhd" path="res://3d models/furniture/chair.tscn" id="42_5c0sg"]
 [ext_resource type="PackedScene" uid="uid://dh628wpfk1duo" path="res://3d models/misc/baby_duck.tscn" id="43_ukqpj"]
 [ext_resource type="PackedScene" uid="uid://dqsm0ayejar0n" path="res://3d models/misc/eye.tscn" id="44_tuha3"]
+[ext_resource type="PackedScene" uid="uid://b51ryv3u2nfml" path="res://3d models/barriers/wooden_fence_broken_2.tscn" id="45_gpxap"]
+[ext_resource type="PackedScene" uid="uid://bcp0a3c0n0qnq" path="res://3d models/barriers/wooden_fence_closed_2.tscn" id="46_g55nb"]
+[ext_resource type="PackedScene" uid="uid://bbfiq0efgxv51" path="res://3d models/barriers/wooden_fence_open_2.tscn" id="47_7v7e7"]
 
 [node name="model_database" type="Node3D"]
 
@@ -178,3 +181,12 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 25.985575, -4.7683716e-
 
 [node name="eye" parent="." instance=ExtResource("44_tuha3")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 27, 0, 3)
+
+[node name="wooden_fence_broken2" parent="." instance=ExtResource("45_gpxap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5941143, 0, 6.8609056)
+
+[node name="wooden_fence_closed2" parent="." instance=ExtResource("46_g55nb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 7)
+
+[node name="wooden_fence_open2" parent="." instance=ExtResource("47_7v7e7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.433611, 0, 6.860178)
