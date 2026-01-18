@@ -3,6 +3,8 @@ extends CharacterBody3D
 @export var player_character: CharacterBody3D
 @export var nav_agent: NavigationAgent3D
 signal Transitioned
+var player_ui:CanvasLayer
+var on_screen:bool = false
 
 func _ready() -> void:
 	for node in $"State Machine".get_children():
@@ -10,7 +12,8 @@ func _ready() -> void:
 			node.player=player_character
 		if "nav_agent" in node:
 			node.nav_agent=nav_agent
-
+	player_ui = player_character.get_node("HudCanvasLayer")
+	player_ui.blink_signal.connect(_player_blinked)
 
 func update_target_location(target_location) -> void:
 	nav_agent.target_position = target_location
@@ -39,3 +42,15 @@ func _on_light_sensitive_area_entered(area: Area3D) -> void: #large sphere colle
 
 func _on_moth_stalk_switch_to_chase() -> void:
 	$"State Machine".current_state.Transitioned.emit($"State Machine".current_state, "MothChase")
+
+
+func _on_visible_on_screen_notifier_3d_screen_entered():
+	on_screen = true
+
+
+func _on_visible_on_screen_notifier_3d_screen_exited():
+	on_screen = false
+
+func _player_blinked():
+	if on_screen:
+		$"State Machine".current_state.Transitioned.emit($"State Machine".current_state, "MothStalk")

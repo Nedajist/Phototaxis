@@ -6,6 +6,8 @@ extends CanvasLayer
 # time in seconds to open / close
 var blinking = false
 var blink_progress = 0.0
+var blink_signal_fired:bool = false
+signal blink_signal
 # out of 300
 # 100 to close, 100 to pause, 100 to open
 @export var blink_close_time = 0.25 # seconds to close
@@ -33,6 +35,7 @@ func _process(delta: float) -> void:
 	# Test to trigger blink every 3 seconds
 	#time_since_last_blink += delta
 	if Input.is_action_just_pressed("spacebar") and not blinking:
+		blink_signal_fired = false
 		blink()
 		time_since_last_blink = 0.0
 	
@@ -61,6 +64,9 @@ func blink() -> void:
 
 func _handle_blink(delta: float) -> void:
 	if blinking:
+		if blink_progress <= 200.0 and !blink_signal_fired:
+			blink_signal.emit()
+			blink_signal_fired = true
 		# Animate the blink
 		if blink_progress < 100.0:
 			# Closing phase (0 to 100)
