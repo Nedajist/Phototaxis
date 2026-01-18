@@ -1,11 +1,22 @@
-[gd_scene load_steps=11 format=3 uid="uid://db5vtnv2kffga"]
+[gd_scene load_steps=14 format=3 uid="uid://db5vtnv2kffga"]
 
 [ext_resource type="Material" uid="uid://qmwdqv3sgqea" path="res://materials/brick_1/Bricks047_1K-JPG.tres" id="1_xw8xx"]
 [ext_resource type="Material" uid="uid://bsjlmqnoee1kp" path="res://materials/wood/Wood035_1K-JPG.tres" id="2_x6wi8"]
 [ext_resource type="Shader" uid="uid://cb0kf83pluoej" path="res://carpet.tres" id="3_x6wi8"]
+[ext_resource type="PackedScene" uid="uid://d7xhochwne5q" path="res://3d models/furniture/metal_shelf.tscn" id="4_c07op"]
+[ext_resource type="PackedScene" uid="uid://crpim427bviie" path="res://3d models/furniture/cabinet.tscn" id="5_5uunp"]
+[ext_resource type="PackedScene" uid="uid://55h0vdxnlbpo" path="res://3d models/furniture/filing_cabinet.tscn" id="6_3lkm5"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_5tcl3"]
 size = Vector3(10, 3, 10)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6ilwl"]
+render_priority = 0
+shader = ExtResource("3_x6wi8")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wt7sd"]
+material = SubResource("ShaderMaterial_6ilwl")
+size = Vector2(8, 8)
 
 [sub_resource type="BoxMesh" id="BoxMesh_skq4x"]
 size = Vector3(2, 2, 3)
@@ -19,19 +30,16 @@ size = Vector3(0.2, 4, 10)
 [sub_resource type="BoxMesh" id="BoxMesh_6ilwl"]
 size = Vector3(0.2, 4, 3.5)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6ilwl"]
-render_priority = 0
-shader = ExtResource("3_x6wi8")
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_wt7sd"]
-material = SubResource("ShaderMaterial_6ilwl")
-size = Vector2(8, 8)
-
 [node name="shed" type="Node3D"]
 
 [node name="base" type="MeshInstance3D" parent="."]
 material_override = ExtResource("1_xw8xx")
 mesh = SubResource("BoxMesh_5tcl3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="base"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6000001, 0)
+mesh = SubResource("PlaneMesh_wt7sd")
+skeleton = NodePath("../..")
 
 [node name="ramp" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.9396926, -0.34202012, 0, 0.34202012, 0.9396926, 0, 0.050988093, 6.0606904)
@@ -77,6 +85,23 @@ material_override = ExtResource("2_x6wi8")
 mesh = SubResource("BoxMesh_6ilwl")
 skeleton = NodePath("../../base")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6000001, 0)
-mesh = SubResource("PlaneMesh_wt7sd")
+[node name="metal_rack" parent="." instance=ExtResource("4_c07op")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 2, -4)
+
+[node name="metal_rack3" parent="." instance=ExtResource("4_c07op")]
+transform = Transform3D(-5.2453665e-08, 0, -1.1999999, 0, 1.1999999, 0, 1.1999999, 0, -5.2453665e-08, 0, 2, 0)
+
+[node name="cabinet" parent="metal_rack3" instance=ExtResource("5_5uunp")]
+transform = Transform3D(1, 0, 7.1054274e-15, 0, 1, 0, -7.1054274e-15, 0, 1, -1.5663252e-07, -0.33333337, -3.5833337)
+
+[node name="cabinet2" parent="metal_rack3" instance=ExtResource("5_5uunp")]
+transform = Transform3D(1, 0, 7.1054274e-15, 0, 1, 0, -7.1054274e-15, 0, 1, 1.5833334, -0.33333337, -3.5833337)
+
+[node name="metal_rack2" parent="." instance=ExtResource("4_c07op")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 3, 2, -4)
+
+[node name="filing_cabinet" parent="." instance=ExtResource("6_3lkm5")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.3, 1.6, 0)
+
+[node name="filing_cabinet2" parent="." instance=ExtResource("6_3lkm5")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -4.3, 1.6, -1.2)
