@@ -19,16 +19,20 @@ var sprinting = false
 const SPEED = 2.0
 const SPRINT_SPEED = 5.0
 
+
 var health=10
 @export var interaction_hold_time: float = 1.0  # Time in seconds to hold for interaction
 var interaction_hold_timer: float = 0.0
 var is_interacting: bool = false
 
 var look_at_moth = false
+var blink_safe_cooldown: bool = false
+
 
 func _ready() -> void:
 	EventBus.mothster_used.connect(mothster_used)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	$HudCanvasLayer.blink_signal.connect(_player_blinked)
 
 func _process(delta: float) -> void:
 	# Check for interactables in range and emit signals
@@ -72,7 +76,7 @@ func _physics_process(delta: float) -> void:
 	#camera_3d.look_at(camera_lookat_target.transform.origin, Vector3.UP, false)
 	# Add the gravity.
 	
-	if look_at_moth:
+	if look_at_moth and !blink_safe_cooldown:
 		self.look_at(camera_lookat_target.transform.origin - Vector3(0, 1, 0))
 		camera_pitch = clamp(camera_pitch, deg_to_rad(-5), deg_to_rad(5))
 
@@ -132,7 +136,6 @@ func handle_player_movement(delta) -> void:
 func _on_camera_3d_spotted_moth(moth) -> void:
 	look_at_moth=true
 	camera_lookat_target = moth
-	print(moth.name)
 	
 func _get_interactables() -> Array:
 	# Returns array of all bodies in interaction area that have interact() method
@@ -184,3 +187,11 @@ func mothster_used():
 func _on_mothster_timer_timeout():
 	EventBus.mothster_ended.emit()
 	mothster_drunk = false
+
+func _player_blinked():
+	$BlinkTimer.start()
+	blink_safe_cooldown = true
+	print("BLINKED")
+
+func _on_blink_timer_timeout():
+	blink_safe_cooldown = false

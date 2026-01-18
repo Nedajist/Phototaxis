@@ -2,7 +2,6 @@ extends CharacterBody3D
 
 @export var player_character: CharacterBody3D
 @export var nav_agent: NavigationAgent3D
-signal Transitioned
 var player_ui:CanvasLayer
 var on_screen:bool = false
 var stalk_timer_active:bool = false
@@ -14,7 +13,7 @@ func _ready() -> void:
 		if "nav_agent" in node:
 			node.nav_agent=nav_agent
 	player_ui = player_character.get_node("HudCanvasLayer")
-	player_ui.blink_signal.connect(_player_blinked)
+	player_ui.blink_signal_attract.connect(_player_blinked)
 
 func update_target_location(target_location) -> void:
 	nav_agent.target_position = target_location
