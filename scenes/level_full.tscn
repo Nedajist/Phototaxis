@@ -814,7 +814,6 @@ transform = Transform3D(-0.25, 0, -2.1855694e-08, 0, 0.25, 0, 2.1855694e-08, 0, 
 light_sources = [NodePath("../NavigationRegion3D/BreakerBox/lightpost"), NodePath("../NavigationRegion3D/BreakerBox/lightpost2"), NodePath("../NavigationRegion3D/BreakerBox/lightpost3"), NodePath("../NavigationRegion3D/BreakerBox/lightpost4")]
 
 [node name="LevelTimer" parent="." instance=ExtResource("10_j5urc")]
-wait_time = 10.0
 
 [node name="Label" type="Label" parent="LevelTimer"]
 offset_left = 1.0
