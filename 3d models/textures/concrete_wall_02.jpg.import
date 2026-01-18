@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csypp00rrfoby"
-path.s3tc="res://.godot/imported/concrete_wall_01.jpg-58ce1e3ec3d42bc2314b19ec3ba77927.s3tc.ctex"
+uid="uid://bo80s484mcw24"
+path.s3tc="res://.godot/imported/concrete_wall_02.jpg-22125fafb5cbb627ad01f3086999deaa.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://concrete_wall_01.jpg"
-dest_files=["res://.godot/imported/concrete_wall_01.jpg-58ce1e3ec3d42bc2314b19ec3ba77927.s3tc.ctex"]
+source_file="res://3d models/textures/concrete_wall_02.jpg"
+dest_files=["res://.godot/imported/concrete_wall_02.jpg-22125fafb5cbb627ad01f3086999deaa.s3tc.ctex"]
 
 [params]
 
