@@ -1,14 +1,14 @@
 [gd_scene load_steps=5 format=4 uid="uid://b51ryv3u2nfml"]
 
-[ext_resource type="Texture2D" uid="uid://b4elfy1rd455n" path="res://3d models/textures/wooden_fence_broken_low_wooden_wall.jpg" id="1_p8b45"]
+[ext_resource type="Texture2D" uid="uid://bk8jpwclscyrt" path="res://3d models/textures/wooden_fence_broken_low_wooden_wall.jpg" id="1_p8b45"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_un0kk"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l3mm5"]
 resource_name = "low_wooden_wall"
 cull_mode = 2
 albedo_texture = ExtResource("1_p8b45")
 texture_filter = 2
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_cc38i"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_de18y"]
 _surfaces = [{
 "aabb": AABB(-2.0136952, -0.07150379, -0.19562297, 2.1059482, 1.2745484, 0.29243097),
 "format": 34896613377,
@@ -22,7 +22,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_atuii"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_d2vh6"]
 resource_name = "wooden_fence_broken_Cube_042"
 _surfaces = [{
 "aabb": AABB(-2.0136952, -0.07150379, -0.19562297, 2.1059482, 1.2745484, 0.29243097),
@@ -30,7 +30,7 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 324,
 "index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUAGAAZABoAGAAbABkAHAAdAB4AHAAfAB0AIAAhACIAIAAjACEAJAAlACYAJAAnACUAKAApACoAKAArACkALAAtAC4ALAAvAC0AMAAxADIAMAAzADEANAA1ADYANAA3ADUAOAA5ADoAOAA7ADkAPAA9AD4APAA/AD0AQABBAEIAQABDAEEARABFAEYARABHAEUASABJAEoASABLAEkATABNAE4ATABPAE0AUABRAFIAUABTAFEAVABVAFYAVABXAFUAWABZAFoAWABbAFkAXABdAF4AXABfAF0AYABhAGIAYABjAGEAZABlAGYAZABnAGUAaABpAGoAaABrAGkAbABtAG4AbABvAG0AcABxAHIAcABzAHEAdAB1AHYAdAB3AHUAeAB5AHoAeAB7AHkAfAB9AH4AfAB/AH0AgACBAIIAgACDAIEAhACFAIYAhACHAIUAiACJAIoAiACLAIkAjACNAI4AjACPAI0AkACRAJIAkACTAJEAlACVAJYAlACXAJUAmACZAJoAmACbAJkAnACdAJ4AnACfAJ0AoAChAKIAoACjAKEApAClAKYApACnAKUAqACpAKoAqACrAKkArACtAK4ArACvAK0AsACxALIAsACzALEAtAC1ALYAtAC3ALUAuAC5ALoAuAC7ALkAvAC9AL4AvAC/AL0AwADBAMIAwADDAMEAxADFAMYAxADHAMUAyADJAMoAyADLAMkAzADNAM4AzADPAM0A0ADRANIA0ADTANEA1ADVANYA1ADXANUA"),
-"material": SubResource("StandardMaterial3D_un0kk"),
+"material": SubResource("StandardMaterial3D_l3mm5"),
 "name": "low_wooden_wall",
 "primitive": 3,
 "uv_scale": Vector4(3.5975938, 1.9704674, 0, 0),
@@ -38,10 +38,10 @@ _surfaces = [{
 "vertex_data": PackedByteArray("P/OlyGPqnMWc6f//P6ucxcj0//+w+5zFe+qlyD+rnMV76qXIP6ubFcj0///PWpsVnOn//z+rmxU/86XIHGybFT/zpcgcbHIZ8////z+rchnI9P//z1pyGQT8pcg/q3IZBPylyD+rvMfI9P//sPu8x/P///8/q7zHP/OlyGPqvMeG6jEPP6uqKgr/MQ8/q6oqyPQxD2BhqirI9DEPH/WqKsj0///PWqrpyPT//7D7qumc6f//P6uq6fP///8/q6rpCv8xDz+rWMbI9FFPAvxYxv//UU8/q1jGyPQxDx/1WMb//1FPP6smxpn1OZP//37Gp/5yl9XFnMbI9FFPAvwKxqf+cpfVxWXDP/OlyGPqrcIE/KXIP6tbwpn1OZP//7DDyPQxD2BhABf//1FPP6sAF8j0UU99WgAXCv8xDz+rABfI9FFPfVos6af+cpfVxXjpmfU5kwp0nOn//1FPP6sP6Zn1OZMKdD/oBPylyD+rDeg/86XIHGzz56f+cpfVxVnohuoxDz+rpBXI9FFPfVqkFZHpUU8/q6QVyPQxD2BhpBWR6VFPP6u1GJn1OZMKdKYYTOyQkJKyoBjI9FFPfVq6GEzskJCSshITP/OlyBxsJhN76qXIP6suE5n1OZMKdAoTyPQxDx/1oMWR6VFPP6ugxcj0UU8C/KDFhuoxDz+roMXI9FFPAvydOkzskJCSsiY6mfU5k///9zmR6VFPP6vLOpn1OZP///g4e+qlyD+rijk/86XIY+rXOUzskJCSsrg4vMR5l2q4OqV88VbQhqpipanyEMmIyWelXMJooGeKNqVcwmigZ4rI4LPzjMejh73gfPFW0IaqvOAnxS2ZwF/J4CfFLZnAX9QZ8PW+vlelzRmz84zHo4fMGRjIeo4hjtUZGMh6jiGOO6Gp8hDJiMnGofD1vr5XpdihvMR5l2q4KqEIGDIW0CZ9Di4d8wURKn0OGRv5DQAAfQ4fGhIOTFB9DrPzjMejh6i+qfIQyYjJqL588VbQhqqpvvD1vr5Xpae+Lh3zBREqh1kTT1JGLHOHWQNSgD5iTodZHxoSDkxQh1kDUoA+Yk6Cpb2QcHPWp36lyZizbcKEfqUTT1JGLHODpcmYs23ChOyjvMR5l2q43KMYyHqOIY7ao72QcHPWp+2jGRv5DQAAkyADUoA+Yk6PIBxQ/0VuJY8gLh3zBREqkyAcUP9FbiVzI8mYs23ChGkj5ZFfczpIaCMDUoA+Yk50I+WRX3M6SPogGMh6jiGOEiEnxS2ZwF8WIcmYs23ChPUgCBgyFtAmVh0cUP9FbiVWHQ9NIk5FS1YdGRv5DQAAVh0PTSJORUv3HeWRX3M6SPYdcYuIemNv9h0cUP9FbiX3HXGLiHpjbyjgJ8UtmcBfMeBcwmigZ4oy4OWRX3M6SCbgHxoSDkxQR6gPTSJORUtHqBNPUkYsc0eoCBgyFtAmR6gTT1JGLHMlpnGLiHpjbz+mvZBwc9anQaYPTSJORUsjpr2QcHPWp9KlXMJooGeKqKW8xHmXarijpXGLiHpjb9al87jTWP19TCEF8YBeXrNGIW7vpWTfkEUhV7rDTjyqTSFXusNOPKpioLXuGGiW0ZSgBfGAXl6zmaAuuYtWh9ZdoC65i1aH1k+eSO2RcLivSJ617hholtFHnoW3fWJWq1Cehbd9YlarPhtu76Vk35BEG0jtkXC4r0Qb87jTWP19PRuPAgAAeq/MBgAAkhFbpMwGDQEdCtfRywZxAYoHgoLMBrXuGGiW0QvBbu+lZN+QC8EF8YBeXrMNwUjtkXC4rwnBAACSEVukyRPPPggcj5DGE7I8eCqfqMUTcQGKB4KCyROyPHgqn6idGemCUz+rY68ZfI/fVtutsBnPPggcj5CbGXyP31bbrdIe87jTWP191h6Ft31iVqvXHumCUz+rY9EeDQEdCtfR06eyPHgqn6jXp289YSU7ydenAACSEVuk0qdvPWElO8n7nHyP31bbrY6dV40hRrrVmJ2yPHgqn6jvnFeNIUa61WCahbd9YlarLJouuYtWh9YgmnyP31bbrW6ajwIAAHqvxJtvPWElO8nHm4M++R2EsMebDQEdCtfRxJuDPvkdhLDuWVeNIUa61apZqYu+PXaapllvPWElO8n0WamLvj12mupWLrmLVofWCldXusNOPKoPV1eNIUa61eRWcQGKB4KCuDKDPvkdhLCcMs8+CByPkJoyjwIAAHqvuTLPPggcj5DAOKmLvj12msI46YJTP6tjwjiDPvkdhLDAOOmCUz+rY5EmV7rDTjyqsybzuNNY/X23JqmLvj12moYmAuLT4wLi0+MC4tPjAuLT44rL+cqKy/nKisv5yorL+cqxNxE1sTcRNbE3ETWxNxE1fRiYIH0YmCB9GJggfRiYIFRVVFVUVVRVVFVUVVRVVFX6yvYV+sr2FfrK9hX6yvYVDRzFHQ0cxR0NHMUdDRzFHeMa4x2sGvAdmhr1HfQa3h3TItoVSyOmFYIjjxWiIu8VkDUFNZA1BTWQNQU1kDUFNYQ2izHMNQ8ydzVMMso2WDFPNAQ0yjSvMw01gDMONDE0g8v5yoPL+cqDy/nKg8v5yn/I1MqvyLTKxMilym/I38q5zKTKiczIynXM18rPzJTKDuLJ4w7iyeMO4snjDuLJ4z7iq+GN4pThreKL4R/itOFE4kLi4+Ff4rDhb+Jt4jXicePZvtjjAL/l4wW/Z+PWvijl56GH5D2ieORFojjl36GuFMpcfhTmXHgU6lyzFMdc4xJ4QdsR1UC5EcBABRONQVFEgHJRRIByUUSAclFEgHJIpaYTSKWkE0ilnxNIpasThAxTQYQMU0GEDFNBhAxTQR4AQ7UYADa1FwA2tR8ARLXSBlFH7AZmR+8GaEfPBk9HtRglWJsYMliZGDNYuBgkWIoRS2E1EXJhKxF3YZMRRmF9EPpiYBGJYoMRd2JMEBJjlOh7oJToe6CU6HuglOh7oH3kf5225F+dvORbnXjkgp1A6IGcGukMnDTp/psg6JKcl+cIwZfnCMGX5wjBl+cIwX3pP7XP6WW11OlntXXpO7WE6q6y7+lkstzpW7KT6rWyywrRcAIKO3HnCUpx3QrHcPgEjF00BMRcIASwXAwFoV2y+4GklfthpJL7XKS1+4Skpu2jkPPwRo5n8fONP+3tkIpD0XiKQ9F4ikPReIpD0Xj0n/oP9J/2D/Of6A/1nwYQiPH8j5fyOI+x8iWPafETkFP19pNN9JeUPPShlHj14JMr8iGRafGPkTHxrpFE8hORLPTDokH0z6JD9NCiK/TCorntwqiB8E+rrPB3q3fthqj7+WqpU/mJqC35Vqgl+qOpRw8oVDwPHVQ7DxxUSA8pVKIMLV09C0NcKAs1XMAMQF3ACdxiowpjY8gKeWOZCcVi8A3gaHMMP2lTDEhpAQ7baIQN6GabDeVmnA3lZoMN6GZaDi1pkhA1aNcQF2iyDXZp")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_cc38i")
+shadow_mesh = SubResource("ArrayMesh_de18y")
 
 [node name="wooden_fence_broken2" type="Node3D"]
 
 [node name="wooden_fence_broken" type="MeshInstance3D" parent="."]
-mesh = SubResource("ArrayMesh_atuii")
+mesh = SubResource("ArrayMesh_d2vh6")
 skeleton = NodePath("")
