@@ -17,7 +17,7 @@ environment_file_directory="res://AmbientCG/Environments"
 [application]
 
 config/name="Phototaxis"
-run/main_scene="uid://f4ilbe43h3yg"
+run/main_scene="uid://cyjfkujhlu7a8"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -77,5 +77,4 @@ interact={
 
 [rendering]
 
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
+limits/opengl/max_lights_per_object=32

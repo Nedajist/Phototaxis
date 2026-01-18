@@ -554,15 +554,18 @@ shape = SubResource("ConcavePolygonShape3D_lstbe")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="building_base"]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 25, 0, 10)
 material_override = ExtResource("1_4ns5f")
+cast_shadow = 0
 mesh = SubResource("BoxMesh_7bhrc")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="building_base"]
+cast_shadow = 0
 mesh = SubResource("BoxMesh_i8k85")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="building_base"]
 transform = Transform3D(-4.371139e-08, -0.5, 0.8660254, 0, 0.8660254, 0.5, -1, 2.1855694e-08, -3.7855173e-08, 9.450296, -0.55295515, 23)
+cast_shadow = 0
 mesh = SubResource("BoxMesh_toav8")
 skeleton = NodePath("../MeshInstance3D")
 
@@ -1473,10 +1476,7 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10, 
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 4.9, -8)
 
 [node name="ceiling_light7" parent="ceiling/lights" instance=ExtResource("18_ts6u7")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 9, 4.9, -17)
-
-[node name="ceiling_light8" parent="ceiling/lights" instance=ExtResource("18_ts6u7")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 14, 4.9, -17.000002)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 11, 4.9, -17)
 
 [node name="posters" type="Node3D" parent="."]
 
