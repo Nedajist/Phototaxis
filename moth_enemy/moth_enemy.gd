@@ -5,6 +5,7 @@ extends CharacterBody3D
 var player_ui:CanvasLayer
 var on_screen:bool = false
 var stalk_timer_active:bool = false
+var light_attracted_to
 
 func _ready() -> void:
 	for node in $"State Machine".get_children():
@@ -74,6 +75,7 @@ func _on_light_sensitive_body_entered(body):
 	if body.name == "LightBody":#is_in_group("Lights"):
 		if !(body.get_parent().current_state == 4):
 			if !stalk_timer_active:
+				light_attracted_to = body
 				print("moth has felt the light shining")
 				$"State Machine".current_state.Transitioned.emit($"State Machine".current_state, "MothFollow")
 				$"State Machine/MothFollow".light = body

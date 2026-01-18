@@ -76,7 +76,7 @@ func _physics_process(delta: float) -> void:
 	#camera_3d.look_at(camera_lookat_target.transform.origin, Vector3.UP, false)
 	# Add the gravity.
 	
-	if look_at_moth and !blink_safe_cooldown:
+	if look_at_moth and !blink_safe_cooldown and camera_lookat_target:
 		self.look_at(camera_lookat_target.transform.origin - Vector3(0, 1, 0))
 		camera_pitch = clamp(camera_pitch, deg_to_rad(-5), deg_to_rad(5))
 
