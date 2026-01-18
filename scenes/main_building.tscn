@@ -1917,7 +1917,7 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_sips5")
 
 [node name="poster2" type="MeshInstance3D" parent="posters"]
-transform = Transform3D(8.284887e-07, 0, -100, 0, 99.99394, 0, 69.47564, 0, 1.1924881e-06, 36.617275, 2.9861488, -6.4548874)
+transform = Transform3D(8.284887e-07, 0, -100, 0, 99.99394, 0, 69.47564, 0, 1.1924881e-06, 36.617115, 2.979847, -6.4553804)
 mesh = SubResource("ArrayMesh_wgeow")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_63cga")
@@ -1947,7 +1947,7 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_c8wcx")
 
 [node name="poster7" type="MeshInstance3D" parent="posters"]
-transform = Transform3D(-2.8351685e-06, 1.5663811e-06, 100, 24.897842, 93.35239, 0, -64.86109, 35.834625, -4.371139e-06, 37.036995, 1.9990511, -8.059563)
+transform = Transform3D(-2.8351685e-06, 1.5663811e-06, 100, 24.897842, 93.35239, 0, -64.86109, 35.834625, -4.371139e-06, 37.041977, 1.9990511, -8.059563)
 mesh = SubResource("ArrayMesh_xmlp5")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_11bjj")
@@ -2007,13 +2007,13 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_d5ter")
 
 [node name="poster18" type="MeshInstance3D" parent="posters"]
-transform = Transform3D(4.141071e-06, 9.3126616e-08, 100, -1.2125156, 99.978714, 9.313226e-08, -69.46506, -1.7451328, 5.9604645e-06, 36.615585, 2.5000443, 17.03159)
+transform = Transform3D(8.283625e-07, 2.0810525e-08, -100, -1.212517, 99.978714, 0, 69.46506, 1.7451348, 1.1924881e-06, 36.661636, 2.5000443, 17.03159)
 mesh = SubResource("ArrayMesh_eiga7")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_0bkdf")
 
 [node name="poster19" type="MeshInstance3D" parent="posters"]
-transform = Transform3D(-3.0368767e-06, 0, 100, 0, 99.99394, 0, -69.47564, 0, -4.371139e-06, 17.486744, 3.033941, -1.7206035)
+transform = Transform3D(-3.0368767e-06, 0, 100, 0, 99.99394, 0, -69.47564, 0, -4.371139e-06, 17.307898, 3.033941, -1.7206035)
 mesh = SubResource("ArrayMesh_urlt2")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_cq4dl")
