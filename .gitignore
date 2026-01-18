@@ -2,3 +2,5 @@
 .godot/
 /android/
 .vscode/settings.json
+/export
+export_presets.cfg
