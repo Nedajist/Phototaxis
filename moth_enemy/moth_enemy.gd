@@ -68,6 +68,7 @@ func _on_kill_range_body_entered(body):
 	if body.name == "PlayerCharacter":
 		EventBus.jumpscare.emit()
 		#body.jumpscare()
-		self.queue_free()
+		#self.queue_free()
+		get_tree().call_group("Enemies", "queue_free")
 		#print("The part where it kills you")
 		#get_tree().change_scene_to_file("res://retry_screen.tscn")
