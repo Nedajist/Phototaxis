@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqoqgm2g1es0y"]
+
+[ext_resource type="Texture2D" uid="uid://du3mhwdy12g7w" path="res://2d_assets/Gas_Canister.png" id="1_lc78l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r1ubf"]
+size = Vector3(0.5, 0.5, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lc78l"]
+
+[node name="GasolineCanister" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_r1ubf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("BoxMesh_lc78l")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9161636, 0)
+visible = false
+text = "THIS IS A GASOLINE CANISTER"
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+billboard = 1
+texture = ExtResource("1_lc78l")
