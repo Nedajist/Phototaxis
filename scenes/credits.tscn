@@ -1,4 +1,13 @@
-[gd_scene load_steps=0 format=3 uid="uid://b1d6xim74lap"]
+[gd_scene load_steps=5 format=3 uid="uid://b1d6xim74lap"]
+
+[ext_resource type="Texture2D" uid="uid://cigd3gck2s6oh" path="res://2d_assets/Mothster.png" id="1_0bpdh"]
+[ext_resource type="Script" uid="uid://dnw0blu65a6cd" path="res://scenes/credits.gd" id="1_2ckv8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2ckv8"]
+font_size = 26
+
+[sub_resource type="LabelSettings" id="LabelSettings_0ctdu"]
+font_size = 10
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -7,11 +16,79 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_2ckv8")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 493.0
-offset_top = 314.0
-offset_right = 662.0
-offset_bottom = 337.0
-text = "GREAT JOB EVERYONE"
+offset_left = 77.0
+offset_top = 33.0
+offset_right = 451.0
+offset_bottom = 459.0
+text = "Phototaxis
+
+Art:
+flarekittens
+
+Programming:
+Nedajist
+neesh
+numbskul
+QTheGuy
+rocdoc"
+label_settings = SubResource("LabelSettings_2ckv8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 659.0
+offset_top = -52.0
+offset_right = 1149.0
+offset_bottom = 645.0
+text = "Assets: 
+https://craigsnedeker.itch.io/classic64-asset-library
+https://domi236.itch.io/ps1-style-tree-and-grass-pack 
+https://dripsone.itch.io/barrels-psx-low-poly 
+https://dripsone.itch.io/rocks-psx-low-poly 
+https://titans-tracks.itch.io/titans-packs-floral-green 
+https://zofiab.itch.io/free-abandoned-hospital-psx-style
+https://prildarill.itch.io/low-poly-rat 
+https://heyitscdr.itch.io/old-retro-junk 
+https://daniel-jurys.itch.io/psx-derelict-furniture 
+https://ambientcg.com/view?id=Ground003
+https://ambientcg.com/view?id=Bricks021
+https://ambientcg.com/view?id=Bricks047
+https://godotshaders.com/shader/starry-sky/
+https://ambientcg.com/view?id=WallpaperSubstance001
+https://ambientcg.com/view?id=OfficeCeiling001
+https://valsekamerplant.itch.io/psx-style-walls-fences 
+
+Sound:
+https://freesound.org/people/EchoCinematics/sounds/131599/
+https://freesound.org/people/LookIMadeAThing/sounds/260555/
+https://freesound.org/people/_stubb/sounds/406244/ 
+https://freesound.org/people/joalukashalt/sounds/615553/
+https://freesound.org/people/greatsoundstube/sounds/628846/
+https://freesound.org/people/ZHR%C3%98/sounds/540634/ 
+https://freesound.org/people/Muyo5438/sounds/712111/
+https://freesound.org/people/webaudio360/sounds/812153/
+https://freesound.org/people/JessKawaiiXxX/sounds/421606/ 
+https://freesound.org/people/Matio888/sounds/793483/ 
+
+"
+label_settings = SubResource("LabelSettings_0ctdu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mothster" type="Sprite2D" parent="."]
+position = Vector2(570, 254)
+texture = ExtResource("1_0bpdh")
+
+[node name="TitleButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 151.0
+offset_top = 486.0
+offset_right = 370.0
+offset_bottom = 602.0
+text = "Back To Title"

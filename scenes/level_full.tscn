@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://cyjfkujhlu7a8"]
+[gd_scene load_steps=20 format=3 uid="uid://cyjfkujhlu7a8"]
 
 [ext_resource type="Shader" uid="uid://dyysfxgdx3tjb" path="res://sky.gdshader" id="1_rujvi"]
+[ext_resource type="PackedScene" uid="uid://db5vtnv2kffga" path="res://shed.tscn" id="1_rvbka"]
 [ext_resource type="PackedScene" uid="uid://bsgjd4nsmouiv" path="res://3d models/trees/tree_06.tscn" id="2_8fobk"]
 [ext_resource type="PackedScene" uid="uid://byia83ocim6js" path="res://scenes/player_character.tscn" id="2_lscal"]
 [ext_resource type="PackedScene" uid="uid://cjnrpwoo7ri8e" path="res://3d models/trees/tree_01.tscn" id="3_11pt6"]
@@ -13,9 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b4jppir7cfejv" path="res://breaker_box.tscn" id="9_ijcf8"]
 [ext_resource type="PackedScene" uid="uid://ygf5ld8cbgji" path="res://light_manager.tscn" id="9_sd6n8"]
 [ext_resource type="Script" uid="uid://bxeqlygxow2lo" path="res://musics/musicmanager.gd" id="13_rvbka"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_8fobk"]
-size = Vector3(10, 3, 10)
+[ext_resource type="PackedScene" uid="uid://bacxq4ateb1oc" path="res://3d models/misc/wildlife_entity.tscn" id="15_j5urc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7aj1g"]
 shader = ExtResource("1_rujvi")
@@ -50,17 +49,14 @@ polygons = [PackedInt32Array(2, 9, 3), PackedInt32Array(3, 9, 8), PackedInt32Arr
 
 [node name="level" type="Node3D" parent="."]
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="level"]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -29.188408, -2.5665293, 31.505924)
-mesh = SubResource("BoxMesh_8fobk")
+[node name="shed" parent="level" instance=ExtResource("1_rvbka")]
+transform = Transform3D(-0.75, 0, 1.13246855e-07, 0, 0.75, 0, -1.13246855e-07, 0, -0.75, -29.188408, -2.4665294, 31.505924)
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="level"]
-transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -39.587467, -2.5665274, -37.646217)
-mesh = SubResource("BoxMesh_8fobk")
+[node name="shed2" parent="level" instance=ExtResource("1_rvbka")]
+transform = Transform3D(0.56568545, 0, 0.56568545, 0, 0.8, 0, -0.56568545, 0, 0.56568545, -39.587467, -2.9665272, -37.646217)
 
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="level"]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 8.34749, -3.0979433, -39.704712)
-mesh = SubResource("BoxMesh_8fobk")
+[node name="shed3" parent="level" instance=ExtResource("1_rvbka")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 8.34749, -3.0979433, -39.704712)
 
 [node name="trees" type="Node" parent="level"]
 
@@ -823,26 +819,135 @@ navigation_mesh = SubResource("NavigationMesh_sd6n8")
 [node name="phototaxis_terrain" parent="NavigationRegion3D" instance=ExtResource("5_2vian")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.536743e-07, -1, 0)
 
+[node name="main_building" parent="NavigationRegion3D" instance=ExtResource("4_abddk")]
+
+[node name="poster" parent="NavigationRegion3D/main_building/posters" index="0"]
+surface_material_override/0 = null
+
+[node name="poster2" parent="NavigationRegion3D/main_building/posters" index="1"]
+surface_material_override/0 = null
+
+[node name="poster3" parent="NavigationRegion3D/main_building/posters" index="2"]
+surface_material_override/0 = null
+
+[node name="poster4" parent="NavigationRegion3D/main_building/posters" index="3"]
+surface_material_override/0 = null
+
+[node name="poster5" parent="NavigationRegion3D/main_building/posters" index="4"]
+surface_material_override/0 = null
+
+[node name="poster6" parent="NavigationRegion3D/main_building/posters" index="5"]
+surface_material_override/0 = null
+
+[node name="poster7" parent="NavigationRegion3D/main_building/posters" index="6"]
+surface_material_override/0 = null
+
+[node name="poster8" parent="NavigationRegion3D/main_building/posters" index="7"]
+surface_material_override/0 = null
+
+[node name="poster9" parent="NavigationRegion3D/main_building/posters" index="8"]
+surface_material_override/0 = null
+
+[node name="poster10" parent="NavigationRegion3D/main_building/posters" index="9"]
+surface_material_override/0 = null
+
+[node name="poster11" parent="NavigationRegion3D/main_building/posters" index="10"]
+surface_material_override/0 = null
+
+[node name="poster12" parent="NavigationRegion3D/main_building/posters" index="11"]
+surface_material_override/0 = null
+
+[node name="poster13" parent="NavigationRegion3D/main_building/posters" index="12"]
+surface_material_override/0 = null
+
+[node name="poster14" parent="NavigationRegion3D/main_building/posters" index="13"]
+surface_material_override/0 = null
+
+[node name="poster16" parent="NavigationRegion3D/main_building/posters" index="14"]
+surface_material_override/0 = null
+
+[node name="poster17" parent="NavigationRegion3D/main_building/posters" index="15"]
+surface_material_override/0 = null
+
+[node name="poster18" parent="NavigationRegion3D/main_building/posters" index="16"]
+surface_material_override/0 = null
+
+[node name="poster19" parent="NavigationRegion3D/main_building/posters" index="17"]
+surface_material_override/0 = null
+
+[node name="poster20" parent="NavigationRegion3D/main_building/posters" index="18"]
+surface_material_override/0 = null
+
+[node name="BreakerBox" parent="NavigationRegion3D/main_building" node_paths=PackedStringArray("attached_electronics") instance=ExtResource("9_ijcf8")]
+transform = Transform3D(-1.0927847e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.0927847e-08, 36.6, 1.3, 11.2)
+attached_electronics = [NodePath("../ceiling/lights/ceiling_light13"), NodePath("../ceiling/lights/ceiling_light14"), NodePath("../ceiling/lights/ceiling_light15"), NodePath("../ceiling/lights/ceiling_light16"), NodePath("../ceiling/lights/ceiling_light17"), NodePath("../ceiling/lights/ceiling_light18"), NodePath("../ceiling/lights/ceiling_light21"), NodePath("../ceiling/lights/ceiling_light22"), NodePath("../ceiling/lights/ceiling_light19"), NodePath("../ceiling/lights/ceiling_light20"), NodePath("../ceiling/lights/ceiling_light6"), NodePath("../ceiling/lights/ceiling_light10")]
+
+[node name="BreakerBox2" parent="NavigationRegion3D/main_building" node_paths=PackedStringArray("attached_electronics") instance=ExtResource("9_ijcf8")]
+transform = Transform3D(-1.0927847e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.0927847e-08, 25.999998, 1.3, -9.500001)
+attached_electronics = [NodePath("../ceiling/lights/ceiling_light2"), NodePath("../ceiling/lights/ceiling_light3"), NodePath("../ceiling/lights/ceiling_light4"), NodePath("../ceiling/lights/ceiling_light11"), NodePath("../ceiling/lights/ceiling_light12"), NodePath("../ceiling/lights/ceiling_light5"), NodePath("../ceiling/lights/ceiling_light9"), NodePath("../ceiling/lights/ceiling_light7"), NodePath("../ceiling/lights/ceiling_light8")]
+
 [node name="BreakerBox" parent="NavigationRegion3D" node_paths=PackedStringArray("attached_electronics") instance=ExtResource("9_ijcf8")]
-transform = Transform3D(-0.25, 0, -2.1855694e-08, 0, 0.25, 0, 2.1855694e-08, 0, -0.25, 7.907346, 0.64322555, 0.898263)
+transform = Transform3D(0.24904867, 0, 0.021788932, 0, 0.25, 0, -0.021788932, 0, 0.24904867, 15.171839, -0.55677444, -30.033653)
 attached_electronics = [NodePath("lightpost"), NodePath("lightpost2"), NodePath("lightpost3"), NodePath("lightpost4")]
 
 [node name="lightpost" parent="NavigationRegion3D/BreakerBox" instance=ExtResource("7_oh6h3")]
-transform = Transform3D(2.43732, 0, 7.619677, 0, 8, 0, -7.619677, 0, 2.43732, -1.2818336, -6.641027, 14.263903)
+transform = Transform3D(-3.0921433, 0, -7.3782563, 0, 8, 0, 7.3782563, 0, -3.0921433, -37.21084, -1.841027, 106.62637)
 
 [node name="lightpost2" parent="NavigationRegion3D/BreakerBox" instance=ExtResource("7_oh6h3")]
-transform = Transform3D(-1.62093, 0, 7.834066, 0, 8, 0, -7.834066, 0, -1.62093, -17.233017, -10.571241, 68.76277)
+transform = Transform3D(0.9319789, 0, -7.945529, 0, 8, 0, 7.945529, 0, 0.9319789, -16.570469, -5.771241, 53.72512)
 
 [node name="lightpost3" parent="NavigationRegion3D/BreakerBox" instance=ExtResource("7_oh6h3")]
-transform = Transform3D(-5.0870104, 0, -6.174328, 0, 8, 0, 6.174328, 0, -5.0870104, 32.431973, -11.621548, 114.45432)
+transform = Transform3D(5.6057806, 0, 5.7074714, 0, 8, 0, -5.7074714, 0, 5.6057806, -62.0642, -6.8215475, 3.8788528)
 
 [node name="lightpost4" parent="NavigationRegion3D/BreakerBox" instance=ExtResource("7_oh6h3")]
-transform = Transform3D(-0.36025193, 0, 7.991884, 0, 8, 0, -7.991884, 0, -0.36025193, -25.903015, -10.00831, 126.67665)
+transform = Transform3D(-0.3376568, 0, -7.9928718, 0, 8, 0, 7.9928718, 0, -0.3376568, -2.8859406, -5.20831, -3.2127457)
 
-[node name="main_building" parent="NavigationRegion3D" instance=ExtResource("4_abddk")]
+[node name="BreakerBox2" parent="NavigationRegion3D" node_paths=PackedStringArray("attached_electronics") instance=ExtResource("9_ijcf8")]
+transform = Transform3D(-0.06470476, 0, -0.24148145, 0, 0.25, 0, 0.24148145, 0, -0.06470476, -30.55302, -1, -37.80684)
+attached_electronics = [NodePath("lightpost5"), NodePath("lightpost6"), NodePath("lightpost7"), NodePath("lightpost8"), NodePath("lightpost9")]
+
+[node name="lightpost5" parent="NavigationRegion3D/BreakerBox2" instance=ExtResource("7_oh6h3")]
+transform = Transform3D(2.416429, 0, -7.626328, 0, 8, 0, 7.626328, 0, 2.416429, 80.71402, -1.035408, -103.5096)
+
+[node name="lightpost6" parent="NavigationRegion3D/BreakerBox2" instance=ExtResource("7_oh6h3")]
+transform = Transform3D(-0.36025143, 0, 7.991885, 0, 8, 0, -7.991885, 0, -0.36025143, 1.2634277, -5.035408, -3.0935059)
+
+[node name="lightpost7" parent="NavigationRegion3D/BreakerBox2" instance=ExtResource("7_oh6h3")]
+transform = Transform3D(-7.626329, 0, -2.4164283, 0, 8, 0, 2.4164283, 0, -7.626329, 75.982124, -1.035408, 6.9555054)
+
+[node name="lightpost8" parent="NavigationRegion3D/BreakerBox2" instance=ExtResource("7_oh6h3")]
+transform = Transform3D(7.8128085, 0, -1.7204765, 0, 8, 0, 1.7204765, 0, 7.8128085, 110.30952, -0.23540783, -77.20047)
+
+[node name="lightpost9" parent="NavigationRegion3D/BreakerBox2" instance=ExtResource("7_oh6h3")]
+transform = Transform3D(1.7204766, 0, 7.812809, 0, 8, 0, -7.812809, 0, 1.7204766, 23.579056, -2.635408, -55.341194)
+
+[node name="BreakerBox3" parent="NavigationRegion3D" node_paths=PackedStringArray("attached_electronics") instance=ExtResource("9_ijcf8")]
+transform = Transform3D(-0.24148145, 0, -0.06470478, 0, 0.25, 0, 0.06470478, 0, -0.24148145, -41.3, 0.3, 15.8)
+attached_electronics = [NodePath("lightpost"), NodePath("lightpost2"), NodePath("lightpost3"), NodePath("lightpost4")]
+
+[node name="lightpost" parent="NavigationRegion3D/BreakerBox3" instance=ExtResource("7_oh6h3")]
+transform = Transform3D(-6.9282036, 0, -3.9999986, 0, 8, 0, 3.9999986, 0, -6.9282036, -37.958206, -6, 79.06994)
+
+[node name="lightpost2" parent="NavigationRegion3D/BreakerBox3" instance=ExtResource("7_oh6h3")]
+transform = Transform3D(9.536743e-07, 0, 8, 0, 8, 0, -8, 0, 9.536743e-07, -93.56039, -6, 24.303223)
+
+[node name="lightpost3" parent="NavigationRegion3D/BreakerBox3" instance=ExtResource("7_oh6h3")]
+transform = Transform3D(6.9282045, 0, 3.9999988, 0, 8, 0, -3.9999988, 0, 6.9282045, -54.03911, -8, -58.28194)
+
+[node name="lightpost4" parent="NavigationRegion3D/BreakerBox3" instance=ExtResource("7_oh6h3")]
+transform = Transform3D(-2.1457672e-06, 0, -8.000001, 0, 8, 0, 8.000001, 0, -2.1457672e-06, -2.5726166, -5.2, -3.0804787)
+
+[node name="wildlife_entity" parent="NavigationRegion3D" instance=ExtResource("15_j5urc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.22633, -0.75799835, -7.6117215)
+
+[node name="wildlife_entity2" parent="NavigationRegion3D" instance=ExtResource("15_j5urc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.679844, -1.3032322, -24.645535)
 
 [node name="musicmanager" type="Node" parent="." node_paths=PackedStringArray("audio_manager")]
 script = ExtResource("13_rvbka")
 audio_manager = NodePath("AudioStreamPlayer")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="musicmanager"]
+
+[editable path="NavigationRegion3D/main_building"]
+[editable path="NavigationRegion3D/main_building/ceiling/lights/ceiling_light10"]
