@@ -15,6 +15,7 @@ enum LightState {
 	OFF
 }
 @export var light_parents:Array[Node3D]
+@export var particle_agents:Array[GPUParticles3D]
 @export var total_time_on:float = 13.0
 
 # time in seconds at full strength
@@ -214,6 +215,8 @@ func _set_lights_visible(_visible: bool):
 				light.light_color = original_light_color[lights.find(light)]
 			else:
 				light.light_energy = 0.0
+	for particles in particle_agents:
+		particles.emitting = _visible
 
 # Public API: Manually deactivate lights (skip to OFF state)
 func deactivate():
