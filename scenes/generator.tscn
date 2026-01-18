@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0h4xhxeqqyo0"]
+[gd_scene load_steps=4 format=3 uid="uid://c0h4xhxeqqyo0"]
+
+[ext_resource type="Script" uid="uid://b2gi6wjsbfgp3" path="res://scenes/generator.gd" id="1_5yxne"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2isyr"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_5yxne"]
 
 [node name="Generator" type="StaticBody3D"]
+script = ExtResource("1_5yxne")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_2isyr")

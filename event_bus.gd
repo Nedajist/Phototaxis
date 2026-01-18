@@ -2,6 +2,12 @@
 # class_name EventBus 
 extends Node
 
+signal mothster_attempt_pickup
+signal gasoline_attempt_pickup
+signal mothster_picked_up
+signal gasoline_picked_up
+signal mothster_used
+signal gasoline_used
 signal sprint_changed
 signal interaction_progress
 signal interaction_complete
@@ -16,3 +22,9 @@ func silence_warnings() -> void:
 	interaction_complete.emit()
 	no_interactable_in_range.emit()
 	interactables_in_range.emit()
+	mothster_attempt_pickup.emit()
+	gasoline_attempt_pickup.emit()
+	mothster_picked_up.emit()
+	gasoline_picked_up.emit()
+	mothster_used.emit()
+	gasoline_used.emit()

@@ -31,7 +31,7 @@ func _process(delta):
 		match behavior:
 			Mode.Random:
 				target = randi_range(0, light_sources.size() - 1)
-				print(target)
+				#print(target)
 			Mode.Top_Most:
 				target = 0
 		light_sources[target].selected_to_break = true

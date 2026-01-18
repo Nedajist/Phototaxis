@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cuj6wqediitwk"]
+[gd_scene load_steps=11 format=3 uid="uid://cuj6wqediitwk"]
 
 [ext_resource type="PackedScene" uid="uid://byia83ocim6js" path="res://scenes/player_character.tscn" id="1_4nm3s"]
 [ext_resource type="PackedScene" uid="uid://dqqqxrwirr7dw" path="res://outside_floodlight.tscn" id="1_mhwm6"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://c0h4xhxeqqyo0" path="res://scenes/generator.tscn" id="5_skpo8"]
 [ext_resource type="PackedScene" uid="uid://bt1tbegimor52" path="res://scenes/mothster_energy.tscn" id="7_hhg80"]
 [ext_resource type="PackedScene" uid="uid://dqoqgm2g1es0y" path="res://scenes/gasoline_canister.tscn" id="7_rnwwe"]
-[ext_resource type="PackedScene" uid="uid://p2agvyulx204" path="res://scenes/glowstick.tscn" id="8_vr6ee"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vonw3"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -187,8 +186,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7577596, 4.7683716e-07, 1.
 [node name="MothsterEnergy" parent="." instance=ExtResource("7_hhg80")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.457934, 4.7683716e-07, 1.1785235)
 
+[node name="MothsterEnergy2" parent="." instance=ExtResource("7_hhg80")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9634514, 4.7683716e-07, 3.6209402)
+
 [node name="GasolineCanister" parent="." instance=ExtResource("7_rnwwe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7115908, 0.090500474, 1.193625)
 
-[node name="Glowstick" parent="." instance=ExtResource("8_vr6ee")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8203826, 0, 3.6294057)
+[node name="GasolineCanister2" parent="." instance=ExtResource("7_rnwwe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.086977005, 0.090500474, 2.47924)
