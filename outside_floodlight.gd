@@ -8,6 +8,7 @@ enum LightState {
 	ON,
 	BLINK_LOW,
 	BLINK_HIGH,
+	BURNING_OUT,
 	OFF
 }
 
@@ -32,7 +33,11 @@ var interval_blink_high: float = 0.5
 var blink_fade_out: float = 0.2
 var blink_fade_in: float = 0.05
 
+#time in seconds for a burnout
+var burnout_time = 5
+
 var selected_to_break: bool = false
+var gas_low: bool = false
 
 # State machine variables
 var current_state: LightState = LightState.ON
@@ -41,6 +46,7 @@ var blink_timer: float = 0.0
 var is_blinking_off: bool = false
 var lights: Array = []
 var original_light_energy: Array = []
+var original_light_color: Array = []
 
 func _ready():
 	duration_on = 4.0 * total_time_on / 13.0
@@ -57,6 +63,8 @@ func _process(delta):
 			_process_blink_low_state(delta)
 		LightState.BLINK_HIGH:
 			_process_blink_high_state(delta)
+		LightState.BURNING_OUT:
+			_process_burnout_state(delta)
 		LightState.OFF:
 			pass  # Lights stay off
 
@@ -64,6 +72,7 @@ func _process(delta):
 func _cache_lights():
 	lights.clear()
 	original_light_energy.clear()
+	original_light_color.clear()
 	
 	var light_parents = [
 		$main_box/lightpost/lightpost_crossbar/light_1,
@@ -76,6 +85,7 @@ func _cache_lights():
 			if child is Light3D:
 				lights.append(child)
 				original_light_energy.append(child.light_energy)
+				original_light_color.append(child.light_color)
 
 # Start a new state
 func _start_state(new_state: LightState):
@@ -93,6 +103,19 @@ func _start_state(new_state: LightState):
 			_set_lights_visible(true)
 		LightState.OFF:
 			_set_lights_visible(false)
+		LightState.BURNING_OUT:
+			_set_lights_visible(true)
+
+func _process_burnout_state(delta):
+	state_timer += delta
+	for light in lights:
+		if light is Light3D:
+			light.light_energy += 2 * delta
+			light.light_color.b8 = min(light.light_color.b8 + 255 * delta, 255)
+				
+	#255 - 85 = 140 across 5 seconds
+	if state_timer >= burnout_time:
+		_start_state(LightState.OFF)
 
 # Process ON state: flicker lights randomly
 func _process_on_state(delta):
@@ -106,6 +129,8 @@ func _process_on_state(delta):
 	
 	# Transition to BLINK_LOW after duration
 	if selected_to_break:
+		_start_state(LightState.BURNING_OUT)
+	elif gas_low:
 		_start_state(LightState.BLINK_LOW)
 
 # Process BLINK_LOW state: occasional blinks
@@ -176,6 +201,7 @@ func _set_lights_visible(_visible: bool):
 			light.visible = _visible
 			if visible:
 				light.light_energy = original_light_energy[lights.find(light)]
+				light.light_color = original_light_color[lights.find(light)]
 			else:
 				light.light_energy = 0.0
 

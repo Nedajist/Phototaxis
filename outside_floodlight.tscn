@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://5b1hobitnycn" path="res://materials/diamond_plate/DiamondPlate009_1K-JPG_Metalness.jpg" id="4_bsrld"]
 [ext_resource type="Texture2D" uid="uid://b4vdx4f2sdi17" path="res://materials/diamond_plate/DiamondPlate009_1K-JPG_NormalGL.jpg" id="5_ofhi2"]
 [ext_resource type="Texture2D" uid="uid://dvekvfo3y4vwj" path="res://materials/diamond_plate/DiamondPlate009_1K-JPG_Roughness.jpg" id="6_p83cb"]
-[ext_resource type="Material" uid="uid://bhirbjyvgu3le" path="res://materials/diamond_plate/DiamondPlate009_1K-JPG.tres" id="7_ahoyo"]
+[ext_resource type="Material" uid="uid://bvik250qe0chs" path="res://materials/diamond_plate/DiamondPlate009_1K-JPG.tres" id="7_ahoyo"]
 [ext_resource type="AudioStream" uid="uid://cdgpsacdd2w88" path="res://sfx/260555__lookimadeathing__basic-fire-whoosh-2.mp3" id="9_holxg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ncbd"]
@@ -125,10 +125,12 @@ skeleton = NodePath("../../../..")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="main_box/lightpost/lightpost_crossbar/light_1"]
 transform = Transform3D(0.9659258, 0.22414386, 0.12940955, -0.12940954, -0.014754623, 0.9914814, 0.22414389, -0.97444445, 0.014754415, 0, 0, 0)
+light_color = Color(1, 1, 0.33333334, 1)
 spot_range = 10.0
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="main_box/lightpost/lightpost_crossbar/light_1"]
 transform = Transform3D(1, 0, 0, 0, 0.8660254, -0.5, 0, 0.5, 0.8660254, 0, -0.08660245, -0.049999952)
+light_color = Color(1, 1, 0.33333334, 1)
 light_energy = 0.5
 omni_range = 1.0
 
@@ -139,6 +141,7 @@ skeleton = NodePath("../../../..")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="main_box/lightpost/lightpost_crossbar/light_2"]
 transform = Transform3D(1, 0, 0, 0, 0.8660254, -0.5, 0, 0.5, 0.8660254, 0, -0.08660245, -0.049999952)
+light_color = Color(1, 1, 0.33333334, 1)
 light_energy = 0.5
 
 [node name="light_3" type="MeshInstance3D" parent="main_box/lightpost/lightpost_crossbar"]
@@ -148,10 +151,12 @@ skeleton = NodePath("../../../..")
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="main_box/lightpost/lightpost_crossbar/light_3"]
 transform = Transform3D(0.9659258, -0.22414386, -0.12940955, 0.12940954, -0.014754623, 0.9914814, -0.22414389, -0.97444445, 0.014754415, 0, 0, 0)
+light_color = Color(1, 1, 0.33333334, 1)
 spot_range = 10.0
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="main_box/lightpost/lightpost_crossbar/light_3"]
 transform = Transform3D(1, 0, 0, 0, 0.8660254, -0.5, 0, 0.5, 0.8660254, 0, -0.08660245, -0.049999952)
+light_color = Color(1, 1, 0.33333334, 1)
 light_energy = 0.5
 omni_range = 1.0
 
