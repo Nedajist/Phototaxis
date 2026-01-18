@@ -1,7 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://cplgatc870qhj"]
+[gd_scene load_steps=21 format=3 uid="uid://cplgatc870qhj"]
 
 [ext_resource type="Texture2D" uid="uid://bb0h6fvmi65a6" path="res://materials/diamond_plate/DiamondPlate009_1K-JPG_Color.jpg" id="1_4uxog"]
-[ext_resource type="Script" path="res://outside_floodlight.gd" id="1_6qv3f"]
+[ext_resource type="Script" uid="uid://4g1vmj512wdd" path="res://outside_floodlight.gd" id="1_6qv3f"]
 [ext_resource type="Texture2D" uid="uid://cxu0xotdw620h" path="res://materials/diamond_plate/DiamondPlate009_1K-JPG_AmbientOcclusion.jpg" id="2_6qv3f"]
 [ext_resource type="Texture2D" uid="uid://d4nw1ly6v1v6n" path="res://materials/diamond_plate/DiamondPlate009_1K-JPG_Displacement.jpg" id="3_holxg"]
 [ext_resource type="Texture2D" uid="uid://5b1hobitnycn" path="res://materials/diamond_plate/DiamondPlate009_1K-JPG_Metalness.jpg" id="4_bsrld"]
@@ -29,11 +29,8 @@ heightmap_texture = ExtResource("3_holxg")
 uv1_triplanar = true
 uv2_triplanar = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_33j6r"]
-next_pass = SubResource("StandardMaterial3D_1ncbd")
-
 [sub_resource type="BoxMesh" id="BoxMesh_grmg1"]
-material = SubResource("StandardMaterial3D_33j6r")
+material = SubResource("StandardMaterial3D_1ncbd")
 size = Vector3(0.75, 0.75, 1.15)
 
 [sub_resource type="BoxMesh" id="BoxMesh_n0i55"]
