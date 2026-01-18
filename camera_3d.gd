@@ -37,7 +37,7 @@ func _process(_delta):
 		if object.is_in_group("Enemies"):
 			moth_spotted = true
 			looking_at_moth = true
-			emit_signal("spotted_moth")
+			emit_signal("spotted_moth", object)
 		if object.name == "HoldPlayerCamera":
 			moth_spotted = true
 	#print(moth_spotted)

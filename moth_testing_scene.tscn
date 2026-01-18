@@ -64,6 +64,11 @@ shape = SubResource("BoxShape3D_bu470")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2510767, 0.49356413, 2.6368637)
 player_character = NodePath("../PlayerCharacter")
 
+[node name="PlayerCameraAnchor" parent="MothEnemy" index="11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.129085, 0, 0)
+
 [node name="PlayerCharacter" parent="." node_paths=PackedStringArray("camera_lookat_target") instance=ExtResource("3_bu470")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1619954, 0.9999995, 15.071329)
 camera_lookat_target = NodePath("../MothEnemy")
+
+[editable path="MothEnemy"]
