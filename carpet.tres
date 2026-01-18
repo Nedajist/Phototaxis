@@ -1,7 +1,7 @@
 [gd_resource type="VisualShader" load_steps=16 format=3 uid="uid://cb0kf83pluoej"]
 
-[ext_resource type="Texture2D" uid="uid://cy413c5kglc8v" path="res://carpet_lightgray_01.png" id="1_d7a2o"]
-[ext_resource type="Texture2D" uid="uid://qq78bgdjwkhw" path="res://carpet_brown_01.png" id="2_rvbuw"]
+[ext_resource type="Texture2D" uid="uid://cy413c5kglc8v" path="res://3d models/textures/carpet_lightgray_01.png" id="1_d7a2o"]
+[ext_resource type="Texture2D" uid="uid://qq78bgdjwkhw" path="res://3d models/textures/carpet_brown_01.png" id="2_rvbuw"]
 
 [sub_resource type="VisualShaderNodeMix" id="VisualShaderNodeMix_xo501"]
 

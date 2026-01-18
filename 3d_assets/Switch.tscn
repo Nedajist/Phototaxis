@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://4ke43iuje6r4"]
 
 [ext_resource type="Script" uid="uid://oxxttutymjt1" path="res://3d_assets/switch.gd" id="1_kythj"]
-[ext_resource type="Material" uid="uid://bcd70ojs537if" path="res://textures/Slightly_rusty/Metal053B_1K-JPG.tres" id="1_sakex"]
+[ext_resource type="Material" uid="uid://dpt0th2c3ik16" path="res://textures/Slightly_rusty/Metal053B_1K-JPG.tres" id="1_sakex"]
 [ext_resource type="Texture2D" uid="uid://cn1da2ufyjww3" path="res://textures/Slightly_rusty/Metal053B_1K-JPG_Displacement.jpg" id="2_2lo1i"]
 [ext_resource type="AudioStream" uid="uid://cgeqimiqmrjs7" path="res://sfx/131599__echocinematics__kill-switch-large-breaker-switch.mp3" id="4_s2s2w"]
 

@@ -2,10 +2,15 @@ extends CanvasLayer
 @onready var progress_bar: ProgressBar = %ProgressBar
 @onready var radial_progress_bar: TextureProgressBar = %RadialProgressBar
 @onready var interact_label: Label = %InteractLabel
+@onready var gasoline_texture_rect: TextureRect = %GasolineTextureRect
+@onready var mothster_texture_rect: TextureRect = %MothsterTextureRect
+@onready var mothster_label: Label = %MothsterLabel
 
 # time in seconds to open / close
 var blinking = false
 var blink_progress = 0.0
+var blink_signal_fired:bool = false
+signal blink_signal
 # out of 300
 # 100 to close, 100 to pause, 100 to open
 @export var blink_close_time = 0.25 # seconds to close
@@ -24,6 +29,11 @@ func _ready() -> void:
 	EventBus.interaction_complete.connect(_interaction_complete)
 	EventBus.no_interactable_in_range.connect(_no_interactable_in_range)
 	EventBus.interactables_in_range.connect(_interactables_in_range)
+	EventBus.gasoline_picked_up.connect(gasoline_pickup)
+	EventBus.gasoline_used.connect(gasoline_used)
+	EventBus.mothster_picked_up.connect(mothster_pickup)
+	EventBus.mothster_used.connect(mothster_used)
+	EventBus.mothster_ended.connect(mothster_ended)
 	
 	# Initialize progress bars to fully open (0%)
 	blink_top_bottom_progress_bar.value = 0
@@ -32,9 +42,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	# Test to trigger blink every 3 seconds
 	#time_since_last_blink += delta
-	#if time_since_last_blink >= blink_interval and not blinking:
-		#blink()
-		#time_since_last_blink = 0.0
+	if Input.is_action_just_pressed("spacebar") and not blinking:
+		blink_signal_fired = false
+		blink()
+		time_since_last_blink = 0.0
 	
 	_handle_blink(delta)
 
@@ -61,6 +72,12 @@ func blink() -> void:
 
 func _handle_blink(delta: float) -> void:
 	if blinking:
+		if blink_progress <= 200.0 and !blink_signal_fired:
+			var rng = RandomNumberGenerator.new()
+			if rng.randi_range(1,6) < 2:
+				print("asd")
+				blink_signal.emit()
+			blink_signal_fired = true
 		# Animate the blink
 		if blink_progress < 100.0:
 			# Closing phase (0 to 100)
@@ -96,3 +113,17 @@ func _handle_blink(delta: float) -> void:
 			var opening_progress = 300.0 - blink_progress
 			blink_top_bottom_progress_bar.value = opening_progress
 			blink_bottom_top_progress_bar.value = opening_progress
+
+func mothster_pickup():
+	mothster_label.visible = true
+	mothster_texture_rect.visible = true
+func mothster_used():
+	mothster_label.visible = false
+	mothster_texture_rect.visible = false
+	progress_bar.modulate = Color.GREEN
+func mothster_ended():
+	progress_bar.modulate = Color.WHITE
+func gasoline_pickup():
+	gasoline_texture_rect.visible = true
+func gasoline_used():
+	gasoline_texture_rect.visible = false

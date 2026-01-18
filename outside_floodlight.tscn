@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dqqqxrwirr7dw"]
+[gd_scene load_steps=22 format=3 uid="uid://dqqqxrwirr7dw"]
 
 [ext_resource type="Texture2D" uid="uid://bb0h6fvmi65a6" path="res://materials/diamond_plate/DiamondPlate009_1K-JPG_Color.jpg" id="1_4uxog"]
 [ext_resource type="Script" uid="uid://4g1vmj512wdd" path="res://outside_floodlight.gd" id="1_6qv3f"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://dvekvfo3y4vwj" path="res://materials/diamond_plate/DiamondPlate009_1K-JPG_Roughness.jpg" id="6_p83cb"]
 [ext_resource type="Material" uid="uid://bvik250qe0chs" path="res://materials/diamond_plate/DiamondPlate009_1K-JPG.tres" id="7_ahoyo"]
 [ext_resource type="AudioStream" uid="uid://cdgpsacdd2w88" path="res://sfx/260555__lookimadeathing__basic-fire-whoosh-2.mp3" id="9_holxg"]
-[ext_resource type="Texture2D" uid="uid://cwtx4hvqhd33" path="res://2d_assets/Front.png" id="10_bsrld"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ncbd"]
 albedo_color = Color(1, 1, 0.37254903, 1)
@@ -74,49 +73,6 @@ size = Vector3(0.1, 0.1, 2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_vquj6"]
 size = Vector3(1, 0.1, 0.1)
 
-[sub_resource type="Curve" id="Curve_ofhi2"]
-_data = [Vector2(0, 0), 0.0, 2.8224373, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -3.5280464, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="CurveTexture" id="CurveTexture_gd0tl"]
-curve = SubResource("Curve_ofhi2")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_p83cb"]
-emission_shape = 3
-emission_box_extents = Vector3(0.5, 0.1, 0.1)
-angle_min = -4.9999895
-angle_max = 5.000011
-direction = Vector3(0, 0, 0)
-initial_velocity_min = 0.099999994
-initial_velocity_max = 0.5
-orbit_velocity_min = 9.49949e-08
-orbit_velocity_max = 1.0000001
-gravity = Vector3(0, 0, 0)
-radial_accel_min = -0.5000022
-radial_accel_max = 0.49999776
-damping_min = 0.1
-damping_max = 0.1
-scale_max = 1.5
-scale_curve = SubResource("CurveTexture_gd0tl")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_frg8s"]
-transparency = 2
-alpha_scissor_threshold = 0.5
-alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("10_bsrld")
-rim = 0.5
-backlight_enabled = true
-backlight = Color(0.10934054, 0.109340556, 0.10934054, 1)
-billboard_mode = 3
-billboard_keep_scale = true
-particles_anim_h_frames = 1
-particles_anim_v_frames = 1
-particles_anim_loop = false
-
-[sub_resource type="QuadMesh" id="QuadMesh_ahoyo"]
-material = SubResource("StandardMaterial3D_frg8s")
-size = Vector2(0.075, 0.075)
-
 [node name="lightpost" type="Node3D"]
 script = ExtResource("1_6qv3f")
 
@@ -169,10 +125,12 @@ skeleton = NodePath("../../../..")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="main_box/lightpost/lightpost_crossbar/light_1"]
 transform = Transform3D(0.9659258, 0.22414386, 0.12940955, -0.12940954, -0.014754623, 0.9914814, 0.22414389, -0.97444445, 0.014754415, 0, 0, 0)
+light_color = Color(1, 1, 0.33333334, 1)
 spot_range = 10.0
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="main_box/lightpost/lightpost_crossbar/light_1"]
 transform = Transform3D(1, 0, 0, 0, 0.8660254, -0.5, 0, 0.5, 0.8660254, 0, -0.08660245, -0.049999952)
+light_color = Color(1, 1, 0.33333334, 1)
 light_energy = 0.5
 omni_range = 1.0
 
@@ -183,6 +141,7 @@ skeleton = NodePath("../../../..")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="main_box/lightpost/lightpost_crossbar/light_2"]
 transform = Transform3D(1, 0, 0, 0, 0.8660254, -0.5, 0, 0.5, 0.8660254, 0, -0.08660245, -0.049999952)
+light_color = Color(1, 1, 0.33333334, 1)
 light_energy = 0.5
 
 [node name="light_3" type="MeshInstance3D" parent="main_box/lightpost/lightpost_crossbar"]
@@ -192,10 +151,12 @@ skeleton = NodePath("../../../..")
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="main_box/lightpost/lightpost_crossbar/light_3"]
 transform = Transform3D(0.9659258, -0.22414386, -0.12940955, 0.12940954, -0.014754623, 0.9914814, -0.22414389, -0.97444445, 0.014754415, 0, 0, 0)
+light_color = Color(1, 1, 0.33333334, 1)
 spot_range = 10.0
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="main_box/lightpost/lightpost_crossbar/light_3"]
 transform = Transform3D(1, 0, 0, 0, 0.8660254, -0.5, 0, 0.5, 0.8660254, 0, -0.08660245, -0.049999952)
+light_color = Color(1, 1, 0.33333334, 1)
 light_energy = 0.5
 omni_range = 1.0
 
@@ -216,10 +177,3 @@ shape = SubResource("BoxShape3D_vquj6")
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("9_holxg")
-
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.877281, 0.61171156)
-lifetime = 2.0
-preprocess = 2.0
-process_material = SubResource("ParticleProcessMaterial_p83cb")
-draw_pass_1 = SubResource("QuadMesh_ahoyo")

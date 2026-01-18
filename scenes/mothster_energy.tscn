@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bt1tbegimor52"]
+
+[ext_resource type="Script" uid="uid://duartlijh3y7p" path="res://scenes/mothster_energy.gd" id="1_61yne"]
+[ext_resource type="Texture2D" uid="uid://cigd3gck2s6oh" path="res://2d_assets/Mothster.png" id="1_mnxdw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q5ebi"]
+size = Vector3(0.4, 1, 0.4)
+
+[node name="MothsterEnergy" type="StaticBody3D"]
+script = ExtResource("1_61yne")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_q5ebi")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0.15887296, 0)
+billboard = 1
+texture = ExtResource("1_mnxdw")

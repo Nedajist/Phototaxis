@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2jfru6701df8"]
+[gd_scene load_steps=5 format=3 uid="uid://f4ilbe43h3yg"]
 
 [ext_resource type="PackedScene" uid="uid://dq66112hawpx3" path="res://moth_enemy/moth_enemy.tscn" id="1_vonw3"]
 [ext_resource type="PackedScene" uid="uid://c02im4b6l80gd" path="res://player_character.tscn" id="2_oi3di"]

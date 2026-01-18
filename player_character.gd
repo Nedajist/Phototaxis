@@ -4,7 +4,9 @@ extends CharacterBody3D
 @export var camera_lookat_target: CharacterBody3D
 @onready var flashlight: Node3D = %Flashlight
 @onready var interaction_area_3d: Area3D = %InteractionArea3D
-
+@onready var inventory_component: Node3D = %InventoryComponent
+@export var mothster_duration: float = 3.0
+var mothster_drunk = false
 @export var mouse_sensitivity = 0.002
 var camera_pitch: float = 0.0
 var flashlight_pitch: float = 0.0
@@ -25,6 +27,7 @@ var is_interacting: bool = false
 var look_at_moth = false
 
 func _ready() -> void:
+	EventBus.mothster_used.connect(mothster_used)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _process(delta: float) -> void:
@@ -71,7 +74,7 @@ func _physics_process(delta: float) -> void:
 	
 	if look_at_moth:
 		self.look_at(camera_lookat_target.transform.origin)
-		camera_pitch = clamp(camera_pitch, deg_to_rad(-15), deg_to_rad(15))
+		camera_pitch = clamp(camera_pitch, deg_to_rad(-5), deg_to_rad(5))
 
 	handle_player_movement(delta)
 
@@ -101,14 +104,16 @@ func handle_player_movement(delta) -> void:
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
-	if Input.is_action_pressed("shift") and sprint_meter > 1:
+	if Input.is_action_pressed("shift") and (sprint_meter > 1 or mothster_drunk):
 		sprinting = true
-		sprint_meter -= 1
-		sprint_meter = max(sprint_min, sprint_meter)
+		if not mothster_drunk:
+			sprint_meter -= 1
+			sprint_meter = max(sprint_min, sprint_meter)
 	else:
 		sprinting = false
-		sprint_meter += .25
-		sprint_meter = min(sprint_max, sprint_meter)
+		if not mothster_drunk:
+			sprint_meter += .25
+			sprint_meter = min(sprint_max, sprint_meter)
 		
 	EventBus.sprint_changed.emit(sprint_meter)
 	
@@ -154,3 +159,25 @@ func _complete_interaction() -> void:
 		interactable.interact()
 	
 	EventBus.interaction_complete.emit()
+
+
+func _on_camera_3d_moth_out_of_view():
+	look_at_moth = false
+
+func mothster_used():
+	mothster_drunk = true
+	# Set stamina to full
+	sprint_meter = sprint_max
+	EventBus.sprint_changed.emit(sprint_meter)
+	
+	# Create a timer for unlimited sprint duration
+	var timer = Timer.new()
+	timer.wait_time = mothster_duration
+	timer.one_shot = true
+	timer.timeout.connect(_on_mothster_timer_timeout)
+	add_child(timer)
+	timer.start()
+
+func _on_mothster_timer_timeout():
+	EventBus.mothster_ended.emit()
+	mothster_drunk = false
