@@ -57,23 +57,28 @@ func _light_deactivate(target):
 		deactivated_lights.append(target)
 
 func _gasoline_refilled():
-	print(deactivated_lights.size())
-	print(light_sources.size())
+	
+	#if any were still active, let them know
 	for light in light_sources:
 		light.gas_low = false
 		light.gas_critical = false
+		light.gas_empty = false
 	
 	#work from the back to prevent indexing errors
 	while deactivated_lights.size() > 0:
-		deactivated_lights.back().gas_low = false
-		deactivated_lights.back().gas_critical = false
-		if(deactivated_lights.back().has_method("activate")):
-			deactivated_lights.back().activate() #activate leads to a pop from the back
+		var target = deactivated_lights.back()
+		
+		target.gas_low = false
+		target.gas_critical = false
+		target.gas_empty = false
+		
+		if(target.has_method("activate")):
+			target.activate() #activate leads to a pop from the back
 
 func _gasoline_low():
 	for light in light_sources:
 		light.gas_low = true 
-	for light in deactivated_lights: #If a deactivated light gets turned on it should 
+	for light in deactivated_lights:
 		light.gas_low = true
 	
 func _gasoline_critical():
