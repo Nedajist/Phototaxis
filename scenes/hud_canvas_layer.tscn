@@ -1,84 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://c3gxebruu2cr8"]
+[gd_scene load_steps=5 format=3 uid="uid://cudbfausccvek"]
 
 [ext_resource type="Script" uid="uid://ehlsm8li3mo5" path="res://hud_canvas_layer.gd" id="1_5aj0g"]
 [ext_resource type="Texture2D" uid="uid://bvpjpyxhklcxs" path="res://2d_assets/progress_bar.png" id="2_5iisq"]
 [ext_resource type="Texture2D" uid="uid://cryi77eywewfx" path="res://2d_assets/grey_box.png" id="3_iu5xa"]
-[ext_resource type="Texture2D" uid="uid://ccq526l5340o8" path="res://moth_enemy/Normal Moth/Front.png" id="4_5u3oq"]
-[ext_resource type="Script" uid="uid://bau0yahd4je3l" path="res://scenes/jumpscare.gd" id="4_r572b"]
-
-[sub_resource type="Animation" id="Animation_uhibh"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_r572b"]
-resource_name = "fade_out_in"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("..:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.13333334, 0.75, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_1htod"]
-_data = {
-&"RESET": SubResource("Animation_uhibh"),
-&"fade_out_in": SubResource("Animation_r572b")
-}
-
-[sub_resource type="Animation" id="Animation_ih7kw"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 500)]
-}
-
-[sub_resource type="Animation" id="Animation_qlyun"]
-resource_name = "jumpscare"
-length = 0.15
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.14912418),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 500), Vector2(0, -300)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_g74xv"]
-_data = {
-&"RESET": SubResource("Animation_ih7kw"),
-&"jumpscare": SubResource("Animation_qlyun")
-}
+[ext_resource type="PackedScene" uid="uid://uaebcnnrolqd" path="res://scenes/jumpscare.tscn" id="4_5u3oq"]
 
 [node name="HudCanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_5aj0g")
@@ -222,54 +147,4 @@ size_flags_stretch_ratio = 10.0
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Jumpscare" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("4_r572b")
-
-[node name="Blackout" type="PanelContainer" parent="Jumpscare"]
-modulate = Color(0, 0, 0, 0)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="BlackBox" type="ColorRect" parent="Jumpscare/Blackout"]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 2
-color = Color(0, 0, 0, 1)
-
-[node name="BlackoutAnimationPlayer" type="AnimationPlayer" parent="Jumpscare/Blackout/BlackBox"]
-unique_name_in_owner = true
-libraries = {
-&"": SubResource("AnimationLibrary_1htod")
-}
-
-[node name="MothContainer" type="PanelContainer" parent="Jumpscare"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = 556.0
-offset_top = 608.0
-offset_right = 556.0
-offset_bottom = 608.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="Sprite2D" type="Sprite2D" parent="Jumpscare/MothContainer"]
-position = Vector2(0, 500)
-texture = ExtResource("4_5u3oq")
-
-[node name="MothContainerAnimationPlayer" type="AnimationPlayer" parent="Jumpscare/MothContainer/Sprite2D"]
-unique_name_in_owner = true
-root_node = NodePath("../..")
-libraries = {
-&"": SubResource("AnimationLibrary_g74xv")
-}
+[node name="Jumpscare" parent="." instance=ExtResource("4_5u3oq")]
