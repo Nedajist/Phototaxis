@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cyjfkujhlu7a8"]
+[gd_scene load_steps=19 format=3 uid="uid://cyjfkujhlu7a8"]
 
 [ext_resource type="Shader" uid="uid://dyysfxgdx3tjb" path="res://sky.gdshader" id="1_rujvi"]
 [ext_resource type="PackedScene" uid="uid://db5vtnv2kffga" path="res://shed.tscn" id="1_rvbka"]
@@ -12,7 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://bbfiq0efgxv51" path="res://3d models/barriers/wooden_fence_open_2.tscn" id="5_rvbka"]
 [ext_resource type="PackedScene" uid="uid://dqqqxrwirr7dw" path="res://outside_floodlight.tscn" id="7_oh6h3"]
 [ext_resource type="PackedScene" uid="uid://b4jppir7cfejv" path="res://breaker_box.tscn" id="9_ijcf8"]
-[ext_resource type="PackedScene" path="res://light_manager.tscn" id="9_sd6n8"]
+[ext_resource type="PackedScene" uid="uid://ygf5ld8cbgji" path="res://light_manager.tscn" id="9_sd6n8"]
+[ext_resource type="Script" uid="uid://bxeqlygxow2lo" path="res://musics/musicmanager.gd" id="13_rvbka"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7aj1g"]
 shader = ExtResource("1_rujvi")
@@ -880,3 +881,9 @@ transform = Transform3D(-2.1457672e-06, 0, -8.000001, 0, 8, 0, 8.000001, 0, -2.1
 
 [editable path="NavigationRegion3D/main_building"]
 [editable path="NavigationRegion3D/main_building/ceiling/lights/ceiling_light10"]
+
+[node name="musicmanager" type="Node" parent="." node_paths=PackedStringArray("audio_manager")]
+script = ExtResource("13_rvbka")
+audio_manager = NodePath("AudioStreamPlayer")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="musicmanager"]

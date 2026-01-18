@@ -114,9 +114,10 @@ particles_anim_loop = false
 material = SubResource("StandardMaterial3D_ofhi2")
 size = Vector2(0.25, 0.25)
 
-[node name="lightpost" type="Node3D" node_paths=PackedStringArray("light_parents")]
+[node name="lightpost" type="Node3D" node_paths=PackedStringArray("light_parents", "particle_agents")]
 script = ExtResource("1_6qv3f")
 light_parents = [NodePath("main_box/lightpost/lightpost_crossbar/light_1"), NodePath("main_box/lightpost/lightpost_crossbar/light_2"), NodePath("main_box/lightpost/lightpost_crossbar/light_3")]
+particle_agents = [NodePath("GPUParticles3D")]
 
 [node name="main_box" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, -0.5)
