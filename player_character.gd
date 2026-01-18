@@ -191,7 +191,6 @@ func _on_mothster_timer_timeout():
 func _player_blinked():
 	$BlinkTimer.start()
 	blink_safe_cooldown = true
-	print("BLINKED")
 
 func _on_blink_timer_timeout():
 	blink_safe_cooldown = false
