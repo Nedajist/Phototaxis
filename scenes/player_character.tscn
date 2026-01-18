@@ -46,5 +46,9 @@ shape = SubResource("BoxShape3D_4akcp")
 [node name="InventoryComponent" parent="." instance=ExtResource("5_uj7mf")]
 unique_name_in_owner = true
 
+[node name="BlinkTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="moth_out_of_view" from="Camera3D" to="." method="_on_camera_3d_moth_out_of_view"]
 [connection signal="spotted_moth" from="Camera3D" to="." method="_on_camera_3d_spotted_moth"]
+[connection signal="timeout" from="BlinkTimer" to="." method="_on_blink_timer_timeout"]

@@ -2,7 +2,6 @@ extends CharacterBody3D
 
 @export var player_character: CharacterBody3D
 @export var nav_agent: NavigationAgent3D
-signal Transitioned
 var player_ui:CanvasLayer
 var on_screen:bool = false
 var stalk_timer_active:bool = false
@@ -13,8 +12,9 @@ func _ready() -> void:
 			node.player=player_character
 		if "nav_agent" in node:
 			node.nav_agent=nav_agent
+	print(player_character)
 	player_ui = player_character.get_node("HudCanvasLayer")
-	player_ui.blink_signal.connect(_player_blinked)
+	player_ui.blink_signal_attract.connect(_player_blinked)
 
 func update_target_location(target_location) -> void:
 	nav_agent.target_position = target_location
@@ -25,22 +25,13 @@ func _physics_process(delta):
 		look_at(transform.origin + velocity, Vector3.UP)
 	
 func _on_vision_area_body_entered(body): #small sphere and cone detector check for physical objects 
-	print("moth has spotted: " + body.name)
+	#print("moth has spotted: " + body.name)
 	if body.name == "PlayerCharacter":
 		print("player_seen")
 		if randi_range(1,4)==1:
 			$"State Machine".current_state.Transitioned.emit($"State Machine".current_state, "MothChase")
 		else:
 			$"State Machine".current_state.Transitioned.emit($"State Machine".current_state, "MothStalk")
-
-
-func _on_light_sensitive_area_entered(area: Area3D) -> void: #large sphere collector checks for Area3Ds named MothLight
-	if area.name=="MothLight":
-		if !stalk_timer_active:
-			print("moth has felt the light shining")
-			$"State Machine".current_state.Transitioned.emit($"State Machine".current_state, "MothFollow")
-			$"State Machine/MothFollow".light=area
-
 
 func _on_moth_stalk_switch_to_chase() -> void:
 	$"State Machine".current_state.Transitioned.emit($"State Machine".current_state, "MothChase")
@@ -67,6 +58,7 @@ func _on_stalk_timer_timeout():
 func _on_kill_range_body_entered(body):
 	if body.name == "PlayerCharacter":
 		EventBus.jumpscare.emit()
+		%musicmanager._end_music()
 		get_tree().call_group("Enemies", "queue_free")
 		#body.jumpscare()
 		#self.queue_free()
@@ -75,3 +67,14 @@ func _on_kill_range_body_entered(body):
 
 func GetLookatPoint():
 	return $PlayerCameraAnchor
+
+
+func _on_light_sensitive_body_entered(body):
+	#print("(Looking for light) Moth found ", body.name)
+	if body.name == "LightBody":#is_in_group("Lights"):
+		if !(body.get_parent().current_state == 4):
+			if !stalk_timer_active:
+				print("moth has felt the light shining")
+				$"State Machine".current_state.Transitioned.emit($"State Machine".current_state, "MothFollow")
+				$"State Machine/MothFollow".light = body
+			
