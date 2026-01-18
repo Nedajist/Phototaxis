@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://detp30ngyni5s"]
+[gd_scene load_steps=8 format=3 uid="uid://detp30ngyni5s"]
 
 [ext_resource type="Script" uid="uid://c2ns81er81cc4" path="res://scenes/title_screen.gd" id="1_mgrm8"]
 [ext_resource type="Texture2D" uid="uid://drhqqqwe33xt2" path="res://2d_assets/title_card_fixed.png" id="2_dc4i4"]
 [ext_resource type="PackedScene" uid="uid://btbw57a4jnd2t" path="res://scenes/eyelid.tscn" id="2_mgrm8"]
 [ext_resource type="AudioStream" uid="uid://byhy1d2ua4bqh" path="res://musics/main menu.mp3" id="4_mgrm8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mgrm8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dc4i4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e54dn"]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -27,6 +33,7 @@ offset_left = 447.0
 offset_top = 271.0
 offset_right = 710.0
 offset_bottom = 378.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_mgrm8")
 flat = true
 
 [node name="CreditsButton" type="Button" parent="."]
@@ -36,6 +43,7 @@ offset_left = 444.0
 offset_top = 381.0
 offset_right = 715.0
 offset_bottom = 467.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dc4i4")
 flat = true
 
 [node name="ExitButton" type="Button" parent="."]
@@ -45,6 +53,7 @@ offset_left = 443.0
 offset_top = 469.0
 offset_right = 714.0
 offset_bottom = 541.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_e54dn")
 flat = true
 
 [node name="Eyelid" parent="." instance=ExtResource("2_mgrm8")]
