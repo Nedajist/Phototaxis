@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://btbw57a4jnd2t"]
+
+[ext_resource type="Script" uid="uid://b6jbjiqphj2mc" path="res://scenes/eyelid.gd" id="1_t0usy"]
+[ext_resource type="Texture2D" uid="uid://bn616s42hu3pk" path="res://2d_assets/eye_placeholder.png" id="1_yqy2v"]
+
+[node name="Eyelid" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+scale = Vector2(0.35100645, 0.35100654)
+script = ExtResource("1_t0usy")
+
+[node name="EyelidTop" type="TextureProgressBar" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 445.00006
+offset_bottom = 267.0
+fill_mode = 2
+texture_progress = ExtResource("1_yqy2v")
+
+[node name="EyelidBottom" type="TextureProgressBar" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 445.00006
+offset_bottom = 267.0
+fill_mode = 3
+texture_progress = ExtResource("1_yqy2v")

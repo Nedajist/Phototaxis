@@ -1,7 +1,16 @@
 extends Node2D
+@onready var retry_button: Button = %RetryButton
+@onready var exit_button: Button = %ExitButton
+const TITLE_SCREEN = preload("uid://detp30ngyni5s")
+const LEVEL_FULL = preload("uid://cyjfkujhlu7a8")
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	retry_button.pressed.connect(_on_retry_button_pressed)
+	exit_button.pressed.connect(_on_exit_button_pressed)
 
-func _on_button_2_pressed():
-	get_tree().change_scene_to_file("res://moth_testing_scene.tscn")
+func _on_retry_button_pressed():
+	get_tree().change_scene_to_packed(TITLE_SCREEN)
+	
+func _on_exit_button_pressed():
+	get_tree().quit(0)

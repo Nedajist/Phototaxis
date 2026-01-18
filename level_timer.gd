@@ -9,3 +9,5 @@ func _process(_delta):
 
 func _on_timer_timeout():
 	print("level survived!")
+	var tree = get_tree()
+	tree.change_scene_to_file("res://victory_screen.tscn")
