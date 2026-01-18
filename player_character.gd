@@ -72,7 +72,7 @@ func _physics_process(delta: float) -> void:
 	
 	if look_at_moth:
 		self.look_at(camera_lookat_target.transform.origin)
-		camera_pitch = clamp(camera_pitch, deg_to_rad(-5), deg_to_rad(5))
+		#camera_pitch = clamp(camera_pitch, deg_to_rad(-15), deg_to_rad(-5))
 
 	handle_player_movement(delta)
 

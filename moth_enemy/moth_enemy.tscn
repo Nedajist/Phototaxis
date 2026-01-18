@@ -1,11 +1,11 @@
 [gd_scene load_steps=16 format=3 uid="uid://dq66112hawpx3"]
 
 [ext_resource type="Script" uid="uid://c1d2552pvod1n" path="res://moth_enemy/moth_enemy.gd" id="1_rmvo2"]
-[ext_resource type="Texture2D" uid="uid://ccq526l5340o8" path="res://moth_enemy/Normal Moth/Front.png" id="2_751u3"]
 [ext_resource type="Script" uid="uid://ckj3rd7w7dcrk" path="res://moth_enemy/moth_state_machine.gd" id="2_dutgy"]
+[ext_resource type="Texture2D" uid="uid://p5tjgsh8m2kl" path="res://moth_enemy/Enraged Moth/front.png" id="2_mm7q4"]
 [ext_resource type="Script" uid="uid://cnhkr454kbmr8" path="res://moth_enemy/moth_chase.gd" id="3_6eo5i"]
 [ext_resource type="Script" uid="uid://mfgq6vs627nn" path="res://moth_enemy/moth_idle.gd" id="3_gtdvq"]
-[ext_resource type="Texture2D" uid="uid://c013ch6u0aojw" path="res://moth_enemy/Normal Moth/Back.png" id="3_mm7q4"]
+[ext_resource type="Texture2D" uid="uid://ypbg5qanv3qf" path="res://moth_enemy/Enraged Moth/Back.png" id="3_nqo6d"]
 [ext_resource type="Script" uid="uid://cwojt73q7pthm" path="res://moth_enemy/moth_follow_light.gd" id="5_l03gm"]
 [ext_resource type="PackedScene" uid="uid://dlwbgy88dpm5i" path="res://moth_enemy/cone.tscn" id="6_bk6gy"]
 [ext_resource type="Script" uid="uid://cvgbkqcxgfl30" path="res://moth_enemy/moth_stalk.gd" id="6_vdxdw"]
@@ -15,6 +15,7 @@
 [sub_resource type="BoxMesh" id="BoxMesh_l03gm"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rmvo2"]
+radius = 0.12402344
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_bk6gy"]
 
@@ -29,12 +30,12 @@ script = ExtResource("1_rmvo2")
 nav_agent = NodePath("NavigationAgent3D")
 
 [node name="MothFront" type="Sprite3D" parent="."]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
-texture = ExtResource("2_751u3")
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 1, 0)
+texture = ExtResource("2_mm7q4")
 
 [node name="MothBack" type="Sprite3D" parent="MothFront"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01)
-texture = ExtResource("3_mm7q4")
+texture = ExtResource("3_nqo6d")
 
 [node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_dutgy")
@@ -64,6 +65,7 @@ LightSensitive = NodePath("../../LightSensitive")
 PlayerSensitive = NodePath("../../VisionArea")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 visible = false
 mesh = SubResource("CapsuleMesh_y0wrk")
 
@@ -72,18 +74,20 @@ transform = Transform3D(-1.7484554e-08, 0, 1, 0, 0.30000004, 0, -0.39999998, 0, 
 mesh = SubResource("BoxMesh_l03gm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_rmvo2")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
 [node name="HoldPlayerCamera" type="Area3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 1, 0)
 
 [node name="MothSurroundingVision" type="CollisionShape3D" parent="HoldPlayerCamera"]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 1, 0)
 shape = SubResource("SphereShape3D_bk6gy")
 
 [node name="VisionArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Cone" parent="VisionArea" instance=ExtResource("6_bk6gy")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -1.3987606)
@@ -98,19 +102,21 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 shape = SubResource("SphereShape3D_bk6gy")
 
 [node name="LightSensitive" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="LightSensitive"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 shape = SubResource("SphereShape3D_bk6gy")
 
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 1, 0)
 
 [node name="StalkTimer" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
 
 [node name="KillRange" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="KillRange"]
 shape = SubResource("SphereShape3D_vdxdw")
