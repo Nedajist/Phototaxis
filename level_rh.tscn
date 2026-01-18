@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://byia83ocim6js" path="res://scenes/player_character.tscn" id="2_yhrv1"]
 [ext_resource type="PackedScene" uid="uid://b4jppir7cfejv" path="res://breaker_box.tscn" id="3_3gc80"]
 [ext_resource type="PackedScene" uid="uid://ygf5ld8cbgji" path="res://light_manager.tscn" id="3_yhrv1"]
-[ext_resource type="PackedScene" uid="uid://c0h4xhxeqqyo0" path="res://scenes/generator.tscn" id="5_cqtb4"]
-[ext_resource type="PackedScene" uid="uid://dqoqgm2g1es0y" path="res://scenes/gasoline_canister.tscn" id="6_jirxn"]
+[ext_resource type="PackedScene" uid="uid://cgbtxv2pfofqd" path="res://scenes/generator.tscn" id="5_cqtb4"]
+[ext_resource type="PackedScene" path="res://scenes/gasoline_canister.tscn" id="6_jirxn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vonw3"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)

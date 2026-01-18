@@ -13,6 +13,7 @@ func _ready():
 func _process(delta):
 	if(gas_remaining > 0):
 		gas_remaining -= delta
+		EventBus.gas_changed.emit(gas_remaining/tank_longevity)
 		if(gas_remaining <= 0):
 			EventBus.gas_empty.emit()
 		elif(gas_remaining <= tank_longevity*0.2):

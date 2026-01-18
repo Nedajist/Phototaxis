@@ -1,5 +1,6 @@
 extends CanvasLayer
 @onready var progress_bar: ProgressBar = %ProgressBar
+@onready var gas_progress_bar: ProgressBar = %GasProgressBar
 @onready var radial_progress_bar: TextureProgressBar = %RadialProgressBar
 @onready var interact_label: Label = %InteractLabel
 @onready var gasoline_texture_rect: TextureRect = %GasolineTextureRect
@@ -34,6 +35,7 @@ func _ready() -> void:
 	EventBus.mothster_picked_up.connect(mothster_pickup)
 	EventBus.mothster_used.connect(mothster_used)
 	EventBus.mothster_ended.connect(mothster_ended)
+	EventBus.gas_changed.connect(_gas_changed)
 	
 	# Initialize progress bars to fully open (0%)
 	blink_top_bottom_progress_bar.value = 0
@@ -48,6 +50,9 @@ func _process(delta: float) -> void:
 		time_since_last_blink = 0.0
 	
 	_handle_blink(delta)
+
+func _gas_changed(gas_percentage) -> void:
+	gas_progress_bar.value = gas_percentage * 100
 
 func _sprint_changed(sprint_meter) -> void:
 	progress_bar.value = sprint_meter

@@ -25,6 +25,8 @@ signal gas_low
 signal gas_critical
 signal gas_empty
 
+signal gas_changed(float)
+
 #Add signals to this dummy function to silence warnings
 func silence_warnings() -> void:
 	jumpscare.emit()
@@ -50,3 +52,4 @@ func silence_warnings() -> void:
 	gas_critical.emit()
 	gas_empty.emit()
 	
+	gas_changed.emit(0)
