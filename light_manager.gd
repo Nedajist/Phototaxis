@@ -63,17 +63,12 @@ func _gasoline_refilled():
 		light.gas_low = false
 		light.gas_critical = false
 	
-	#Need to iterate through backwards because activate() removes elements from the array
-	#and will cause indexing errors while iterating forwards.
-	#Cursed AF. Might refactor tomorrow.
-	for i in range(deactivated_lights.size() - 1, -1, -1):
-		
-		print("node: " + deactivated_lights[i].name)
-		deactivated_lights[i].gas_low = false
-		deactivated_lights[i].gas_critical = false
-		if(deactivated_lights[i].has_method("activate")):
-			deactivated_lights[i].activate()
-	
+	#work from the back to prevent indexing errors
+	while deactivated_lights.size() > 0:
+		deactivated_lights.back().gas_low = false
+		deactivated_lights.back().gas_critical = false
+		if(deactivated_lights.back().has_method("activate")):
+			deactivated_lights.back().activate() #activate leads to a pop from the back
 
 func _gasoline_low():
 	for light in light_sources:
