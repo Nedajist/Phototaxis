@@ -1,25 +1,20 @@
-[gd_scene load_steps=20 format=3 uid="uid://cyjfkujhlu7a8"]
+[gd_scene load_steps=18 format=3 uid="uid://cyjfkujhlu7a8"]
 
 [ext_resource type="Shader" uid="uid://dyysfxgdx3tjb" path="res://sky.gdshader" id="1_rujvi"]
 [ext_resource type="PackedScene" uid="uid://bsgjd4nsmouiv" path="res://3d models/trees/tree_06.tscn" id="2_8fobk"]
-[ext_resource type="PackedScene" uid="uid://c5emba75qxchp" path="res://scenes/player_character.tscn" id="2_lscal"]
+[ext_resource type="PackedScene" uid="uid://byia83ocim6js" path="res://scenes/player_character.tscn" id="2_lscal"]
 [ext_resource type="PackedScene" uid="uid://cjnrpwoo7ri8e" path="res://3d models/trees/tree_01.tscn" id="3_11pt6"]
 [ext_resource type="PackedScene" uid="uid://c24hjcol3t0ym" path="res://3d models/trees/tree_05.tscn" id="4_2vian"]
 [ext_resource type="PackedScene" uid="uid://chrhdj1rnvmok" path="res://scenes/main_building.tscn" id="4_abddk"]
-[ext_resource type="PackedScene" uid="uid://bl2frqxdwmw1q" path="res://3d models/misc/rat_entity_1.tscn" id="4_xc460"]
+[ext_resource type="PackedScene" uid="uid://bcp0a3c0n0qnq" path="res://3d models/barriers/wooden_fence_closed_2.tscn" id="4_xc460"]
 [ext_resource type="PackedScene" uid="uid://cg5bdun7dy7fc" path="res://scenes/level_base_terrain.tscn" id="5_2vian"]
-[ext_resource type="PackedScene" uid="uid://bacxq4ateb1oc" path="res://3d models/misc/wildlife_entity.tscn" id="5_scnhe"]
+[ext_resource type="PackedScene" uid="uid://bbfiq0efgxv51" path="res://3d models/barriers/wooden_fence_open_2.tscn" id="5_rvbka"]
 [ext_resource type="PackedScene" uid="uid://dqqqxrwirr7dw" path="res://outside_floodlight.tscn" id="7_oh6h3"]
 [ext_resource type="PackedScene" uid="uid://b4jppir7cfejv" path="res://breaker_box.tscn" id="9_ijcf8"]
-[ext_resource type="PackedScene" uid="uid://ygf5ld8cbgji" path="res://light_manager.tscn" id="9_sd6n8"]
-[ext_resource type="PackedScene" uid="uid://c8brhj5r4fvpw" path="res://3d models/misc/rat_entity_2.tscn" id="13_rvbka"]
+[ext_resource type="PackedScene" path="res://light_manager.tscn" id="9_sd6n8"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_8fobk"]
 size = Vector3(10, 3, 10)
-
-[sub_resource type="BoxMesh" id="BoxMesh_h4fk2"]
-flip_faces = true
-size = Vector3(100, 5, 100)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7aj1g"]
 shader = ExtResource("1_rujvi")
@@ -66,11 +61,6 @@ mesh = SubResource("BoxMesh_8fobk")
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="level"]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 8.34749, -3.0979433, -39.704712)
 mesh = SubResource("BoxMesh_8fobk")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
-mesh = SubResource("BoxMesh_h4fk2")
-skeleton = NodePath("")
 
 [node name="trees" type="Node" parent="level"]
 
@@ -383,29 +373,445 @@ transform = Transform3D(-0.2356968, 0, 0.08334888, 0, 0.25, 0, -0.08334888, 0, -
 [node name="tree52" parent="level/trees/group_3" instance=ExtResource("3_11pt6")]
 transform = Transform3D(0.00010471791, 0, -0.24999999, 0, 0.25, 0, 0.24999999, 0, 0.00010471791, 8.673131, -2.3623981, 16.660698)
 
-[node name="enviroment" type="Node" parent="."]
+[node name="fence" type="Node3D" parent="level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, 0)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="enviroment"]
-transform = Transform3D(-0.8350685, 0.13851899, -0.5324218, -0.110698625, 0.905681, 0.4092526, 0.5388936, 0.40069237, -0.74097186, 0, -0.19008255, 0)
-shadow_enabled = true
+[node name="wooden_fence_closed2" parent="level/fence" instance=ExtResource("4_xc460")]
+transform = Transform3D(0.9921453, -0.12509081, 0, 0.12509081, 0.9921453, 0, 0, 0, 1, 30.87108, 0.95894766, -50.131397)
+
+[node name="wooden_fence_open2" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.832417, 0.930387, -50.181606)
+
+[node name="wooden_fence_open126" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.832417, 0.930387, -50.181606)
+
+[node name="wooden_fence_open127" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.832417, 0.930387, -50.181606)
+
+[node name="wooden_fence_open128" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3545054e-08, 3.8096983e-09, -1, 0.08715574, 0.9961947, 0, 0.9961947, -0.08715574, -4.371139e-08, 36.832417, 1.1391027, -47.981987)
+
+[node name="wooden_fence_open129" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3545054e-08, 3.8096983e-09, -1, 0.08715574, 0.9961947, 0, 0.9961947, -0.08715574, -4.371139e-08, 36.832417, 1.3134142, -45.989597)
+
+[node name="wooden_fence_open130" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.371139e-08, -1.1882856e-16, -1, 0, 1, 0, 1, 0, -4.371139e-08, 36.832417, 1.2964412, -43.897587)
+
+[node name="wooden_fence_open131" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3545054e-08, 3.8096983e-09, -1, 0.08715574, 0.9961947, 0, 0.9961947, -0.08715574, -4.371139e-08, 36.832417, 1.4956802, -41.91502)
+
+[node name="wooden_fence_open132" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.371139e-08, -1.1882856e-16, -1, 0, 1, 0, 1, 0, -4.371139e-08, 36.832417, 1.4699917, -39.92263)
+
+[node name="wooden_fence_open133" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.371139e-08, -1.1882856e-16, -1, 0, 1, 0, 1, 0, -4.371139e-08, 36.832417, 1.4699917, -37.82263)
+
+[node name="wooden_fence_open134" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.371139e-08, -1.1882856e-16, -1, 0, 1, 0, 1, 0, -4.371139e-08, 36.832417, 1.5699917, -35.722633)
+
+[node name="wooden_fence_open135" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3545054e-08, 3.8096983e-09, -1, 0.08715574, 0.9961947, 0, 0.9961947, -0.08715574, -4.371139e-08, 36.832417, 1.7692306, -33.740063)
+
+[node name="wooden_fence_open136" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3545054e-08, 3.8096983e-09, -1, 0.08715574, 0.9961947, 0, 0.9961947, -0.08715574, -4.371139e-08, 36.832417, 1.9435421, -31.747673)
+
+[node name="wooden_fence_open137" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3545054e-08, 3.8096983e-09, -1, 0, 1, 3.809698e-09, 1, 0, -4.3545054e-08, 36.832417, 1.9435421, -29.747673)
+
+[node name="wooden_fence_open138" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3545054e-08, 3.8096983e-09, -1, 0, 1, 3.809698e-09, 1, 0, -4.3545054e-08, 36.832417, 1.9435421, -27.747673)
+
+[node name="wooden_fence_open139" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3545054e-08, 3.8096983e-09, -1, 0, 1, 3.809698e-09, 1, 0, -4.3545054e-08, 36.832417, 1.9435421, -25.747673)
+
+[node name="wooden_fence_open140" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3545054e-08, 3.8096983e-09, -1, 0, 1, 3.809698e-09, 1, 0, -4.3545054e-08, 36.832417, 1.9435421, -23.747673)
+
+[node name="wooden_fence_open141" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3545054e-08, 3.8096983e-09, -1, 0, 1, 3.809698e-09, 1, 0, -4.3545054e-08, 36.832417, 1.9435421, -21.747673)
+
+[node name="wooden_fence_open142" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3545054e-08, 3.8096983e-09, -1, 0, 1, 3.809698e-09, 1, 0, -4.3545054e-08, 36.832417, 1.9435421, -19.747673)
+
+[node name="wooden_fence_open143" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3545054e-08, 3.8096983e-09, -1, 0, 1, 3.809698e-09, 1, 0, -4.3545054e-08, 36.832417, 1.9435421, -17.747673)
+
+[node name="wooden_fence_open3" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 26.805079, 0.730387, -49.981606)
+
+[node name="wooden_fence_open4" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-0.9961948, -0.087155744, 8.709011e-08, -0.087155744, 0.9961948, 7.619396e-09, -8.742278e-08, 0, -1, 24.805079, 0.43038702, -49.981606)
+
+[node name="wooden_fence_open5" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-0.9961948, -0.087155744, 8.709011e-08, -0.087155744, 0.9961948, 7.619396e-09, -8.742278e-08, 0, -1, 22.805079, 0.23038697, -49.981606)
+
+[node name="wooden_fence_open6" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-0.9961948, -0.087155744, 8.709011e-08, -0.087155744, 0.9961948, 7.619396e-09, -8.742278e-08, 0, -1, 20.805079, 0.030386925, -49.981606)
+
+[node name="wooden_fence_open7" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-1.0000001, 0, 8.742277e-08, -2.3507956e-23, 1.0000001, -2.6889966e-16, -8.742277e-08, 6.192788e-16, -1, 18.805079, 0.030386925, -49.981606)
+
+[node name="wooden_fence_open8" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-1.0000001, 0, 8.742277e-08, -2.3507956e-23, 1.0000001, -2.6889966e-16, -8.742277e-08, 6.192788e-16, -1, 16.805079, 0.030386925, -49.981606)
+
+[node name="wooden_fence_open9" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-1.0000001, 0, 8.742277e-08, -2.3507956e-23, 1.0000001, -2.6889966e-16, -8.742277e-08, 6.192788e-16, -1, 14.8050785, 0.030386925, -49.981606)
+
+[node name="wooden_fence_open10" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-1.0000001, 0, 8.742277e-08, -2.3507956e-23, 1.0000001, -2.6889966e-16, -8.742277e-08, 6.192788e-16, -1, 12.8050785, 0.030386925, -49.981606)
+
+[node name="wooden_fence_open11" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-1.0000001, 0, 8.742277e-08, -2.3507956e-23, 1.0000001, -2.6889966e-16, -8.742277e-08, 6.192788e-16, -1, 10.8050785, 0.030386925, -49.981606)
+
+[node name="wooden_fence_open12" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-0.9848078, 0.17364818, 8.609464e-08, 0.17364818, 0.9848078, -1.5180806e-08, -8.742278e-08, 6.192788e-16, -1, 8.8050785, 0.33038712, -49.981606)
+
+[node name="wooden_fence_open13" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-1, -1.4901161e-08, 8.742278e-08, -1.4901161e-08, 1, 3.5527137e-15, -8.742278e-08, 6.192788e-16, -1, 6.8050785, 0.33038712, -49.981606)
+
+[node name="wooden_fence_open14" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-0.9961947, 0.08715572, 8.709011e-08, 0.08715572, 0.9961947, -7.619393e-09, -8.742278e-08, 6.192788e-16, -1, 4.8050785, 0.43038702, -49.981606)
+
+[node name="wooden_fence_open15" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-0.9961947, 0.08715572, 8.709011e-08, 0.08715572, 0.9961947, -7.619393e-09, -8.742278e-08, 6.192788e-16, -1, 2.8050785, 0.63038707, -49.981606)
+
+[node name="wooden_fence_open16" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-0.9961947, 0.08715572, 8.709011e-08, 0.08715572, 0.9961947, -7.619393e-09, -8.742278e-08, 6.192788e-16, -1, 0.8050785, 0.8303871, -49.981606)
+
+[node name="wooden_fence_open17" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-1, -1.4901161e-08, 8.742278e-08, -1.4901161e-08, 1, 2.6645353e-15, -8.742278e-08, 6.192788e-16, -1, -1.1949215, 0.8303871, -49.981606)
+
+[node name="wooden_fence_open18" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-0.9961947, -0.08715575, 8.709011e-08, -0.08715575, 0.9961947, 7.619399e-09, -8.742278e-08, 6.192788e-16, -1, -3.1949217, 0.7303872, -49.981606)
+
+[node name="wooden_fence_open19" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-0.9961947, -0.08715575, 8.709011e-08, -0.08715575, 0.9961947, 7.619399e-09, -8.742278e-08, 6.192788e-16, -1, -5.294922, 0.53038716, -49.981606)
+
+[node name="wooden_fence_open20" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-0.9961947, -0.08715575, 8.709011e-08, -0.08715575, 0.9961947, 7.619399e-09, -8.742278e-08, 6.192788e-16, -1, -7.294922, 0.33038712, -49.981606)
+
+[node name="wooden_fence_open21" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-0.9961947, -0.08715575, 8.709011e-08, -0.08715575, 0.9961947, 7.619399e-09, -8.742278e-08, 6.192788e-16, -1, -9.1949215, 0.13038707, -49.981606)
+
+[node name="wooden_fence_open22" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-1, -1.4901161e-08, 8.742278e-08, -1.4901161e-08, 1, 3.5527137e-15, -8.742278e-08, 6.192788e-16, -1, -11.1949215, 0.030386925, -49.981606)
+
+[node name="wooden_fence_open23" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-0.9848077, 0.17364816, 8.609462e-08, 0.17364816, 0.9848077, -1.5180802e-08, -8.742278e-08, 6.192788e-16, -1, -13.294922, 0.33038688, -49.981606)
+
+[node name="wooden_fence_open24" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-0.9848077, 0.17364816, 8.609462e-08, 0.17364816, 0.9848077, -1.5180802e-08, -8.742278e-08, 6.192788e-16, -1, -15.294922, 0.730387, -49.981606)
+
+[node name="wooden_fence_open25" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-0.99999994, 6.6849635e-32, 8.742277e-08, 1.0786611e-22, 0.99999994, 3.0102014e-15, -8.7422784e-08, 1.8531232e-15, -1, -17.194921, 0.730387, -49.981606)
+
+[node name="wooden_fence_open26" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-0.9961946, 0.08715572, 8.70901e-08, 0.08715572, 0.9961946, -7.619392e-09, -8.7422784e-08, 1.8531232e-15, -1, -19.294922, 0.9303868, -49.981606)
+
+[node name="wooden_fence_open27" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-0.9961946, 0.08715572, 8.70901e-08, 0.08715572, 0.9961946, -7.619392e-09, -8.7422784e-08, 1.8531232e-15, -1, -21.294922, 1.0303868, -49.981606)
+
+[node name="wooden_fence_open28" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-0.99999994, -7.450581e-09, 8.742276e-08, -7.450581e-09, 0.99999994, 4.440892e-15, -8.7422784e-08, 1.8531232e-15, -1, -23.194921, 1.0303868, -49.981606)
+
+[node name="wooden_fence_open29" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-0.99999994, -7.450581e-09, 8.742276e-08, -7.450581e-09, 0.99999994, 4.440892e-15, -8.7422784e-08, 1.8531232e-15, -1, -25.194921, 1.0303868, -49.981606)
+
+[node name="wooden_fence_open30" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-0.9961946, -0.08715573, 8.709009e-08, -0.08715573, 0.9961946, 7.619399e-09, -8.7422784e-08, 1.8531232e-15, -1, -27.194921, 0.8303869, -49.981606)
+
+[node name="wooden_fence_open31" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-0.9961946, -0.08715573, 8.709009e-08, -0.08715573, 0.9961946, 7.619399e-09, -8.7422784e-08, 1.8531232e-15, -1, -29.194921, 0.6303868, -49.981606)
+
+[node name="wooden_fence_open32" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-0.99999994, 1.3167232e-29, 8.7422755e-08, -7.764703e-23, 0.99999994, 3.5527137e-15, -8.7422784e-08, 1.8531232e-15, -1, -31.194921, 0.6303868, -49.981606)
+
+[node name="wooden_fence_open33" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-0.9961946, 0.08715572, 8.7090086e-08, 0.08715572, 0.9961946, -7.6193905e-09, -8.7422784e-08, 1.8531232e-15, -1, -33.29492, 0.83038664, -49.981606)
+
+[node name="wooden_fence_open34" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-0.9961946, 0.08715572, 8.7090086e-08, 0.08715572, 0.9961946, -7.6193905e-09, -8.7422784e-08, 1.8531232e-15, -1, -35.39492, 1.0303867, -49.981606)
+
+[node name="wooden_fence_open35" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-0.99999994, -7.450581e-09, 8.742275e-08, -7.450581e-09, 0.99999994, 4.440892e-15, -8.7422784e-08, 1.8531232e-15, -1, -37.39492, 1.1303867, -49.981606)
+
+[node name="wooden_fence_open36" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-0.99999994, -7.450581e-09, 8.742275e-08, -7.450581e-09, 0.99999994, 4.440892e-15, -8.7422784e-08, 1.8531232e-15, -1, -39.49492, 1.1303867, -49.981606)
+
+[node name="wooden_fence_open37" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-0.99999994, -7.450581e-09, 8.742275e-08, -7.450581e-09, 0.99999994, 4.440892e-15, -8.7422784e-08, 1.8531232e-15, -1, -41.594917, 1.1303867, -49.981606)
+
+[node name="wooden_fence_open38" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-0.99999994, -7.450581e-09, 8.742275e-08, -7.450581e-09, 0.99999994, 4.440892e-15, -8.7422784e-08, 1.8531232e-15, -1, -43.594917, 1.1303867, -49.981606)
+
+[node name="wooden_fence_open39" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-0.9961946, 0.087155715, 8.709008e-08, 0.087155715, 0.9961946, -7.619389e-09, -8.7422784e-08, 1.8531232e-15, -1, -45.694916, 1.3303868, -49.981606)
+
+[node name="wooden_fence_open40" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-0.99999994, -7.450581e-09, 8.742275e-08, -7.450581e-09, 0.99999994, 4.440892e-15, -8.7422784e-08, 1.8531232e-15, -1, -47.694916, 1.3303868, -49.981606)
+
+[node name="wooden_fence_open41" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-0.9961946, -0.08715573, 8.709008e-08, -0.08715573, 0.9961946, 7.619398e-09, -8.7422784e-08, 1.8531232e-15, -1, -49.694916, 1.1303867, -49.981606)
+
+[node name="wooden_fence_open42" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.8097006e-09, -1, -0.08715573, 0.9961946, 7.619397e-09, 0.9961946, 0.08715573, -4.337869e-08, -49.694916, 1.0303867, -48.081604)
+
+[node name="wooden_fence_open43" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.8097006e-09, -1, 0, 0.99999994, 3.809701e-09, 0.99999994, 0, -4.387769e-08, -49.694916, 1.0303867, -45.981606)
+
+[node name="wooden_fence_open44" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.8097006e-09, -1, 0, 0.99999994, 3.809701e-09, 0.99999994, 0, -4.387769e-08, -49.694916, 1.0303867, -43.881607)
+
+[node name="wooden_fence_open45" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.8097006e-09, -1, 0, 0.99999994, 3.809701e-09, 0.99999994, 0, -4.387769e-08, -49.694916, 1.0303867, -41.881607)
+
+[node name="wooden_fence_open46" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.8097006e-09, -1, 0, 0.99999994, 3.809701e-09, 0.99999994, 0, -4.387769e-08, -49.694916, 1.0303867, -39.881607)
+
+[node name="wooden_fence_open47" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.8097006e-09, -1, 0, 0.99999994, 3.809701e-09, 0.99999994, 0, -4.387769e-08, -49.694916, 1.0303867, -37.881607)
+
+[node name="wooden_fence_open48" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.8097006e-09, -1, 0, 0.99999994, 3.809701e-09, 0.99999994, 0, -4.387769e-08, -49.694916, 1.0303867, -35.881607)
+
+[node name="wooden_fence_open49" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.8097006e-09, -1, 0, 0.99999994, 3.809701e-09, 0.99999994, 0, -4.387769e-08, -49.694916, 1.0303867, -33.881607)
+
+[node name="wooden_fence_open50" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.8097006e-09, -1, 0, 0.99999994, 3.809701e-09, 0.99999994, 0, -4.387769e-08, -49.694916, 1.0303867, -31.881607)
+
+[node name="wooden_fence_open51" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.8097006e-09, -1, 0.08715572, 0.9961946, -2.8987923e-11, 0.9961946, -0.08715572, -4.404276e-08, -49.694916, 1.2303867, -29.781607)
+
+[node name="wooden_fence_open52" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.8097e-09, -1, -7.450581e-09, 0.99999994, 3.8097014e-09, 0.99999994, 7.450581e-09, -4.3877687e-08, -49.694916, 1.2303867, -27.781607)
+
+[node name="wooden_fence_open53" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.8097e-09, -1, -7.450581e-09, 0.99999994, 3.8097014e-09, 0.99999994, 7.450581e-09, -4.3877687e-08, -49.694916, 1.2303867, -25.781607)
+
+[node name="wooden_fence_open54" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.8097e-09, -1, -7.450581e-09, 0.99999994, 3.8097014e-09, 0.99999994, 7.450581e-09, -4.3877687e-08, -49.694916, 1.2303867, -23.781607)
+
+[node name="wooden_fence_open55" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.8097e-09, -1, -0.08715573, 0.9961946, 7.619397e-09, 0.9961946, 0.08715573, -4.3378684e-08, -49.694916, 1.0303867, -21.881607)
+
+[node name="wooden_fence_open56" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.8097e-09, -1, -0.08715573, 0.9961946, 7.619397e-09, 0.9961946, 0.08715573, -4.3378684e-08, -49.694916, 0.83038664, -19.981607)
+
+[node name="wooden_fence_open57" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.8097e-09, -1, -0.08715572, 0.9961946, 7.619396e-09, 0.9961946, 0.08715572, -4.337868e-08, -49.694916, 0.73038673, -17.881607)
+
+[node name="wooden_fence_open58" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.8097e-09, -1, -0.08715572, 0.9961946, 7.619396e-09, 0.9961946, 0.08715572, -4.337868e-08, -49.694916, 0.5303867, -15.981607)
+
+[node name="wooden_fence_open59" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.809701e-09, -1, 7.450581e-09, 0.99999994, 3.8097006e-09, 0.99999994, -7.450581e-09, -4.387768e-08, -49.694916, 0.5303867, -13.981607)
+
+[node name="wooden_fence_open60" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.809701e-09, -1, 7.450581e-09, 0.99999994, 3.8097006e-09, 0.99999994, -7.450581e-09, -4.387768e-08, -49.694916, 0.5303867, -11.981607)
+
+[node name="wooden_fence_open61" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.809701e-09, -1, 7.450581e-09, 0.99999994, 3.8097006e-09, 0.99999994, -7.450581e-09, -4.387768e-08, -49.694916, 0.5303867, -9.981607)
+
+[node name="wooden_fence_open62" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.809701e-09, -1, 7.450581e-09, 0.99999994, 3.8097006e-09, 0.99999994, -7.450581e-09, -4.387768e-08, -49.694916, 0.5303867, -7.9816074)
+
+[node name="wooden_fence_open63" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.809701e-09, -1, 7.450581e-09, 0.99999994, 3.8097006e-09, 0.99999994, -7.450581e-09, -4.387768e-08, -49.694916, 0.5303867, -5.981607)
+
+[node name="wooden_fence_open64" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.809701e-09, -1, 7.450581e-09, 0.99999994, 3.8097006e-09, 0.99999994, -7.450581e-09, -4.387768e-08, -49.694916, 0.5303867, -3.981607)
+
+[node name="wooden_fence_open65" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.809701e-09, -1, 0.08715573, 0.9961946, -2.8987479e-11, 0.9961946, -0.08715573, -4.404275e-08, -49.694916, 0.7303865, -1.8816069)
+
+[node name="wooden_fence_open66" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.809701e-09, -1, 0.08715573, 0.9961946, -2.8987479e-11, 0.9961946, -0.08715573, -4.404275e-08, -49.694916, 1.0303864, 0.11839306)
+
+[node name="wooden_fence_open67" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.809701e-09, -1, 0.08715573, 0.9961946, -2.8987479e-11, 0.9961946, -0.08715573, -4.404275e-08, -49.694916, 1.2303865, 2.118393)
+
+[node name="wooden_fence_open68" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.809701e-09, -1, 0, 0.99999994, 3.809701e-09, 0.99999994, 0, -4.3877677e-08, -49.694916, 1.2303865, 4.018393)
+
+[node name="wooden_fence_open69" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.809701e-09, -1, -0.08715572, 0.9961946, 7.619395e-09, 0.9961946, 0.08715572, -4.3378673e-08, -49.694916, 1.1303865, 5.918393)
+
+[node name="wooden_fence_open70" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.809701e-09, -1, -0.08715572, 0.9961946, 7.619395e-09, 0.9961946, 0.08715572, -4.3378673e-08, -49.694916, 0.93038654, 7.918393)
+
+[node name="wooden_fence_open71" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.809701e-09, -1, 7.450581e-09, 0.99999994, 3.809701e-09, 0.99999994, -7.450581e-09, -4.3877673e-08, -49.694916, 0.93038654, 9.918393)
+
+[node name="wooden_fence_open72" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.809701e-09, -1, -0.087155715, 0.9961946, 7.619395e-09, 0.9961946, 0.087155715, -4.337867e-08, -49.694916, 0.73038673, 11.818393)
+
+[node name="wooden_fence_open73" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.809701e-09, -1, 0.08715575, 0.9961946, -2.8989255e-11, 0.9961946, -0.08715575, -4.404274e-08, -49.694916, 0.93038654, 14.0183935)
+
+[node name="wooden_fence_open74" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.8097006e-09, -1, 2.2351742e-08, 0.99999994, 3.809699e-09, 0.99999994, -2.2351742e-08, -4.3877666e-08, -49.694916, 1.0303866, 16.018394)
+
+[node name="wooden_fence_open75" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.8097006e-09, -1, 2.2351742e-08, 0.99999994, 3.809699e-09, 0.99999994, -2.2351742e-08, -4.3877666e-08, -49.694916, 1.0303866, 18.018394)
+
+[node name="wooden_fence_open76" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.8097006e-09, -1, -0.0871557, 0.9961946, 7.619391e-09, 0.9961946, 0.0871557, -4.3378662e-08, -49.694916, 0.93038654, 20.018394)
+
+[node name="wooden_fence_open77" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.8097006e-09, -1, -0.0871557, 0.9961946, 7.619391e-09, 0.9961946, 0.0871557, -4.3378662e-08, -49.694916, 0.7303865, 22.018394)
+
+[node name="wooden_fence_open78" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.8097006e-09, -1, 2.9802322e-08, 0.99999994, 3.8096974e-09, 0.99999994, -2.9802322e-08, -4.3877666e-08, -49.694916, 0.7303865, 24.118395)
+
+[node name="wooden_fence_open79" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.8097006e-09, -1, 2.9802322e-08, 0.99999994, 3.8096974e-09, 0.99999994, -2.9802322e-08, -4.3877666e-08, -49.694916, 0.7303865, 26.118395)
+
+[node name="wooden_fence_open80" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.8097006e-09, -1, 2.9802322e-08, 0.99999994, 3.8096974e-09, 0.99999994, -2.9802322e-08, -4.3877666e-08, -49.694916, 0.7303865, 28.118395)
+
+[node name="wooden_fence_open81" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.8097006e-09, -1, 2.9802322e-08, 0.99999994, 3.8096974e-09, 0.99999994, -2.9802322e-08, -4.3877666e-08, -49.694916, 0.7303865, 30.118395)
+
+[node name="wooden_fence_open82" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.8097006e-09, -1, 2.9802322e-08, 0.99999994, 3.8096974e-09, 0.99999994, -2.9802322e-08, -4.3877666e-08, -49.694916, 0.7303865, 32.118393)
+
+[node name="wooden_fence_open83" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.8097006e-09, -1, -0.08715569, 0.9961946, 7.6193905e-09, 0.9961946, 0.08715569, -4.3378662e-08, -49.694916, 0.53038645, 34.018394)
+
+[node name="wooden_fence_open84" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.8097006e-09, -1, -0.08715569, 0.9961946, 7.6193905e-09, 0.9961946, 0.08715569, -4.3378662e-08, -49.694916, 0.3303864, 35.918396)
+
+[node name="wooden_fence_open85" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.8097006e-09, -1, -0.08715569, 0.9961946, 7.6193905e-09, 0.9961946, 0.08715569, -4.3378662e-08, -49.694916, 0.13038635, 37.9184)
+
+[node name="wooden_fence_open86" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.8097006e-09, -1, 3.7252903e-08, 0.99999994, 3.8096966e-09, 0.99999994, -3.7252903e-08, -4.3877666e-08, -49.694916, 0.13038635, 40.018402)
+
+[node name="wooden_fence_open87" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.8097006e-09, -1, 3.7252903e-08, 0.99999994, 3.8096966e-09, 0.99999994, -3.7252903e-08, -4.3877666e-08, -49.694916, 0.13038635, 42.018402)
+
+[node name="wooden_fence_open88" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.8097006e-09, -1, 3.7252903e-08, 0.99999994, 3.8096966e-09, 0.99999994, -3.7252903e-08, -4.3877666e-08, -49.694916, 0.13038635, 44.018402)
+
+[node name="wooden_fence_open89" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-4.3877726e-08, 3.8097006e-09, -1, 3.7252903e-08, 0.99999994, 3.8096966e-09, 0.99999994, -3.7252903e-08, -4.3877666e-08, -49.694916, 0.23038626, 46.1184)
+
+[node name="wooden_fence_open90" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(0.99999994, -3.7252903e-08, -1.6627766e-10, 3.72529e-08, 0.9999999, 3.8096966e-09, 1.6634516e-10, -3.8096992e-09, 0.99999994, -47.694916, 0.23038626, 46.1184)
+
+[node name="wooden_fence_open91" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(0.99999994, -3.7252903e-08, -1.6627766e-10, 3.72529e-08, 0.9999999, 3.8096966e-09, 1.6634516e-10, -3.8096992e-09, 0.99999994, -45.694916, 0.23038626, 46.1184)
+
+[node name="wooden_fence_open92" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(0.99999994, -3.7252903e-08, -1.6627766e-10, 3.72529e-08, 0.9999999, 3.8096966e-09, 1.6634516e-10, -3.8096992e-09, 0.99999994, -43.694916, 0.23038626, 46.1184)
+
+[node name="wooden_fence_open93" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(0.99999994, -3.7252903e-08, -1.6627766e-10, 3.72529e-08, 0.9999999, 3.8096966e-09, 1.6634516e-10, -3.8096992e-09, 0.99999994, -41.694916, 0.23038626, 46.1184)
+
+[node name="wooden_fence_open94" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(0.9961946, -0.08715576, -4.976818e-10, 0.08715577, 0.9961946, 3.7807077e-09, 1.6634513e-10, -3.8096992e-09, 0.9999999, -39.594913, 0.4303863, 46.1184)
+
+[node name="wooden_fence_open95" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(0.9961946, -0.08715576, -4.976818e-10, 0.08715577, 0.9961946, 3.7807077e-09, 1.6634513e-10, -3.8096992e-09, 0.9999999, -37.594913, 0.63038635, 46.1184)
+
+[node name="wooden_fence_open96" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(0.9961946, -0.08715576, -4.976818e-10, 0.08715577, 0.9961946, 3.7807077e-09, 1.6634513e-10, -3.8096992e-09, 0.9999999, -35.594913, 0.8303864, 46.1184)
+
+[node name="wooden_fence_open97" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(0.9961946, -0.08715576, -4.976818e-10, 0.08715577, 0.9961946, 3.7807077e-09, 1.6634513e-10, -3.8096992e-09, 0.9999999, -33.594913, 1.1303864, 46.1184)
+
+[node name="wooden_fence_open98" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(0.99619466, -0.08715573, -4.976815e-10, 0.08715573, 0.99619466, 3.7807077e-09, 1.6634512e-10, -3.8096992e-09, 0.9999999, -31.594913, 1.3303864, 46.1184)
+
+[node name="wooden_fence_open99" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(1, 1.4901161e-08, -1.6627724e-10, -1.4901161e-08, 1, 3.8096966e-09, 1.6634512e-10, -3.8096992e-09, 0.9999999, -29.694914, 1.3303864, 46.1184)
+
+[node name="wooden_fence_open100" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(1, 1.4901161e-08, -1.6627724e-10, -1.4901161e-08, 1, 3.8096966e-09, 1.6634512e-10, -3.8096992e-09, 0.9999999, -27.694914, 1.3303864, 46.1184)
+
+[node name="wooden_fence_open101" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(1, 1.4901161e-08, -1.6627724e-10, -1.4901161e-08, 1, 3.8096966e-09, 1.6634512e-10, -3.8096992e-09, 0.9999999, -25.694914, 1.3303864, 46.1184)
+
+[node name="wooden_fence_open102" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(0.9961947, 0.08715575, 1.6639239e-10, -0.08715575, 0.9961947, 3.8096917e-09, 1.6634512e-10, -3.8096992e-09, 0.9999999, -23.694914, 1.2303864, 46.1184)
+
+[node name="wooden_fence_open103" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(0.9961947, 0.08715575, 1.6639239e-10, -0.08715575, 0.9961947, 3.8096917e-09, 1.6634512e-10, -3.8096992e-09, 0.9999999, -21.694916, 1.0303863, 46.1184)
+
+[node name="wooden_fence_open104" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(0.9961947, 0.08715575, 1.6639239e-10, -0.08715575, 0.9961947, 3.8096917e-09, 1.6634512e-10, -3.8096992e-09, 0.9999999, -19.694916, 0.8303864, 46.1184)
+
+[node name="wooden_fence_open105" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(0.9961947, 0.08715575, 1.6639239e-10, -0.08715575, 0.9961947, 3.8096917e-09, 1.6634512e-10, -3.8096992e-09, 0.9999999, -17.694916, 0.63038635, 46.1184)
+
+[node name="wooden_fence_open106" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(1, 1.4901161e-08, -1.662773e-10, -1.4901161e-08, 1, 3.8096966e-09, 1.6634512e-10, -3.8096992e-09, 0.9999999, -15.594915, 0.63038635, 46.1184)
+
+[node name="wooden_fence_open107" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(0.9659258, -0.25881904, -1.1466336e-09, 0.25881904, 0.9659258, 3.6368484e-09, 1.6634512e-10, -3.8096992e-09, 0.9999999, -13.394915, 1.1303864, 46.1184)
+
+[node name="wooden_fence_open108" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(0.9659258, -0.25881904, -1.1466336e-09, 0.25881904, 0.9659258, 3.6368484e-09, 1.6634512e-10, -3.8096992e-09, 0.9999999, -11.394915, 1.6303864, 46.1184)
+
+[node name="wooden_fence_open109" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(0.98480785, -0.17364821, -8.2529794e-10, 0.17364821, 0.98480785, 3.7229448e-09, 1.6634512e-10, -3.8096992e-09, 0.9999999, -9.494914, 2.0303864, 46.1184)
+
+[node name="wooden_fence_open110" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(0.9961948, -0.087155744, -4.9768134e-10, 0.087155744, 0.9961948, 3.7807073e-09, 1.6634512e-10, -3.8096992e-09, 0.9999999, -7.4949136, 2.2303865, 46.1184)
+
+[node name="wooden_fence_open111" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(1.0000001, -2.1228553e-25, -1.6627713e-10, -7.3067274e-26, 1.0000001, 3.809696e-09, 1.6634517e-10, -3.8096992e-09, 0.9999999, -5.5949135, 2.2303865, 46.1184)
+
+[node name="wooden_fence_open112" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(1.0000001, -2.1228553e-25, -1.6627713e-10, -7.3067274e-26, 1.0000001, 3.809696e-09, 1.6634517e-10, -3.8096992e-09, 0.9999999, -3.5949135, 2.2303865, 46.1184)
+
+[node name="wooden_fence_open113" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(1.0000001, -2.1228553e-25, -1.6627713e-10, -7.3067274e-26, 1.0000001, 3.809696e-09, 1.6634517e-10, -3.8096992e-09, 0.9999999, -1.5949135, 2.1303864, 46.1184)
+
+[node name="wooden_fence_open114" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(1.0000001, -2.1228553e-25, -1.6627713e-10, -7.3067274e-26, 1.0000001, 3.809696e-09, 1.6634517e-10, -3.8096992e-09, 0.9999999, 0.40508652, 2.1303864, 46.1184)
+
+[node name="wooden_fence_open115" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(1.0000001, -2.1228553e-25, -1.6627713e-10, -7.3067274e-26, 1.0000001, 3.809696e-09, 1.6634517e-10, -3.8096992e-09, 0.9999999, 2.4050865, 2.2303863, 46.1184)
+
+[node name="wooden_fence_open116" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(1.0000001, -2.1228553e-25, -1.6627713e-10, -7.3067274e-26, 1.0000001, 3.809696e-09, 1.6634517e-10, -3.8096992e-09, 0.9999999, 4.505087, 2.2303863, 46.1184)
+
+[node name="wooden_fence_open117" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(1.0000001, -2.1228553e-25, -1.6627713e-10, -7.3067274e-26, 1.0000001, 3.809696e-09, 1.6634517e-10, -3.8096992e-09, 0.9999999, 6.505087, 2.2303863, 46.1184)
+
+[node name="wooden_fence_open118" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-1.4901161e-08, -3.8096997e-09, 1, -7.3067274e-26, 1.0000001, 3.809696e-09, -1.0000001, 1.110223e-16, -2.2351742e-08, 6.505087, 2.2303863, 44.1184)
+
+[node name="wooden_fence_open119" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-1.4901161e-08, -3.8096997e-09, 1, 0.087155744, 0.99619484, 5.743282e-09, -0.99619484, 0.087155744, -2.193465e-08, 6.505087, 2.4303863, 42.018402)
+
+[node name="wooden_fence_open120" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-1.4901161e-08, -3.8096997e-09, 1, -7.450581e-09, 1.0000001, 3.8096957e-09, -1.0000001, -7.450581e-09, -2.2351742e-08, 6.505087, 2.4303863, 40.018402)
+
+[node name="wooden_fence_open121" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-1.4901161e-08, -3.8096997e-09, 1, -7.450581e-09, 1.0000001, 3.8096957e-09, -1.0000001, -7.450581e-09, -2.2351742e-08, 6.505087, 2.4303863, 38.018402)
+
+[node name="wooden_fence_open122" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-1.4901161e-08, -3.8096997e-09, 1, -0.08715575, 0.9961948, 1.8471148e-09, -0.9961948, -0.08715575, -2.2598723e-08, 6.505087, 2.3303862, 36.018402)
+
+[node name="wooden_fence_open123" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-1.4901161e-08, -3.8096997e-09, 1, -0.17364818, 0.98480785, -1.2952217e-10, -0.98480785, -0.17364818, -2.2673714e-08, 6.505087, 1.9303861, 34.018402)
+
+[node name="wooden_fence_open124" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(-1.4901161e-08, -3.8096997e-09, 1, -0.17364818, 0.98480785, -1.2952217e-10, -0.98480785, -0.17364818, -2.2673714e-08, 6.505087, 1.5303861, 32.018402)
+
+[node name="wooden_fence_open125" parent="level/fence" instance=ExtResource("5_rvbka")]
+transform = Transform3D(1.0232396e-07, -3.809701e-09, -1, 0.17364818, 0.9848082, 1.531032e-08, 0.98480785, -0.17364824, 1.08768354e-07, 6.505087, 1.5303861, 32.018402)
+
+[node name="enviroment" type="Node" parent="."]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="enviroment"]
 environment = SubResource("Environment_2vian")
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_lscal")]
-transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 0, 0)
-
-[node name="wildlife2" parent="." instance=ExtResource("5_scnhe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.076754, -1.4976847, -27.984509)
-
-[node name="wildlife" parent="." instance=ExtResource("5_scnhe")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.860306, -1.47381, -22.95998)
-
-[node name="rat_entity1" parent="." instance=ExtResource("4_xc460")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.147331, 0.6929015, 24.34586)
-
-[node name="rat_entity_2" parent="." instance=ExtResource("13_rvbka")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.419786, 0.16437723, -2.7519546)
+transform = Transform3D(0.85232085, 0, -0.52301925, 0, 1, 0, 0.52301925, 0, 0.85232085, -0.13250828, 0, 5.8218384)
 
 [node name="lightmanager" parent="." node_paths=PackedStringArray("light_sources") instance=ExtResource("9_sd6n8")]
 transform = Transform3D(-0.25, 0, -2.1855694e-08, 0, 0.25, 0, 2.1855694e-08, 0, -0.25, 11.894613, 1.3050765, 0.898263)
