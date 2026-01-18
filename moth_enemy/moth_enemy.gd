@@ -24,6 +24,8 @@ func update_target_location(target_location) -> void:
 func _physics_process(delta):
 	if velocity!=Vector3(0,0,0):
 		look_at(transform.origin + velocity, Vector3.UP)
+	if $"State Machine".current_state == $"State Machine/MothFollow" and light_attracted_to.get_parent().current_state == LightPost.LightState.OFF:
+		$"State Machine".current_state.Transitioned.emit($"State Machine".current_state, "MothIdle")
 	
 func _on_vision_area_body_entered(body): #small sphere and cone detector check for physical objects 
 	#print("moth has spotted: " + body.name)
@@ -73,7 +75,7 @@ func GetLookatPoint():
 func _on_light_sensitive_body_entered(body):
 	#print("(Looking for light) Moth found ", body.name)
 	if body.name == "LightBody":#is_in_group("Lights"):
-		if !(body.get_parent().current_state == 4):
+		if !(body.get_parent().current_state == LightPost.LightState.OFF):
 			if !stalk_timer_active:
 				light_attracted_to = body
 				print("moth has felt the light shining")

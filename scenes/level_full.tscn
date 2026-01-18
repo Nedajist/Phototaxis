@@ -1,7 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://cyjfkujhlu7a8"]
+[gd_scene load_steps=23 format=3 uid="uid://cyjfkujhlu7a8"]
 
 [ext_resource type="Shader" uid="uid://dyysfxgdx3tjb" path="res://sky.gdshader" id="1_rujvi"]
-[ext_resource type="PackedScene" path="res://shed.tscn" id="1_rvbka"]
+[ext_resource type="PackedScene" uid="uid://db5vtnv2kffga" path="res://shed.tscn" id="1_rvbka"]
 [ext_resource type="PackedScene" uid="uid://bsgjd4nsmouiv" path="res://3d models/trees/tree_06.tscn" id="2_8fobk"]
 [ext_resource type="PackedScene" uid="uid://byia83ocim6js" path="res://scenes/player_character.tscn" id="2_lscal"]
 [ext_resource type="PackedScene" uid="uid://cjnrpwoo7ri8e" path="res://3d models/trees/tree_01.tscn" id="3_11pt6"]
@@ -13,10 +13,11 @@
 [ext_resource type="PackedScene" uid="uid://dqqqxrwirr7dw" path="res://outside_floodlight.tscn" id="7_oh6h3"]
 [ext_resource type="PackedScene" uid="uid://b4jppir7cfejv" path="res://breaker_box.tscn" id="9_ijcf8"]
 [ext_resource type="PackedScene" uid="uid://ygf5ld8cbgji" path="res://light_manager.tscn" id="9_sd6n8"]
-[ext_resource type="PackedScene" uid="uid://hiitfpg7yv0c" path="res://level_timer.tscn" id="10_j5urc"]
-[ext_resource type="Script" uid="uid://bxeqlygxow2lo" path="res://musics/musicmanager.gd" id="13_rvbka"]
-[ext_resource type="PackedScene" uid="uid://c0h4xhxeqqyo0" path="res://scenes/generator.tscn" id="14_cybri"]
+[ext_resource type="PackedScene" path="res://level_timer.tscn" id="10_j5urc"]
+[ext_resource type="PackedScene" path="res://scenes/generator.tscn" id="14_cybri"]
 [ext_resource type="PackedScene" uid="uid://bacxq4ateb1oc" path="res://3d models/misc/wildlife_entity.tscn" id="15_j5urc"]
+[ext_resource type="PackedScene" uid="uid://d1t0t05cmgjpy" path="res://scenes/musicmanager.tscn" id="16_qci8t"]
+[ext_resource type="PackedScene" uid="uid://dq66112hawpx3" path="res://moth_enemy/moth_enemy.tscn" id="17_qci8t"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7aj1g"]
 shader = ExtResource("1_rujvi")
@@ -891,13 +892,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.22633, -0.75799835, -7.61
 [node name="wildlife_entity2" parent="NavigationRegion3D" instance=ExtResource("15_j5urc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.679844, -1.3032322, -24.645535)
 
-[node name="musicmanager" type="Node" parent="." node_paths=PackedStringArray("audio_manager")]
-script = ExtResource("13_rvbka")
-audio_manager = NodePath("AudioStreamPlayer")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="musicmanager"]
+[node name="musicmanager" parent="." instance=ExtResource("16_qci8t")]
 
 [node name="LevelTimer" parent="." instance=ExtResource("10_j5urc")]
+
+[node name="MothEnemy" parent="." node_paths=PackedStringArray("player_character") instance=ExtResource("17_qci8t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4355965, 3.2692623, -20.60849)
+player_character = NodePath("../PlayerCharacter")
 
 [editable path="NavigationRegion3D/main_building"]
 [editable path="NavigationRegion3D/main_building/ceiling/lights/ceiling_light10"]
