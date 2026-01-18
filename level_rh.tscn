@@ -20,7 +20,7 @@ background_mode = 2
 sky = SubResource("Sky_oi3di")
 tonemap_mode = 2
 
-[node name="level" type="Node"]
+[node name="level2" type="Node"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_0b4ue")
@@ -185,3 +185,6 @@ tank_longevity = 20.0
 
 [node name="GasolineCanister" parent="." instance=ExtResource("6_jirxn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1536016, 2.3841858e-07, 3.5314763)
+
+[node name="GasolineCanister2" parent="." instance=ExtResource("6_jirxn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1536016, 2.3841858e-07, 7.2898626)
