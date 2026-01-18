@@ -1009,10 +1009,16 @@ unique_name_in_owner = true
 
 [node name="PickupContainer" parent="." instance=ExtResource("19_8nvtt")]
 
-[node name="MothContainer" type="Node3D" parent="."]
-
 [node name="MothEnemy" parent="." node_paths=PackedStringArray("player_character") instance=ExtResource("20_xpi1f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1153488, 1.1753988, 23.530039)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.825918, 1.1753988, -17.998014)
+player_character = NodePath("../PlayerCharacter")
+
+[node name="MothEnemy6" parent="." node_paths=PackedStringArray("player_character") instance=ExtResource("20_xpi1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1867924, 1.1753988, -25.337467)
+player_character = NodePath("../PlayerCharacter")
+
+[node name="MothEnemy7" parent="." node_paths=PackedStringArray("player_character") instance=ExtResource("20_xpi1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.562252, 1.1753988, -4.707592)
 player_character = NodePath("../PlayerCharacter")
 
 [node name="MothEnemy2" parent="." node_paths=PackedStringArray("player_character") instance=ExtResource("20_xpi1f")]

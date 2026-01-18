@@ -5,17 +5,16 @@ class_name MothChase
 @export var move_speed:= 10
 @onready var nav_agent: NavigationAgent3D
 @onready var player: CharacterBody3D
-@onready var musicman = $"../../../musicmanager"#%musicmanager
-
 @export var LightSensitive: Area3D
 @export var PlayerSensitive: Area3D
 @export var PlayerSensitive2: Area3D
+@onready var musicmanager: Node = $"../../../musicmanager"
 
 var SPEED = randi_range(4,7)
 
 func Enter():
 	print("Chase Entered")
-	musicman._increase_chasing_moths()
+	musicmanager._increase_chasing_moths()
 	LightSensitive.visible=false
 	PlayerSensitive.visible=false	
 	player.camera_lookat_target=moth_enemy
@@ -23,7 +22,7 @@ func Enter():
 func Exit():
 	LightSensitive.visible=true
 	PlayerSensitive.visible=true
-	musicman._decrease_chasing_moths()
+	musicmanager._decrease_chasing_moths()
 
 func Physics_Update(_delta: float):
 	if moth_enemy and player:

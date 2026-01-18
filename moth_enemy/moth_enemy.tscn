@@ -37,12 +37,14 @@ script = ExtResource("2_nqo6d")
 [node name="MothFront" type="Sprite3D" parent="Node"]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 billboard = 1
+shaded = true
 texture = ExtResource("2_mm7q4")
 
 [node name="MothBack" type="Sprite3D" parent="Node"]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 visible = false
 billboard = 1
+shaded = true
 texture = ExtResource("3_nqo6d")
 
 [node name="FrontNode" type="Node3D" parent="Node"]
