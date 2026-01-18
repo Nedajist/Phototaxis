@@ -118,9 +118,8 @@ func _process_burnout_state(delta):
 		if light is Light3D:
 			light.light_energy += 2 * delta
 			light.light_color.b8 = min(light.light_color.b8 + 255 * delta, 255)
-				
 	if state_timer >= burnout_time:
-		selected_to_break = false
+		EventBus.light_burned_out.emit(self)
 		deactivate()
 
 # Process ON state: flicker lights randomly
@@ -221,6 +220,7 @@ func _set_lights_visible(_visible: bool):
 # Public API: Manually deactivate lights (skip to OFF state)
 func deactivate():
 	EventBus.floodlight_deactivated.emit(self)
+	selected_to_break = false
 	_start_state(LightState.OFF)
 
 # Public API: Reactivate lights (restart from ON state)

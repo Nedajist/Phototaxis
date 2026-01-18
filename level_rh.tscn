@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://byia83ocim6js" path="res://scenes/player_character.tscn" id="2_yhrv1"]
 [ext_resource type="PackedScene" uid="uid://b4jppir7cfejv" path="res://breaker_box.tscn" id="3_3gc80"]
 [ext_resource type="PackedScene" uid="uid://ygf5ld8cbgji" path="res://light_manager.tscn" id="3_yhrv1"]
-[ext_resource type="PackedScene" uid="uid://cgbtxv2pfofqd" path="res://scenes/generator.tscn" id="5_cqtb4"]
+[ext_resource type="PackedScene" uid="uid://c0h4xhxeqqyo0" path="res://scenes/generator.tscn" id="5_cqtb4"]
 [ext_resource type="PackedScene" uid="uid://dqoqgm2g1es0y" path="res://scenes/gasoline_canister.tscn" id="6_jirxn"]
 [ext_resource type="PackedScene" uid="uid://hiitfpg7yv0c" path="res://level_timer.tscn" id="7_3gc80"]
 
@@ -182,7 +182,7 @@ frequency = 6.0
 
 [node name="Generator" parent="." instance=ExtResource("5_cqtb4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.053257, 0, 2.1228895)
-tank_longevity = 20.0
+tank_longevity = 150.0
 
 [node name="GasolineCanister" parent="." instance=ExtResource("6_jirxn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1536016, 2.3841858e-07, 3.5314763)
@@ -191,4 +191,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1536016, 2.3841858e-07, 3.5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1536016, 2.3841858e-07, 7.2898626)
 
 [node name="Timer" parent="." instance=ExtResource("7_3gc80")]
-wait_time = 30.0
