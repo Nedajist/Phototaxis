@@ -809,17 +809,13 @@ transform = Transform3D(0.85232085, 0, -0.52301925, 0, 1, 0, 0.52301925, 0, 0.85
 
 [node name="lightmanager" parent="." node_paths=PackedStringArray("light_sources") instance=ExtResource("9_sd6n8")]
 transform = Transform3D(-0.25, 0, -2.1855694e-08, 0, 0.25, 0, 2.1855694e-08, 0, -0.25, 11.894613, 1.3050765, 0.898263)
-light_sources = [NodePath("../NavigationRegion3D/lightpost"), NodePath("../NavigationRegion3D/lightpost2"), NodePath("../NavigationRegion3D/lightpost3"), NodePath("../NavigationRegion3D/lightpost4")]
+light_sources = [NodePath("../NavigationRegion3D/BreakerBox/lightpost"), NodePath("../NavigationRegion3D/BreakerBox/lightpost2"), NodePath("../NavigationRegion3D/BreakerBox/lightpost3"), NodePath("../NavigationRegion3D/BreakerBox/lightpost4")]
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_sd6n8")
 
 [node name="phototaxis_terrain" parent="NavigationRegion3D" instance=ExtResource("5_2vian")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.536743e-07, -1, 0)
-
-[node name="BreakerBox" parent="NavigationRegion3D" node_paths=PackedStringArray("attached_electronics") instance=ExtResource("9_ijcf8")]
-transform = Transform3D(-0.25, 0, -2.1855694e-08, 0, 0.25, 0, 2.1855694e-08, 0, -0.25, 7.907346, 0.64322555, 0.898263)
-attached_electronics = [NodePath("../lightpost"), NodePath("../lightpost2"), NodePath("../lightpost3"), NodePath("../lightpost4")]
 
 [node name="main_building" parent="NavigationRegion3D" instance=ExtResource("4_abddk")]
 
@@ -831,19 +827,40 @@ attached_electronics = [NodePath("../ceiling/lights/ceiling_light13"), NodePath(
 transform = Transform3D(-1.0927847e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.0927847e-08, 25.999998, 1.3, -9.500001)
 attached_electronics = [NodePath("../ceiling/lights/ceiling_light2"), NodePath("../ceiling/lights/ceiling_light3"), NodePath("../ceiling/lights/ceiling_light4"), NodePath("../ceiling/lights/ceiling_light11"), NodePath("../ceiling/lights/ceiling_light12"), NodePath("../ceiling/lights/ceiling_light5"), NodePath("../ceiling/lights/ceiling_light9"), NodePath("../ceiling/lights/ceiling_light7"), NodePath("../ceiling/lights/ceiling_light8")]
 
-[node name="lightpost" parent="NavigationRegion3D" instance=ExtResource("7_oh6h3")]
-transform = Transform3D(-0.6093298, 0, -1.9049193, 0, 2, 0, 1.9049193, 0, -0.6093298, 8.227804, -1.0170312, -2.6677127)
+[node name="BreakerBox" parent="NavigationRegion3D" node_paths=PackedStringArray("attached_electronics") instance=ExtResource("9_ijcf8")]
+transform = Transform3D(0.24904867, 0, 0.021788932, 0, 0.25, 0, -0.021788932, 0, 0.24904867, 15.171839, -0.55677444, -30.033653)
+attached_electronics = [NodePath("lightpost"), NodePath("lightpost2"), NodePath("lightpost3"), NodePath("lightpost4")]
 
-[node name="lightpost2" parent="NavigationRegion3D" instance=ExtResource("7_oh6h3")]
-transform = Transform3D(0.40523267, 0, -1.9585165, 0, 2, 0, 1.9585165, 0, 0.40523267, 12.215599, -1.9995848, -16.29243)
+[node name="lightpost" parent="NavigationRegion3D/BreakerBox" instance=ExtResource("7_oh6h3")]
+transform = Transform3D(-3.0921433, 0, -7.3782563, 0, 8, 0, 7.3782563, 0, -3.0921433, -37.21084, -1.841027, 106.62637)
 
-[node name="lightpost3" parent="NavigationRegion3D" instance=ExtResource("7_oh6h3")]
-transform = Transform3D(1.2717525, 0, 1.5435821, 0, 2, 0, -1.5435821, 0, 1.2717525, -0.20065022, -2.2621613, -27.715317)
+[node name="lightpost2" parent="NavigationRegion3D/BreakerBox" instance=ExtResource("7_oh6h3")]
+transform = Transform3D(0.9319789, 0, -7.945529, 0, 8, 0, 7.945529, 0, 0.9319789, -16.570469, -5.771241, 53.72512)
 
-[node name="lightpost4" parent="NavigationRegion3D" instance=ExtResource("7_oh6h3")]
-transform = Transform3D(0.090063155, 0, -1.997971, 0, 2, 0, 1.997971, 0, 0.090063155, 14.383097, -1.858852, -30.7709)
+[node name="lightpost3" parent="NavigationRegion3D/BreakerBox" instance=ExtResource("7_oh6h3")]
+transform = Transform3D(5.6057806, 0, 5.7074714, 0, 8, 0, -5.7074714, 0, 5.6057806, -62.0642, -6.8215475, 3.8788528)
 
-[node name="BreakerBox" parent="NavigationRegion3D/lightpost4" instance=ExtResource("9_ijcf8")]
-transform = Transform3D(-1.1175871e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.1175871e-08, 0.3970108, 0.575, -0.4769764)
+[node name="lightpost4" parent="NavigationRegion3D/BreakerBox" instance=ExtResource("7_oh6h3")]
+transform = Transform3D(-0.3376568, 0, -7.9928718, 0, 8, 0, 7.9928718, 0, -0.3376568, -2.8859406, -5.20831, -3.2127457)
+
+[node name="BreakerBox2" parent="NavigationRegion3D" node_paths=PackedStringArray("attached_electronics") instance=ExtResource("9_ijcf8")]
+transform = Transform3D(-0.06470476, 0, -0.24148145, 0, 0.25, 0, 0.24148145, 0, -0.06470476, -30.55302, -1, -37.80684)
+attached_electronics = [NodePath("lightpost5"), NodePath("lightpost6"), NodePath("lightpost7"), NodePath("lightpost8"), NodePath("lightpost9")]
+
+[node name="lightpost5" parent="NavigationRegion3D/BreakerBox2" instance=ExtResource("7_oh6h3")]
+transform = Transform3D(2.416429, 0, -7.626328, 0, 8, 0, 7.626328, 0, 2.416429, 80.71402, -1.035408, -103.5096)
+
+[node name="lightpost6" parent="NavigationRegion3D/BreakerBox2" instance=ExtResource("7_oh6h3")]
+transform = Transform3D(-0.36025143, 0, 7.991885, 0, 8, 0, -7.991885, 0, -0.36025143, 1.2634277, -5.035408, -3.0935059)
+
+[node name="lightpost7" parent="NavigationRegion3D/BreakerBox2" instance=ExtResource("7_oh6h3")]
+transform = Transform3D(-7.626329, 0, -2.4164283, 0, 8, 0, 2.4164283, 0, -7.626329, 75.982124, -1.035408, 6.9555054)
+
+[node name="lightpost8" parent="NavigationRegion3D/BreakerBox2" instance=ExtResource("7_oh6h3")]
+transform = Transform3D(7.8128085, 0, -1.7204765, 0, 8, 0, 1.7204765, 0, 7.8128085, 110.30952, -0.23540783, -77.20047)
+
+[node name="lightpost9" parent="NavigationRegion3D/BreakerBox2" instance=ExtResource("7_oh6h3")]
+transform = Transform3D(1.7204763, 0, 7.8128085, 0, 8, 0, -7.8128085, 0, 1.7204763, 23.579056, -0.23540783, -55.341187)
 
 [editable path="NavigationRegion3D/main_building"]
+[editable path="NavigationRegion3D/main_building/ceiling/lights/ceiling_light10"]
