@@ -181,3 +181,8 @@ func mothster_used():
 func _on_mothster_timer_timeout():
 	EventBus.mothster_ended.emit()
 	mothster_drunk = false
+
+
+func _on_area_3d_body_entered(body):
+	if body.is_in_group("Lights"):
+		print("YEAAA")

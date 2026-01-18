@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ck2xur32foxlf"]
+[gd_scene load_steps=11 format=3 uid="uid://ck2xur32foxlf"]
 
 [ext_resource type="Script" uid="uid://cuwhwa3mamyvi" path="res://moth_enemy/moth_testing_scene.gd" id="1_iqrvf"]
 [ext_resource type="PackedScene" uid="uid://dq66112hawpx3" path="res://moth_enemy/moth_enemy.tscn" id="1_w7ixk"]
@@ -17,6 +17,8 @@ polygons = [PackedInt32Array(3, 5, 4), PackedInt32Array(4, 5, 0), PackedInt32Arr
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bu470"]
 size = Vector3(1, 4.626709, 4.971817)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jjlsi"]
 
 [node name="MothTestingScene" type="Node"]
 script = ExtResource("1_iqrvf")
@@ -76,3 +78,7 @@ player_character = NodePath("../PlayerCharacter")
 [node name="PlayerCharacter" parent="." node_paths=PackedStringArray("camera_lookat_target") instance=ExtResource("3_bu470")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1619954, 0.9999995, 15.071329)
 camera_lookat_target = NodePath("../MothEnemy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.224928, 0, 9.473162)
+mesh = SubResource("BoxMesh_jjlsi")
