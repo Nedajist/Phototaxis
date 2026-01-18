@@ -6,6 +6,7 @@ extends CanvasLayer
 @onready var gasoline_texture_rect: TextureRect = %GasolineTextureRect
 @onready var mothster_texture_rect: TextureRect = %MothsterTextureRect
 @onready var mothster_label: Label = %MothsterLabel
+@onready var time_remaining: Label = %Time_remaining
 
 # time in seconds to open / close
 var blinking = false
@@ -36,6 +37,7 @@ func _ready() -> void:
 	EventBus.mothster_used.connect(mothster_used)
 	EventBus.mothster_ended.connect(mothster_ended)
 	EventBus.gas_changed.connect(_gas_changed)
+	EventBus.update_time.connect(_update_time)
 	
 	# Initialize progress bars to fully open (0%)
 	blink_top_bottom_progress_bar.value = 0
@@ -132,3 +134,14 @@ func gasoline_pickup():
 	gasoline_texture_rect.visible = true
 func gasoline_used():
 	gasoline_texture_rect.visible = false
+
+func _update_time(absolute_time):
+	var total_seconds = int(absolute_time)
+	@warning_ignore("integer_division")
+	var minutes = str(total_seconds/60)
+	var seconds = str(total_seconds % 60)
+	
+	if(total_seconds % 60 < 10):
+		seconds = "0" + seconds
+	
+	time_remaining.text = str(minutes) + ":" + str(seconds)
