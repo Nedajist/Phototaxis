@@ -3,7 +3,7 @@
 extends Node
 
 signal jumpscare
-
+signal mothster_ended
 signal mothster_attempt_pickup
 signal gasoline_attempt_pickup
 signal mothster_picked_up
@@ -19,10 +19,11 @@ signal generator_interacted
 signal generator_filled_with_gas
 
 
+
 #Add signals to this dummy function to silence warnings
 func silence_warnings() -> void:
 	jumpscare.emit()
-	
+	mothster_ended.emit()
 	sprint_changed.emit()
 	interaction_progress.emit()
 	interaction_complete.emit()
