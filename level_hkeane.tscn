@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cuj6wqediitwk"]
 
-[ext_resource type="PackedScene" uid="uid://ojq7xuv1o00a" path="res://player_character.tscn" id="1_4nm3s"]
+[ext_resource type="PackedScene" path="res://scenes/player_character.tscn" id="1_4nm3s"]
 [ext_resource type="PackedScene" path="res://outside_floodlight.tscn" id="1_mhwm6"]
 [ext_resource type="PackedScene" path="res://light_manager.tscn" id="3_578nk"]
 [ext_resource type="PackedScene" path="res://breaker_box.tscn" id="4_4xjp7"]
