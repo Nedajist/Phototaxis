@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://uaebcnnrolqd"]
+[gd_scene load_steps=9 format=3 uid="uid://uaebcnnrolqd"]
 
 [ext_resource type="Texture2D" uid="uid://ccq526l5340o8" path="res://moth_enemy/Normal Moth/Front.png" id="1_0krjb"]
+[ext_resource type="Script" uid="uid://bau0yahd4je3l" path="res://scenes/jumpscare.gd" id="1_yfyrm"]
 
 [sub_resource type="Animation" id="Animation_uhibh"]
 length = 0.001
@@ -81,6 +82,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_yfyrm")
 
 [node name="Blackout" type="PanelContainer" parent="."]
 modulate = Color(0, 0, 0, 0)
@@ -96,7 +98,8 @@ modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Blackout/BlackBox"]
+[node name="BlackoutAnimationPlayer" type="AnimationPlayer" parent="Blackout/BlackBox"]
+unique_name_in_owner = true
 libraries = {
 &"": SubResource("AnimationLibrary_1htod")
 }
@@ -119,7 +122,8 @@ grow_vertical = 0
 position = Vector2(0, 500)
 texture = ExtResource("1_0krjb")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="MothContainer/Sprite2D"]
+[node name="MothContainerAnimationPlayer" type="AnimationPlayer" parent="MothContainer/Sprite2D"]
+unique_name_in_owner = true
 root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_g74xv")
