@@ -62,3 +62,11 @@ func _player_blinked():
 
 func _on_stalk_timer_timeout():
 	stalk_timer_active = false
+
+
+func _on_kill_range_body_entered(body):
+	if body.name == "PlayerCharacter":
+		body.jumpscare()
+		self.queue_free()
+		#print("The part where it kills you")
+		#get_tree().change_scene_to_file("res://retry_screen.tscn")
