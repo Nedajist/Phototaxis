@@ -57,6 +57,7 @@ func _end_music():
 func stop_music():
 	await $AudioStreamPlayer/AnimationPlayer.play("fade_out_music")
 	$AudioStreamPlayer/AnimationPlayer.stop()
+	audio_manager.stream = null
 
 
 func _on_animation_player_animation_finished(anim_name):
