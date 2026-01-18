@@ -58,6 +58,7 @@ func _on_stalk_timer_timeout():
 func _on_kill_range_body_entered(body):
 	if body.name == "PlayerCharacter":
 		EventBus.jumpscare.emit()
+		%musicmanager._end_music()
 		get_tree().call_group("Enemies", "queue_free")
 		#body.jumpscare()
 		#self.queue_free()

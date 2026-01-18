@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://d1t0t05cmgjpy"]
+
+[ext_resource type="Script" uid="uid://bxeqlygxow2lo" path="res://musics/musicmanager.gd" id="1_ht1d5"]
+[ext_resource type="AudioStream" uid="uid://8nqtnlhihf6i" path="res://musics/game_chase1.wav" id="2_vu8m2"]
+
+[sub_resource type="Animation" id="Animation_vdrmu"]
+resource_name = "fade_out_music"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.96666664),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -80.0]
+}
+
+[sub_resource type="Animation" id="Animation_n1mn2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_vu8m2"]
+resource_name = "fade_in_music"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-80.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nngir"]
+_data = {
+&"RESET": SubResource("Animation_n1mn2"),
+&"fade_in_music": SubResource("Animation_vu8m2"),
+&"fade_out_music": SubResource("Animation_vdrmu")
+}
+
+[node name="musicmanager" type="Node" node_paths=PackedStringArray("audio_manager")]
+script = ExtResource("1_ht1d5")
+audio_manager = NodePath("AudioStreamPlayer")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_vu8m2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AudioStreamPlayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_nngir")
+}
+
+[connection signal="animation_finished" from="AudioStreamPlayer/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
