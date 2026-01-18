@@ -1,4 +1,6 @@
 extends Control
+
+
 @onready var eyelid_top: TextureProgressBar = %EyelidTop
 @onready var eyelid_bottom: TextureProgressBar = %EyelidBottom
 
