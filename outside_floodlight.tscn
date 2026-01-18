@@ -1,0 +1,174 @@
+[gd_scene load_steps=22 format=3 uid="uid://dqqqxrwirr7dw"]
+
+[ext_resource type="Texture2D" uid="uid://bb0h6fvmi65a6" path="res://materials/diamond_plate/DiamondPlate009_1K-JPG_Color.jpg" id="1_4uxog"]
+[ext_resource type="Script" uid="uid://4g1vmj512wdd" path="res://outside_floodlight.gd" id="1_6qv3f"]
+[ext_resource type="Texture2D" uid="uid://cxu0xotdw620h" path="res://materials/diamond_plate/DiamondPlate009_1K-JPG_AmbientOcclusion.jpg" id="2_6qv3f"]
+[ext_resource type="Texture2D" uid="uid://d4nw1ly6v1v6n" path="res://materials/diamond_plate/DiamondPlate009_1K-JPG_Displacement.jpg" id="3_holxg"]
+[ext_resource type="Texture2D" uid="uid://5b1hobitnycn" path="res://materials/diamond_plate/DiamondPlate009_1K-JPG_Metalness.jpg" id="4_bsrld"]
+[ext_resource type="Texture2D" uid="uid://b4vdx4f2sdi17" path="res://materials/diamond_plate/DiamondPlate009_1K-JPG_NormalGL.jpg" id="5_ofhi2"]
+[ext_resource type="Texture2D" uid="uid://dvekvfo3y4vwj" path="res://materials/diamond_plate/DiamondPlate009_1K-JPG_Roughness.jpg" id="6_p83cb"]
+[ext_resource type="Material" uid="uid://bhirbjyvgu3le" path="res://materials/diamond_plate/DiamondPlate009_1K-JPG.tres" id="7_ahoyo"]
+[ext_resource type="AudioStream" uid="uid://cdgpsacdd2w88" path="res://sfx/260555__lookimadeathing__basic-fire-whoosh-2.mp3" id="9_holxg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ncbd"]
+albedo_color = Color(1, 1, 0.37254903, 1)
+albedo_texture = ExtResource("1_4uxog")
+metallic = 1.0
+metallic_texture = ExtResource("4_bsrld")
+metallic_texture_channel = 4
+roughness_texture = ExtResource("6_p83cb")
+roughness_texture_channel = 4
+normal_enabled = true
+normal_texture = ExtResource("5_ofhi2")
+ao_enabled = true
+ao_texture = ExtResource("2_6qv3f")
+ao_texture_channel = 4
+heightmap_enabled = true
+heightmap_scale = 1.0
+heightmap_texture = ExtResource("3_holxg")
+uv1_triplanar = true
+uv2_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_33j6r"]
+next_pass = SubResource("StandardMaterial3D_1ncbd")
+
+[sub_resource type="BoxMesh" id="BoxMesh_grmg1"]
+material = SubResource("StandardMaterial3D_33j6r")
+size = Vector3(0.75, 0.75, 1.15)
+
+[sub_resource type="BoxMesh" id="BoxMesh_n0i55"]
+material = ExtResource("7_ahoyo")
+size = Vector3(0.1, 0.1, 2)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_gg6u0"]
+material = ExtResource("7_ahoyo")
+top_radius = 0.05
+bottom_radius = 0.05
+height = 0.3
+
+[sub_resource type="BoxMesh" id="BoxMesh_yv5og"]
+material = ExtResource("7_ahoyo")
+size = Vector3(0.1, 0.1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ny74w"]
+lightmap_size_hint = Vector2i(5, 36)
+material = ExtResource("7_ahoyo")
+size = Vector3(0.1, 3, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dxp7n"]
+material = ExtResource("7_ahoyo")
+size = Vector3(1, 0.1, 0.1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_w68wx"]
+radius = 0.2
+height = 0.25
+is_hemisphere = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k2n3o"]
+size = Vector3(0.75, 0.75, 1.15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y4nef"]
+size = Vector3(0.1, 0.1, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vquj6"]
+size = Vector3(1, 0.1, 0.1)
+
+[node name="lightpost" type="Node3D"]
+script = ExtResource("1_6qv3f")
+
+[node name="main_box" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, -0.5)
+mesh = SubResource("BoxMesh_grmg1")
+
+[node name="stilts_post_1" type="MeshInstance3D" parent="main_box"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0.19999999)
+mesh = SubResource("BoxMesh_n0i55")
+skeleton = NodePath("../..")
+
+[node name="stilt_1" type="MeshInstance3D" parent="main_box/stilts_post_1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.20000002, 0.9)
+mesh = SubResource("CylinderMesh_gg6u0")
+
+[node name="stilt_2" type="MeshInstance3D" parent="main_box/stilts_post_1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.20000002, -0.90000004)
+mesh = SubResource("CylinderMesh_gg6u0")
+
+[node name="stilts_post_2" type="MeshInstance3D" parent="main_box"]
+transform = Transform3D(2.9802322e-08, 0, -1.0000001, 0, 1, 0, 1.0000001, 0, 2.9802322e-08, 0, -0.3, 0.7)
+mesh = SubResource("BoxMesh_yv5og")
+skeleton = NodePath("../..")
+
+[node name="stilt_3" type="MeshInstance3D" parent="main_box/stilts_post_2"]
+transform = Transform3D(2.9802315e-08, 0, 0.9999999, 0, 1, 0, -0.9999999, 0, 2.9802315e-08, 4.4703484e-08, -0.20000002, -0.39999995)
+mesh = SubResource("CylinderMesh_gg6u0")
+skeleton = NodePath("../../stilts_post_1")
+
+[node name="stilt_4" type="MeshInstance3D" parent="main_box/stilts_post_2"]
+transform = Transform3D(2.9802315e-08, 0, 0.9999999, 0, 1, 0, -0.9999999, 0, 2.9802315e-08, 1.4901161e-08, -0.20000002, 0.39999995)
+mesh = SubResource("CylinderMesh_gg6u0")
+skeleton = NodePath("../../stilts_post_1")
+
+[node name="lightpost" type="MeshInstance3D" parent="main_box"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0.7)
+mesh = SubResource("BoxMesh_ny74w")
+skeleton = NodePath("../..")
+
+[node name="lightpost_crossbar" type="MeshInstance3D" parent="main_box/lightpost"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4000002, 0.10000001)
+mesh = SubResource("BoxMesh_dxp7n")
+skeleton = NodePath("../../..")
+
+[node name="light_1" type="MeshInstance3D" parent="main_box/lightpost/lightpost_crossbar"]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, -0.4, -0.10000014, 0.19999999)
+mesh = SubResource("SphereMesh_w68wx")
+skeleton = NodePath("../../../..")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="main_box/lightpost/lightpost_crossbar/light_1"]
+transform = Transform3D(0.9659258, 0.22414386, 0.12940955, -0.12940954, -0.014754623, 0.9914814, 0.22414389, -0.97444445, 0.014754415, 0, 0, 0)
+spot_range = 10.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="main_box/lightpost/lightpost_crossbar/light_1"]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, -0.5, 0, 0.5, 0.8660254, 0, -0.08660245, -0.049999952)
+light_energy = 0.5
+omni_range = 1.0
+
+[node name="light_2" type="MeshInstance3D" parent="main_box/lightpost/lightpost_crossbar"]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, -0.10000014, 0.19999999)
+mesh = SubResource("SphereMesh_w68wx")
+skeleton = NodePath("../../../..")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="main_box/lightpost/lightpost_crossbar/light_2"]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, -0.5, 0, 0.5, 0.8660254, 0, -0.08660245, -0.049999952)
+light_energy = 0.5
+
+[node name="light_3" type="MeshInstance3D" parent="main_box/lightpost/lightpost_crossbar"]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0.4, -0.10000014, 0.19999999)
+mesh = SubResource("SphereMesh_w68wx")
+skeleton = NodePath("../../../..")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="main_box/lightpost/lightpost_crossbar/light_3"]
+transform = Transform3D(0.9659258, -0.22414386, -0.12940955, 0.12940954, -0.014754623, 0.9914814, -0.22414389, -0.97444445, 0.014754415, 0, 0, 0)
+spot_range = 10.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="main_box/lightpost/lightpost_crossbar/light_3"]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, -0.5, 0, 0.5, 0.8660254, 0, -0.08660245, -0.049999952)
+light_energy = 0.5
+omni_range = 1.0
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, -0.5)
+shape = SubResource("BoxShape3D_k2n3o")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, -0.3)
+shape = SubResource("BoxShape3D_y4nef")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0.2)
+shape = SubResource("BoxShape3D_vquj6")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("9_holxg")

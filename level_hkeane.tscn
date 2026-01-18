@@ -1,8 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://bh4v45l15b8tf"]
+[gd_scene load_steps=8 format=3 uid="uid://cuj6wqediitwk"]
 
-[ext_resource type="PackedScene" uid="uid://c02im4b6l80gd" path="res://player_character.tscn" id="1_4nm3s"]
+[ext_resource type="PackedScene" uid="uid://ojq7xuv1o00a" path="res://player_character.tscn" id="1_4nm3s"]
+[ext_resource type="PackedScene" path="res://outside_floodlight.tscn" id="1_mhwm6"]
+[ext_resource type="PackedScene" path="res://light_manager.tscn" id="3_578nk"]
+[ext_resource type="PackedScene" path="res://breaker_box.tscn" id="4_4xjp7"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vonw3"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+energy_multiplier = 0.25
+
+[sub_resource type="Sky" id="Sky_oi3di"]
+sky_material = SubResource("ProceduralSkyMaterial_vonw3")
+
+[sub_resource type="Environment" id="Environment_0b4ue"]
+background_mode = 2
+sky = SubResource("Sky_oi3di")
+tonemap_mode = 2
 
 [node name="level" type="Node"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0b4ue")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.48480973, -0.87461966, -3.823084e-08, 0, -4.371139e-08, 1, -0.87461966, -0.48480973, -2.1191706e-08, 0, 0, 0)
+light_energy = 0.1
+shadow_enabled = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 4)
@@ -133,8 +157,22 @@ height = 5.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5, 0.5, 13)
 size = Vector3(4, 2, 3)
 
-[node name="PlayerCharacter" parent="." instance=ExtResource("1_4nm3s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8799, 0.37924933, 3.02191)
+[node name="lightpost" parent="." instance=ExtResource("1_mhwm6")]
+transform = Transform3D(0.3821895, 0, 0.5864565, 0, 0.70000005, 0, -0.5864565, 0, 0.3821895, 3.9749355, -0.5326867, 2.7132626)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.892733, 0)
+[node name="lightpost2" parent="." instance=ExtResource("1_mhwm6")]
+transform = Transform3D(-0.5132455, 0, -0.47600323, 0, 0.7, 0, 0.47600323, 0, -0.5132455, 7.1340427, -0.5326867, 10.229637)
+
+[node name="lightpost3" parent="." instance=ExtResource("1_mhwm6")]
+transform = Transform3D(-0.59752375, 0, 0.36464417, 0, 0.70000005, 0, -0.36464417, 0, -0.59752375, -5.5361795, -0.5326867, 12.081279)
+
+[node name="PlayerCharacter" parent="." instance=ExtResource("1_4nm3s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.53307, -0.5, 7.369843)
+
+[node name="BreakerBox" parent="." node_paths=PackedStringArray("attached_electronics") instance=ExtResource("4_4xjp7")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -3.734863, 0.7377875, -0.4478057)
+attached_electronics = [NodePath("../lightpost"), NodePath("../lightpost2"), NodePath("../lightpost3")]
+
+[node name="lightmanager" parent="." node_paths=PackedStringArray("light_sources") instance=ExtResource("3_578nk")]
+light_sources = [NodePath("../lightpost"), NodePath("../lightpost2"), NodePath("../lightpost3")]
+frequency = 6.0

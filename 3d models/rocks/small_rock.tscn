@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=4 uid="uid://bdvp5porqh40b"]
+
+[ext_resource type="Texture2D" uid="uid://dy5rbu6ibswum" path="res://3d models/textures/Rocks.png" id="1_yny8v"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npu2u"]
+resource_name = "stone 2"
+vertex_color_use_as_albedo = true
+emission_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_3ovnx"]
+_surfaces = [{
+"aabb": AABB(-0.0034900992, -0.004219781, -0.0042197807, 0.00770988, 0.008439561, 0.008439561),
+"format": 34359742465,
+"index_count": 132,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAADAAIABAACAAEAAAADAAUABAAFAAMAAAAFAAYABAAHAAUABgAFAAcAAAAGAAgAAQAAAAgACQAGAAcACQAHAAoACAAGAAsABgAJAAsACgAHAAwABAAMAAcACQAKAA0ADAANAAoADQALAAkABAAOAAwADwANAAwADAAOAA8AEAANAA8ACwANABAADgARAA8ADgAEABEAEQAQAA8AEAASAAsAEQASABAACwASABMAEQATABIAFAALABMACAALABQAEQAVABMAFAATABUAAQAIABQAAQAUABUAAQAVABYAEQAXABUAFwAWABUAFwABABYABAAXABEAFwAEAAEA"),
+"name": "stone 2",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("Jrpkuy4OeTuKA9U6uPZRuhRGijsWRoo7SioPuwDANbncAEg7FmtCu8/8gbm9sxk7tDOYupcQKLrcAEg7FmtCuw58obqgAkE6Jrpku3E9hjUAhaS6JvyNum4VRbsa4Ea6Jrpkuy4OeTtBLFc6iCznuqwOfLod8Ge713ubuBdGirsWRoq7j/aktzb9FTsd8Ge77P+EOW4VRbtcSXw5VWwWOxdGirsWRoq7khwOOg3G+brI8BM7FkaKO+5Mfjrqirw6FkaKO40CFbr9aU+7FkaKO0qkAjtzH806FkaKO4o3ezr9aU+7FkaKOwj/SDvK2Ye5r8taui4OeTtz1va6XzxmOxRGijsKx8w44X6VuBRGijsWRoo7cTyhOU/fgTsWRoo7")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_i5ul6"]
+resource_name = "Cube_005"
+_surfaces = [{
+"aabb": AABB(-0.0034900992, -0.004219781, -0.0042197807, 0.00770988, 0.008439561, 0.008439561),
+"attribute_data": PackedByteArray("IxIeP5A4LT/iwRI/5rg3P+nBCT/T2SE/qgMNP8YnHz9KXAQ/5rg3Pzf/Az+ONSM/6MEJP85BKz84cOM+OhwtP6wC4T5eUSI/cQmQPgTiAz8sVY8+5IDfPiwFoD5OXdk+uQaoPmW0Bj8UgJw+VnsPPzz0rj5mtAY/FICxPkoLDD+S+H0+lIYHP5rZfT5ltAY/OwylPlpflD4yh5k+NI6QPmjqoD4cS5I+pNKXPqznsD6064w+FFKsPqTSlz6s57A+LAWgPk5d2T4sVY8+5IDfPrkGqD6KLcI+mtl9PvrrxD5c3II+ZmSxPrTrjD4UUqw+soL/PnDABj/Lm9E+BDMDP0/I0j7C/N0+cWrXPsVYBj/ErwE/lvjNPkiZAj9rGwQ/rp+IPgAcJz8UgJw+VnsPPxDhmz7UzRQ/Uk2APij7IT+S+H0+lIYHPxSAnD5Wew8/FrrLPirpGT921sg+5KQhPxSAsT5KCww/EOGbPtTNFD8Q4Zs+1M0UPyggyj7muDc/mRibPq5DLz+un4g+ABwnP6wC4T5eUSI/FrrLPliaET/NoNg+cMAGPzf/Az+ONSM/T8jSPsL83T5ImQI/dBDGPsSvAT+W+M0+FrrLPnwhyz5CMe4+XlavPptQIT8a+Qc/KZkOP9olCT9omRc/MIfwPg7SHD9f0xM/visQP96cFT8jEh4/kDgtP74rED/enBU/DtIcP1/TEz+qAw0/xicfP5tQIT8odSo/79QCP/oHCD/owQk/qjMMPzf/Az+ONSM/zaDYPnDABj921sg+5KQhPyggyj7muDc/EOGbPtTNFD8="),
+"format": 34359742487,
+"index_count": 132,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABAAHAAUABwAIAAUACQAKAAsACwAMAAkADQAOAA8ADQAQAA4AEAARAA4AEgATABQAEgAVABMAFQAWABMAFwAYABkAFwAaABgAFwAZABsAFwAbABwAFwAcAB0AHgAfACAAHgAhAB8AHgAgACIAHgAiACMAJAAlACYAJAAnACUAJwAoACUAKQAqACsAKQAsACoAKQArAC0ALgAvADAAMAAxAC4AMgAzADQANAA1ADIANgA3ADgANgA5ADcAOQA6ADcAOwA8AD0AOwA+ADwAPgA/ADwAQABBAEIAQABDAEEAQABCAEQARQBGAEcARwBIAEUASQBKAEsA"),
+"material": SubResource("StandardMaterial3D_npu2u"),
+"name": "stone 2",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 76,
+"vertex_data": PackedByteArray("Jrpkuy4OeTuKA9U6uPZRuhRGijsWRoo7SioPuwDANbncAEg7FmtCu8/8gbm9sxk7Jrpkuy4OeTtBLFc6j/aktzb9FTsd8Ge7r8taui4OeTtz1va6Jrpku3E9hjUAhaS6iCznuqwOfLod8Ge713ubuBdGirsWRoq7JvyNum4VRbsa4Ea67P+EOW4VRbtcSXw5VWwWOxdGirsWRoq7FkaKO0qkAjtzH806XzxmOxRGijsKx8w4FkaKOwj/SDvK2Ye5cTyhOU/fgTsWRoo74X6VuBRGijsWRoo7cTyhOU/fgTsWRoo7uPZRuhRGijsWRoo74X6VuBRGijsWRoo7tDOYupcQKLrcAEg7SioPuwDANbncAEg7tDOYupcQKLrcAEg77P+EOW4VRbtcSXw5JvyNum4VRbsa4Ea6khwOOg3G+brI8BM7FmtCuw58obqgAkE6FmtCu8/8gbm9sxk7SioPuwDANbncAEg7uPZRuhRGijsWRoo7Jrpkuy4OeTtBLFc6r8taui4OeTtz1va6Jrpkuy4OeTuKA9U6XzxmOxRGijsKx8w44X6VuBRGijsWRoo7khwOOg3G+brI8BM7FkaKO0qkAjtzH806FkaKO+5Mfjrqirw6tDOYupcQKLrcAEg7cTyhOU/fgTsWRoo7FkaKO0qkAjtzH806FkaKO4o3ezr9aU+7FkaKO40CFbr9aU+7FkaKOwj/SDvK2Ye5FkaKO+5Mfjrqirw6FkaKO+5Mfjrqirw6VWwWOxdGirsWRoq77P+EOW4VRbtcSXw5khwOOg3G+brI8BM7iCznuqwOfLod8Ge713ubuBdGirsWRoq7VWwWOxdGirsWRoq7j/aktzb9FTsd8Ge7r8taui4OeTtz1va6FkaKOwj/SDvK2Ye5XzxmOxRGijsKx8w4j/aktzb9FTsd8Ge7FkaKO4o3ezr9aU+7iCznuqwOfLod8Ge7JvyNum4VRbsa4Ea613ubuBdGirsWRoq7Jrpku3E9hjUAhaS6FmtCuw58obqgAkE6Jrpkuy4OeTuKA9U6FmtCuw58obqgAkE6Jrpku3E9hjUAhaS6FmtCu8/8gbm9sxk7Jrpkuy4OeTtBLFc6FkaKO40CFbr9aU+7FkaKO4o3ezr9aU+7j/aktzb9FTsd8Ge7VWwWOxdGirsWRoq7FkaKO40CFbr9aU+7VWwWOxdGirsWRoq7FkaKO+5Mfjrqirw6yULXgoUlT+nJQteCoiVX6clC14I4JTrpyULXgu0kJulFGyzNorL66EUbLM2isvroRRsszaKy+uhFGyzNorL66EUbLM2isvro63hVId7lvb/reFUh6uMfwOt4VSH85PS/63hVITvmpr+ssR6qFfq256yxHqoK9xnprLEeqmvnOfCssR6qyPwWm6yxHqpu/BmbWHh4abXXlM1YeHhpZdnXzFh4eGmHzHrSWHh4adLedspYeHhpod8cyrZjIEL5z762tmMgQvnPvra2YyBC+c++trZjIEL5z762tmMgQvnPvra2YyBC+c++trZjIEL5z762f3Fq+HK+2MN/cWr4cr7Yw39xavhyvtjDf3Fq+HK+2MN/cWr4cr7Yw39xavhyvtjDTZ/daRX0oqdNn91pKPSqp02f3WkJ9JynTZ/daS/0radNn91pSvS6p/7//3/GFv///v//f8YW///+//9/xhb///7//3/GFv///v//f8YW///2q9pKMf5R5far2kpp/A7l9qvaSin+UOX2q9pKm/6gmVYLCfdqrqbmVgsJ91atGOdWCwn37q3Z5lYLCfeqrovmp8dk6HG3bcqnx2To5rL8y6fHZOhoqT7Pp8dk6AG6jMmnx2ToArqMyeotUULgMCL26i1RQj0x6fXqLVFCojBI9uotUUKuMaT16i1RQmEyN/WrF4l0dDR1+asXiXR0NHX5qxeJdHQ0dfmrF4l0dDR1+asXiXR0NHX5tvJ37oypueK28nfuuqgm47byd+6iqa7itvJ37gaqeuL5xwJW2PJq8/nHAlbY8mrz+ccCVtjyavM=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_3ovnx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8es0g"]
+albedo_texture = ExtResource("1_yny8v")
+
+[node name="small rock" type="Node3D"]
+
+[node name="small rock" type="MeshInstance3D" parent="."]
+transform = Transform3D(-22.503622, -32.840508, 3.8843205, 26.96349, -15.5013895, 25.153076, -19.145685, 16.769253, 30.858303, 0, 0, 0)
+mesh = SubResource("ArrayMesh_i5ul6")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_8es0g")
