@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://uaebcnnrolqd"]
+[gd_scene load_steps=10 format=3 uid="uid://uaebcnnrolqd"]
 
 [ext_resource type="Script" uid="uid://bau0yahd4je3l" path="res://scenes/jumpscare.gd" id="1_yfyrm"]
 [ext_resource type="Texture2D" uid="uid://dpttjs67giuy4" path="res://moth_enemy/Enraged Moth/front.png" id="2_yfyrm"]
+[ext_resource type="AudioStream" uid="uid://226gglshatv0" path="res://moth_enemy/scary-sting-sound (replace with better).mp3" id="3_uhh4h"]
 
 [sub_resource type="Animation" id="Animation_uhibh"]
 length = 0.001
@@ -126,3 +127,6 @@ root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_g74xv")
 }
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_uhh4h")

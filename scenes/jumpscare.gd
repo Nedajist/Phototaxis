@@ -9,6 +9,7 @@ func jumpscare():
 	blackout_animation_player.play("fade_out_in")
 	await get_tree().create_timer(3.0).timeout
 	moth_container_animation_player.play("jumpscare")
+	$AudioStreamPlayer3D.play()
 	await get_tree().create_timer(1.0).timeout
 	get_tree().change_scene_to_file("res://retry_screen.tscn")
 	

@@ -12,13 +12,13 @@ func _physics_process(delta):
 	var front_distance = player.global_position - front_node.global_position
 	var back_distance = player.global_position - back_node.global_position
 	if back_distance.length() < front_distance.length() and !facing_back:
-		back_node.visible = true
-		front_node.visible = false
+		$MothBack.visible = true
+		$MothFront.visible = false
 		facing_back = true
 		print("FaceBack")
 		print(back_distance.length(), "   ", front_distance.length())
-	#elif facing_back:
-		#front_node.visible = true
-		#back_node.visible = false
-		#facing_back = false
-		#print("FaceFront")
+	elif back_distance.length() > front_distance.length() and facing_back:
+		$MothFront.visible = true
+		$MothBack.visible = false
+		facing_back = false
+		print("FaceFront")
