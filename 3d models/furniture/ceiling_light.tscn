@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bgwxo14hnjmcp"]
+[gd_scene load_steps=6 format=3 uid="uid://bgwxo14hnjmcp"]
 
 [ext_resource type="Material" uid="uid://bvik250qe0chs" path="res://materials/diamond_plate/DiamondPlate009_1K-JPG.tres" id="1_advau"]
+[ext_resource type="Script" uid="uid://4g1vmj512wdd" path="res://outside_floodlight.gd" id="1_p5acw"]
+[ext_resource type="AudioStream" uid="uid://cdgpsacdd2w88" path="res://sfx/260555__lookimadeathing__basic-fire-whoosh-2.mp3" id="3_u6mot"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_p5acw"]
 top_radius = 0.025
@@ -10,7 +12,9 @@ bottom_radius = 0.025
 material = ExtResource("1_advau")
 size = Vector3(0.25, 0.1, 0.1)
 
-[node name="ceiling_light" type="Node3D"]
+[node name="ceiling_light" type="Node3D" node_paths=PackedStringArray("light_parents")]
+script = ExtResource("1_p5acw")
+light_parents = [NodePath(".")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.1, 0, 0)
@@ -41,3 +45,9 @@ light_size = 1.0
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -0.2, 0)
 spot_range = 10.0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_u6mot")
+volume_db = -5.0
+max_distance = 15.0
