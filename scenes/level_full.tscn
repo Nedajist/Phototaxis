@@ -1,7 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://cyjfkujhlu7a8"]
+[gd_scene load_steps=21 format=3 uid="uid://cyjfkujhlu7a8"]
 
 [ext_resource type="Shader" uid="uid://dyysfxgdx3tjb" path="res://sky.gdshader" id="1_rujvi"]
-[ext_resource type="PackedScene" path="res://shed.tscn" id="1_rvbka"]
+[ext_resource type="PackedScene" uid="uid://db5vtnv2kffga" path="res://shed.tscn" id="1_rvbka"]
 [ext_resource type="PackedScene" uid="uid://bsgjd4nsmouiv" path="res://3d models/trees/tree_06.tscn" id="2_8fobk"]
 [ext_resource type="PackedScene" uid="uid://byia83ocim6js" path="res://scenes/player_character.tscn" id="2_lscal"]
 [ext_resource type="PackedScene" uid="uid://cjnrpwoo7ri8e" path="res://3d models/trees/tree_01.tscn" id="3_11pt6"]
@@ -12,9 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://bbfiq0efgxv51" path="res://3d models/barriers/wooden_fence_open_2.tscn" id="5_rvbka"]
 [ext_resource type="PackedScene" uid="uid://dqqqxrwirr7dw" path="res://outside_floodlight.tscn" id="7_oh6h3"]
 [ext_resource type="PackedScene" uid="uid://b4jppir7cfejv" path="res://breaker_box.tscn" id="9_ijcf8"]
-[ext_resource type="PackedScene" uid="uid://ygf5ld8cbgji" path="res://light_manager.tscn" id="9_sd6n8"]
+[ext_resource type="PackedScene" path="res://light_manager.tscn" id="9_sd6n8"]
 [ext_resource type="PackedScene" uid="uid://hiitfpg7yv0c" path="res://level_timer.tscn" id="10_j5urc"]
 [ext_resource type="Script" uid="uid://bxeqlygxow2lo" path="res://musics/musicmanager.gd" id="13_rvbka"]
+[ext_resource type="PackedScene" uid="uid://c0h4xhxeqqyo0" path="res://scenes/generator.tscn" id="14_cybri"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7aj1g"]
 shader = ExtResource("1_rujvi")
@@ -841,6 +842,9 @@ attached_electronics = [NodePath("../ceiling/lights/ceiling_light13"), NodePath(
 [node name="BreakerBox2" parent="NavigationRegion3D/main_building" node_paths=PackedStringArray("attached_electronics") instance=ExtResource("9_ijcf8")]
 transform = Transform3D(-1.0927847e-08, 0, 0.25, 0, 0.25, 0, -0.25, 0, -1.0927847e-08, 25.999998, 1.3, -9.500001)
 attached_electronics = [NodePath("../ceiling/lights/ceiling_light2"), NodePath("../ceiling/lights/ceiling_light3"), NodePath("../ceiling/lights/ceiling_light4"), NodePath("../ceiling/lights/ceiling_light11"), NodePath("../ceiling/lights/ceiling_light12"), NodePath("../ceiling/lights/ceiling_light5"), NodePath("../ceiling/lights/ceiling_light9"), NodePath("../ceiling/lights/ceiling_light7"), NodePath("../ceiling/lights/ceiling_light8")]
+
+[node name="Generator" parent="NavigationRegion3D" instance=ExtResource("14_cybri")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 16.5, 0.09999949, -12.3)
 
 [node name="BreakerBox" parent="NavigationRegion3D" node_paths=PackedStringArray("attached_electronics") instance=ExtResource("9_ijcf8")]
 transform = Transform3D(0.24904867, 0, 0.021788932, 0, 0.25, 0, -0.021788932, 0, 0.24904867, 15.171839, -0.55677444, -30.033653)
