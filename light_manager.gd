@@ -41,9 +41,9 @@ func _process(delta):
 				#print(target)
 			Mode.Top_Most:
 				target = 0
-		light_sources[target].selected_to_break = false
-		#deactivated_lights.append(light_sources[target])
-		#light_sources.remove_at(target)
+		light_sources[target].selected_to_break = true
+		deactivated_lights.append(light_sources[target])
+		light_sources.remove_at(target)
 		timer = frequency
 
 func _light_reactivate(target):
