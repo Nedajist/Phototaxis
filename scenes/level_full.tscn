@@ -1,6 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://cyjfkujhlu7a8"]
 
 [ext_resource type="Shader" uid="uid://dyysfxgdx3tjb" path="res://sky.gdshader" id="1_rujvi"]
+[ext_resource type="PackedScene" uid="uid://db5vtnv2kffga" path="res://shed.tscn" id="1_rvbka"]
 [ext_resource type="PackedScene" uid="uid://bsgjd4nsmouiv" path="res://3d models/trees/tree_06.tscn" id="2_8fobk"]
 [ext_resource type="PackedScene" uid="uid://byia83ocim6js" path="res://scenes/player_character.tscn" id="2_lscal"]
 [ext_resource type="PackedScene" uid="uid://cjnrpwoo7ri8e" path="res://3d models/trees/tree_01.tscn" id="3_11pt6"]
@@ -12,9 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://dqqqxrwirr7dw" path="res://outside_floodlight.tscn" id="7_oh6h3"]
 [ext_resource type="PackedScene" uid="uid://b4jppir7cfejv" path="res://breaker_box.tscn" id="9_ijcf8"]
 [ext_resource type="PackedScene" path="res://light_manager.tscn" id="9_sd6n8"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_8fobk"]
-size = Vector3(10, 3, 10)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7aj1g"]
 shader = ExtResource("1_rujvi")
@@ -49,17 +47,14 @@ polygons = [PackedInt32Array(2, 9, 3), PackedInt32Array(3, 9, 8), PackedInt32Arr
 
 [node name="level" type="Node3D" parent="."]
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="level"]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -29.188408, -2.5665293, 31.505924)
-mesh = SubResource("BoxMesh_8fobk")
+[node name="shed" parent="level" instance=ExtResource("1_rvbka")]
+transform = Transform3D(-0.75, 0, 1.13246855e-07, 0, 0.75, 0, -1.13246855e-07, 0, -0.75, -29.188408, -2.4665294, 31.505924)
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="level"]
-transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -39.587467, -2.5665274, -37.646217)
-mesh = SubResource("BoxMesh_8fobk")
+[node name="shed2" parent="level" instance=ExtResource("1_rvbka")]
+transform = Transform3D(0.56568545, 0, 0.56568545, 0, 0.8, 0, -0.56568545, 0, 0.56568545, -39.587467, -2.9665272, -37.646217)
 
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="level"]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 8.34749, -3.0979433, -39.704712)
-mesh = SubResource("BoxMesh_8fobk")
+[node name="shed3" parent="level" instance=ExtResource("1_rvbka")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 8.34749, -3.0979433, -39.704712)
 
 [node name="trees" type="Node" parent="level"]
 

@@ -1,0 +1,82 @@
+[gd_scene load_steps=11 format=3 uid="uid://db5vtnv2kffga"]
+
+[ext_resource type="Material" uid="uid://qmwdqv3sgqea" path="res://materials/brick_1/Bricks047_1K-JPG.tres" id="1_xw8xx"]
+[ext_resource type="Material" uid="uid://bsjlmqnoee1kp" path="res://materials/wood/Wood035_1K-JPG.tres" id="2_x6wi8"]
+[ext_resource type="Shader" uid="uid://cb0kf83pluoej" path="res://carpet.tres" id="3_x6wi8"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5tcl3"]
+size = Vector3(10, 3, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_skq4x"]
+size = Vector3(2, 2, 3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xw8xx"]
+size = Vector3(10, 0.2, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_x6wi8"]
+size = Vector3(0.2, 4, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6ilwl"]
+size = Vector3(0.2, 4, 3.5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6ilwl"]
+render_priority = 0
+shader = ExtResource("3_x6wi8")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wt7sd"]
+material = SubResource("ShaderMaterial_6ilwl")
+size = Vector2(8, 8)
+
+[node name="shed" type="Node3D"]
+
+[node name="base" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_xw8xx")
+mesh = SubResource("BoxMesh_5tcl3")
+
+[node name="ramp" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9396926, -0.34202012, 0, 0.34202012, 0.9396926, 0, 0.050988093, 6.0606904)
+material_override = ExtResource("1_xw8xx")
+mesh = SubResource("BoxMesh_skq4x")
+
+[node name="ceiling" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, 0)
+material_override = ExtResource("2_x6wi8")
+mesh = SubResource("BoxMesh_xw8xx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ceiling"]
+
+[node name="walls" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9, 3.5, 0)
+material_override = ExtResource("2_x6wi8")
+mesh = SubResource("BoxMesh_x6wi8")
+skeleton = NodePath("../../base")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="walls"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9, 3.5, 0)
+material_override = ExtResource("2_x6wi8")
+mesh = SubResource("BoxMesh_x6wi8")
+skeleton = NodePath("../../base")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="walls"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.7881393e-07, 3.5, -4.9)
+material_override = ExtResource("2_x6wi8")
+mesh = SubResource("BoxMesh_x6wi8")
+skeleton = NodePath("../../base")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="walls"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.0486825, 3.5, 4.9000006)
+material_override = ExtResource("2_x6wi8")
+mesh = SubResource("BoxMesh_6ilwl")
+skeleton = NodePath("../../base")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="walls"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.0000002, 3.5, 4.9000006)
+material_override = ExtResource("2_x6wi8")
+mesh = SubResource("BoxMesh_6ilwl")
+skeleton = NodePath("../../base")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6000001, 0)
+mesh = SubResource("PlaneMesh_wt7sd")
