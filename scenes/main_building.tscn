@@ -3,7 +3,7 @@
 [ext_resource type="Material" uid="uid://qmwdqv3sgqea" path="res://materials/brick_1/Bricks047_1K-JPG.tres" id="1_4ns5f"]
 [ext_resource type="Shader" uid="uid://bj2a4iu2cmk8r" path="res://wall.tres" id="2_ox8ns"]
 [ext_resource type="Shader" uid="uid://cb0kf83pluoej" path="res://carpet.tres" id="3_toav8"]
-[ext_resource type="Material" uid="uid://di4knatm8asn4" path="res://materials/inside_wall.tres" id="4_ks0ql"]
+[ext_resource type="Material" path="res://materials/inside_wall.tres" id="4_ks0ql"]
 [ext_resource type="PackedScene" uid="uid://djvxbos06ptl6" path="res://3d models/furniture/bed_complete.tscn" id="5_lstbe"]
 [ext_resource type="PackedScene" uid="uid://bo8jqoih1uqhd" path="res://3d models/furniture/chair.tscn" id="5_lvhbe"]
 [ext_resource type="PackedScene" uid="uid://3r5x5p1xs17a" path="res://3d models/furniture/desk.tscn" id="6_2sadd"]
@@ -15,9 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://55h0vdxnlbpo" path="res://3d models/furniture/filing_cabinet.tscn" id="9_dly6i"]
 [ext_resource type="PackedScene" uid="uid://bh5acme3wf2dc" path="res://3d models/furniture/painting.tscn" id="11_8w72e"]
 [ext_resource type="PackedScene" uid="uid://cr845u4nr00io" path="res://3d models/furniture/x_ray_skull.tscn" id="12_ghkkk"]
-[ext_resource type="PackedScene" uid="uid://d7xhochwne5q" path="res://3d models/furniture/metal_shelf.tscn" id="16_ghkkk"]
+[ext_resource type="PackedScene" path="res://3d models/furniture/metal_shelf.tscn" id="16_ghkkk"]
 [ext_resource type="Material" uid="uid://tf5jcn1q125y" path="res://materials/ceiling/OfficeCeiling001_1K-JPG.tres" id="17_44ia1"]
-[ext_resource type="PackedScene" uid="uid://bgwxo14hnjmcp" path="res://3d models/furniture/ceiling_light.tscn" id="18_ts6u7"]
+[ext_resource type="PackedScene" path="res://3d models/furniture/ceiling_light.tscn" id="18_ts6u7"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_toav8"]
 data = PackedVector3Array(-20, 1.5, 15, 20, 1.5, 15, -20, -1.5, 15, 20, 1.5, 15, 20, -1.5, 15, -20, -1.5, 15, 20, 1.5, -15, -20, 1.5, -15, 20, -1.5, -15, -20, 1.5, -15, -20, -1.5, -15, 20, -1.5, -15, 20, 1.5, 15, 20, 1.5, -15, 20, -1.5, 15, 20, 1.5, -15, 20, -1.5, -15, 20, -1.5, 15, -20, 1.5, -15, -20, 1.5, 15, -20, -1.5, -15, -20, 1.5, 15, -20, -1.5, 15, -20, -1.5, -15, 20, 1.5, 15, -20, 1.5, 15, 20, 1.5, -15, -20, 1.5, 15, -20, 1.5, -15, 20, 1.5, -15, -20, -1.5, 15, 20, -1.5, 15, -20, -1.5, -15, 20, -1.5, 15, 20, -1.5, -15, -20, -1.5, -15)
