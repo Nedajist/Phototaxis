@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cyjfkujhlu7a8"]
+[gd_scene load_steps=22 format=3 uid="uid://cyjfkujhlu7a8"]
 
 [ext_resource type="Shader" uid="uid://dyysfxgdx3tjb" path="res://sky.gdshader" id="1_rujvi"]
 [ext_resource type="PackedScene" uid="uid://bsgjd4nsmouiv" path="res://3d models/trees/tree_06.tscn" id="2_8fobk"]
@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://ygf5ld8cbgji" path="res://light_manager.tscn" id="9_sd6n8"]
 [ext_resource type="PackedScene" uid="uid://bttvoms2pcrn3" path="res://Generator.glb" id="13_rvbka"]
 [ext_resource type="PackedScene" uid="uid://cxx36fgml6gl3" path="res://3d models/misc/wildlife_entity.tscn" id="14_d6qyr"]
+[ext_resource type="PackedScene" uid="uid://bl2frqxdwmw1q" path="res://3d models/misc/rat_entity_1.tscn" id="15_cybri"]
+[ext_resource type="PackedScene" uid="uid://c8brhj5r4fvpw" path="res://3d models/misc/rat_entity_2.tscn" id="16_qci8t"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_8fobk"]
 size = Vector3(10, 3, 10)
@@ -851,3 +853,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.884157, -1.1997021, 9.236
 
 [node name="wildlife_entity2" parent="." instance=ExtResource("14_d6qyr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.694881, -1.1997021, -20.849012)
+
+[node name="rat_entity_1" parent="." instance=ExtResource("15_cybri")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.351017, 0.7267026, -3.1161141)
+move_speed = 5.0
+
+[node name="rat_entity_2" parent="." instance=ExtResource("16_qci8t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.047783, 0.7118925, 23.537022)
+move_speed = 5.0
