@@ -32,9 +32,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	# Test to trigger blink every 3 seconds
 	#time_since_last_blink += delta
-	#if time_since_last_blink >= blink_interval and not blinking:
-		#blink()
-		#time_since_last_blink = 0.0
+	if Input.is_action_just_pressed("spacebar") and not blinking:
+		blink()
+		time_since_last_blink = 0.0
 	
 	_handle_blink(delta)
 
