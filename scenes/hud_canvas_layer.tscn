@@ -222,6 +222,19 @@ expand_mode = 4
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="Label" type="Label" parent="VBoxContainer/Control2/HBoxContainer/Control2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Right Click
+to drink
+Mothster"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Panel2" type="Panel" parent="VBoxContainer/Control2/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
