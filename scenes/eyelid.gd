@@ -2,9 +2,10 @@ extends Control
 @onready var eyelid_top: TextureProgressBar = %EyelidTop
 @onready var eyelid_bottom: TextureProgressBar = %EyelidBottom
 
-@export var duration_close:float = 0.8
-@export var duration_stay_closed:float = 0.2
-@export var duration_open:float = 0.2
+@export var initial_pause:float = 1.5
+@export var duration_close:float = 0.5
+@export var duration_stay_closed:float = 0.3
+@export var duration_open:float = 0.15
 @export var duartion_stay_open:float = 3.0
 
 var blink_tween: Tween
@@ -14,7 +15,8 @@ func _ready() -> void:
 	start_blinking()
 
 func start_blinking() -> void:
-	# Start the continuous blink cycle
+	# Wait for initial pause before starting the blink cycle
+	await get_tree().create_timer(initial_pause).timeout
 	_blink_cycle()
 
 func _blink_cycle() -> void:
