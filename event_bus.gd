@@ -18,7 +18,12 @@ signal interactables_in_range
 signal generator_interacted
 signal generator_filled_with_gas
 
+signal floodlight_activated(Node3D)
+signal floodlight_deactivated(Node3D)
 
+signal gas_low
+signal gas_critical
+signal gas_empty
 
 #Add signals to this dummy function to silence warnings
 func silence_warnings() -> void:
@@ -37,3 +42,11 @@ func silence_warnings() -> void:
 	gasoline_used.emit()
 	generator_interacted.emit()
 	generator_filled_with_gas.emit()
+	
+	floodlight_activated.emit(null)
+	floodlight_deactivated.emit(null)
+	
+	gas_low.emit()
+	gas_critical.emit()
+	gas_empty.emit()
+	
