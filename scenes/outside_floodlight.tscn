@@ -73,8 +73,9 @@ size = Vector3(0.1, 0.1, 2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_vquj6"]
 size = Vector3(1, 0.1, 0.1)
 
-[node name="lightpost" type="Node3D"]
+[node name="lightpost" type="Node3D" node_paths=PackedStringArray("light_parents")]
 script = ExtResource("1_6qv3f")
+light_parents = [NodePath("main_box/lightpost/lightpost_crossbar/light_1"), NodePath("main_box/lightpost/lightpost_crossbar/light_2"), NodePath("main_box/lightpost/lightpost_crossbar/light_3")]
 
 [node name="main_box" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, -0.5)
