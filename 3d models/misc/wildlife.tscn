@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://cquisc7oy0ck5"]
+[gd_scene load_steps=6 format=4 uid="uid://cquisc7oy0ck5"]
 
 [ext_resource type="Texture2D" uid="uid://dui05e1wuqu3m" path="res://3d models/textures/capybara1_texture.png" id="1_qq2pw"]
-[ext_resource type="Script" uid="uid://c3fyaey53luej" path="res://3d models/misc/wildlife.gd" id="1_w2vwu"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_1ct80"]
 _surfaces = [{
@@ -60,14 +59,10 @@ albedo_texture = ExtResource("1_qq2pw")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p15gn"]
 albedo_texture = ExtResource("1_qq2pw")
 
-[node name="wildlife" type="Node3D" node_paths=PackedStringArray("nav_agent")]
-script = ExtResource("1_w2vwu")
-nav_agent = NodePath("NavigationAgent3D")
+[node name="wildlife" type="Node3D"]
 
 [node name="Capybara" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
 mesh = SubResource("ArrayMesh_w2vwu")
 surface_material_override/0 = SubResource("StandardMaterial3D_bjmsl")
 surface_material_override/1 = SubResource("StandardMaterial3D_p15gn")
-
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
