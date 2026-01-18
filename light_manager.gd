@@ -19,6 +19,12 @@ var deactivated_lights:Array[Node3D]
 
 func _ready():
 	EventBus.generator_filled_with_gas.connect(_gasoline_refilled)
+	EventBus.floodlight_activated.connect(_light_reactivate)
+	EventBus.floodlight_deactivated.connect(_light_deactivate)
+	
+	EventBus.gas_low.connect(_gasoline_low)
+	EventBus.gas_critical.connect(_gasoline_critical)
+	EventBus.gas_empty.connect(_gasoline_empty)
 	timer = frequency
 	#for light:LightPost in light_sources:
 		#light.total_time_on = frequency
@@ -35,30 +41,54 @@ func _process(delta):
 				#print(target)
 			Mode.Top_Most:
 				target = 0
-		light_sources[target].selected_to_break = true
-		deactivated_lights.append(light_sources[target])
-		light_sources.remove_at(target)
+		light_sources[target].selected_to_break = false
+		#deactivated_lights.append(light_sources[target])
+		#light_sources.remove_at(target)
 		timer = frequency
 
 func _light_reactivate(target):
 	if(!light_sources.has(target) and deactivated_lights.has(target)):
 		light_sources.append(target)
 		deactivated_lights.erase(target)
+		
+func _light_deactivate(target):
+	if(light_sources.has(target) and !deactivated_lights.has(target)):
+		light_sources.erase(target)
+		deactivated_lights.append(target)
 
 func _gasoline_refilled():
-	# TODO: Implement
-	print("Gasoline Refilled!")
-	pass
+	print(deactivated_lights.size())
+	print(light_sources.size())
+	for light in light_sources:
+		light.gas_low = false
+		light.gas_critical = false
 	
-"""
-there are two ways the lights can turn off
+	#Need to iterate through backwards because activate() removes elements from the array
+	#and will cause indexing errors while iterating forwards.
+	#Cursed AF. Might refactor tomorrow.
+	for i in range(deactivated_lights.size() - 1, -1, -1):
+		
+		print("node: " + deactivated_lights[i].name)
+		deactivated_lights[i].gas_low = false
+		deactivated_lights[i].gas_critical = false
+		if(deactivated_lights[i].has_method("activate")):
+			deactivated_lights[i].activate()
+	
 
-All lights are connected to a central generator, which will slowly run out of gas. 
-When gas is running out, it will start blinking.
--> This can be fixed by filling the generator with gas (stub above)
+func _gasoline_low():
+	for light in light_sources:
+		light.gas_low = true 
+	for light in deactivated_lights: #If a deactivated light gets turned on it should 
+		light.gas_low = true
+	
+func _gasoline_critical():
+	for light in light_sources:
+		light.gas_critical = true 
+	for light in deactivated_lights:
+		light.gas_critical = true
 
-Randomly, any given light has a chance to burn out. The lights will get brighter and brighter, 
-then suddenly turn off.
--> This can be fixed by finding the breaker switches and fixing the correct light. 
-Each light has a one-to-one or many-to-one (multiple lights per breaker) relationship with each breaker
-"""
+func _gasoline_empty():
+	for light in light_sources:
+		light.gas_empty = true
+	for light in deactivated_lights:
+		light.gas_empty = true
