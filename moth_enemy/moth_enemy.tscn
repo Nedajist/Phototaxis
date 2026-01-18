@@ -130,6 +130,9 @@ one_shot = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="KillRange"]
 shape = SubResource("SphereShape3D_vdxdw")
 
+[node name="PlayerCameraAnchor" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.108588, 0, 0)
+
 [connection signal="switch_to_chase" from="State Machine/MothStalk" to="." method="_on_moth_stalk_switch_to_chase"]
 [connection signal="body_entered" from="VisionArea" to="." method="_on_vision_area_body_entered"]
 [connection signal="area_entered" from="LightSensitive" to="." method="_on_light_sensitive_area_entered"]

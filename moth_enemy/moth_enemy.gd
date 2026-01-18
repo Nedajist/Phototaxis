@@ -72,3 +72,6 @@ func _on_kill_range_body_entered(body):
 		#self.queue_free()
 		#print("The part where it kills you")
 		#get_tree().change_scene_to_file("res://retry_screen.tscn")
+
+func GetLookatPoint():
+	return $PlayerCameraAnchor
