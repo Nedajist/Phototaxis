@@ -24,6 +24,7 @@ text = "we go agane
 
 [node name="ExitButton" type="Button" parent="."]
 unique_name_in_owner = true
+visible = false
 offset_left = 470.0
 offset_top = 476.0
 offset_right = 645.0

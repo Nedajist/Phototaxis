@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://detp30ngyni5s"]
 
-[ext_resource type="Script" path="res://scenes/title_screen.gd" id="1_mgrm8"]
+[ext_resource type="Script" uid="uid://c2ns81er81cc4" path="res://scenes/title_screen.gd" id="1_mgrm8"]
 [ext_resource type="PackedScene" uid="uid://btbw57a4jnd2t" path="res://scenes/eyelid.tscn" id="2_mgrm8"]
 [ext_resource type="Texture2D" uid="uid://ujqaveds3d7n" path="res://2d_assets/title_card.png" id="2_s4lrb"]
 [ext_resource type="AudioStream" uid="uid://byhy1d2ua4bqh" path="res://musics/main menu.mp3" id="4_mgrm8"]
@@ -40,6 +40,7 @@ flat = true
 
 [node name="ExitButton" type="Button" parent="."]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
 offset_left = 443.0
 offset_top = 469.0
