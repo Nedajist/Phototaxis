@@ -174,7 +174,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.53307, -0.5, 7.369843)
 
 [node name="BreakerBox" parent="." node_paths=PackedStringArray("attached_electronics") instance=ExtResource("4_4xjp7")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -3.734863, 0.7377875, -0.4478057)
-attached_electronics = [NodePath("../lightpost"), NodePath("../lightpost2"), NodePath("../lightpost3")]
+attached_electronics = [NodePath("../lightpost3")]
+
+[node name="BreakerBox2" parent="." node_paths=PackedStringArray("attached_electronics") instance=ExtResource("4_4xjp7")]
+transform = Transform3D(0, 0, -0.25000003, 0, 0.25, 0, 0.25000003, 0, 0, 9.228699, 0.7377875, 6.2740645)
+attached_electronics = [NodePath("../lightpost"), NodePath("../lightpost2")]
 
 [node name="lightmanager" parent="." node_paths=PackedStringArray("light_sources") instance=ExtResource("3_578nk")]
 light_sources = [NodePath("../lightpost"), NodePath("../lightpost2"), NodePath("../lightpost3")]
