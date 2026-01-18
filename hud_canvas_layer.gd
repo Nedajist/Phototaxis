@@ -65,7 +65,10 @@ func blink() -> void:
 func _handle_blink(delta: float) -> void:
 	if blinking:
 		if blink_progress <= 200.0 and !blink_signal_fired:
-			blink_signal.emit()
+			var rng = RandomNumberGenerator.new()
+			if rng.randi_range(1,6) < 2:
+				print("asd")
+				blink_signal.emit()
 			blink_signal_fired = true
 		# Animate the blink
 		if blink_progress < 100.0:

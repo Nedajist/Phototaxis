@@ -92,8 +92,13 @@ shape = SubResource("SphereShape3D_bk6gy")
 [node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 
+[node name="StalkTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
 [connection signal="switch_to_chase" from="State Machine/MothStalk" to="." method="_on_moth_stalk_switch_to_chase"]
 [connection signal="body_entered" from="VisionArea" to="." method="_on_vision_area_body_entered"]
 [connection signal="area_entered" from="LightSensitive" to="." method="_on_light_sensitive_area_entered"]
 [connection signal="screen_entered" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]
+[connection signal="timeout" from="StalkTimer" to="." method="_on_stalk_timer_timeout"]

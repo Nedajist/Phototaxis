@@ -5,6 +5,7 @@ extends CharacterBody3D
 signal Transitioned
 var player_ui:CanvasLayer
 var on_screen:bool = false
+var stalk_timer_active:bool = false
 
 func _ready() -> void:
 	for node in $"State Machine".get_children():
@@ -35,9 +36,10 @@ func _on_vision_area_body_entered(body): #small sphere and cone detector check f
 
 func _on_light_sensitive_area_entered(area: Area3D) -> void: #large sphere collector checks for Area3Ds named MothLight
 	if area.name=="MothLight":
-		print("moth has felt the light shining")
-		$"State Machine".current_state.Transitioned.emit($"State Machine".current_state, "MothFollow")
-		$"State Machine/MothFollow".light=area
+		if !stalk_timer_active:
+			print("moth has felt the light shining")
+			$"State Machine".current_state.Transitioned.emit($"State Machine".current_state, "MothFollow")
+			$"State Machine/MothFollow".light=area
 
 
 func _on_moth_stalk_switch_to_chase() -> void:
@@ -54,3 +56,9 @@ func _on_visible_on_screen_notifier_3d_screen_exited():
 func _player_blinked():
 	if on_screen:
 		$"State Machine".current_state.Transitioned.emit($"State Machine".current_state, "MothStalk")
+		$StalkTimer.start()
+		stalk_timer_active = true
+
+
+func _on_stalk_timer_timeout():
+	stalk_timer_active = false
