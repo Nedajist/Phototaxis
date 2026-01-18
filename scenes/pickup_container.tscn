@@ -6,7 +6,7 @@
 [node name="PickupContainer" type="Node3D"]
 
 [node name="MothsterEnergy" parent="." instance=ExtResource("1_amvig")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8976154, 0.5207801, -8.318592)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6230288, 0.9524121, 0.6377163)
 
 [node name="MothsterEnergy2" parent="." instance=ExtResource("1_amvig")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.740448, 1.4705408, 19.92197)
