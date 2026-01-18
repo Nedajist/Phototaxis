@@ -860,7 +860,23 @@ transform = Transform3D(-7.626329, 0, -2.4164283, 0, 8, 0, 2.4164283, 0, -7.6263
 transform = Transform3D(7.8128085, 0, -1.7204765, 0, 8, 0, 1.7204765, 0, 7.8128085, 110.30952, -0.23540783, -77.20047)
 
 [node name="lightpost9" parent="NavigationRegion3D/BreakerBox2" instance=ExtResource("7_oh6h3")]
-transform = Transform3D(1.7204763, 0, 7.8128085, 0, 8, 0, -7.8128085, 0, 1.7204763, 23.579056, -0.23540783, -55.341187)
+transform = Transform3D(1.7204766, 0, 7.812809, 0, 8, 0, -7.812809, 0, 1.7204766, 23.579056, -2.635408, -55.341194)
+
+[node name="BreakerBox3" parent="NavigationRegion3D" node_paths=PackedStringArray("attached_electronics") instance=ExtResource("9_ijcf8")]
+transform = Transform3D(-0.24148145, 0, -0.06470478, 0, 0.25, 0, 0.06470478, 0, -0.24148145, -41.3, 0.3, 15.8)
+attached_electronics = [NodePath("lightpost"), NodePath("lightpost2"), NodePath("lightpost3"), NodePath("lightpost4")]
+
+[node name="lightpost" parent="NavigationRegion3D/BreakerBox3" instance=ExtResource("7_oh6h3")]
+transform = Transform3D(-6.9282036, 0, -3.9999986, 0, 8, 0, 3.9999986, 0, -6.9282036, -37.958206, -6, 79.06994)
+
+[node name="lightpost2" parent="NavigationRegion3D/BreakerBox3" instance=ExtResource("7_oh6h3")]
+transform = Transform3D(9.536743e-07, 0, 8, 0, 8, 0, -8, 0, 9.536743e-07, -93.56039, -6, 24.303223)
+
+[node name="lightpost3" parent="NavigationRegion3D/BreakerBox3" instance=ExtResource("7_oh6h3")]
+transform = Transform3D(6.9282045, 0, 3.9999988, 0, 8, 0, -3.9999988, 0, 6.9282045, -54.03911, -8, -58.28194)
+
+[node name="lightpost4" parent="NavigationRegion3D/BreakerBox3" instance=ExtResource("7_oh6h3")]
+transform = Transform3D(-2.1457672e-06, 0, -8.000001, 0, 8, 0, 8.000001, 0, -2.1457672e-06, -2.5726166, -5.2, -3.0804787)
 
 [editable path="NavigationRegion3D/main_building"]
 [editable path="NavigationRegion3D/main_building/ceiling/lights/ceiling_light10"]
