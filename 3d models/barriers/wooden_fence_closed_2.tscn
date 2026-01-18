@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=4 uid="uid://bcp0a3c0n0qnq"]
+[gd_scene load_steps=6 format=4 uid="uid://bcp0a3c0n0qnq"]
 
 [ext_resource type="Texture2D" uid="uid://mdvv0bed7brf" path="res://3d models/textures/wooden_fence_closed_low_wooden_wall.jpg" id="1_dfgq0"]
 
@@ -42,8 +42,17 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_sl474")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_dfgq0"]
+size = Vector3(2, 1, 0.1)
+
 [node name="wooden_fence_closed2" type="Node3D"]
 
 [node name="wooden_fence_closed" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_01yog")
 skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0.5, -0.049999997)
+shape = SubResource("BoxShape3D_dfgq0")

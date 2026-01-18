@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://bxvfd7rum88vk"]
+[gd_scene load_steps=11 format=3 uid="uid://bxvfd7rum88vk"]
 
 [ext_resource type="PackedScene" uid="uid://dqqqxrwirr7dw" path="res://outside_floodlight.tscn" id="1_1ws1u"]
 [ext_resource type="PackedScene" uid="uid://byia83ocim6js" path="res://scenes/player_character.tscn" id="2_yhrv1"]
 [ext_resource type="PackedScene" uid="uid://b4jppir7cfejv" path="res://breaker_box.tscn" id="3_3gc80"]
 [ext_resource type="PackedScene" uid="uid://ygf5ld8cbgji" path="res://light_manager.tscn" id="3_yhrv1"]
 [ext_resource type="PackedScene" uid="uid://cgbtxv2pfofqd" path="res://scenes/generator.tscn" id="5_cqtb4"]
-[ext_resource type="PackedScene" path="res://scenes/gasoline_canister.tscn" id="6_jirxn"]
+[ext_resource type="PackedScene" uid="uid://dqoqgm2g1es0y" path="res://scenes/gasoline_canister.tscn" id="6_jirxn"]
+[ext_resource type="PackedScene" uid="uid://hiitfpg7yv0c" path="res://level_timer.tscn" id="7_3gc80"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_vonw3"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -188,3 +189,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1536016, 2.3841858e-07, 3.5
 
 [node name="GasolineCanister2" parent="." instance=ExtResource("6_jirxn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1536016, 2.3841858e-07, 7.2898626)
+
+[node name="Timer" parent="." instance=ExtResource("7_3gc80")]
+wait_time = 30.0

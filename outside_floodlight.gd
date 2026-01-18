@@ -1,6 +1,9 @@
 class_name LightPost
 extends Node3D
 @onready var audio_stream_player_3d: AudioStreamPlayer3D = %AudioStreamPlayer3D
+#@onready var light_1: MeshInstance3D = %light_1
+#@onready var light_2: MeshInstance3D = %light_2
+#@onready var light_3: MeshInstance3D = %light_3
 
 # there are four states that progress in the following order
 # when the lights are reactivated, start from ON
@@ -11,7 +14,8 @@ enum LightState {
 	BURNING_OUT,
 	OFF
 }
-
+@export var light_parents:Array[Node3D]
+@export var particle_agents:Array[GPUParticles3D]
 @export var total_time_on:float = 13.0
 
 # time in seconds at full strength
@@ -76,11 +80,11 @@ func _cache_lights():
 	original_light_energy.clear()
 	original_light_color.clear()
 	
-	var light_parents = [
-		$main_box/lightpost/lightpost_crossbar/light_1,
-		$main_box/lightpost/lightpost_crossbar/light_2,
-		$main_box/lightpost/lightpost_crossbar/light_3
-	]
+	#var light_parents = [
+#		light_1,
+#		light_2,
+#		light_3
+#	]
 	
 	for light_parent in light_parents:
 		for child in light_parent.get_children():
@@ -211,6 +215,8 @@ func _set_lights_visible(_visible: bool):
 				light.light_color = original_light_color[lights.find(light)]
 			else:
 				light.light_energy = 0.0
+	for particles in particle_agents:
+		particles.emitting = _visible
 
 # Public API: Manually deactivate lights (skip to OFF state)
 func deactivate():

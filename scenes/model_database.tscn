@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://de2evhgms5tyo"]
+[gd_scene load_steps=46 format=3 uid="uid://de2evhgms5tyo"]
 
 [ext_resource type="PackedScene" uid="uid://cjnrpwoo7ri8e" path="res://3d models/trees/tree_01.tscn" id="1_vdns3"]
 [ext_resource type="PackedScene" uid="uid://dl2vrdghviaii" path="res://3d models/trees/tree_02.tscn" id="2_b6bgt"]
@@ -47,6 +47,7 @@
 [ext_resource type="PackedScene" uid="uid://b51ryv3u2nfml" path="res://3d models/barriers/wooden_fence_broken_2.tscn" id="45_gpxap"]
 [ext_resource type="PackedScene" uid="uid://bcp0a3c0n0qnq" path="res://3d models/barriers/wooden_fence_closed_2.tscn" id="46_g55nb"]
 [ext_resource type="PackedScene" uid="uid://bbfiq0efgxv51" path="res://3d models/barriers/wooden_fence_open_2.tscn" id="47_7v7e7"]
+[ext_resource type="PackedScene" uid="uid://d7xhochwne5q" path="res://3d models/furniture/metal_shelf.tscn" id="45_gpxap"]
 
 [node name="model_database" type="Node3D"]
 
@@ -190,3 +191,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 7)
 
 [node name="wooden_fence_open2" parent="." instance=ExtResource("47_7v7e7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.433611, 0, 6.860178)
+
+[node name="Node3D" parent="." instance=ExtResource("45_gpxap")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 8.6)
