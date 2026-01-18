@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dq66112hawpx3"]
+[gd_scene load_steps=15 format=3 uid="uid://dq66112hawpx3"]
 
 [ext_resource type="Script" uid="uid://c1d2552pvod1n" path="res://moth_enemy/moth_enemy.gd" id="1_rmvo2"]
 [ext_resource type="Script" uid="uid://ckj3rd7w7dcrk" path="res://moth_enemy/moth_state_machine.gd" id="2_dutgy"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://cwojt73q7pthm" path="res://moth_enemy/moth_follow_light.gd" id="5_l03gm"]
 [ext_resource type="PackedScene" uid="uid://dlwbgy88dpm5i" path="res://moth_enemy/cone.tscn" id="6_bk6gy"]
 [ext_resource type="Script" uid="uid://cvgbkqcxgfl30" path="res://moth_enemy/moth_stalk.gd" id="6_vdxdw"]
+[ext_resource type="Texture2D" uid="uid://bteed6bsd7ahq" path="res://moth_enemy/Normal Moth/Front.png" id="8_mm7q4"]
+[ext_resource type="Texture2D" uid="uid://dhom2qiviaoo0" path="res://moth_enemy/Normal Moth/Back.png" id="9_nqo6d"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_y0wrk"]
 
@@ -51,6 +53,7 @@ LightSensitive = NodePath("../../LightSensitive")
 PlayerSensitive = NodePath("../../VisionArea")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("CapsuleMesh_y0wrk")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
@@ -81,6 +84,14 @@ shape = SubResource("SphereShape3D_bk6gy")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="LightSensitive"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 shape = SubResource("SphereShape3D_bk6gy")
+
+[node name="MothFront" type="Sprite3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+texture = ExtResource("8_mm7q4")
+
+[node name="MothBack" type="Sprite3D" parent="MothFront"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01)
+texture = ExtResource("9_nqo6d")
 
 [connection signal="switch_to_chase" from="State Machine/MothStalk" to="." method="_on_moth_stalk_switch_to_chase"]
 [connection signal="body_entered" from="VisionArea" to="." method="_on_vision_area_body_entered"]
