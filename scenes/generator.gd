@@ -3,4 +3,4 @@ extends StaticBody3D
 
 
 func interact():
-	print("Generator!")
+	EventBus.generator_interacted.emit()

@@ -18,6 +18,7 @@ var timer
 var deactivated_lights:Array[Node3D]
 
 func _ready():
+	EventBus.generator_filled_with_gas.connect(_gasoline_refilled)
 	timer = frequency
 	#for light:LightPost in light_sources:
 		#light.total_time_on = frequency
@@ -43,3 +44,18 @@ func _light_reactivate(target):
 	if(!light_sources.has(target) and deactivated_lights.has(target)):
 		light_sources.append(target)
 		deactivated_lights.erase(target)
+
+func _gasoline_refilled():
+	# TODO: Implement
+	print("Gasoline Refilled!")
+	pass
+	
+"""
+there are two ways the lights can turn off
+
+All lights are connected to a central generator, which will slowly run out of gas. When gas is running out, it will start blinking.
+-> This can be fixed by filling the generator with gas (stub above)
+
+Randomly, any given light has a chance to burn out. The lights will get brighter and brighter, then suddenly turn off.
+-> This can be fixed by finding the breaker switches and fixing the correct light. Each light has a one-to-one or many-to-one (multiple lights per breaker) relationship with each breaker
+"""
