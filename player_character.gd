@@ -17,7 +17,7 @@ var sprint_meter: float = 100.0
 var sprinting = false
 
 const SPEED = 2.0
-const SPRINT_SPEED = 5.0
+const SPRINT_SPEED = 6.0
 
 
 var health=10
@@ -133,9 +133,10 @@ func handle_player_movement(delta) -> void:
 	move_and_slide()
 
 
-func _on_camera_3d_spotted_moth(moth) -> void:
-	look_at_moth=true
-	camera_lookat_target = moth
+func _on_camera_3d_spotted_moth(moth:Node3D) -> void:
+	if moth.global_position.distance_to(self.global_position) < 100:
+		look_at_moth=true
+		camera_lookat_target = moth
 	
 func _get_interactables() -> Array:
 	# Returns array of all bodies in interaction area that have interact() method
