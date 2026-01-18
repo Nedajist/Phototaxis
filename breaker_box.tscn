@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4jppir7cfejv"]
+
+[ext_resource type="Script" uid="uid://05rpcu2t5rb1" path="res://breaker_box.gd" id="1_3rb8u"]
+[ext_resource type="PackedScene" uid="uid://bpvpg1yhowgao" path="res://3d_assets/Switch.tscn" id="2_i5kwe"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_nsvcr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nsvcr"]
+
+[node name="BreakerBox" type="StaticBody3D" groups=["interactable"]]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+script = ExtResource("1_3rb8u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("BoxMesh_nsvcr")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_nsvcr")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3098005, 0)
+text = "THIS IS A BREAKER BOX"
+
+[node name="Switch" parent="." instance=ExtResource("2_i5kwe")]
+unique_name_in_owner = true
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)

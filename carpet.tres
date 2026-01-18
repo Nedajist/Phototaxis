@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=16 format=3 uid="uid://cippr3600iv1x"]
+[gd_resource type="VisualShader" load_steps=16 format=3 uid="uid://nl8mqxkfer7j"]
 
 [ext_resource type="Texture2D" uid="uid://cy413c5kglc8v" path="res://carpet_lightgray_01.png" id="1_d7a2o"]
 [ext_resource type="Texture2D" uid="uid://qq78bgdjwkhw" path="res://carpet_brown_01.png" id="2_rvbuw"]
