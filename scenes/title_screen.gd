@@ -3,7 +3,7 @@ extends Control
 #play button "res://scenes/level_full.tscn"
 #credits button
 const LEVEL_FULL = preload("res://scenes/level_full.tscn")
-const CREDITS = preload("uid://b1d6xim74lap")
+const CREDITS = preload("res://scenes/credits.tscn")
 
 @onready var play_button: Button = %PlayButton
 @onready var credits_button: Button = %CreditsButton

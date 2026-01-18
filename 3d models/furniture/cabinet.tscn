@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=4 uid="uid://crpim427bviie"]
+[gd_scene load_steps=5 format=4 uid="uid://crpim427bviie"]
 
-[ext_resource type="Texture2D" uid="uid://bysjxx81k80x6" path="res://3d models/textures/cabinet_0.png" id="1_xj5gn"]
+[ext_resource type="Texture2D" uid="uid://js14pfpj8x4k" path="res://3d models/textures/cabinet_0.png" id="1_xj5gn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a1lyh"]
 resource_name = "cabinet_textures1"
@@ -42,23 +42,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_12wl4")
 
-[sub_resource type="Animation" id="Animation_p67tw"]
-resource_name = "Take 001"
-length = 10.3125
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_uapd0"]
-_data = {
-&"Take 001": SubResource("Animation_p67tw")
-}
-
 [node name="cabinet" type="Node3D"]
 
 [node name="cabinet" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.022033377)
 mesh = SubResource("ArrayMesh_qygxv")
 skeleton = NodePath("")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_uapd0")
-}

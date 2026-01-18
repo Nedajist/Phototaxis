@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cd5jygl443w8h"]
 
-[ext_resource type="Material" uid="uid://ccd6o6mrhags" path="res://materials/flashlight_material.tres" id="1_nnxok"]
+[ext_resource type="Material" uid="uid://dkcr80bndg2k4" path="res://materials/flashlight_material.tres" id="1_nnxok"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_h3kvc"]
 material = ExtResource("1_nnxok")
@@ -34,6 +34,8 @@ mesh = SubResource("BoxMesh_h3kvc")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -4.9693947, 3.8342938, 5.042445)
+spot_range = 30.0
+spot_attenuation = 1.5
 spot_angle = 25.0
 
 [node name="Node3D" type="Node3D" parent="."]

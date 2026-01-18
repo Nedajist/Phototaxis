@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b4jppir7cfejv"]
 
-[ext_resource type="Script" uid="uid://05rpcu2t5rb1" path="res://breaker_box.gd" id="1_3rb8u"]
-[ext_resource type="PackedScene" uid="uid://bpvpg1yhowgao" path="res://3d_assets/Switch.tscn" id="2_i5kwe"]
+[ext_resource type="Script" path="res://breaker_box.gd" id="1_3rb8u"]
+[ext_resource type="PackedScene" uid="uid://4ke43iuje6r4" path="res://3d_assets/Switch.tscn" id="2_i5kwe"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_nsvcr"]
 
@@ -26,3 +26,9 @@ text = "THIS IS A BREAKER BOX"
 [node name="Switch" parent="." instance=ExtResource("2_i5kwe")]
 unique_name_in_owner = true
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+light_color = Color(0.77916384, 0, 0.15613142, 1)
+light_energy = 0.1
+omni_range = 1.0

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://detp30ngyni5s"]
+[gd_scene load_steps=5 format=3 uid="uid://detp30ngyni5s"]
 
-[ext_resource type="Script" uid="uid://c2ns81er81cc4" path="res://scenes/title_screen.gd" id="1_mgrm8"]
+[ext_resource type="Script" path="res://scenes/title_screen.gd" id="1_mgrm8"]
 [ext_resource type="PackedScene" uid="uid://btbw57a4jnd2t" path="res://scenes/eyelid.tscn" id="2_mgrm8"]
 [ext_resource type="Texture2D" uid="uid://ujqaveds3d7n" path="res://2d_assets/title_card.png" id="2_s4lrb"]
+[ext_resource type="AudioStream" uid="uid://byhy1d2ua4bqh" path="res://musics/main menu.mp3" id="4_mgrm8"]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -61,3 +62,7 @@ offset_top = 48.0
 offset_right = 509.0
 offset_bottom = 48.0
 scale = Vector2(0.361, 0.361)
+
+[node name="ambience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_mgrm8")
+autoplay = true
