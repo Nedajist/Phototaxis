@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://5b1hobitnycn" path="res://materials/diamond_plate/DiamondPlate009_1K-JPG_Metalness.jpg" id="4_bsrld"]
 [ext_resource type="Texture2D" uid="uid://b4vdx4f2sdi17" path="res://materials/diamond_plate/DiamondPlate009_1K-JPG_NormalGL.jpg" id="5_ofhi2"]
 [ext_resource type="Texture2D" uid="uid://dvekvfo3y4vwj" path="res://materials/diamond_plate/DiamondPlate009_1K-JPG_Roughness.jpg" id="6_p83cb"]
-[ext_resource type="Material" uid="uid://bhirbjyvgu3le" path="res://materials/diamond_plate/DiamondPlate009_1K-JPG.tres" id="7_ahoyo"]
+[ext_resource type="Material" uid="uid://bvik250qe0chs" path="res://materials/diamond_plate/DiamondPlate009_1K-JPG.tres" id="7_ahoyo"]
 [ext_resource type="AudioStream" uid="uid://cdgpsacdd2w88" path="res://sfx/260555__lookimadeathing__basic-fire-whoosh-2.mp3" id="9_holxg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ncbd"]
