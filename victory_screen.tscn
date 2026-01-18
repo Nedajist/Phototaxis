@@ -12,15 +12,15 @@ title_screen = ExtResource("3_r8dr5")
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1152.0
 offset_bottom = 648.0
-color = Color(0.3771176, 0.39418694, 0.38737553, 1)
+color = Color(0.076077156, 0.082667045, 0.08003578, 1)
 
 [node name="Label" type="Label" parent="."]
-offset_left = 528.0
+offset_left = 178.0
 offset_top = 215.0
-offset_right = 568.0
-offset_bottom = 238.0
+offset_right = 1075.0
+offset_bottom = 252.0
 theme_override_font_sizes/font_size = 27
-text = "You Win"
+text = "You leave the moths behind. They are very sad. You monster."
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchors_preset = 15
@@ -132,5 +132,5 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [connection signal="pressed" from="VBoxContainer/Control2/HBoxContainer/Retry Button" to="." method="_on_retry"]
-[connection signal="pressed" from="VBoxContainer/Control2/HBoxContainer/Title Screen" to="." method="_on_title_screen"]
 [connection signal="pressed" from="VBoxContainer/Control2/HBoxContainer/Title Screen" to="." method="_on_title_screen_pressed"]
+[connection signal="pressed" from="VBoxContainer/Control2/HBoxContainer/Title Screen" to="." method="_on_title_screen"]
