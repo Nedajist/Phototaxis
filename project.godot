@@ -95,4 +95,4 @@ right_click={
 
 [rendering]
 
-limits/opengl/max_lights_per_object=32
+limits/opengl/max_lights_per_object=64

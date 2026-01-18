@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgwxo14hnjmcp"]
+[gd_scene load_steps=7 format=3 uid="uid://bgwxo14hnjmcp"]
 
 [ext_resource type="Material" uid="uid://bvik250qe0chs" path="res://materials/diamond_plate/DiamondPlate009_1K-JPG.tres" id="1_advau"]
 [ext_resource type="Script" uid="uid://4g1vmj512wdd" path="res://outside_floodlight.gd" id="1_p5acw"]
@@ -11,6 +11,9 @@ bottom_radius = 0.025
 [sub_resource type="BoxMesh" id="BoxMesh_u6mot"]
 material = ExtResource("1_advau")
 size = Vector3(0.25, 0.1, 0.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u6mot"]
+size = Vector3(2.0084229, 1.0756836, 1.6131592)
 
 [node name="ceiling_light" type="Node3D" node_paths=PackedStringArray("light_parents")]
 script = ExtResource("1_p5acw")
@@ -41,9 +44,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 5.9604645e-08)
 light_color = Color(0.8352941, 0.9764706, 0.91764706, 1)
 light_energy = 0.5
 light_size = 1.0
+distance_fade_enabled = true
+distance_fade_begin = 20.0
+distance_fade_shadow = 30.0
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -0.2, 0)
+distance_fade_enabled = true
+distance_fade_begin = 20.0
+distance_fade_shadow = 30.0
 spot_range = 10.0
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
@@ -51,3 +60,12 @@ unique_name_in_owner = true
 stream = ExtResource("3_u6mot")
 volume_db = -5.0
 max_distance = 15.0
+
+[node name="LightBody" type="StaticBody3D" parent="." groups=["Lights"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, -1.5)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LightBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.026550293, 0.51293945, 1.4756064)
+shape = SubResource("BoxShape3D_u6mot")

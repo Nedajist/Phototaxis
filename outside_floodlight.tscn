@@ -173,12 +173,18 @@ skeleton = NodePath("../../../..")
 [node name="SpotLight3D" type="SpotLight3D" parent="main_box/lightpost/lightpost_crossbar/light_1"]
 transform = Transform3D(0.9659258, 0.22414386, 0.12940955, -0.12940954, -0.014754623, 0.9914814, 0.22414389, -0.97444445, 0.014754415, 0, 0, 0)
 light_color = Color(1, 1, 0.33333334, 1)
+distance_fade_enabled = true
+distance_fade_begin = 20.0
+distance_fade_shadow = 30.0
 spot_range = 10.0
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="main_box/lightpost/lightpost_crossbar/light_1"]
 transform = Transform3D(1, 0, 0, 0, 0.8660254, -0.5, 0, 0.5, 0.8660254, 0, -0.08660245, -0.049999952)
 light_color = Color(1, 1, 0.33333334, 1)
 light_energy = 0.5
+distance_fade_enabled = true
+distance_fade_begin = 20.0
+distance_fade_shadow = 30.0
 omni_range = 1.0
 
 [node name="light_2" type="MeshInstance3D" parent="main_box/lightpost/lightpost_crossbar"]
@@ -191,6 +197,9 @@ skeleton = NodePath("../../../..")
 transform = Transform3D(1, 0, 0, 0, 0.8660254, -0.5, 0, 0.5, 0.8660254, 0, -0.08660245, -0.049999952)
 light_color = Color(1, 1, 0.33333334, 1)
 light_energy = 0.5
+distance_fade_enabled = true
+distance_fade_begin = 20.0
+distance_fade_shadow = 30.0
 
 [node name="light_3" type="MeshInstance3D" parent="main_box/lightpost/lightpost_crossbar"]
 unique_name_in_owner = true
@@ -201,12 +210,18 @@ skeleton = NodePath("../../../..")
 [node name="SpotLight3D2" type="SpotLight3D" parent="main_box/lightpost/lightpost_crossbar/light_3"]
 transform = Transform3D(0.9659258, -0.22414386, -0.12940955, 0.12940954, -0.014754623, 0.9914814, -0.22414389, -0.97444445, 0.014754415, 0, 0, 0)
 light_color = Color(1, 1, 0.33333334, 1)
+distance_fade_enabled = true
+distance_fade_begin = 20.0
+distance_fade_shadow = 30.0
 spot_range = 10.0
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="main_box/lightpost/lightpost_crossbar/light_3"]
 transform = Transform3D(1, 0, 0, 0, 0.8660254, -0.5, 0, 0.5, 0.8660254, 0, -0.08660245, -0.049999952)
 light_color = Color(1, 1, 0.33333334, 1)
 light_energy = 0.5
+distance_fade_enabled = true
+distance_fade_begin = 20.0
+distance_fade_shadow = 30.0
 omni_range = 1.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
