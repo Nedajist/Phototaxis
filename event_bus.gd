@@ -25,6 +25,8 @@ signal gas_low
 signal gas_critical
 signal gas_empty
 
+signal light_burned_out(Node3D)
+
 signal gas_changed(float)
 
 signal update_time(float)
@@ -53,6 +55,8 @@ func silence_warnings() -> void:
 	gas_low.emit()
 	gas_critical.emit()
 	gas_empty.emit()
+	
+	light_burned_out.emit(Node3D)
 	
 	gas_changed.emit(0)
 	update_time.emit(0)

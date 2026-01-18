@@ -32,19 +32,21 @@ func _ready():
 		randomize()
 
 func _process(delta):
-	timer -= delta
-	if(timer <= 0 && light_sources.size() > 0):
-		var target
-		match behavior:
-			Mode.Random:
-				target = randi_range(0, light_sources.size() - 1)
-				#print(target)
-			Mode.Top_Most:
-				target = 0
-		light_sources[target].selected_to_break = true
-		deactivated_lights.append(light_sources[target])
-		light_sources.remove_at(target)
-		timer = frequency
+	if(light_sources.size() > 0):
+		if(timer <= 0):
+			var target
+			match behavior:
+				Mode.Random:
+					target = randi_range(0, light_sources.size() - 1)
+					#print(target)
+				Mode.Top_Most:
+					target = 0
+			light_sources[target].selected_to_break = true
+			deactivated_lights.append(light_sources[target])
+			light_sources.remove_at(target)
+			timer = frequency
+		else:
+			timer -= delta
 
 func _light_reactivate(target):
 	if(!light_sources.has(target) and deactivated_lights.has(target)):
