@@ -15,10 +15,10 @@ func _physics_process(delta):
 		$MothBack.visible = true
 		$MothFront.visible = false
 		facing_back = true
-		print("FaceBack")
+		#print("FaceBack")
 		print(back_distance.length(), "   ", front_distance.length())
 	elif back_distance.length() > front_distance.length() and facing_back:
 		$MothFront.visible = true
 		$MothBack.visible = false
 		facing_back = false
-		print("FaceFront")
+		#print("FaceFront")

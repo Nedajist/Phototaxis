@@ -13,6 +13,8 @@ var blinking = false
 var blink_progress = 0.0
 var blink_signal_fired:bool = false
 signal blink_signal
+signal blink_signal_attract
+var rng = RandomNumberGenerator.new()
 # out of 300
 # 100 to close, 100 to pause, 100 to open
 @export var blink_close_time = 0.25 # seconds to close
@@ -80,10 +82,9 @@ func blink() -> void:
 func _handle_blink(delta: float) -> void:
 	if blinking:
 		if blink_progress <= 200.0 and !blink_signal_fired:
-			var rng = RandomNumberGenerator.new()
 			if rng.randi_range(1,5) < 2:
-				print("asd")
-				blink_signal.emit()
+				blink_signal_attract.emit()
+			blink_signal.emit()
 			blink_signal_fired = true
 		# Animate the blink
 		if blink_progress < 100.0:

@@ -14,6 +14,9 @@ func _ready():
 
 
 func _physics_process(delta: float) -> void:
+	if number_of_aggressive_moths == -1 and !(previous_number_of_aggressive_moths == -1):
+		stop_music()
+	
 	if number_of_aggressive_moths==0 and previous_number_of_aggressive_moths>0:
 		ambient_begin()
 	
@@ -24,6 +27,7 @@ func _physics_process(delta: float) -> void:
 	
 
 func ambient_begin():
+	$AudioStreamPlayer/AnimationPlayer.play("fade_out_music")
 	await get_tree().create_timer(randf_range(1,4)).timeout
 	if number_of_aggressive_moths==0:
 		if randi_range(1,2)==1:
@@ -40,3 +44,21 @@ func chase_begin():
 		audio_manager.stream=chase_2
 	
 	audio_manager.play()
+
+func _increase_chasing_moths():
+	number_of_aggressive_moths += 1
+
+func _decrease_chasing_moths():
+	number_of_aggressive_moths -= 1
+
+func _end_music():
+	number_of_aggressive_moths = 0
+
+func stop_music():
+	await $AudioStreamPlayer/AnimationPlayer.play("fade_out_music")
+	$AudioStreamPlayer/AnimationPlayer.stop()
+
+
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == "fade_out_music":
+		$AudioStreamPlayer/AnimationPlayer.play("fade_in_music")

@@ -1,8 +1,8 @@
 extends Node2D
 @onready var retry_button: Button = %RetryButton
 @onready var exit_button: Button = %ExitButton
-const TITLE_SCREEN = preload("uid://detp30ngyni5s")
-const LEVEL_FULL = preload("uid://cyjfkujhlu7a8")
+const TITLE_SCREEN = preload("res://scenes/title_screen.tscn")
+const LEVEL_FULL = preload("res://scenes/level_full.tscn")
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
