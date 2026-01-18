@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://dqqqxrwirr7dw" path="res://outside_floodlight.tscn" id="7_oh6h3"]
 [ext_resource type="PackedScene" uid="uid://b4jppir7cfejv" path="res://breaker_box.tscn" id="9_ijcf8"]
 [ext_resource type="PackedScene" path="res://light_manager.tscn" id="9_sd6n8"]
-[ext_resource type="PackedScene" uid="uid://hiitfpg7yv0c" path="res://level_timer.tscn" id="10_j5urc"]
 [ext_resource type="Script" uid="uid://bxeqlygxow2lo" path="res://musics/musicmanager.gd" id="13_rvbka"]
 [ext_resource type="PackedScene" uid="uid://c0h4xhxeqqyo0" path="res://scenes/generator.tscn" id="14_cybri"]
 [ext_resource type="PackedScene" uid="uid://bacxq4ateb1oc" path="res://3d models/misc/wildlife_entity.tscn" id="15_j5urc"]
@@ -809,7 +808,7 @@ transform = Transform3D(1.0232396e-07, -3.809701e-09, -1, 0.17364818, 0.9848082,
 environment = SubResource("Environment_2vian")
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("2_lscal")]
-transform = Transform3D(0.85232085, 0, -0.52301925, 0, 1, 0, 0.52301925, 0, 0.85232085, -0.13250828, 0, 5.8218384)
+transform = Transform3D(0.74855083, 0, -0.66307735, 0, 1, 0, 0.66307735, 0, 0.74855083, 1.2674916, 0.100000024, 3.3218384)
 
 [node name="lightmanager" parent="." node_paths=PackedStringArray("light_sources") instance=ExtResource("9_sd6n8")]
 transform = Transform3D(-0.25, 0, -2.1855694e-08, 0, 0.25, 0, 2.1855694e-08, 0, -0.25, 11.894613, 1.3050765, 0.898263)
@@ -839,6 +838,7 @@ surface_material_override/0 = null
 surface_material_override/0 = null
 
 [node name="poster6" parent="NavigationRegion3D/main_building/posters" index="5"]
+transform = Transform3D(-3.15162, 99.89101, 8.742278e-06, 69.40412, 4.5360203, 0, -2.7552335e-07, 8.732749e-06, -100, 28.721924, 3.2693205, -19.110039)
 surface_material_override/0 = null
 
 [node name="poster7" parent="NavigationRegion3D/main_building/posters" index="6"]
