@@ -806,10 +806,6 @@ transform = Transform3D(1.0232396e-07, -3.809701e-09, -1, 0.17364818, 0.9848082,
 
 [node name="enviroment" type="Node" parent="."]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="enviroment"]
-transform = Transform3D(-0.53889364, -0.4006924, 0.7409718, -0.11069863, 0.90568113, 0.4092525, -0.83506864, 0.1385187, -0.53242207, 0, -0.19008255, 0)
-shadow_enabled = true
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="enviroment"]
 environment = SubResource("Environment_2vian")
 
