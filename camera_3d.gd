@@ -29,9 +29,11 @@ func _process(_delta):
 		raycast_result = space.intersect_ray(ray_query)
 	var moth_spotted:bool = false
 	for object in object_list:
-		if object.name=="MothEnemy":
+		if object.is_in_group("Enemies"):
 			moth_spotted = true
 			looking_at_moth = true
 			emit_signal("spotted_moth")
-	if !moth_spotted and looking_at_moth:
-		emit_signal("moth_out_of_view")
+	print(moth_spotted)
+	#if !moth_spotted and looking_at_moth:
+	#	print("motv")
+	#	emit_signal("moth_out_of_view")
