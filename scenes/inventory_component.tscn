@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://dgv0ai283b3pn"]
+
+[node name="InventoryComponent" type="Node3D"]

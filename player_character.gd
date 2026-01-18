@@ -4,6 +4,7 @@ extends CharacterBody3D
 @export var camera_lookat_target: CharacterBody3D
 @onready var flashlight: Node3D = %Flashlight
 @onready var interaction_area_3d: Area3D = %InteractionArea3D
+@onready var inventory_component: Node3D = %InventoryComponent
 
 @export var mouse_sensitivity = 0.002
 var camera_pitch: float = 0.0
