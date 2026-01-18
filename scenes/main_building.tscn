@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=4 uid="uid://chrhdj1rnvmok"]
+[gd_scene load_steps=102 format=4 uid="uid://chrhdj1rnvmok"]
 
 [ext_resource type="Material" uid="uid://qmwdqv3sgqea" path="res://materials/brick_1/Bricks047_1K-JPG.tres" id="1_4ns5f"]
 [ext_resource type="Shader" uid="uid://bj2a4iu2cmk8r" path="res://wall.tres" id="2_ox8ns"]
@@ -27,7 +27,6 @@
 [ext_resource type="Texture2D" uid="uid://cgtyn7qcfyeoe" path="res://3d models/posters/poster 13.png" id="25_2e0cd"]
 [ext_resource type="Texture2D" uid="uid://63fechnr38wf" path="res://3d models/posters/poster 16.png" id="26_hver8"]
 [ext_resource type="Texture2D" uid="uid://cbmpnh5ftej13" path="res://3d models/posters/Chapter64pg12.PNG.webp" id="27_u3phq"]
-[ext_resource type="Texture2D" uid="uid://dg0knw1bso0hi" path="res://3d models/posters/poster 14.png" id="28_vp7sa"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_toav8"]
 data = PackedVector3Array(-20, 1.5, 15, 20, 1.5, 15, -20, -1.5, 15, 20, 1.5, 15, 20, -1.5, 15, -20, -1.5, 15, 20, 1.5, -15, -20, 1.5, -15, 20, -1.5, -15, -20, 1.5, -15, -20, -1.5, -15, 20, -1.5, -15, 20, 1.5, 15, 20, 1.5, -15, 20, -1.5, 15, 20, 1.5, -15, 20, -1.5, -15, 20, -1.5, 15, -20, 1.5, -15, -20, 1.5, 15, -20, -1.5, -15, -20, 1.5, 15, -20, -1.5, 15, -20, -1.5, -15, 20, 1.5, 15, -20, 1.5, 15, 20, 1.5, -15, -20, 1.5, 15, -20, 1.5, -15, 20, 1.5, -15, -20, -1.5, 15, 20, -1.5, 15, -20, -1.5, -15, 20, -1.5, 15, 20, -1.5, -15, -20, -1.5, -15)
@@ -532,48 +531,6 @@ shadow_mesh = SubResource("ArrayMesh_seyl6")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fv5re"]
 albedo_texture = ExtResource("27_u3phq")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_43qi7"]
-resource_name = "Material.013"
-vertex_color_use_as_albedo = true
-emission_enabled = true
-emission = Color(1, 1, 1, 1)
-emission_energy_multiplier = 0.0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_qffoo"]
-_surfaces = [{
-"aabb": AABB(-0.01, -0.01, -0.00030803206, 0.02, 0.02, 0.00030803206),
-"format": 34359742465,
-"index_count": 36,
-"index_data": PackedByteArray("AAABAAIAAwABAAAAAgAEAAAAAQADAAUABQACAAEABgAEAAIAAgAFAAYABwAAAAQAAAAHAAMABAAGAAcABQADAAcABwAGAAUA"),
-"name": "Material.013",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 8,
-"vertex_data": PackedByteArray("CtcjPArXIzwAAAAACtcjvArXIzwAAAAACtcjvArXI7wAAAAACtcjvArXIzxdf6G5CtcjPArXI7wAAAAACtcjvArXI7xdf6G5CtcjPArXI7xdf6G5CtcjPArXIzxdf6G5")
-}]
-blend_shape_mode = 0
-
-[sub_resource type="ArrayMesh" id="ArrayMesh_81fms"]
-resource_name = "Plane_012"
-_surfaces = [{
-"aabb": AABB(-0.01, -0.01, -0.00030803206, 0.02, 0.02, 0.00030803206),
-"attribute_data": PackedByteArray("AACAPwAAAAAAAAAAAAAAAAAAAAAAAIA/AACAPwAAgD8AAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA/AAAAAAAAgD8AAAAAAACAPwAAgD8AAIA/AACAPwAAAAAAAIA/AAAAAAAAgD8AAIA/AAAAAAAAgD8AAAAAAACAPwAAgD8AAIA/AACAPwAAAAAAAIA/AAAAAAAAgD8AAAAAAAAAAAAAAAAAAAAA"),
-"format": 34359742487,
-"index_count": 36,
-"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQA"),
-"material": SubResource("StandardMaterial3D_43qi7"),
-"name": "Material.013",
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 24,
-"vertex_data": PackedByteArray("CtcjPArXIzwAAAAACtcjvArXIzwAAAAACtcjvArXI7wAAAAACtcjPArXI7wAAAAACtcjPArXIzxdf6G5CtcjPArXI7xdf6G5CtcjvArXI7xdf6G5CtcjvArXIzxdf6G5CtcjvArXIzxdf6G5CtcjvArXIzwAAAAACtcjPArXIzwAAAAACtcjPArXIzxdf6G5CtcjPArXI7xdf6G5CtcjPArXI7wAAAAACtcjvArXI7wAAAAACtcjvArXI7xdf6G5CtcjPArXIzxdf6G5CtcjPArXIzwAAAAACtcjPArXI7wAAAAACtcjPArXI7xdf6G5CtcjvArXI7xdf6G5CtcjvArXI7wAAAAACtcjvArXIzwAAAAACtcjvArXIzxdf6G5/////////z//////////P/////////8//////////z//f/9/////v/9//3////+//3//f////7//f/9/////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+//3///////7//f///////v/9///////+//3///////78AAP9/////vwAA/3////+/AAD/f////78AAP9/////v////3////+/////f////7////9/////v////3////+/")
-}]
-blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_qffoo")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sips5"]
-albedo_texture = ExtResource("28_vp7sa")
 
 [node name="main_building" type="Node3D"]
 
@@ -1576,11 +1533,5 @@ transform = Transform3D(4.141071e-06, 9.3126616e-08, 100, -1.2125156, 99.978714,
 mesh = SubResource("ArrayMesh_8fosn")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_fv5re")
-
-[node name="poster13" type="MeshInstance3D" parent="posters"]
-transform = Transform3D(69.46506, 1.7451348, 0, -1.212517, 99.978714, 0, 0, 0, 100, 25.985481, 2.975577, -8.536034)
-mesh = SubResource("ArrayMesh_81fms")
-skeleton = NodePath("")
-surface_material_override/0 = SubResource("StandardMaterial3D_sips5")
 
 [editable path="ceiling/lights/ceiling_light10"]

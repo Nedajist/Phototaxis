@@ -1,4 +1,4 @@
-[gd_scene load_steps=145 format=4 uid="uid://de2evhgms5tyo"]
+[gd_scene load_steps=148 format=4 uid="uid://de2evhgms5tyo"]
 
 [ext_resource type="PackedScene" uid="uid://cjnrpwoo7ri8e" path="res://3d models/trees/tree_01.tscn" id="1_vdns3"]
 [ext_resource type="PackedScene" uid="uid://dl2vrdghviaii" path="res://3d models/trees/tree_02.tscn" id="2_b6bgt"]
@@ -64,6 +64,9 @@
 [ext_resource type="Texture2D" uid="uid://dvap7fl5wy7eq" path="res://3d models/posters/fractal-mka-modified.jpeg" id="62_r01ul"]
 [ext_resource type="Texture2D" uid="uid://ca3iga2d1p6t6" path="res://3d models/posters/12262947.jpg" id="63_h123v"]
 [ext_resource type="Texture2D" uid="uid://b2u31od1xj446" path="res://3d models/posters/abe-modified.jpg" id="64_syacs"]
+[ext_resource type="PackedScene" uid="uid://b51ryv3u2nfml" path="res://3d models/barriers/wooden_fence_broken_2.tscn" id="65_reeun"]
+[ext_resource type="PackedScene" uid="uid://bcp0a3c0n0qnq" path="res://3d models/barriers/wooden_fence_closed_2.tscn" id="66_r24o4"]
+[ext_resource type="PackedScene" uid="uid://bbfiq0efgxv51" path="res://3d models/barriers/wooden_fence_open_2.tscn" id="67_1ryd3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o1ljq"]
 resource_name = "Material.001"
@@ -576,7 +579,7 @@ emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_qffoo"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_lcioq"]
 _surfaces = [{
 "aabb": AABB(-0.01, -0.01, -0.00030803206, 0.02, 0.02, 0.00030803206),
 "format": 34359742465,
@@ -606,7 +609,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("CtcjPArXIzwAAAAACtcjvArXIzwAAAAACtcjvArXI7wAAAAACtcjPArXI7wAAAAACtcjPArXIzxdf6G5CtcjPArXI7xdf6G5CtcjvArXI7xdf6G5CtcjvArXIzxdf6G5CtcjvArXIzxdf6G5CtcjvArXIzwAAAAACtcjPArXIzwAAAAACtcjPArXIzxdf6G5CtcjPArXI7xdf6G5CtcjPArXI7wAAAAACtcjvArXI7wAAAAACtcjvArXI7xdf6G5CtcjPArXIzxdf6G5CtcjPArXIzwAAAAACtcjPArXI7wAAAAACtcjPArXI7xdf6G5CtcjvArXI7xdf6G5CtcjvArXI7wAAAAACtcjvArXIzwAAAAACtcjvArXIzxdf6G5/////////z//////////P/////////8//////////z//f/9/////v/9//3////+//3//f////7//f/9/////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+//3///////7//f///////v/9///////+//3///////78AAP9/////vwAA/3////+/AAD/f////78AAP9/////v////3////+/////f////7////9/////v////3////+/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_qffoo")
+shadow_mesh = SubResource("ArrayMesh_lcioq")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1xcde"]
 albedo_texture = ExtResource("57_rli2m")
@@ -618,7 +621,7 @@ emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_seyl6"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_enu3x"]
 _surfaces = [{
 "aabb": AABB(-0.01, -0.01, -0.00030803206, 0.02, 0.02, 0.00030803206),
 "format": 34359742465,
@@ -648,7 +651,7 @@ _surfaces = [{
 "vertex_data": PackedByteArray("CtcjPArXIzwAAAAACtcjvArXIzwAAAAACtcjvArXI7wAAAAACtcjPArXI7wAAAAACtcjPArXIzxdf6G5CtcjPArXI7xdf6G5CtcjvArXI7xdf6G5CtcjvArXIzxdf6G5CtcjvArXIzxdf6G5CtcjvArXIzwAAAAACtcjPArXIzwAAAAACtcjPArXIzxdf6G5CtcjPArXI7xdf6G5CtcjPArXI7wAAAAACtcjvArXI7wAAAAACtcjvArXI7xdf6G5CtcjPArXIzxdf6G5CtcjPArXIzwAAAAACtcjPArXI7wAAAAACtcjPArXI7xdf6G5CtcjvArXI7xdf6G5CtcjvArXI7wAAAAACtcjvArXIzwAAAAACtcjvArXIzxdf6G5/////////z//////////P/////////8//////////z//f/9/////v/9//3////+//3//f////7//f/9/////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+//3///////7//f///////v/9///////+//3///////78AAP9/////vwAA/3////+/AAD/f////78AAP9/////v////3////+/////f////7////9/////v////3////+/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_seyl6")
+shadow_mesh = SubResource("ArrayMesh_enu3x")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vcc11"]
 albedo_texture = ExtResource("58_xdrry")
@@ -1160,3 +1163,12 @@ transform = Transform3D(4.141071e-06, 9.3126616e-08, 100, -1.2125156, 99.978714,
 mesh = SubResource("ArrayMesh_yevnp")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_7q376")
+
+[node name="wooden_fence_broken2" parent="." instance=ExtResource("65_reeun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7123933, 0, 6.7606134)
+
+[node name="wooden_fence_closed2" parent="." instance=ExtResource("66_r24o4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.589223, -4.7683716e-07, 6.9794893)
+
+[node name="wooden_fence_open2" parent="." instance=ExtResource("67_1ryd3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.119114, 0, 7.267716)
