@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cyjfkujhlu7a8"]
+[gd_scene load_steps=26 format=3 uid="uid://cyjfkujhlu7a8"]
 
 [ext_resource type="Shader" uid="uid://dyysfxgdx3tjb" path="res://sky.gdshader" id="1_rujvi"]
 [ext_resource type="PackedScene" uid="uid://db5vtnv2kffga" path="res://shed.tscn" id="1_rvbka"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://chrhdj1rnvmok" path="res://scenes/main_building.tscn" id="4_abddk"]
 [ext_resource type="PackedScene" uid="uid://bcp0a3c0n0qnq" path="res://3d models/barriers/wooden_fence_closed_2.tscn" id="4_xc460"]
 [ext_resource type="PackedScene" uid="uid://cg5bdun7dy7fc" path="res://scenes/level_base_terrain.tscn" id="5_2vian"]
-[ext_resource type="PackedScene" path="res://scenes/tree_group_04.tscn" id="5_qci8t"]
+[ext_resource type="PackedScene" uid="uid://cw7c4dqlchsc0" path="res://scenes/tree_group_04.tscn" id="5_qci8t"]
 [ext_resource type="PackedScene" uid="uid://bbfiq0efgxv51" path="res://3d models/barriers/wooden_fence_open_2.tscn" id="5_rvbka"]
 [ext_resource type="PackedScene" uid="uid://dqqqxrwirr7dw" path="res://outside_floodlight.tscn" id="7_oh6h3"]
 [ext_resource type="PackedScene" uid="uid://b4jppir7cfejv" path="res://breaker_box.tscn" id="9_ijcf8"]
@@ -17,8 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://hiitfpg7yv0c" path="res://level_timer.tscn" id="10_j5urc"]
 [ext_resource type="PackedScene" uid="uid://c0h4xhxeqqyo0" path="res://scenes/generator.tscn" id="14_cybri"]
 [ext_resource type="PackedScene" uid="uid://bacxq4ateb1oc" path="res://3d models/misc/wildlife_entity.tscn" id="15_j5urc"]
-[ext_resource type="PackedScene" path="res://scenes/musicmanager.tscn" id="18_8nvtt"]
-[ext_resource type="PackedScene" path="res://scenes/pickup_container.tscn" id="19_8nvtt"]
+[ext_resource type="PackedScene" uid="uid://d1t0t05cmgjpy" path="res://scenes/musicmanager.tscn" id="18_8nvtt"]
+[ext_resource type="PackedScene" uid="uid://bt1tbegimor52" path="res://scenes/mothster_energy.tscn" id="19_un4xv"]
+[ext_resource type="PackedScene" uid="uid://dqoqgm2g1es0y" path="res://scenes/gasoline_canister.tscn" id="20_f2y6o"]
 [ext_resource type="PackedScene" uid="uid://dq66112hawpx3" path="res://moth_enemy/moth_enemy.tscn" id="20_xpi1f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7aj1g"]
@@ -1007,7 +1008,52 @@ transform = Transform3D(1.0232396e-07, -3.809701e-09, -1, 0.17364818, 0.9848082,
 [node name="musicmanager" parent="." instance=ExtResource("18_8nvtt")]
 unique_name_in_owner = true
 
-[node name="PickupContainer" parent="." instance=ExtResource("19_8nvtt")]
+[node name="PickupContainer" type="Node3D" parent="."]
+
+[node name="MothsterEnergy" parent="PickupContainer" instance=ExtResource("19_un4xv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6230288, 0.9524121, 0.6377163)
+
+[node name="MothsterEnergy5" parent="PickupContainer" instance=ExtResource("19_un4xv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.9448, 0.9524121, -14.295326)
+
+[node name="MothsterEnergy6" parent="PickupContainer" instance=ExtResource("19_un4xv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.537193, 0.9524121, 6.351391)
+
+[node name="MothsterEnergy2" parent="PickupContainer" instance=ExtResource("19_un4xv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.740448, 1.4705408, 19.92197)
+
+[node name="MothsterEnergy3" parent="PickupContainer" instance=ExtResource("19_un4xv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.289783, 1.4705408, 7.532921)
+
+[node name="MothsterEnergy4" parent="PickupContainer" instance=ExtResource("19_un4xv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.411236, -0.7720394, -37.855545)
+
+[node name="GasolineCanister" parent="PickupContainer" instance=ExtResource("20_f2y6o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.947344, 1.1636788, -12.354273)
+
+[node name="GasolineCanister6" parent="PickupContainer" instance=ExtResource("20_f2y6o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.78351, 1.1636788, -12.354273)
+
+[node name="GasolineCanister7" parent="PickupContainer" instance=ExtResource("20_f2y6o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.394646, 1.1636788, -22.095203)
+
+[node name="GasolineCanister8" parent="PickupContainer" instance=ExtResource("20_f2y6o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.19133, 1.6845528, -22.095203)
+
+[node name="GasolineCanister9" parent="PickupContainer" instance=ExtResource("20_f2y6o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.19133, 1.6845528, -1.48876)
+
+[node name="GasolineCanister4" parent="PickupContainer" instance=ExtResource("20_f2y6o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.45139, -1.0673182, -38.76731)
+
+[node name="GasolineCanister5" parent="PickupContainer" instance=ExtResource("20_f2y6o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.604021, 1.1880517, 16.6613)
+
+[node name="GasolineCanister3" parent="PickupContainer" instance=ExtResource("20_f2y6o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.000471, -0.7037776, 31.457848)
+
+[node name="GasolineCanister2" parent="PickupContainer" instance=ExtResource("20_f2y6o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0038624, -1.1303186, -39.630302)
 
 [node name="MothEnemy" parent="." node_paths=PackedStringArray("player_character") instance=ExtResource("20_xpi1f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.825918, 1.1753988, -17.998014)
