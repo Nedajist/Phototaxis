@@ -1002,6 +1002,24 @@ unique_name_in_owner = true
 
 [node name="PickupContainer" parent="." instance=ExtResource("19_8nvtt")]
 
+[node name="MothsterEnergy" parent="PickupContainer" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6230288, -0.34758794, -4.3622837)
+
+[node name="MothsterEnergy3" parent="PickupContainer" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.289783, 0.17054069, 24.53292)
+
+[node name="MothsterEnergy4" parent="PickupContainer" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.411236, 0.52796066, -37.855545)
+
+[node name="GasolineCanister4" parent="PickupContainer" index="5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.45139, 0.23268187, -38.76731)
+
+[node name="GasolineCanister3" parent="PickupContainer" index="7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.000471, -0.4037776, 31.457848)
+
+[node name="GasolineCanister2" parent="PickupContainer" index="8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0038624, -0.13031864, -39.630302)
+
 [node name="MothEnemy" parent="." node_paths=PackedStringArray("player_character") instance=ExtResource("20_xpi1f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.825918, 1.1753988, -17.998014)
 player_character = NodePath("../PlayerCharacter")
@@ -1019,7 +1037,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.56225204, 1.1753988, 14.29
 player_character = NodePath("../PlayerCharacter")
 
 [node name="MothEnemy2" parent="." node_paths=PackedStringArray("player_character") instance=ExtResource("20_xpi1f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.329758, -1.2129261, -31.988394)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.329758, 0.08707392, -31.988394)
 player_character = NodePath("../PlayerCharacter")
 
 [node name="MothEnemy3" parent="." node_paths=PackedStringArray("player_character") instance=ExtResource("20_xpi1f")]
@@ -1036,3 +1054,4 @@ player_character = NodePath("../PlayerCharacter")
 
 [editable path="NavigationRegion3D/main_building"]
 [editable path="NavigationRegion3D/main_building/ceiling/lights/ceiling_light10"]
+[editable path="PickupContainer"]
