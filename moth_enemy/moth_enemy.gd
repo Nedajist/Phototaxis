@@ -16,6 +16,7 @@ func _ready() -> void:
 	print(player_character)
 	player_ui = player_character.get_node("HudCanvasLayer")
 	player_ui.blink_signal_attract.connect(_player_blinked)
+	EventBus.gas_empty.connect(_on_gas_empty)
 
 func update_target_location(target_location) -> void:
 	nav_agent.target_position = target_location
@@ -82,3 +83,6 @@ func _on_light_sensitive_body_entered(body):
 				$"State Machine".current_state.Transitioned.emit($"State Machine".current_state, "MothFollow")
 				$"State Machine/MothFollow".light = body
 			
+
+func _on_gas_empty() -> void:
+	$"State Machine".current_state.Transitioned.emit($"State Machine".current_state, "MothEnraged")

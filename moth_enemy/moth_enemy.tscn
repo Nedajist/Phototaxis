@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dq66112hawpx3"]
+[gd_scene load_steps=18 format=3 uid="uid://dq66112hawpx3"]
 
 [ext_resource type="Script" uid="uid://c1d2552pvod1n" path="res://moth_enemy/moth_enemy.gd" id="1_rmvo2"]
 [ext_resource type="Script" uid="uid://ckj3rd7w7dcrk" path="res://moth_enemy/moth_state_machine.gd" id="2_dutgy"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://cwojt73q7pthm" path="res://moth_enemy/moth_follow_light.gd" id="5_l03gm"]
 [ext_resource type="PackedScene" uid="uid://dlwbgy88dpm5i" path="res://moth_enemy/cone.tscn" id="6_bk6gy"]
 [ext_resource type="Script" uid="uid://cvgbkqcxgfl30" path="res://moth_enemy/moth_stalk.gd" id="6_vdxdw"]
+[ext_resource type="Script" uid="uid://dpwciowy4sni0" path="res://moth_enemy/moth_enraged.gd" id="10_qa0pf"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_y0wrk"]
 
@@ -79,6 +80,10 @@ script = ExtResource("6_vdxdw")
 moth_enemy = NodePath("../..")
 LightSensitive = NodePath("../../LightSensitive")
 PlayerSensitive = NodePath("../../VisionArea")
+
+[node name="MothEnraged" type="Node" parent="State Machine" node_paths=PackedStringArray("moth_enemy")]
+script = ExtResource("10_qa0pf")
+moth_enemy = NodePath("../..")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 visible = false
