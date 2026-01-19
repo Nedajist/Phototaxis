@@ -137,6 +137,27 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="Label2" type="Label" parent="."]
+offset_left = 48.0
+offset_top = 253.0
+offset_right = 462.0
+offset_bottom = 640.0
+text = "But they leave you with these words of great wisdom:
+
+The moth is busy
+all night long,
+but does he make a peep?
+No, he is too considerate
+about our need for sleep.
+
+So when we spy a drowsy moth
+tucked in for the day,
+shh, let's be
+as thoughtful as he
+and let him snore away.
+
+- David L. Harrison"
+
 [connection signal="pressed" from="VBoxContainer/Control2/HBoxContainer/Retry Button" to="." method="_on_retry"]
-[connection signal="pressed" from="VBoxContainer/Control2/HBoxContainer/Title Screen" to="." method="_on_title_screen"]
 [connection signal="pressed" from="VBoxContainer/Control2/HBoxContainer/Title Screen" to="." method="_on_title_screen_pressed"]
+[connection signal="pressed" from="VBoxContainer/Control2/HBoxContainer/Title Screen" to="." method="_on_title_screen"]
