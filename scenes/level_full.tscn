@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dqqqxrwirr7dw" path="res://outside_floodlight.tscn" id="7_oh6h3"]
 [ext_resource type="PackedScene" uid="uid://b4jppir7cfejv" path="res://breaker_box.tscn" id="9_ijcf8"]
 [ext_resource type="PackedScene" uid="uid://bvh55u7g7ct3t" path="res://light_manager.tscn" id="9_sd6n8"]
-[ext_resource type="PackedScene" uid="uid://hiitfpg7yv0c" path="res://level_timer.tscn" id="10_j5urc"]
+[ext_resource type="PackedScene" path="res://level_timer.tscn" id="10_j5urc"]
 [ext_resource type="PackedScene" uid="uid://c0h4xhxeqqyo0" path="res://scenes/generator.tscn" id="14_cybri"]
 [ext_resource type="PackedScene" uid="uid://bacxq4ateb1oc" path="res://3d models/misc/wildlife_entity.tscn" id="15_j5urc"]
 [ext_resource type="PackedScene" uid="uid://d1t0t05cmgjpy" path="res://scenes/musicmanager.tscn" id="18_8nvtt"]
@@ -1014,10 +1014,10 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6230288, 0.9524121, 0.6377163)
 
 [node name="MothsterEnergy5" parent="PickupContainer" instance=ExtResource("19_un4xv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.9448, 0.9524121, -14.295326)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.9448, -0.57572484, -15.846094)
 
 [node name="MothsterEnergy6" parent="PickupContainer" instance=ExtResource("19_un4xv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.537193, 0.9524121, 6.351391)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.537193, 0.076470375, 6.351391)
 
 [node name="MothsterEnergy2" parent="PickupContainer" instance=ExtResource("19_un4xv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.740448, 1.4705408, 19.92197)
@@ -1032,16 +1032,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.411236, -0.7720394, -37.8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.947344, 1.1636788, -12.354273)
 
 [node name="GasolineCanister6" parent="PickupContainer" instance=ExtResource("20_f2y6o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.78351, 1.1636788, -12.354273)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.78351, -0.47394502, -12.354273)
 
 [node name="GasolineCanister7" parent="PickupContainer" instance=ExtResource("20_f2y6o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.394646, 1.1636788, -22.095203)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.394646, -1.3745817, -22.095203)
 
 [node name="GasolineCanister8" parent="PickupContainer" instance=ExtResource("20_f2y6o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.19133, 1.6845528, -22.095203)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.19133, -0.8059634, -22.095203)
 
 [node name="GasolineCanister9" parent="PickupContainer" instance=ExtResource("20_f2y6o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.19133, 1.6845528, -1.48876)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.19133, -0.22148263, -1.48876)
 
 [node name="GasolineCanister4" parent="PickupContainer" instance=ExtResource("20_f2y6o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.45139, -1.0673182, -38.76731)
